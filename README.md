@@ -6,7 +6,8 @@ A (short)handy tool for learning and practicing Teeline.
 
 - Teeline alphabet
 - Revision page that shows outlines/words and users practice reading/writing them
-- Literary passages and speeches read by text-to-speech software to for transcription practice 
+- Literary passages and speeches read by text-to-speech software to for transcription practice
+- Users can practice 'writing' outlines using their mouse or a touchscreen input, like in [this Stack Overflow example](https://stackoverflow.com/questions/39050460/drawing-on-canvas-using-touchscreen-devices)
 
 ### Resources and further reading
 
