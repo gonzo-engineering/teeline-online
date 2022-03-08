@@ -16,4 +16,4 @@ A (short)handy tool for learning and practicing Teeline.
 
 - [How to Get Handwriting Animation With Irregular SVG Strokes](https://css-tricks.com/how-to-get-handwriting-animation-with-irregular-svg-strokes/) by Trapti Rahangdale
 - [SVG paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths)
-- [Teeline Mate](https://github.com/adxsoft/TeelineMate) by [@adxsoft](https://github.com/adxsoft/TeelineMate)
+- [Teeline Mate](https://github.com/adxsoft/TeelineMate) by [@adxsoft](https://github.com/adxsoft)
