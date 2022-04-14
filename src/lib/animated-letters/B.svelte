@@ -1,0 +1,42 @@
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="720pt"
+	height="720pt"
+	viewBox="0 0 720 720"
+>
+	<defs />
+	<path
+		class="path"
+		id="shape0"
+		transform="translate(274.567761627583, 236.329284750337)"
+		fill="none"
+		stroke="#000000"
+		stroke-width="9.6"
+		stroke-linecap="square"
+		stroke-linejoin="bevel"
+		d="M74.798 0C70.4679 12.9902 55.6928 24.3647 48.3688 35.8866C26.6894 69.992 -1.2733 117.817 0.0449239 160C2.77571 247.385 80.8371 228.752 98.2474 171.401C111.841 126.623 14.6489 106.248 1.34047 159.482"
+	/>
+</svg>
+
+<style>
+	svg {
+		width: 300px;
+		height: 300px;
+	}
+
+	.path {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+		animation: dash 2s linear infinite;
+	}
+
+	@keyframes dash {
+		from {
+			stroke-dashoffset: 1100;
+		}
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+</style>

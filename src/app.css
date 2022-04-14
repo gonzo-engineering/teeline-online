@@ -1,0 +1,40 @@
+@font-face {
+	font-family: 'Handwriting';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/fonts/handwriting.otf'); /* IE9 Compat Modes */
+	src: local(''), url('/fonts/handwriting.otf') format('embedded-opentype'),
+		/* IE6-IE8 */ url('/fonts/handwriting.otf') format('woff2'),
+		/* Super Modern Browsers */ url('/fonts/handwriting.otf') format('woff'),
+		/* Modern Browsers */ url('/fonts/handwriting.otf') format('truetype'),
+		/* Safari, Android, iOS */ url('/fonts/handwriting.otf') format('svg'); /* Legacy iOS */
+}
+
+* {
+	font-family: 'Handwriting';
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 5rem;
+	text-align: center;
+	font-weight: 500;
+}
+
+h2 {
+	font-size: 4rem;
+}
+
+h3 {
+	font-size: 3rem;
+}
+
+p {
+	font-size: 1.8rem;
+	font-weight: bold;
+}
+
+a {
+	text-decoration: none;
+}
