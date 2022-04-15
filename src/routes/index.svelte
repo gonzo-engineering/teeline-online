@@ -3,10 +3,7 @@
 	import F from '$lib/animated-letters/F.svelte';
 
 	import AlphabetTable from '../lib/AlphabetTable.svelte';
-	import Header from '../lib/Header.svelte';
 </script>
-
-<Header />
 
 <main>
 	<AlphabetTable />

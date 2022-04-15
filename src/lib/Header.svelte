@@ -13,7 +13,7 @@
 <style>
 	h1 {
 		text-align: center;
-		margin: 30px 0 0 0;
+		margin: 50px 0 0 0;
 	}
 
 	.tagline {
