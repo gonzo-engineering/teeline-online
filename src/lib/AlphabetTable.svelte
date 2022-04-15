@@ -53,13 +53,13 @@
 	.alphabet-container {
 		display: grid;
 		grid-template-columns: repeat(7, 1fr);
-		grid-column-gap: 30px;
-		grid-row-gap: 30px;
+		grid-column-gap: 50px;
+		grid-row-gap: 50px;
 	}
 
 	.card-container {
-		box-shadow: 0px 0px 15px 5px #e1e1e1;
-		border-radius: 10px;
+		/* box-shadow: 0px 0px 15px 5px #e1e1e1;
+		border-radius: 10px; */
 	}
 
 	.outline-container {
