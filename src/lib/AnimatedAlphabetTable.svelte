@@ -25,7 +25,7 @@
 					stroke-miterlimit="2"
 					d="M 159 1 C 279.658 0.6508 522.393 0.3254 493 1"
 				/>
-				{#each letter.lines as line}
+				{#each letter.lines as line, i}
 					<path
 						class="path"
 						transform="translate({line.translateValues})"
@@ -34,6 +34,7 @@
 						stroke-width="13"
 						stroke-linecap="round"
 						stroke-linejoin="bevel"
+						style="animation-delay: {i / 4}s"
 						d={line.path}
 					/>
 				{/each}
