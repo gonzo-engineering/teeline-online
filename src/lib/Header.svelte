@@ -1,24 +1,32 @@
 <header>
-	<h1>teeline.online</h1>
+	<h1><a href="/">teeline.online</a></h1>
 	<div class="tagline">A (short)handy tool</div>
-	<!-- <nav>
-        <ul>
-            <li><a href="/alphabet">Alphabet</a></li>
-            <li><a href="/revise">Revise</a></li>
-            <li><a href="/practice">Practice</a></li>
-        </ul>
-    </nav> -->
+	<nav>
+		<ul>
+			<li><a href="/alphabet">Alphabet</a></li>
+		</ul>
+	</nav>
 </header>
 
 <style>
+	header {
+		margin: 0 0 50px 0;
+	}
+
 	h1 {
 		text-align: center;
 		margin: 50px 0 0 0;
 	}
 
+	h1 a {
+		text-decoration: none;
+		font-weight: 400;
+	}
+
 	.tagline {
 		text-align: center;
 		font-size: 2rem;
+		margin-bottom: 2rem;
 	}
 
 	nav {

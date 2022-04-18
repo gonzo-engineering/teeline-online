@@ -1,10 +1,15 @@
 <script>
-	import Header from '$lib/Header.svelte';
+	import Header from '../lib/Header.svelte';
+	import Footer from '../lib/Footer.svelte';
 </script>
 
-<Header />
-
-<slot />
+<body>
+	<Header />
+	<main>
+		<slot />
+	</main>
+	<Footer />
+</body>
 
 <style>
 	@font-face {
@@ -19,9 +24,7 @@
 			/* Safari, Android, iOS */ url('/fonts/handwriting.otf') format('svg'); /* Legacy iOS */
 	}
 
-	* {
-		font-family: 'Handwriting';
-		margin: 0;
-		padding: 0;
+	body {
+		margin: 0 100px 100px;
 	}
 </style>

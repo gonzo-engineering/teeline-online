@@ -8,8 +8,7 @@
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				xmlns:xlink="http://www.w3.org/1999/xlink"
-				width="100pt"
-				height="100pt"
+				width="100%"
 				viewBox="0 0 720 720"
 			>
 				<defs />
@@ -46,17 +45,18 @@
 
 <style>
 	.animated-container {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		gap: 70px;
+		display: grid;
+		grid-template-columns: repeat(8, 1fr);
+		grid-column-gap: 30px;
+		grid-row-gap: 30px;
 	}
 
 	.outline-container {
-		padding: 0 20px 40px 20px;
 		border-radius: 15px;
-		box-shadow: 0px 0px 10px 3px #e1e1e1;
+		box-shadow: 0px 0px 10px 1px #e1e1e1;
 		border-radius: 10px;
+		width: 100%;
+		padding-bottom: 30px;
 	}
 
 	.outline-container:hover .path {
