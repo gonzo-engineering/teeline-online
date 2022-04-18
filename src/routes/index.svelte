@@ -10,7 +10,7 @@
 <div class="copy-container">
 	<p>
 		Teeline is a form of shorthand that allows people - usually journalists - to write lots of words
-		really quickly. It is accepted by <a href="https://www.nctj.com/"
+		really quickly. It is accepted by the <a href="https://www.nctj.com/"
 			>National Council for the Training of Journalists</a
 		> and remains a requirement for qualified reporters.
 	</p>
