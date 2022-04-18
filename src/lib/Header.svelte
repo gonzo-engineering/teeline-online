@@ -3,6 +3,7 @@
 	<div class="tagline">A (short)handy tool</div>
 	<nav>
 		<ul>
+			<li><a href="/">Home</a></li>
 			<li><a href="/alphabet">Alphabet</a></li>
 		</ul>
 	</nav>

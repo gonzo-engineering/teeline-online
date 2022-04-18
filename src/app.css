@@ -27,7 +27,7 @@ h3 {
 	font-size: 3rem;
 }
 
-a, a:link, a:visited, a:active {
+a {
 	text-decoration: underline;
 	font-weight: bold;
 	color: black;

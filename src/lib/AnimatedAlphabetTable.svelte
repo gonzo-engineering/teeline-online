@@ -30,7 +30,7 @@
 						transform="translate({line.translateValues})"
 						fill="none"
 						stroke="#000000"
-						stroke-width="13"
+						stroke-width="10"
 						stroke-linecap="round"
 						stroke-linejoin="bevel"
 						style="animation-delay: {i / 4}s"
