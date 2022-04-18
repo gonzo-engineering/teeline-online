@@ -25,6 +25,7 @@
 	}
 
 	body {
-		margin: 0 100px 100px;
+		width: 90%;
+		margin: auto;
 	}
 </style>

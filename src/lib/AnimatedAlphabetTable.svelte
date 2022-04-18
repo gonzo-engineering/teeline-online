@@ -46,7 +46,7 @@
 <style>
 	.animated-container {
 		display: grid;
-		grid-template-columns: repeat(8, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		grid-column-gap: 30px;
 		grid-row-gap: 30px;
 	}
@@ -75,6 +75,12 @@
 		}
 		to {
 			stroke-dashoffset: 0;
+		}
+	}
+
+	@media (min-width: 1025px) {
+		.animated-container {
+			grid-template-columns: repeat(8, 1fr);
 		}
 	}
 </style>

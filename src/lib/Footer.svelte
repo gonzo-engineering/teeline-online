@@ -13,7 +13,7 @@
 	footer {
 		text-align: center;
 		margin: auto;
-		width: 40%;
+		width: 80%;
 	}
 
 	.footer-content {
@@ -22,5 +22,11 @@
 
 	p {
 		font-size: 1.8rem;
+	}
+
+	@media (min-width: 1025px) {
+		footer {
+			width: 40%;
+		}
 	}
 </style>
