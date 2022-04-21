@@ -3,7 +3,7 @@
 		<p>
 			teeline.online is developed by <a href="https://frederickobrien.com" target="_blank"
 				>Fred O'Brien</a
-			>. You can view the source code on
+			>, a man of no particular consequence. The source code is publicly accessible on
 			<a href="https://github.com/frederickobrien/teeline-online" target="_blank">GitHub</a>
 		</p>
 	</div>

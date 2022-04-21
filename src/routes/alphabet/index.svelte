@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Alphabet | Teeline Online</title>
+	<title>Alphabet | teeline.online</title>
 </svelte:head>
 
 <AnimatedAlphabetTable />

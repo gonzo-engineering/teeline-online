@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Teeline Online</title>
+	<title>teeline.online</title>
 </svelte:head>
 
 <div class="copy-container">
@@ -28,7 +28,7 @@
 		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 50px;
+		margin-top: 100px;
 	}
 
 	@media (min-width: 1025px) {
