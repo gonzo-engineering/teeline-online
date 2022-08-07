@@ -1,11 +1,15 @@
 <script>
-	import { alphabet } from '../data/outlines/alphabet';
-	import OutlineCard from './OutlineCard.svelte';
+	import OutlineCard from '$lib/OutlineCard.svelte';
+	import { outlines } from '../../data/outlines/outlines';
 </script>
 
+<svelte:head>
+	<title>Outlines | teeline.online</title>
+</svelte:head>
+
 <div class="animated-container">
-	{#each alphabet as letter}
-		<OutlineCard outline={letter} />
+	{#each outlines as outline}
+		<OutlineCard {outline} />
 	{/each}
 </div>
 
