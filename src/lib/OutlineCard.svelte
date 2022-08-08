@@ -31,7 +31,7 @@
 				stroke-width="10"
 				stroke-linecap="round"
 				stroke-linejoin="bevel"
-				style="animation-delay: {i / 1.5}s"
+				style="animation-delay: {i}s"
 				d={line.path}
 			/>
 		{/each}
