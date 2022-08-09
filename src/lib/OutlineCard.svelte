@@ -20,7 +20,7 @@
 			stroke-linecap="square"
 			stroke-linejoin="miter"
 			stroke-miterlimit="2"
-			d="M 159 1 C 279.658 0.6508 522.393 0.3254 573 1"
+			d="M 80 1 C 279.658 0.6508 522.393 0.3254 650 1"
 		/>
 		{#each outline.lines as line, i}
 			<path
