@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Krita: https://krita.org -->
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:krita="http://krita.org/namespaces/svg/krita"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    width="720pt"
+    height="720pt"
+    viewBox="0 0 720 720">
+<defs/>
+<path id="shape0" transform="translate(281.732677470002, 233.975708502024)" fill="none" stroke="#000000" stroke-width="9.6" stroke-linecap="square" stroke-linejoin="bevel" d="M0.583112 0C0.583112 15.212 2.99441 28.3457 1.55477 43.8219C-0.777776 68.8968 -2.18633 51.5224 10.2997 45.2794C40.9306 29.9639 40.1956 83.2101 41.9758 100.567C43.6021 116.423 39.9033 135.508 38.8665 151.579C38.15 162.685 55.2463 233.568 21.1823 217.846C18.4797 216.599 12.2887 214.56 11.077 211.53C-1.09784 181.093 96.8869 185.76 117.571 183.935C122.735 183.48 133.118 183.547 133.118 183.547C133.118 183.547 129.325 183.184 127.482 183.547C119.769 185.062 86.5366 193.701 92.5021 208.615C98.5674 223.779 124.63 216.896 134.672 215.223"/>
+</svg>

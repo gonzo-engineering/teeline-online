@@ -36,7 +36,7 @@
 			/>
 		{/each}
 	</svg>
-	<div class="outline-label">{outline.name}</div>
+	<div class="outline-label">{outline.name.toString().replace(/,/g, ' / ')}</div>
 </div>
 
 <style>
@@ -64,12 +64,6 @@
 		}
 		to {
 			stroke-dashoffset: 0;
-		}
-	}
-
-	@media (min-width: 1025px) {
-		.animated-container {
-			grid-template-columns: repeat(8, 1fr);
 		}
 	}
 </style>

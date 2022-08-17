@@ -1,11 +1,44 @@
 <script>
-	import { alphabet } from '../data/outlines/alphabet';
+	import { outlines } from '../data/outlines/outlines';
 	import OutlineCard from './OutlineCard.svelte';
+
+	const alphabet = [
+		'A',
+		'B',
+		'C',
+		'D',
+		'E',
+		'F',
+		'G',
+		'H',
+		'I',
+		'J',
+		'K',
+		'L',
+		'M',
+		'N',
+		'O',
+		'P',
+		'Q',
+		'R',
+		'S',
+		'T',
+		'U',
+		'V',
+		'W',
+		'X',
+		'Y',
+		'Z'
+	];
+
+	const lowerCaseAlphabet = alphabet.map((letter) => letter.toLocaleLowerCase());
 </script>
 
 <div class="animated-container">
-	{#each alphabet as letter}
-		<OutlineCard outline={letter} />
+	{#each outlines as outline}
+		{#if lowerCaseAlphabet.some((el) => outline.name.includes(el))}
+			<OutlineCard {outline} />
+		{/if}
 	{/each}
 </div>
 

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created using Krita: https://krita.org -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="720pt"
+   height="720pt"
+   viewBox="0 0 720 720"
+   version="1.1"
+   id="svg97"
+   sodipodi:docname="or.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata101">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1403"
+     id="namedview99"
+     showgrid="false"
+     inkscape:zoom="0.93125"
+     inkscape:cx="480"
+     inkscape:cy="480"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg97" />
+  <defs
+     id="defs94" />
+  <path
+     id="shape0"
+     transform="translate(328.04653435979, 411.070414277998)"
+     fill="none"
+     stroke="#000000"
+     stroke-width="9.6"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     d="M31.337 2.49756C32.5549 0.670816 40.4648 2.06137 42.2507 2.13377C83.6067 3.81037 94.2025 56.3107 52.1943 67.9797C34.1302 72.9975 -1.53399 64.8361 0.0511315 41.0592C1.50358 19.2725 20.3549 4.29237 41.0381 0.314826C41.7537 0.177213 43.8038 -0.243658 43.2208 0.193563" />
+</svg>
