@@ -1,6 +1,6 @@
 <header>
 	<h1><a href="/">teeline.online</a></h1>
-	<div class="tagline">A (short)handy tool</div>
+	<div class="tagline">Very (short)handy</div>
 	<nav>
 		<ul>
 			<li><a href="/">Home</a></li>
