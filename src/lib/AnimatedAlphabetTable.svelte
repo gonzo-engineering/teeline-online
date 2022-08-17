@@ -52,7 +52,7 @@
 
 	@media (min-width: 1025px) {
 		.animated-container {
-			grid-template-columns: repeat(5, 1fr);
+			grid-template-columns: repeat(7, 1fr);
 		}
 	}
 </style>

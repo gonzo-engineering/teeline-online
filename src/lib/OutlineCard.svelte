@@ -56,6 +56,7 @@
 
 	.outline-label {
 		text-align: center;
+		font-size: 1.9rem;
 	}
 
 	@keyframes dash {
