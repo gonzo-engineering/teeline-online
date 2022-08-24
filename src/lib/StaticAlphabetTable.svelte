@@ -57,11 +57,6 @@
 		grid-row-gap: 50px;
 	}
 
-	.card-container {
-		/* box-shadow: 0px 0px 15px 5px #e1e1e1;
-		border-radius: 10px; */
-	}
-
 	.outline-container {
 		height: 200px;
 		width: 200px;

@@ -1,5 +1,5 @@
 <script>
-	import OutlineCard from '$lib/OutlineCard.svelte';
+	import OutlineCard from '$lib/cards/StaticOutlineCard.svelte';
 	import { outlines } from '../../data/outlines/outlines';
 
 	const alphabeticalOutlines = outlines.sort(function (a, b) {

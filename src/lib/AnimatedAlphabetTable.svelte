@@ -1,6 +1,6 @@
 <script>
 	import { outlines } from '../data/outlines/outlines';
-	import OutlineCard from './OutlineCard.svelte';
+	import OutlineCard from './cards/StaticOutlineCard.svelte';
 
 	const alphabet = [
 		'A',

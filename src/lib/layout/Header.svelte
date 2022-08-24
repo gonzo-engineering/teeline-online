@@ -1,12 +1,12 @@
 <header>
 	<h1><a href="/">teeline.online</a></h1>
-	<div class="tagline">Very (short)handy</div>
+	<div class="tagline">A (short)handy tool</div>
 	<nav>
 		<ul>
 			<li><a href="/">Home</a></li>
 			<li><a href="/alphabet">Alphabet</a></li>
 			<li><a href="/outlines">Outlines</a></li>
-			<!-- <li><a href="/revise">Revise</a></li> -->
+			<li><a href="/revise">Revise</a></li>
 		</ul>
 	</nav>
 </header>
