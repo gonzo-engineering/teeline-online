@@ -1,28 +1,18 @@
 <script>
-	import { validate_each_keys } from 'svelte/internal';
-
 	import { outlines } from '../data/outlines/outlines';
 	import FlippingOutlineCard from '../lib/cards/OutlineCardFlipping.svelte';
+	import { shuffle } from '../helpers';
 
-	function shuffleArray(array) {
-		for (let i = array.length - 1; i > 0; i--) {
-			const j = Math.floor(Math.random() * (i + 1));
-			[array[i], array[j]] = [array[j], array[i]];
-		}
-	}
+	const shuffledOutlines = shuffle(outlines);
 
-	shuffleArray(outlines);
-
-	let outline = outlines[0];
-
-	function getRandomArbitrary(min, max) {
-		return Math.ceil(Math.random() * (max - min) + min);
-	}
+	let counter = 0;
+	let outlineObject = shuffledOutlines[counter];
 
 	function changeOutline() {
-		let randomNumber = getRandomArbitrary(0, outlines.length - 1);
-		console.log(randomNumber);
-		outline = outlines[randomNumber];
+		if (counter === outlines.length - 1) counter = 0;
+		else counter++;
+		console.log(counter);
+		outlineObject = shuffledOutlines[counter];
 	}
 
 	function handleKeydown(event) {
@@ -41,7 +31,7 @@
 <div class="content">
 	<p>Hover/tap to see what the outline stands for</p>
 
-	<FlippingOutlineCard {outline} />
+	<FlippingOutlineCard {outlineObject} />
 
 	<div class="button-container">
 		<button class="button" on:click={changeOutline}>New outline</button>
@@ -63,7 +53,6 @@
 
 	button {
 		font-size: 2rem;
-		/* box-shadow: 0px 0px 10px 1px #e1e1e1; */
 		border-radius: 10px;
 		padding: 10px 20px;
 	}

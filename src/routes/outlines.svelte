@@ -1,14 +1,9 @@
 <script>
-	import OutlineCard from '$lib/cards/OutlineCardStatic.svelte';
+	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
+
+	import OutlineCard from '$lib/cards/OutlineCardAnimated.svelte';
 	import { outlines } from '../data/outlines/outlines';
-
-	const alphabeticalOutlines = outlines.sort(function (a, b) {
-		var textA = a.name[0].toUpperCase();
-		var textB = b.name[0].toUpperCase();
-		return textA < textB ? -1 : textA > textB ? 1 : 0;
-	});
-
-	console.log(alphabeticalOutlines);
+	import { sortAlphabetically } from '../helpers';
 </script>
 
 <svelte:head>
@@ -16,8 +11,8 @@
 </svelte:head>
 
 <div class="animated-container">
-	{#each outlines as outline}
-		<OutlineCard {outline} />
+	{#each sortAlphabetically(outlines) as outlineObject}
+		<OutlineCardAnimated {outlineObject} />
 	{/each}
 </div>
 

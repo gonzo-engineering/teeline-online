@@ -2,18 +2,18 @@
 	import OutlineSvg from './OutlineSVG.svelte';
 	import { prettify } from '../../helpers';
 
-	export let outline;
+	export let outlineObject;
 </script>
 
 <div class="flip-card">
 	<div class="flip-card-inner">
 		<div class="flip-card-front">
 			<div class="svg-container">
-				<OutlineSvg outlineObject={outline} />
+				<OutlineSvg {outlineObject} />
 			</div>
 		</div>
 		<div class="flip-card-back">
-			<div>{prettify(outline.name)}</div>
+			<div>{prettify(outlineObject.name)}</div>
 		</div>
 	</div>
 </div>

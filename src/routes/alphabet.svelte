@@ -1,6 +1,7 @@
 <script>
 	import { outlines } from '../data/outlines/outlines';
-	import OutlineCard from '../lib/cards/OutlineCardStatic.svelte';
+	import { sortAlphabetically } from '../helpers';
+	import OutlineCardAnimated from '../lib/cards/OutlineCardAnimated.svelte';
 
 	const alphabet = [
 		'A',
@@ -39,9 +40,9 @@
 </svelte:head>
 
 <div class="animated-container">
-	{#each outlines as outline}
-		{#if lowerCaseAlphabet.some((el) => outline.name.includes(el))}
-			<OutlineCard {outline} />
+	{#each sortAlphabetically(outlines) as outlineObject}
+		{#if lowerCaseAlphabet.some((letter) => outlineObject.name.includes(letter))}
+			<OutlineCardAnimated {outlineObject} />
 		{/if}
 	{/each}
 </div>

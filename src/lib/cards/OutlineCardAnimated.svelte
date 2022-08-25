@@ -2,13 +2,13 @@
 	import OutlineSvg from './OutlineSVG.svelte';
 	import { prettify } from '../../helpers';
 
-	export let outline;
+	export let outlineObject;
 </script>
 
 <div class="outline-container">
 	<div class="outline-content">
-		<OutlineSvg outlineObject={outline} class="path" />
-		<div class="outline-label">{prettify(outline.name)}</div>
+		<OutlineSvg {outlineObject} class="path" />
+		<div class="outline-label">{prettify(outlineObject.name)}</div>
 	</div>
 </div>
 
