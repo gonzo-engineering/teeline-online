@@ -1,6 +1,6 @@
 <script>
-	import OutlineCard from '$lib/cards/StaticOutlineCard.svelte';
-	import { outlines } from '../../data/outlines/outlines';
+	import OutlineCard from '$lib/cards/OutlineCardStatic.svelte';
+	import { outlines } from '../data/outlines/outlines';
 
 	const alphabeticalOutlines = outlines.sort(function (a, b) {
 		var textA = a.name[0].toUpperCase();

@@ -1,8 +1,3 @@
-<script>
-	import StaticAlphabetTable from '../lib/StaticAlphabetTable.svelte';
-	import AnimatedAlphabetTable from '../lib/AnimatedAlphabetTable.svelte';
-</script>
-
 <svelte:head>
 	<title>teeline.online</title>
 </svelte:head>

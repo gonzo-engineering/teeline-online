@@ -1,6 +1,6 @@
 <script>
 	import { outlines } from '../data/outlines/outlines';
-	import OutlineCard from './cards/StaticOutlineCard.svelte';
+	import OutlineCard from '../lib/cards/OutlineCardStatic.svelte';
 
 	const alphabet = [
 		'A',
@@ -33,6 +33,10 @@
 
 	const lowerCaseAlphabet = alphabet.map((letter) => letter.toLocaleLowerCase());
 </script>
+
+<svelte:head>
+	<title>Alphabet | teeline.online</title>
+</svelte:head>
 
 <div class="animated-container">
 	{#each outlines as outline}

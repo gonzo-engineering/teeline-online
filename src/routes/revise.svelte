@@ -1,8 +1,8 @@
 <script>
 	import { validate_each_keys } from 'svelte/internal';
 
-	import { outlines } from '../../data/outlines/outlines';
-	import FlippingOutlineCard from '../../lib/cards/FlippingOutlineCard.svelte';
+	import { outlines } from '../data/outlines/outlines';
+	import FlippingOutlineCard from '../lib/cards/OutlineCardFlipping.svelte';
 
 	function shuffleArray(array) {
 		for (let i = array.length - 1; i > 0; i--) {
@@ -14,8 +14,6 @@
 	shuffleArray(outlines);
 
 	let outline = outlines[0];
-	let key;
-	let keyCode;
 
 	function getRandomArbitrary(min, max) {
 		return Math.ceil(Math.random() * (max - min) + min);
