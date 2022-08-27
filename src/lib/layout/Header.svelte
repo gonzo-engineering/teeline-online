@@ -4,7 +4,6 @@
 	<nav>
 		<ul>
 			<li><a href="/">Home</a></li>
-			<li><a href="/alphabet">Alphabet</a></li>
 			<li><a href="/outlines">Outlines</a></li>
 			<li><a href="/revise">Revise</a></li>
 		</ul>
