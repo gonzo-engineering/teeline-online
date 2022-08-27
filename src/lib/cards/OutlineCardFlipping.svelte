@@ -54,6 +54,7 @@
 	.flip-card-front {
 		background-color: white;
 		color: black;
+		display: flex;
 	}
 
 	.flip-card-back {
