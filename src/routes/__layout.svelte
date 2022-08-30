@@ -3,7 +3,7 @@
 	import Footer from '../lib/layout/Footer.svelte';
 </script>
 
-<head>
+<svelte:head>
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:creator" content="@yagayagafred" />
 	<meta name="twitter:title" content="teeline.online" />
@@ -13,7 +13,7 @@
 		name="twitter:image:alt"
 		content="Screenshot of the teeline.online outlines page, showing a selection of Teeline shorthand outline cards."
 	/>
-</head>
+</svelte:head>
 
 <body>
 	<Header />
