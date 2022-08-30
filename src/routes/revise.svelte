@@ -31,7 +31,9 @@
 <div class="content">
 	<p>Hover/tap to see what the outline stands for</p>
 
-	<FlippingOutlineCard {outlineObject} />
+	<div class="flipcard-container">
+		<FlippingOutlineCard {outlineObject} />
+	</div>
 
 	<div class="button-container">
 		<button class="button" on:click={changeOutline}>New outline</button>
@@ -40,7 +42,7 @@
 
 <style>
 	.content {
-		padding: 30px 0;
+		padding: 20px 0;
 	}
 
 	p {
@@ -55,5 +57,16 @@
 		font-size: 2rem;
 		border-radius: 10px;
 		padding: 10px 20px;
+	}
+
+	.flipcard-container {
+		width: 100%;
+	}
+
+	@media (min-width: 1025px) {
+		.flipcard-container {
+			width: 30%;
+			margin: auto;
+		}
 	}
 </style>

@@ -13,6 +13,7 @@
 <style>
 	header {
 		margin: 0 0 50px 0;
+		width: 100%;
 	}
 
 	h1 {
@@ -42,7 +43,7 @@
 	}
 
 	li {
-		margin: 0 40px;
+		margin: 0 20px;
 		list-style-type: none;
 	}
 </style>

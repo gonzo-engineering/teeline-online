@@ -67,14 +67,15 @@
 
 <style>
 	.animated-container {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		grid-column-gap: 30px;
-		grid-row-gap: 30px;
+		display: flex;
+		flex-direction: column;
+		row-gap: 30px;
 	}
 
 	@media (min-width: 1025px) {
 		.animated-container {
+			display: grid;
+			column-gap: 30px;
 			grid-template-columns: repeat(7, 1fr);
 		}
 	}
@@ -83,8 +84,9 @@
 		width: max-content;
 	}
 	.filter-label {
-		margin-right: 1rem;
+		margin-right: 0.5rem;
 		display: inline-block;
+		font-size: 1.8rem;
 	}
 	/* The switch - the box around the slider */
 	.switch {
