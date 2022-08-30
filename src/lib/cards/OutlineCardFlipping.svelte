@@ -22,6 +22,8 @@
 	.flip-card {
 		background-color: transparent;
 		aspect-ratio: 450 / 300;
+		width: 450px;
+		height: 300px;
 		perspective: 1000px;
 		margin: 5vw auto;
 	}
@@ -35,8 +37,7 @@
 		transform-style: preserve-3d;
 	}
 
-	.flip-card:hover .flip-card-inner,
-	.flip-card:active .flip-card-inner {
+	.flip-card:hover .flip-card-inner {
 		transform: rotateY(180deg);
 	}
 
