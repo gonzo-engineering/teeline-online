@@ -13,6 +13,8 @@
 		name="twitter:image:alt"
 		content="Screenshot of the teeline.online outlines page, showing a selection of Teeline shorthand outline cards."
 	/>
+	<script data-goatcounter="https://teeline-online.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </svelte:head>
 
 <body>
