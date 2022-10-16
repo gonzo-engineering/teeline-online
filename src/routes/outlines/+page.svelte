@@ -1,7 +1,7 @@
 <script>
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
-	import { outlines } from '../data/outlines/outlines';
-	import { sortAlphabetically } from '../helpers';
+	import { outlines } from '../../data/outlines/outlines';
+	import { sortAlphabetically } from '../../helpers';
 
 	let displayedOutlines = outlines;
 	let alphabetToggleOn = false;
