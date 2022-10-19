@@ -4,6 +4,7 @@
 	<nav>
 		<ul>
 			<li><a href="/">Home</a></li>
+			<li><a href="/learn">Learn</a></li>
 			<li><a href="/outlines">Outlines</a></li>
 			<li><a href="/revise">Revise</a></li>
 		</ul>
@@ -33,7 +34,7 @@
 	}
 
 	nav {
-		font-size: 2.2rem;
+		font-size: 2rem;
 		font-weight: 700;
 	}
 

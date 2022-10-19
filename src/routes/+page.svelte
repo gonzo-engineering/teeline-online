@@ -1,3 +1,7 @@
+<script>
+	import HomepageSection from '$lib/homepageSection.svelte';
+</script>
+
 <svelte:head>
 	<title>teeline.online</title>
 </svelte:head>
@@ -10,24 +14,51 @@
 		> and remains a requirement for qualified reporters.
 	</p>
 	<p>This site is a resource for anyone wishing to learn and/or practice Teeline.</p>
-	<!-- <h4>Teeline shorthand: the basics</h4>
-	<p>
-		The aim of the game is writing as little as possible while preserving the content of whatever is
-		being transcribed. This means short 'letters' which join in all sorts of ways, and a process of
-		disemvoweling.
-	</p> -->
+</div>
+<div class="site-sections-container">
+	<HomepageSection
+		sectionName="Learn"
+		sectionBlurb="Study the basics of Teeline shorthand"
+		sectionPath="/learn"
+		sectionImage="/images/section-teaser-learn.png"
+		sectionImageAlt="TBD"
+	/>
+	<HomepageSection
+		sectionName="Outlines library"
+		sectionBlurb="Browse hundreds of animated Teeline outlines"
+		sectionPath="/outlines"
+		sectionImage="/images/section-teaser-outlines.png"
+		sectionImageAlt="TBD"
+	/>
+
+	<HomepageSection
+		sectionName="Revise"
+		sectionBlurb="Put your knowledge to the test with virtual flashcards"
+		sectionPath="/revise"
+		sectionImage="/images/section-teaser-revise.png"
+		sectionImageAlt="TBD"
+	/>
 </div>
 
 <style>
-	.copy-container {
+	.copy-container,
+	.site-sections-container {
 		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 100px;
+		margin-top: 50px;
+	}
+
+	.site-sections-container {
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: 4%;
+		row-gap: 30px;
 	}
 
 	@media (min-width: 1025px) {
-		.copy-container {
+		.copy-container,
+		.site-sections-container {
 			width: 60%;
 		}
 	}
