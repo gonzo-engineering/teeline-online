@@ -1,5 +1,5 @@
 <script>
-	import TheBasics from '../../lib/learn-content/theBasics.svx';
+	import TheBasics from '../../learn-content/theBasics.svx';
 </script>
 
 <svelte:head>

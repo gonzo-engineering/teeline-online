@@ -4,7 +4,7 @@ title: The basics
 
 <script>
     import OutlineCardFlipping from '$lib/cards/OutlineCardFlipping.svelte';
-	import { outlines } from '../../data/outlines/outlines';
+	import { outlines } from '../data/outlines/outlines.ts';
 </script>
 
 #### { title }
