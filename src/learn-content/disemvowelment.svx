@@ -1,0 +1,21 @@
+---
+title: Disemvowelment
+---
+
+<script>
+    import Disemvoweler from '$lib/disemvoweler.svelte'
+</script>    
+
+### { title }
+
+Although Teeline has characters for every letter of the alphabet, you wind up using fewer of them when writing shorthand versions of words. 
+
+One of the main ways Teeline saves time and space is by cutting out as many of the vowels as possible.
+
+Why does this work? Well, consider the following sentence. Evn thgh mst of th vwls hv bn rmvd its stl prty esy to undrstnd wht im wrtng. The same principle applies to shorthand. 
+
+Not all vowels are removed. That would be anarchy. The goal is to keep just enough to understand what you’ve written.
+
+<Disemvoweler />
+
+Over time you’ll come to understand that a lot of Teeline depends on context. Does ‘tb’ mean ‘tab’ or ‘tub’? Or tube?! In the context of the sentence it’s in the answer will usually be clear. 

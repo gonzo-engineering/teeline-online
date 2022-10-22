@@ -1,5 +1,9 @@
 <script>
-	import TheBasics from '../../learn-content/theBasics.svx';
+	import Basics from '../../learn-content/basics.svx';
+	import Alphabet from '../../learn-content/alphabet.svx';
+	import Disemvowelment from '../../learn-content/disemvowelment.svx';
+	import ConnectingLetters from '../../learn-content/connecting-letters.svx';
+	import Shortcuts from '../../learn-content/shortcuts.svx';
 </script>
 
 <svelte:head>
@@ -7,7 +11,11 @@
 </svelte:head>
 
 <div class="copy-container">
-	<TheBasics />
+	<Basics />
+	<Alphabet />
+	<Disemvowelment />
+	<ConnectingLetters />
+	<Shortcuts />
 </div>
 
 <style>

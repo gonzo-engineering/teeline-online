@@ -1,0 +1,7 @@
+---
+title: Connecting letters
+---
+
+### { title }
+
+Embed: getting from a longhand word to a Teeline shorthand word
