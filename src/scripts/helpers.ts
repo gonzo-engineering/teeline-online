@@ -1,4 +1,4 @@
-import type { OutlineObject } from './data/outlines/outlines';
+import type { OutlineObject } from '../data/outlines/outlines';
 
 export function prettify(outlineNames: string[]): string {
 	return outlineNames.toString().replace(/,/g, ' / ');

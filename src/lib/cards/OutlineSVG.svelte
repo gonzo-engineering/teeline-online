@@ -1,6 +1,6 @@
 <script>
 	export let outlineObject;
-	import { prettify } from '../../helpers';
+	import { prettify } from '../../scripts/helpers';
 </script>
 
 <svg

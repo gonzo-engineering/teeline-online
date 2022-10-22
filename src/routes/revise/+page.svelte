@@ -1,7 +1,7 @@
 <script>
 	import { outlines } from '../../data/outlines/outlines';
 	import FlippingOutlineCard from '../../lib/cards/OutlineCardFlipping.svelte';
-	import { shuffle } from '../../helpers';
+	import { shuffle } from '../../scripts/helpers';
 
 	const shuffledOutlines = shuffle(outlines);
 

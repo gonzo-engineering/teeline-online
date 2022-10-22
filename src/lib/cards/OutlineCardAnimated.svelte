@@ -1,6 +1,6 @@
 <script>
 	import OutlineSvg from './OutlineSVG.svelte';
-	import { prettify } from '../../helpers';
+	import { prettify } from '../../scripts/helpers';
 
 	export let outlineObject;
 </script>
