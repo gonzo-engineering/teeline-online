@@ -18,13 +18,13 @@
 <div class="site-sections-container">
 	<HomepageSection
 		sectionName="Learn"
-		sectionBlurb="Study the basics of Teeline shorthand"
+		sectionBlurb="Study the basics and core theory of Teeline shorthand"
 		sectionPath="/learn"
 		sectionImage="/images/section-teaser-learn.png"
 		sectionImageAlt="TBD"
 	/>
 	<HomepageSection
-		sectionName="Outlines library"
+		sectionName="Outlines"
 		sectionBlurb="Browse hundreds of animated Teeline outlines"
 		sectionPath="/outlines"
 		sectionImage="/images/section-teaser-outlines.png"

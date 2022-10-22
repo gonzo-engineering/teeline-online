@@ -35,7 +35,7 @@
 
 	@media (min-width: 1025px) {
 		.container {
-			width: 48%;
+			width: 30%;
 		}
 	}
 </style>

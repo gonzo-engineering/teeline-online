@@ -9,7 +9,7 @@
 }
 
 p {
-	font-size: 1.8rem;
+	font-size: var(--regular-font-size);
 	margin: 2rem 0;
 }
 
@@ -28,6 +28,7 @@ h3 {
 
 a {
 	text-decoration: underline;
+	text-decoration-thickness: 8%;
 	font-weight: bold;
 	color: black;
 }
@@ -45,6 +46,6 @@ img {
 }
 
 li {
-	font-size: 1.8rem;
+	font-size: var(--regular-font-size);
 	list-style-position: inside;
 }
