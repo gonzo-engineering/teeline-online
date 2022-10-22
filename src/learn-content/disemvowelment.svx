@@ -21,7 +21,7 @@ Why does this work? Well, consider the following sentence. **Evn thgh mst of th 
 
 However, it's not quite as simple as removing all vowels. That would be anarchy. 
 
-The goal with shorthand is to keep just enough letters to understand what you’ve written. To that end there are times when vowels get a stay of execution.
+The goal with shorthand is to keep just enough letters to understand what you've written. To that end there are times when vowels get a stay of execution.
 
 One of these is when a word starts with a vowel, keep it.
 
