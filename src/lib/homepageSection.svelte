@@ -27,6 +27,7 @@
 		box-shadow: 0px 0px 10px 1px #e1e1e1;
 		border-radius: 20px;
 		padding: 30px;
+		font-size: 1.8rem;
 	}
 	img {
 		margin: 20px 0;

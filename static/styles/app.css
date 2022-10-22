@@ -9,8 +9,8 @@
 }
 
 p {
-	font-size: 2rem;
-	margin: 1rem 0;
+	font-size: 1.8rem;
+	margin: 2rem 0;
 }
 
 h1 {
@@ -42,4 +42,9 @@ input {
 
 img {
 	width: 100%;
+}
+
+li {
+	font-size: 1.8rem;
+	list-style-position: inside;
 }

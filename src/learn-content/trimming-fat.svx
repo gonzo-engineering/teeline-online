@@ -1,0 +1,17 @@
+---
+title: Trimming fat
+---
+
+<script>
+    import WordDisemvoweler from '$lib/disemvoweler/wordDisemvoweler.svelte'
+</script>
+
+### {title}
+
+There are a few other ways you can cut down on letters.
+
+One is getting rid of double letters.
+
+<WordDisemvoweler word="cabbage" />
+
+Another is cutting silent letters.

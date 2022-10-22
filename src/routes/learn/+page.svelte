@@ -2,6 +2,7 @@
 	import Basics from '../../learn-content/basics.svx';
 	import Alphabet from '../../learn-content/alphabet.svx';
 	import Disemvowelment from '../../learn-content/disemvowelment.svx';
+	import TrimmingFat from '../../learn-content/trimming-fat.svx';
 	import ConnectingLetters from '../../learn-content/connecting-letters.svx';
 	import Shortcuts from '../../learn-content/shortcuts.svx';
 </script>
@@ -14,6 +15,7 @@
 	<Basics />
 	<Alphabet />
 	<Disemvowelment />
+	<TrimmingFat />
 	<ConnectingLetters />
 	<Shortcuts />
 </div>
