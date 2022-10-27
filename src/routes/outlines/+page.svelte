@@ -3,7 +3,6 @@
 	import { outlines } from '../../data/outlines/outlines';
 	import { sortAlphabetically } from '../../scripts/helpers';
 
-	let displayedOutlines = outlines;
 	let alphabetToggleOn = false;
 	let searchTerm = null;
 

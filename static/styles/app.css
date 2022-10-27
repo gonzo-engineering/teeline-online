@@ -52,3 +52,7 @@ li {
 	font-size: var(--regular-font-size);
 	list-style-position: inside;
 }
+
+input {
+	font-size: var(--regular-font-size);
+}
