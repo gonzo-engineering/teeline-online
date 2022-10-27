@@ -1,5 +1,5 @@
 ---
-title: Trimming fat
+title: Silent and double letters
 ---
 
 <script>

@@ -1,5 +1,5 @@
 ---
-title: The alaphabet
+title: The alphabet
 ---
 
 ### { title }

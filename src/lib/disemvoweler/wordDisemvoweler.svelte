@@ -5,7 +5,7 @@
 
 <div class="disemvoweler-container">
 	<div class="container-content">
-		{word} → {disemvowelWord(word)}
+		{word}&nbsp;&nbsp; → &nbsp;&nbsp;{disemvowelWord(word)}
 	</div>
 </div>
 
