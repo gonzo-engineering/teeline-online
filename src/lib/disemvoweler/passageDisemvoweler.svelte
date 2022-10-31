@@ -14,13 +14,14 @@
 		as silent and double letters
 	</p>
 	<textarea bind:value={textToDisemvowel} />
-	<p>{disemvowelBodyOfText(textToDisemvowel)}</p>
+	<p class="output">{disemvowelBodyOfText(textToDisemvowel)}</p>
 </div>
 
 <style>
 	.disemvoweler-container {
 		background-color: beige;
-		padding: 20px;
+		padding: 50px;
+		text-align: center;
 	}
 	textarea {
 		font-size: 2rem;
@@ -28,5 +29,11 @@
 		height: 150px;
 		border: none;
 		border-radius: 5px;
+		padding: 20px;
+		box-sizing: border-box;
+	}
+	.output {
+		background-color: white;
+		padding: 20px;
 	}
 </style>

@@ -2,6 +2,43 @@
 title: The alphabet
 ---
 
+<script>
+    import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte'
+    import { outlines } from '../data/outlines/outlines.ts'
+
+    const tOutline = {
+		name: ['t', 'to'],
+		lines: [
+			{
+				path: 'M3.11026 6.11941C-6.51375 6.11941 9.13197 4.82471 10.6244 4.6943C35.0405 2.56086 59.2508 1.65983 83.6933 0.0303372C87.2889 -0.209374 107.886 1.02922 103.774 1.71455',
+				translateValues: [290, 310]
+			}
+		]
+	}
+
+    const dOutline = {
+		name: ['d', 'do', 'day'],
+		lines: [
+			{
+				path: 'M6.82189 0C-3.24926 2.18938 -2.06203 1.84418 9.67209 1.4251C31.6996 0.638404 53.731 0.29227 75.745 1.94332C86.8468 2.77596 98.3791 2.59109 109.429 2.59109C109.777 2.59109 108.741 2.72065 108.393 2.72065',
+				translateValues: [300, 460]
+			}
+		]
+	}
+</script> 
+
 ### { title }
 
 Teeline is spelling-based rather than phonetic, so it has a very familiar alphabet.
+
+#### Letter positioning 
+
+Some shorthand strokes mean different things depending on where they are relative to the line being written on. For example, a short dash on the line means 'd' while one floating above means 't'. An 'n' stroke, meanwhile, means the same thing wherever it is. 
+
+<OutlineCardAnimated outlineObject={tOutline} />
+
+<OutlineCardAnimated outlineObject={dOutline} />
+
+The result is that what's written for 'need' is the same as what's written for 'not', only it's in a different position relative to the line.
+
+There are big letters and there are little letters. Little letters defer to larger ones. This means that when you are writing a word in Teeline it is important to understand the hierarchy of its letters.

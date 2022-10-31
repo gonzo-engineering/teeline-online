@@ -1,9 +1,10 @@
 <script>
 	import { disemvowelWord } from '../../scripts/disemvowel.js';
+	import { randomIntFromInterval } from '../../scripts/helpers.ts';
 	export let word;
 </script>
 
-<div class="disemvoweler-container">
+<div class="disemvoweler-container" style="transform: rotate({randomIntFromInterval(-1, 1)}deg);">
 	<div class="container-content">
 		{word}&nbsp;&nbsp; → &nbsp;&nbsp;{disemvowelWord(word)}
 	</div>
