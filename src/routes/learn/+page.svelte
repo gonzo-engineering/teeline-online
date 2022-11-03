@@ -12,17 +12,6 @@
 </svelte:head>
 
 <div class="copy-container">
-	<div class="learn-menu">
-		<ol>
-			<li><a href="">The basics</a></li>
-			<li><a href="">Alphabet</a></li>
-			<li><a href="">Disemvowelment</a></li>
-			<li><a href="">Silent and double letters</a></li>
-			<li><a href="">Connecting letters</a></li>
-			<li><a href="">Shortcuts</a></li>
-		</ol>
-	</div>
-
 	<Basics />
 	<Alphabet />
 	<Disemvowelment />
