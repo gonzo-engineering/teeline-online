@@ -4,6 +4,9 @@
 </script>
 
 <svelte:head>
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="Shorthand, Teeline, Journalism" />
+
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:creator" content="@yagayagafred" />
 	<meta name="twitter:title" content="teeline.online" />
@@ -18,6 +21,21 @@
 		async
 		src="//gc.zgo.at/count.js"
 	></script>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "teeline.online",
+			"url": "https://teeline.online/",
+			"description": "A free, interactice learning resource for studying Teeline shorthand.",
+			"creator": {
+				"@type": "Person",
+				"name": "Frederick O'Brien",
+				"sameAs": "https://frederickobrien.com"
+   			 },
+			"isAccessibleForFree": true
+		}
+	</script>
 </svelte:head>
 
 <body>

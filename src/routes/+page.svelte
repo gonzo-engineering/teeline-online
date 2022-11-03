@@ -4,6 +4,10 @@
 
 <svelte:head>
 	<title>teeline.online</title>
+	<meta
+		name="description"
+		content="A free learning resource for Teeline shorthand. Study theory, find outlines, and revise with digital flashcards as you work towards 100wpm."
+	/>
 </svelte:head>
 
 <div class="copy-container">
