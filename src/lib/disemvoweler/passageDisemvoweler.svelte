@@ -6,15 +6,15 @@
 <div class="disemvoweler-container">
 	<h2>Disemvoweler 9000</h2>
 	<p>
-		Disclaimer: This is a flawed tool and should be treated as such. It makes mistakes, but
-		hopefully gets across the essentials of trimming fat in Teeline shorthand
-	</p>
-	<p>
 		Type in the box below and watch them, as if by magic, be trimmed of unnecessary vowels as well
 		as silent and double letters
 	</p>
 	<textarea bind:value={textToDisemvowel} />
 	<p class="output">{disemvowelBodyOfText(textToDisemvowel)}</p>
+	<p>
+		Disclaimer: This is a flawed tool and should be treated as such. It makes mistakes, but
+		hopefully gets across the essentials of trimming fat in Teeline shorthand
+	</p>
 </div>
 
 <style>

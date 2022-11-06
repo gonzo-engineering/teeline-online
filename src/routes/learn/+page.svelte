@@ -4,7 +4,7 @@
 	import Disemvowelment from '../../learn-content/disemvowelment.svx';
 	import SilentAndDoubleLetters from '../../learn-content/silent-and-double-letters.svx';
 	import ConnectingLetters from '../../learn-content/connecting-letters.svx';
-	import Shortcuts from '../../learn-content/shortcuts.svx';
+	import SpecialOutlines from '../../learn-content/special-outlines.svx';
 </script>
 
 <svelte:head>
@@ -17,7 +17,7 @@
 	<Disemvowelment />
 	<SilentAndDoubleLetters />
 	<ConnectingLetters />
-	<Shortcuts />
+	<SpecialOutlines />
 </div>
 
 <style>

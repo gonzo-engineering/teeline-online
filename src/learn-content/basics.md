@@ -1,8 +1,9 @@
-### The basics
+### Introduction
 
-Shorthand is a way of writing lots of words really quickly. Teeline is a type of shorthand and the recommended system of the [National Council for the Training of Journalists](https://www.nctj.com/). Trainees need 60 words per minute (wpm) to get their NCTJ diploma, while 100 is needed to achieve the 'gold standard'. Some can write as fast as 120 wpm and beyond.
+Shorthand is a way of writing lots of words really quickly. Teeline is a type of shorthand and the recommended system of the [National Council for the Training of Journalists](https://www.nctj.com/). Trainees need to be able to transcribe at 60 words per minute (wpm) to get their NCTJ diploma, while 100 is needed to achieve the 'gold standard'. Some can write as fast as 120 wpm and beyond.
 
+Although audio recording technology makes shorthand less essential than it once was, it remains an important tool in the journalism toolbox. In a pinch it can be the difference between getting a killer quote and going home empty handed.
 
-**TODO: Animation showing speed of longhand vs shorthand**
+![A passage of Teeline shorthand](/images/teeline-passage-example.webp)
 
-The general idea is to remove as many letters as possible and write the word in as few strokes as possible.
+The core principles of Teeline shorthand are pretty simple - remove as many letters as possible and write words using as few pen strokes as possible, basically - but there are lots of subtle tricks and techniques that can help get your speed up. With (a shitload of) practice you won't need to think, which is just as well given you won't have time to.

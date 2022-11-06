@@ -14,7 +14,7 @@
 	.disemvoweler-container {
 		box-shadow: 0px 0px 10px 1px #e1e1e1;
 		border-radius: 15px;
-		margin: 30px auto;
+		margin: 50px auto;
 		height: fit-content;
 		width: fit-content;
 	}

@@ -7,7 +7,6 @@ export function disemvowelWord(word) {
     const firstLetter = word.charAt(0);
     const finalLetter = word.charAt(word.length - 1);
     const wordNoVowelsOrDoubles = word
-        .replace(/[aeiou]/gi, '')
         .replace('bb', 'b')
         .replace('dd', 'd')
         .replace('ff', 'f')
@@ -19,7 +18,10 @@ export function disemvowelWord(word) {
         .replace('rr', 'r')
         .replace('ss', 's')
         .replace('tt', 't')
-        .replace('vv', 'v');
+        .replace('vv', 'v')
+        .replace('ck', 'c')
+        .replace(/[aeiou]/gi, '')
+        ;
 
     if (word.length === 1) return word;
     else if (

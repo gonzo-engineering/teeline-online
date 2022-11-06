@@ -24,3 +24,14 @@ export function shuffle(outlinesArray: OutlineObject[]): OutlineObject[] {
 export function randomIntFromInterval(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+export function findOutlineInArray(
+	outlineName: string,
+	outlineArray: OutlineObject[]
+): OutlineObject {
+	const foundOutline = outlineArray.find((outline) => outline.name.includes(outlineName));
+
+	if (foundOutline === undefined) console.error(`Outline '${outlineName}' could not be found.`);
+
+	return foundOutline;
+}

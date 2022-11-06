@@ -4,41 +4,44 @@ title: The alphabet
 
 <script>
     import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte'
+	import OutlineCardsSideBySide from '$lib/cards/OutlineCardsSideBySide.svelte'
     import { outlines } from '../data/outlines/outlines.ts'
+	import { findOutlineInArray } from '../scripts/helpers.ts'
 
-    const tOutline = {
-		name: ['t', 'to'],
-		lines: [
-			{
-				path: 'M3.11026 6.11941C-6.51375 6.11941 9.13197 4.82471 10.6244 4.6943C35.0405 2.56086 59.2508 1.65983 83.6933 0.0303372C87.2889 -0.209374 107.886 1.02922 103.774 1.71455',
-				translateValues: [290, 310]
-			}
-		]
-	}
-
-    const dOutline = {
-		name: ['d', 'do', 'day'],
-		lines: [
-			{
-				path: 'M6.82189 0C-3.24926 2.18938 -2.06203 1.84418 9.67209 1.4251C31.6996 0.638404 53.731 0.29227 75.745 1.94332C86.8468 2.77596 98.3791 2.59109 109.429 2.59109C109.777 2.59109 108.741 2.72065 108.393 2.72065',
-				translateValues: [300, 460]
-			}
-		]
-	}
+	const dOutline = findOutlineInArray('d', outlines);
+	const tOutline = findOutlineInArray('t', outlines);
 </script> 
 
 ### { title }
 
-Teeline is spelling-based rather than phonetic, so it has a very familiar alphabet.
+Teeline is spelling-based rather than phonetic and as such has a typical A-to-Z alphabet. You can view this below, and an interactive view is availabe on [the outlines page](/outlines).
 
-#### Letter positioning 
+![A grid view of the Teeline shorthand alphabet](/images/teeline-alphabet.png)
 
-Some shorthand strokes mean different things depending on where they are relative to the line being written on. For example, a short dash on the line means 'd' while one floating above means 't'. An 'n' stroke, meanwhile, means the same thing wherever it is. 
+You'll notice most letters have meanings in addition to their letter. As will become clear, reading Teeline is often heavily reliant on context. If you see an 'f' on its own it's unlikely that you've transcribed someone saying the letter 'f'. 
 
-<OutlineCardAnimated outlineObject={tOutline} />
+You don't _always_ write words as they are spelt - sometimes it's faster to opt for a phonetic approach - but more often than not in Teeline you'll be writing the spelling.
 
-<OutlineCardAnimated outlineObject={dOutline} />
+#### Positioning 
+
+Unlike longhand, in which all letters are sat on the same line and all you need to worry about is going from left to right, in Teeline shorthand thought must be given to how high or low letters are.
+
+ Some Teeline strokes mean different things depending on where they are relative to the line being written on. For example, a short dash on the line means 'd' while one floating above means 't'.
+
+<OutlineCardsSideBySide leftOutline={dOutline} rightOutline={tOutline} />
 
 The result is that what's written for 'need' is the same as what's written for 'not', only it's in a different position relative to the line.
 
+An 'n' stroke, meanwhile, means the same thing wherever it is. 
+
+#### Hierarchy
+
 There are big letters and there are little letters. Little letters defer to larger ones. This means that when you are writing a word in Teeline it is important to understand the hierarchy of its letters.
+
+**Dominant letters:** d, h, p, t
+
+If a word contains one or more of these letters you must take them into account when deciding its position in relation to the line.
+
+Take 'mate' as example (which as we know becomes 'mt' when written in Teeline). Even though the first letter is 'm', which as a default sits on the line, the other letter is a 't', which takes precedence. The right place to put it is therefore _above_ the line.
+
+We'll get into this in more depth in the 'Connecting letters' section. For now it is enough to know that the vertical position of certain letters is especially important to what they mean, and that this importance makes those letters more dominant than their kin. 
