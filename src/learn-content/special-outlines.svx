@@ -11,8 +11,6 @@ title: Special outlines
 	const tOutline = findOutlineInArray('on the other hand', outlines);
 </script> 
 
-### { title }
-
 There are words and turns of phrases so common that it makes sense to have succinct versions of them, even by the standards of Teeline. These abbreviated - or sometimes straight up symbolic - words are called **special outlines**.
 
 Here are a couple of examples:

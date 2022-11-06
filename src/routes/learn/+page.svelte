@@ -1,5 +1,5 @@
 <script>
-	import Basics from '../../learn-content/basics.md';
+	import Introduction from '../../learn-content/introduction.svx';
 	import Alphabet from '../../learn-content/alphabet.svx';
 	import Disemvowelment from '../../learn-content/disemvowelment.svx';
 	import SilentAndDoubleLetters from '../../learn-content/silent-and-double-letters.svx';
@@ -12,12 +12,16 @@
 </svelte:head>
 
 <div class="copy-container">
-	<Basics />
-	<Alphabet />
-	<Disemvowelment />
-	<SilentAndDoubleLetters />
-	<ConnectingLetters />
-	<SpecialOutlines />
+	<div class="learn-menu">
+		<ol>
+			<li><a href="/learn/introduction">Introduction</a></li>
+			<li><a href="/learn/alphabet">Alphabet</a></li>
+			<li><a href="/learn/disemvowelment">Disemvowelment</a></li>
+			<li><a href="/learn/silent-and-double-letters">Silent and double letters</a></li>
+			<li><a href="/learn/connecting-letters">Connecting letters</a></li>
+			<li><a href="/learn/special-outlines">Special outlines</a></li>
+		</ol>
+	</div>
 </div>
 
 <style>
