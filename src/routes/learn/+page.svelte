@@ -1,12 +1,3 @@
-<script>
-	import Introduction from '../../learn-content/introduction.svx';
-	import Alphabet from '../../learn-content/alphabet.svx';
-	import Disemvowelment from '../../learn-content/disemvowelment.svx';
-	import SilentAndDoubleLetters from '../../learn-content/silent-and-double-letters.svx';
-	import ConnectingLetters from '../../learn-content/connecting-letters.svx';
-	import SpecialOutlines from '../../learn-content/special-outlines.svx';
-</script>
-
 <svelte:head>
 	<title>Learn | teeline.online</title>
 </svelte:head>
