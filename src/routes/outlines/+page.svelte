@@ -5,45 +5,31 @@
 
 	let displayedOutlines = outlines;
 	let alphabetToggleOn = false;
+	let searchTerm = null;
 
-	const alphabet = [
-		'A',
-		'B',
-		'C',
-		'D',
-		'E',
-		'F',
-		'G',
-		'H',
-		'I',
-		'J',
-		'K',
-		'L',
-		'M',
-		'N',
-		'O',
-		'P',
-		'Q',
-		'R',
-		'S',
-		'T',
-		'U',
-		'V',
-		'W',
-		'X',
-		'Y',
-		'Z'
-	];
+	const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
 	const lowerCaseAlphabet = alphabet.map((letter) => letter.toLocaleLowerCase());
 
-	function filterOutlines() {
-		displayedOutlines = alphabetToggleOn
-			? outlines
-			: outlines.filter((outline) =>
-					lowerCaseAlphabet.some((letter) => outline.name.includes(letter))
-			  );
+	let alphabetOutlines = outlines.filter((outline) =>
+		lowerCaseAlphabet.some((letter) => outline.name.includes(letter))
+	);
+
+	function toggleAlphabetFilter() {
+		displayedOutlines = alphabetToggleOn ? outlines : alphabetOutlines;
 		alphabetToggleOn = alphabetToggleOn ? false : true;
+
+		searchTerm = null;
+	}
+
+	function filterOutlines(outlines, searchTerm) {
+		if (alphabetToggleOn) {
+			displayedOutlines = alphabetOutlines.filter((outline) =>
+				outline.name.join('').includes(searchTerm)
+			);
+		} else {
+			displayedOutlines = outlines.filter((outline) => outline.name.join('').includes(searchTerm));
+		}
 	}
 </script>
 
@@ -54,9 +40,15 @@
 <div class="filters-container">
 	<div class="filter-label">Only show alphabet</div>
 	<label class="switch">
-		<input type="checkbox" on:click={filterOutlines} />
+		<input type="checkbox" on:click={toggleAlphabetFilter} />
 		<span class="slider round" />
 	</label>
+	<input
+		class="search-input"
+		placeholder="Search for outlines..."
+		bind:value={searchTerm}
+		on:input={filterOutlines(outlines, searchTerm)}
+	/>
 </div>
 
 <div class="animated-container">
@@ -149,5 +141,13 @@
 
 	.slider.round:before {
 		border-radius: 50%;
+	}
+
+	/* Search bar */
+
+	.search-input {
+		padding: 10px 30px;
+		margin-left: 20px;
+		border-radius: 50px;
 	}
 </style>
