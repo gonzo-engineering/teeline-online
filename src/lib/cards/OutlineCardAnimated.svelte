@@ -18,6 +18,7 @@
 		border-radius: 10px;
 		width: var(--width);
 		padding-bottom: 30px;
+		margin: 0 auto;
 	}
 
 	.outline-container:hover :global(.path) {

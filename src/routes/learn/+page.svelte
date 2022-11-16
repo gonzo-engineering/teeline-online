@@ -1,3 +1,15 @@
+<script>
+	import HomepageSection from '$lib/homepageSection.svelte';
+
+	const learnSections = import.meta.glob('../../learn-content/*.svx');
+
+	const sectionsArray = [];
+
+	for (const [key, value] of Object.entries(learnSections)) {
+		sectionsArray.push(key.replace('../../learn-content/', '').replace('.svx', ''));
+	}
+</script>
+
 <svelte:head>
 	<title>Learn | teeline.online</title>
 </svelte:head>
@@ -6,11 +18,21 @@
 	<div class="learn-menu">
 		<ol>
 			<li><a href="/learn/introduction">Introduction</a></li>
-			<li><a href="/learn/alphabet">Alphabet</a></li>
+			<li><a href="/learn/the-alphabet">The alphabet</a></li>
+			<li>
+				<a href="/learn/letter-positioning-and-hierarchy">Letter positioning and hierarchy</a>
+			</li>
 			<li><a href="/learn/disemvowelment">Disemvowelment</a></li>
 			<li><a href="/learn/silent-and-double-letters">Silent and double letters</a></li>
 			<li><a href="/learn/connecting-letters">Connecting letters</a></li>
 			<li><a href="/learn/special-outlines">Special outlines</a></li>
+			<!-- {#each sectionsArray as sectionSlug}
+				<li>
+					<a href="/learn/{sectionSlug}">
+						{sectionSlug}
+					</a>
+				</li>
+			{/each} -->
 		</ol>
 	</div>
 </div>

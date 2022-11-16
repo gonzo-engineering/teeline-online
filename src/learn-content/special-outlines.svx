@@ -9,13 +9,18 @@ title: Special outlines
 
 	const dOutline = findOutlineInArray('ladies and gentlemen', outlines);
 	const tOutline = findOutlineInArray('on the other hand', outlines);
+
+    const governmentOutline = findOutlineInArray('government', outlines);
+    const satisfactoryOutline = findOutlineInArray('satisfactory', outlines);
 </script> 
 
 There are words and turns of phrases so common that it makes sense to have succinct versions of them, even by the standards of Teeline. These abbreviated - or sometimes straight up symbolic - words are called **special outlines**.
 
-Here are a couple of examples:
+Here are a few examples:
 
 <OutlineCardsSideBySide leftOutline={dOutline} rightOutline={tOutline} />
+
+<OutlineCardsSideBySide leftOutline={governmentOutline} rightOutline={satisfactoryOutline} />
 
 Imagine how much longer it would take to write those out fully, even in Teeline. When you're desperately scrawling down a statement those fractions of a second will be invaluable.
 
