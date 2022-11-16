@@ -4,12 +4,21 @@
 	padding: 0;
 }
 
+:root {
+	--regular-font-size: 1.8rem;
+}
+
 p {
 	font-size: 2rem;
 	margin: 1rem 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	margin-top: 3rem;
 }
 
@@ -34,4 +43,8 @@ a {
 
 a:hover {
 	opacity: 0.6;
+}
+
+input {
+	font-size: var(--regular-font-size);
 }
