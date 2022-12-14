@@ -41,4 +41,4 @@ The sum total of this is saving a lot of time and space even before you get into
 
 <PassageDisemvoweler />
 
-Over time you’ll come to understand that a lot of Teeline depends on context. Does ‘tb’ mean ‘tab’ or ‘tub’? Or tube?! In the context of the sentence it’s in the answer will usually be clear.
+Over time you’ll come to understand that a lot of Teeline depends on context. Does ‘tb’ mean ‘tab’ or ‘tub’? Or tube?! In the context of the sentence the word is in the answers will usually be clear.

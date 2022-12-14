@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.title} | teeline.online</title>
+	<title>{data.title} | Learn | teeline.online</title>
 </svelte:head>
 
 <div class="copy-container">
