@@ -6,8 +6,8 @@
 <div class="disemvoweler-container">
 	<h2>Disemvoweler 9000</h2>
 	<p>
-		Type words in the box below and watch them, as if by magic, be trimmed of unnecessary vowels as
-		well as silent and double letters
+		Type words in the box below and watch them be trimmed - as if by magic - of unnecessary vowels
+		as well as silent and double letters
 	</p>
 	<textarea bind:value={textToDisemvowel} />
 	<img src="/images/arrow.svg" alt="" />
@@ -39,7 +39,7 @@
 	}
 	textarea,
 	.output {
-		border: solid rgb(250, 250, 250) 1px;
+		border: dashed black 2px;
 		border-radius: 10px;
 		background-color: rgb(242, 242, 242);
 	}

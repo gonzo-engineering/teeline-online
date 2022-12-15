@@ -51,6 +51,7 @@ img {
 li {
 	font-size: var(--regular-font-size);
 	list-style-position: inside;
+	padding-left: 20px;
 }
 
 input {

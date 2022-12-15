@@ -7,7 +7,7 @@ title: Disemvowelment
     import WordDisemvoweler from '$lib/disemvoweler/wordDisemvoweler.svelte'
 </script>    
 
-One of the main ways Teeline saves time and space is by cutting out as many of the vowels as possible.
+One of the main ways Teeline saves time and space is by removing as many vowels as possible.
 
 Why does this work? Well, consider the following sentence. **Evn thgh mst of th vwls hv bn rmvd its stl prty esy to undrstnd wht im wrtng.** The same principle applies to shorthand. Meaning can be preserved with fewer letters.
 
@@ -41,4 +41,4 @@ The sum total of this is saving a lot of time and space even before you get into
 
 <PassageDisemvoweler />
 
-Over time you’ll come to understand that a lot of Teeline depends on context. Does ‘tb’ mean ‘tab’ or ‘tub’? Or tube?! In the context of the sentence the word is in the answers will usually be clear.
+When the time comes to read what you've written, a lot depends on context. Does ‘tb’ mean ‘tab’ or ‘tub’? Or tube?! In the context of the sentence the word is in the answers will usually be clear.
