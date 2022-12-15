@@ -1,5 +1,6 @@
 <script>
 	import HomepageSection from '$lib/homepageSection.svelte';
+	import { syllabusDetails } from '../../data/syllabus/syllabus';
 
 	const learnSections = import.meta.glob('../../learn-content/*.svx');
 
@@ -16,24 +17,15 @@
 
 <div class="copy-container">
 	<div class="learn-menu">
-		<ol>
-			<li><a href="/learn/introduction">Introduction</a></li>
-			<li><a href="/learn/the-alphabet">The alphabet</a></li>
-			<li>
-				<a href="/learn/letter-positioning-and-hierarchy">Letter positioning and hierarchy</a>
-			</li>
-			<li><a href="/learn/disemvowelment">Disemvowelment</a></li>
-			<li><a href="/learn/silent-and-double-letters">Silent and double letters</a></li>
-			<li><a href="/learn/connecting-letters">Connecting letters</a></li>
-			<li><a href="/learn/special-outlines">Special outlines</a></li>
-			<!-- {#each sectionsArray as sectionSlug}
+		<ul>
+			{#each syllabusDetails as section}
 				<li>
-					<a href="/learn/{sectionSlug}">
-						{sectionSlug}
+					<a href="/learn/{section.slug}">
+						{section.name}
 					</a>
 				</li>
-			{/each} -->
-		</ol>
+			{/each}
+		</ul>
 	</div>
 </div>
 
