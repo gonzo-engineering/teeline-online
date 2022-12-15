@@ -1,12 +1,12 @@
-function isVowel(letter) {
-    return ['a', 'e', 'i', 'o', 'u'].indexOf(letter.toLowerCase()) !== -1;
-}
+export function disemvowelWord(word) {
 
-function disemvowelWord(word) {
+    function isVowel(letter) {
+        return ['a', 'e', 'i', 'o', 'u'].indexOf(letter.toLowerCase()) !== -1;
+    }
+
     const firstLetter = word.charAt(0);
     const finalLetter = word.charAt(word.length - 1);
     const wordNoVowelsOrDoubles = word
-        .replace(/[aeiou]/gi, '')
         .replace('bb', 'b')
         .replace('dd', 'd')
         .replace('ff', 'f')
@@ -18,7 +18,10 @@ function disemvowelWord(word) {
         .replace('rr', 'r')
         .replace('ss', 's')
         .replace('tt', 't')
-        .replace('vv', 'v');
+        .replace('vv', 'v')
+        .replace('ck', 'c')
+        .replace(/[aeiou]/gi, '')
+        ;
 
     if (word.length === 1) return word;
     else if (
@@ -35,7 +38,7 @@ function disemvowelWord(word) {
     else return wordNoVowelsOrDoubles;
 }
 
-function disemvowelBodyOfText(text) {
+export function disemvowelBodyOfText(text) {
     const stringArray = text.split(' ');
     const disemvoweledStringArray = stringArray.map((word) => disemvowelWord(word));
     const disemvoweledText = disemvoweledStringArray.join(' ');

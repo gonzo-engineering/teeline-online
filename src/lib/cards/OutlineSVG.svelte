@@ -1,6 +1,6 @@
 <script>
 	export let outlineObject;
-	import { prettify } from '../../helpers';
+	import { prettify } from '../../scripts/helpers';
 </script>
 
 <svg
@@ -9,7 +9,7 @@
 	width="100%"
 	viewBox="0 0 750 750"
 >
-	<title>Teeline shorthand outline for '{prettify(outlineObject.name)}'</title>
+	<desc>Teeline shorthand outline for '{prettify(outlineObject.name)}'</desc>
 	<path
 		id="shape0"
 		transform="translate(0, 458.461538461538)"

@@ -1,5 +1,13 @@
+<script>
+	import HomepageSection from '$lib/homepageSection.svelte';
+</script>
+
 <svelte:head>
 	<title>teeline.online</title>
+	<meta
+		name="description"
+		content="A free learning resource for Teeline shorthand. Study theory, browse hundreds of outlines, and revise with digital flashcards as you work towards 100wpm."
+	/>
 </svelte:head>
 
 <div class="copy-container">
@@ -9,25 +17,52 @@
 			>National Council for the Training of Journalists</a
 		> and remains a requirement for qualified reporters.
 	</p>
-	<p>This site is a resource for anyone wishing to learn and/or practice Teeline.</p>
-	<!-- <h4>Teeline shorthand: the basics</h4>
-	<p>
-		The aim of the game is writing as little as possible while preserving the content of whatever is
-		being transcribed. This means short 'letters' which join in all sorts of ways, and a process of
-		disemvoweling.
-	</p> -->
+	<p>This site is a resource for anyone who wants to learn or practice Teeline shorthand.</p>
+</div>
+<div class="site-sections-container">
+	<HomepageSection
+		sectionName="Learn"
+		sectionBlurb="Study the basics and core theory of Teeline shorthand"
+		sectionPath="/learn"
+		sectionImage="/images/section-teaser-learn.png"
+		sectionImageAlt="Ink drawing of a man scratching his head in confusion."
+	/>
+	<HomepageSection
+		sectionName="Outlines"
+		sectionBlurb="Browse hundreds of animated Teeline outlines"
+		sectionPath="/outlines"
+		sectionImage="/images/section-teaser-outlines.png"
+		sectionImageAlt="A grid of cards with Teeline shorthand outlines drawn on them."
+	/>
+
+	<HomepageSection
+		sectionName="Revise"
+		sectionBlurb="Put your knowledge to the test with virtual flashcards"
+		sectionPath="/revise"
+		sectionImage="/images/section-teaser-revise.png"
+		sectionImageAlt="A Teeline shorthand revision flashcard."
+	/>
 </div>
 
 <style>
-	.copy-container {
+	.copy-container,
+	.site-sections-container {
 		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 100px;
+		margin-top: 50px;
+	}
+
+	.site-sections-container {
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: 4%;
+		row-gap: 30px;
 	}
 
 	@media (min-width: 1025px) {
-		.copy-container {
+		.copy-container,
+		.site-sections-container {
 			width: 60%;
 		}
 	}

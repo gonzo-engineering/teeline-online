@@ -21,7 +21,7 @@
 	}
 
 	p {
-		font-size: 1.8rem;
+		font-size: 1.5rem;
 	}
 
 	@media (min-width: 1025px) {

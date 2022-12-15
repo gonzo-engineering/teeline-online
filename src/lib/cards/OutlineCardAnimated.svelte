@@ -1,6 +1,6 @@
 <script>
 	import OutlineSvg from './OutlineSVG.svelte';
-	import { prettify } from '../../helpers';
+	import { prettify } from '../../scripts/helpers';
 
 	export let outlineObject;
 </script>
@@ -14,11 +14,11 @@
 
 <style>
 	.outline-container {
-		border-radius: 15px;
 		box-shadow: 0px 0px 10px 1px #e1e1e1;
 		border-radius: 10px;
-		width: 100%;
+		width: var(--width);
 		padding-bottom: 30px;
+		margin: 0 auto;
 	}
 
 	.outline-container:hover :global(.path) {

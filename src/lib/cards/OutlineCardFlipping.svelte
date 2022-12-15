@@ -1,6 +1,6 @@
 <script>
 	import OutlineSvg from './OutlineSVG.svelte';
-	import { prettify } from '../../helpers';
+	import { prettify } from '../../scripts/helpers';
 
 	export let outlineObject;
 </script>
@@ -50,6 +50,7 @@
 		backface-visibility: hidden;
 		box-shadow: 0px 0px 10px 1px #e1e1e1;
 		border-radius: 10px;
+		/* transform: perspective(1000px) rotateX(4deg) rotateY(-16deg) rotateZ(4deg); */
 	}
 
 	.flip-card-front {

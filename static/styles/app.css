@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 * {
-	font-family: 'Handwriting';
+	font-family: 'Handwriting', 'Indie Flower', cursive;
 	margin: 0;
 	padding: 0;
 }
@@ -9,17 +11,9 @@
 }
 
 p {
-	font-size: 2rem;
-	margin: 1rem 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin-top: 3rem;
+	font-size: var(--regular-font-size);
+	margin: 2rem 0;
+	line-height: 1.5;
 }
 
 h1 {
@@ -37,12 +31,27 @@ h3 {
 
 a {
 	text-decoration: underline;
+	text-decoration-thickness: 8%;
 	font-weight: bold;
 	color: black;
 }
 
 a:hover {
 	opacity: 0.6;
+}
+
+input {
+	font-size: var(--regular-font-size);
+}
+
+img {
+	width: 100%;
+}
+
+li {
+	font-size: var(--regular-font-size);
+	list-style-position: inside;
+	padding-left: 20px;
 }
 
 input {

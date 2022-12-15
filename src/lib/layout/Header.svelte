@@ -1,11 +1,15 @@
+<script>
+	import HeaderLink from './HeaderLink.svelte';
+</script>
+
 <header>
 	<h1><a href="/">teeline.online</a></h1>
-	<div class="tagline">A (short)handy tool</div>
+	<div class="tagline">A (short)handy site</div>
 	<nav>
 		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/outlines">Outlines</a></li>
-			<li><a href="/revise">Revise</a></li>
+			<li><HeaderLink href="/learn" title="Learn" /></li>
+			<li><HeaderLink href="/outlines" title="Outlines" /></li>
+			<li><HeaderLink href="/revise" title="Revise" /></li>
 		</ul>
 	</nav>
 </header>
@@ -33,7 +37,7 @@
 	}
 
 	nav {
-		font-size: 2.2rem;
+		font-size: 2rem;
 		font-weight: 700;
 	}
 
@@ -45,5 +49,8 @@
 	li {
 		margin: 0 20px;
 		list-style-type: none;
+	}
+	.active {
+		color: red;
 	}
 </style>
