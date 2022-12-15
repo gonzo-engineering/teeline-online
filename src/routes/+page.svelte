@@ -6,7 +6,7 @@
 	<title>teeline.online</title>
 	<meta
 		name="description"
-		content="A free learning resource for Teeline shorthand. Study theory, find outlines, and revise with digital flashcards as you work towards 100wpm."
+		content="A free learning resource for Teeline shorthand. Study theory, browse hundreds of outlines, and revise with digital flashcards as you work towards 100wpm."
 	/>
 </svelte:head>
 
@@ -17,7 +17,7 @@
 			>National Council for the Training of Journalists</a
 		> and remains a requirement for qualified reporters.
 	</p>
-	<p>This site is a resource for anyone wishing to learn and/or practice Teeline.</p>
+	<p>This site is a resource for anyone who wants to learn or practice Teeline shorthand.</p>
 </div>
 <div class="site-sections-container">
 	<HomepageSection
