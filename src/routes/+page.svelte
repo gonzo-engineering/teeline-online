@@ -24,14 +24,14 @@
 		sectionName="Learn"
 		sectionBlurb="Study the basics and core theory of Teeline shorthand"
 		sectionPath="/learn"
-		sectionImage="/images/section-teaser-learn.png"
+		sectionImage="/images/section-teaser-learn.webp"
 		sectionImageAlt="Ink drawing of a man scratching his head in confusion."
 	/>
 	<HomepageSection
 		sectionName="Outlines"
 		sectionBlurb="Browse hundreds of animated Teeline outlines"
 		sectionPath="/outlines"
-		sectionImage="/images/section-teaser-outlines.png"
+		sectionImage="/images/section-teaser-outlines.webp"
 		sectionImageAlt="A grid of cards with Teeline shorthand outlines drawn on them."
 	/>
 
@@ -39,7 +39,7 @@
 		sectionName="Revise"
 		sectionBlurb="Put your knowledge to the test with virtual flashcards"
 		sectionPath="/revise"
-		sectionImage="/images/section-teaser-revise.png"
+		sectionImage="/images/section-teaser-revise.webp"
 		sectionImageAlt="A Teeline shorthand revision flashcard."
 	/>
 </div>

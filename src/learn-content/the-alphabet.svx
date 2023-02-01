@@ -5,7 +5,7 @@ description: Even shorthand begins with learning your ABCs. This is an intro to 
 
 Teeline is spelling-based rather than phonetic and as such has a typical A-to-Z alphabet. You can view this below, and an interactive view is availabe on [the outlines page](/outlines).
 
-![A grid view of the Teeline shorthand alphabet](/images/teeline-alphabet.png)
+![A grid view of the Teeline shorthand alphabet](/images/teeline-alphabet.webp)
 
 You'll notice most letters have meanings in addition to their letter. As will become clear, reading Teeline is often heavily reliant on context. If you see an 'f' on its own it's unlikely that you've transcribed someone saying the letter 'f'. 
 
