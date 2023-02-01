@@ -12,7 +12,7 @@
 	<meta name="twitter:creator" content="@yagayagafred" />
 	<meta name="twitter:title" content="teeline.online" />
 	<meta name="twitter:description" content="A (short)handy site" />
-	<meta name="twitter:image" content="https://teeline.online/teeline-online-social-card.png" />
+	<meta name="twitter:image" content="https://teeline.online/teeline-online-social-card.webp" />
 	<meta
 		name="twitter:image:alt"
 		content="Screenshot of the teeline.online outlines page, showing a selection of Teeline shorthand outline cards."
