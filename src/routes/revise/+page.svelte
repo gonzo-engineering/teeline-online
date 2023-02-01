@@ -24,6 +24,10 @@
 
 <svelte:head>
 	<title>Revise | teeline.online</title>
+	<meta
+		name="description"
+		content="Work your way through hundreds of virtual flash cards to sear Teeline shorthand outlines into your brain and get your speed closer to the sacred 100wpm."
+	/>
 </svelte:head>
 
 <svelte:window on:keydown={handleKeydown} />

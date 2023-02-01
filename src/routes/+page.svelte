@@ -6,7 +6,7 @@
 	<title>teeline.online</title>
 	<meta
 		name="description"
-		content="A free learning resource for Teeline shorthand. Study theory, browse hundreds of outlines, and revise with digital flashcards as you work towards 100wpm."
+		content="A free, interactive learning resource for Teeline shorthand. Study theory, browse outlines, and revise with flash cards to get to 100wpm and beyond."
 	/>
 </svelte:head>
 

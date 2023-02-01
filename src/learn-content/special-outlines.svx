@@ -1,5 +1,6 @@
 ---
 title: Special outlines
+descriptions: When Teeline shorthand needs its own shorthand, look no further than special outlines
 ---
 
 <script>

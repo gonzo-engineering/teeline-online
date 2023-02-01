@@ -1,5 +1,6 @@
 ---
 title: Connecting letters
+description: How and why to join letters together in Teeline shorthand
 ---
 
 <script>

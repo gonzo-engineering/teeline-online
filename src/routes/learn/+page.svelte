@@ -13,6 +13,10 @@
 
 <svelte:head>
 	<title>Learn | teeline.online</title>
+	<meta
+		name="description"
+		content="Explore the theory and execution of Teeline shorthand - from core principles to special outlines. Be sure to play around with the Disemvoweler 9000!"
+	/>
 </svelte:head>
 
 <div class="copy-container">
