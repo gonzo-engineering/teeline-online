@@ -1,5 +1,6 @@
 ---
 title: Silent and double letters
+description: The nitty gritty of removing unheard letters from words in Teeline shorthand
 ---
 
 <script>

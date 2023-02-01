@@ -5,6 +5,7 @@
 
 <svelte:head>
 	<meta charset="UTF-8" />
+
 	<meta name="keywords" content="Shorthand, Teeline, Journalism" />
 
 	<meta name="twitter:card" content="summary_large_image" />

@@ -1,5 +1,6 @@
 ---
 title: Letter positioning and hierarchy
+description: Exploring the quirks of how letter placement affects meaning in Teeline shorthand
 ---
 
 <script>

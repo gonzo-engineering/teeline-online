@@ -1,5 +1,6 @@
 ---
 title: Disemvowelment
+description: The glorious gory art of removing superflous letters from words in Teeline shorthand
 ---
 
 <script>
