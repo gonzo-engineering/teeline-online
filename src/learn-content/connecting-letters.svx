@@ -6,7 +6,7 @@ description: How and why to join letters together in Teeline shorthand
 <script>
     import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte'
     import WordDisemvoweler from '$lib/disemvoweler/wordDisemvoweler.svelte'
-    import WordConverter from '$lib/WordConverter.svelte'
+    import WordConverter from '$lib/wordConverter.svelte'
 
     import { outlines } from '../data/outlines/outlines.ts'
 	import { findOutlineInArray } from '../scripts/helpers.ts'
