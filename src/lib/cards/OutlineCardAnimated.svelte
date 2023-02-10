@@ -3,12 +3,15 @@
 	import { prettify } from '../../scripts/helpers';
 
 	export let outlineObject;
+	export let displayName = true;
 </script>
 
 <div class="outline-container">
 	<div class="outline-content">
 		<OutlineSvg {outlineObject} class="path" />
-		<div class="outline-label">{prettify(outlineObject.name)}</div>
+		{#if displayName}
+			<div class="outline-label">{prettify(outlineObject.specialOutlineMeanings)}</div>
+		{/if}
 	</div>
 </div>
 
