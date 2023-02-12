@@ -1,33 +1,28 @@
 <script>
 	import { outlines } from '../data/outlines/outlines';
 	import OutlineCardAnimated from './cards/OutlineCardAnimated.svelte';
-	import { disemvowelWord } from '../scripts/disemvowel';
+	import { findMatchingOutline } from '../scripts/helpers';
 
 	let word = '';
-	$: matchingOutlineObject = outlines
-		.filter((outline) => outline.letterGrouping)
-		.find((outline) => outline.letterGrouping === disemvowelWord(word));
 
-	console.log(outlines.filter((outline) => outline.letterGrouping));
+	$: matchingOutline = findMatchingOutline(word, outlines);
+
+	console.log(outlines.filter((outline) => outline.letterGroupings));
 </script>
 
 <div class="word-converter-container">
 	<input bind:value={word} />
-	{#if matchingOutlineObject}
-		<OutlineCardAnimated
-			outlineObject={matchingOutlineObject}
-			displayName={false}
-			--width={'50%'}
-		/>
+	{#if matchingOutline}
+		<OutlineCardAnimated outlineObject={matchingOutline} displayName={false} --width={'50%'} />
 	{/if}
 </div>
 
 <style>
-    .word-converter-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+	.word-converter-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 	input {
 		font-size: 2rem;
 		margin: 2rem;

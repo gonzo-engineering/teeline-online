@@ -1,5 +1,5 @@
 export type OutlineObject = {
-	letterGrouping?: string;
+	letterGroupings?: string[];
 	specialOutlineMeanings: string[];
 	lines: LineDetails[];
 };
@@ -38,7 +38,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'abs',
+		letterGroupings: ['abs'],
 		specialOutlineMeanings: ['absolute'],
 		lines: [
 			{
@@ -310,7 +310,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'bs',
+		letterGroupings: ['bs'],
 		specialOutlineMeanings: ['business'],
 		lines: [
 			{
@@ -320,7 +320,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'bp',
+		letterGroupings: ['bp'],
 		specialOutlineMeanings: ['by the'],
 		lines: [
 			{
@@ -379,6 +379,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
+		letterGroupings: ['crcs'],
 		specialOutlineMeanings: ['circumstances'],
 		lines: [
 			{
@@ -388,6 +389,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
+		letterGroupings: ['crc'],
 		specialOutlineMeanings: ['circumstance'],
 		lines: [
 			{
@@ -406,7 +408,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'cb',
+		letterGroupings: ['cb'],
 		specialOutlineMeanings: ['club'],
 		lines: [
 			{
@@ -496,6 +498,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
+		letterGroupings: ['cn'],
 		specialOutlineMeanings: ['county', 'council'],
 		lines: [
 			{
@@ -523,7 +526,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'dv',
+		letterGroupings: ['dv'],
 		specialOutlineMeanings: ['develop'],
 		lines: [
 			{
@@ -586,6 +589,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
+		letterGroupings: ['dsc'],
 		specialOutlineMeanings: ['discount'],
 		lines: [
 			{
@@ -950,7 +954,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'frt',
+		letterGroupings: ['frt'],
 		specialOutlineMeanings: ['fortunate'],
 		lines: [
 			{
@@ -999,7 +1003,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'gn',
+		letterGroupings: ['gn'],
 		specialOutlineMeanings: ['general'],
 		lines: [
 			{
@@ -1009,7 +1013,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'gv',
+		letterGroupings: ['gv'],
 		specialOutlineMeanings: ['government'],
 		lines: [
 			{
@@ -1037,6 +1041,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
+		letterGroupings: ['hf'],
 		specialOutlineMeanings: ['half'],
 		lines: [
 			{
@@ -1161,7 +1166,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'imp',
+		letterGroupings: ['imp'],
 		specialOutlineMeanings: ['important'],
 		lines: [
 			{
@@ -1415,7 +1420,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'mm',
+		letterGroupings: ['mm'],
 		specialOutlineMeanings: ['member'],
 		lines: [
 			{
@@ -1425,7 +1430,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'mn',
+		letterGroupings: ['mn'],
 		specialOutlineMeanings: ['minimum'],
 		lines: [
 			{
@@ -1728,6 +1733,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
+		letterGroupings: ['prm'],
 		specialOutlineMeanings: ['permanent'],
 		lines: [
 			{
@@ -1820,6 +1826,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
+		letterGroupings: ['pf'],
 		specialOutlineMeanings: ['profit'],
 		lines: [
 			{
@@ -1855,6 +1862,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
+		letterGroupings: ['pb'],
 		specialOutlineMeanings: ['public'],
 		lines: [
 			{
@@ -1891,7 +1899,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'rc',
+		letterGroupings: ['rc'],
 		specialOutlineMeanings: ['recommend', 'recent'],
 		lines: [
 			{
@@ -1901,6 +1909,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
+		letterGroupings: ['rf'],
 		specialOutlineMeanings: ['reference', 'referee'],
 		lines: [
 			{
@@ -1910,7 +1919,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'rg',
+		letterGroupings: ['rg'],
 		specialOutlineMeanings: ['regular'],
 		lines: [
 			{
@@ -1942,7 +1951,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'rs',
+		letterGroupings: ['rs'],
 		specialOutlineMeanings: ['residents'],
 		lines: [
 			{
@@ -1952,7 +1961,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'rsp',
+		letterGroupings: ['rsp'],
 		specialOutlineMeanings: ['respect'],
 		lines: [
 			{
@@ -1989,6 +1998,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
+		letterGroupings: ['sv'],
 		specialOutlineMeanings: ['several'],
 		lines: [
 			{
@@ -1998,7 +2008,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		specialOutlineMeanings: ['shall'],
+		specialOutlineMeanings: ['sh', 'shall'],
 		lines: [
 			{
 				path: 'M39.6437 0.976551C42.8896 -0.105423 30.4322 3.54623e-05 30.1215 0.00489157C20.0612 0.162083 8.79953 4.22885 6.41296 14.9685C2.76222 31.3968 33.4575 20.1484 39.4494 28.2802C50.3535 43.0786 29.6163 49.2958 19.4332 51.1142C12.3874 52.3724 6.50532 50.5312 0 50.5312',
@@ -2016,7 +2026,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'sg',
+		letterGroupings: ['sg'],
 		specialOutlineMeanings: ['significant'],
 		lines: [
 			{
@@ -2256,6 +2266,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
+		letterGroupings: ['td'],
 		specialOutlineMeanings: ['to do'],
 		lines: [
 			{
@@ -2282,7 +2293,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'tg',
+		letterGroupings: ['tg'],
 		specialOutlineMeanings: ['together'],
 		lines: [
 			{
@@ -2346,7 +2357,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'wt',
+		letterGroupings: ['wt'],
 		specialOutlineMeanings: ['what'],
 		lines: [
 			{
@@ -2410,7 +2421,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGrouping: 'wts',
+		letterGroupings: ['wts'],
 		specialOutlineMeanings: ['witness'],
 		lines: [
 			{

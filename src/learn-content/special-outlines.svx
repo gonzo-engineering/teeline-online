@@ -6,13 +6,13 @@ descriptions: When Teeline shorthand needs its own shorthand, look no further th
 <script>
     import OutlineCardsSideBySide from '$lib/cards/OutlineCardsSideBySide.svelte'
     import { outlines } from '../data/outlines/outlines.ts'
-	import { findOutlineInArray } from '../scripts/helpers.ts'
+	import { findMatchingSpecialOutline } from '../scripts/helpers.ts'
 
-	const dOutline = findOutlineInArray('ladies and gentlemen', outlines);
-	const tOutline = findOutlineInArray('on the other hand', outlines);
+	const dOutline = findMatchingSpecialOutline('ladies and gentlemen', outlines);
+	const tOutline = findMatchingSpecialOutline('on the other hand', outlines);
 
-    const governmentOutline = findOutlineInArray('government', outlines);
-    const satisfactoryOutline = findOutlineInArray('satisfactory', outlines);
+    const governmentOutline = findMatchingSpecialOutline('government', outlines);
+    const satisfactoryOutline = findMatchingSpecialOutline('satisfactory', outlines);
 </script> 
 
 There are words and turns of phrases so common that it makes sense to have succinct versions of them, even by the standards of Teeline. These abbreviated - or sometimes straight up symbolic - words are called **special outlines**.
