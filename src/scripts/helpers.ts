@@ -34,7 +34,7 @@ export function findMatchingSpecialOutline(
 	);
 
 	if (foundOutline === undefined)
-		console.error(`Special outline for '${outlineName}' could not be found.`);
+		console.log(`Special outline for '${outlineName}' could not be found.`);
 
 	return foundOutline;
 }

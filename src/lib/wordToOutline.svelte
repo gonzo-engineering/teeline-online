@@ -19,7 +19,7 @@
 			<OutlineCardAnimated
 				outlineObject={findMatchingOutline(letter, outlines)}
 				displayName={false}
-				--width={'33%'}
+				--width={100 / wordLetters.length + '%'}
 			/>
 		{/each}
 	</div>
@@ -41,16 +41,10 @@
 		width: 100%;
 		margin: 5rem auto;
 	}
-	.word-converter-container > div {
-		/* flex: 50%; */
-	}
 	.letters-container {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		margin: 2rem 0;
-	}
-	.letters-container > * {
-		flex: 33%;
+		margin: 0 0 5rem 0;
 	}
 </style>

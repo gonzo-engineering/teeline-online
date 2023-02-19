@@ -20,6 +20,7 @@
 		box-shadow: 0px 0px 10px 1px #e1e1e1;
 		border-radius: 10px;
 		width: var(--width);
+		max-width: 200px;
 		padding-bottom: 30px;
 		margin: 0 auto;
 	}

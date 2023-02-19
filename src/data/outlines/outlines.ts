@@ -320,7 +320,7 @@ export const outlines: OutlineObject[] = [
 		]
 	},
 	{
-		letterGroupings: ['bp'],
+		letterGroupings: ['bp', 'bh'],
 		specialOutlineMeanings: ['by the'],
 		lines: [
 			{
