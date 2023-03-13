@@ -14,7 +14,7 @@
 	<div>
 		<WordDisemvoweler {word} />
 	</div>
-	<div class="letters-container">
+	<!-- <div class="letters-container">
 		{#each wordLetters as letter}
 			<OutlineCardAnimated
 				outlineObject={findMatchingOutline(letter, outlines)}
@@ -22,13 +22,12 @@
 				--width={100 / wordLetters.length + '%'}
 			/>
 		{/each}
-	</div>
-
+	</div> -->
 	<div>
 		<OutlineCardAnimated
 			outlineObject={findMatchingOutline(word, outlines)}
 			displayName={false}
-			--width={'50%'}
+			--width={'100%'}
 		/>
 	</div>
 </div>
@@ -36,9 +35,12 @@
 <style>
 	.word-converter-container {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		/* flex-wrap: wrap; */
 		width: 100%;
+		column-gap: 3rem;
+		align-items: center;
+		justify-content: center;
 		margin: 5rem auto;
 	}
 	.letters-container {

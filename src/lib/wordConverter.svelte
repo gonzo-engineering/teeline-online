@@ -4,16 +4,27 @@
 	import { findMatchingOutline } from '../scripts/helpers';
 
 	let word = '';
+	let emptyOutline = {
+		letterGroupings: [],
+		specialOutlineMeanings: [],
+		lines: [
+			{
+				path: '',
+				translateValues: [0, 0]
+			}
+		]
+	};
 
 	$: matchingOutline = findMatchingOutline(word, outlines);
-
-	console.log(outlines.filter((outline) => outline.letterGroupings));
 </script>
 
 <div class="word-converter-container">
-	<input bind:value={word} />
+	<input class="search-input" placeholder="Search for outlines..." bind:value={word} />
 	{#if matchingOutline}
 		<OutlineCardAnimated outlineObject={matchingOutline} displayName={false} --width={'50%'} />
+	{/if}
+	{#if !matchingOutline}
+		<OutlineCardAnimated outlineObject={emptyOutline} displayName={false} --width={'50%'} />
 	{/if}
 </div>
 
@@ -22,10 +33,9 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		margin: 5rem auto;
 	}
 	input {
-		font-size: 2rem;
-		margin: 2rem;
-		text-align: center;
+		margin-bottom: 3rem;
 	}
 </style>

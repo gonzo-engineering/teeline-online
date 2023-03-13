@@ -28,7 +28,9 @@
 				outline.specialOutlineMeanings.join('').includes(searchTerm)
 			);
 		} else {
-			displayedOutlines = outlines.filter((outline) => outline.specialOutlineMeanings.join('').includes(searchTerm));
+			displayedOutlines = outlines.filter((outline) =>
+				outline.specialOutlineMeanings.join('').includes(searchTerm)
+			);
 		}
 	}
 </script>
@@ -145,13 +147,5 @@
 
 	.slider.round:before {
 		border-radius: 50%;
-	}
-
-	/* Search bar */
-
-	.search-input {
-		padding: 10px 30px;
-		margin-left: 20px;
-		border-radius: 50px;
 	}
 </style>
