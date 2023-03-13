@@ -13,7 +13,7 @@
 			</div>
 		</div>
 		<div class="flip-card-back">
-			<div>{prettify(outlineObject.name)}</div>
+			<div>{prettify(outlineObject.specialOutlineMeanings)}</div>
 		</div>
 	</div>
 </div>

@@ -48,5 +48,5 @@ export function disemvowelBodyOfText(text) {
 const testSentence =
     'All men live enveloped in whale-lines. All are born with halters round their necks; but it is only when caught in the swift, sudden turn of death, that mortals realize the silent, subtle, everpresent perils of life.';
 
-console.log(testSentence);
-console.log(disemvowelBodyOfText(testSentence));
+// console.log(testSentence);
+// console.log(disemvowelBodyOfText(testSentence));

@@ -6,11 +6,13 @@ description: How and why to join letters together in Teeline shorthand
 <script>
     import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte'
     import WordDisemvoweler from '$lib/disemvoweler/wordDisemvoweler.svelte'
+    import WordConverter from '$lib/wordConverter.svelte'
+    import WordToOutline from '$lib/wordToOutline.svelte'
 
     import { outlines } from '../data/outlines/outlines.ts'
-	import { findOutlineInArray } from '../scripts/helpers.ts'
+	import { findMatchingSpecialOutline } from '../scripts/helpers.ts'
 
-	const conferenceOutline = findOutlineInArray('conference', outlines);
+	const conferenceOutline = findMatchingSpecialOutline('conference', outlines);
 </script> 
 
 The full process going on in the shorthand writer's brain is as follows:
@@ -18,14 +20,26 @@ The full process going on in the shorthand writer's brain is as follows:
 - Strip words of superfluous letters (i.e., [disemvowelment](/learn/disemvowelment))
 - Write what remains using [Teeline's alphabet](/learn/the-alphabet) and [special outlines](/learn/special-outlines)
 
-Part of Teeline's beauty is the way letters flow into each other. Cast off your longhand experiences of connecting letters together the same way every time. In the world of shorthand things are much more fluid.
+Part of Teeline's beauty is the way letters flow into each other. Cast off your longhand experiences of connecting letters together the same way every time. Combinations are much more fluid in the world of shorthand.
 
-Let's take the special outline of 'conference' as an example.
+The efficiency of shorthand is in the way it connects letters together. Let's look at a few examples.
+
+<WordToOutline word={'rose'} {outlines} />
+<WordToOutline word={'fort'} {outlines} />
+<WordToOutline word={'sage'} {outlines} />
+
+With each step of the process, you are saving time. Going from 'rose' to 'rs' cuts the number of longhand pen strokes from four to two - then the conversion to shorthand makes it one. Letter combinations are fluid and efficient.
+
+The savings are even better with [special outlines](/learn/special-outlines). Let's take the one for 'conference' as an example.
 
 <OutlineCardAnimated outlineObject={conferenceOutline} --width={"50%"} />
 
-Look at that. One fluid motion of the pen. Eleven would be needed to write it out in longhand. Even the disemvoweled version takes up seven.
+Look at that. One motion of the pen. Eleven would be needed to write it out in longhand. Even the disemvoweled version takes seven.
 
 <WordDisemvoweler word="conference" />
 
-This is an extreme example given 'conference' has an extra succinct special outline of its own, but it represents a key tenet of shorthand: **the fewer pen strokes the better**.
+This is an extreme example given 'conference' has an extra succinct special outline, but it represents a key tenet of shorthand: **the fewer pen strokes the better**.
+
+Type in a word below to see if a corresponding outline exists in [our library](/outlines).
+
+<WordConverter />

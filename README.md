@@ -8,21 +8,25 @@ Most of the site revolves around an array of outline objects, which contain all 
 
 ```ts
 {
-		name: ['ladies and gentlemen'],
-		lines: [
+		"letterGroupings": [
+			"imp"
+		],
+		"specialOutlineMeanings": [
+			"important"
+		],
+		"lines": [
 			{
-				path: 'M72.898 0C39.1048 11.2644 -6.8886 106.317 0.865583 139.66C5.84576 161.075 29.8074 167.407 45.3028 152.486C47.3425 150.522 57.6439 135.773 56.5741 135.773',
-				translateValues: [330, 290]
-			},
-			{
-				path: 'M6.22052 13.4261C6.28149 13.609 6.3323 14.1933 6.73874 13.6852C13.5625 5.15557 21.6861 -1.26291 33.2974 0.211551C51.8997 2.57374 68.9044 14.5389 66.8521 35.0618C64.0536 63.0467 49.1985 96.8419 29.7995 117.588C22.7525 125.124 15.8893 132.767 8.68206 140.131C6.95546 141.895 -0.133047 150.128 0.00190121 149.588',
-				translateValues: [360, 380]
+				"path": "M31.6328 0C32.12 1.02423 31.8825 0.163041 31.6328 1.38786C27.9727 19.3407 11.5986 39.3923 4.18692 56.7039C4.06859 56.9803 1.81512 63.4449 1.0745 63.4449C-3.05311 63.4449 5.82 56.5632 8.99703 53.9281C21.4059 43.636 36.6253 34.5244 50.5903 26.171C88.6116 3.42776 149.34 -14.4002 188.386 20.4213C228.762 56.4296 191.779 205.786 201.401 259.727",
+				"translateValues": [
+					240,
+					400
+				]
 			}
 		]
-}
+	}
 ```
 
-The `name` value is an array of strings rather than just a string because sometimes outlines can have multiple meanings. Each path corresponds to one line in that outline, and `translateValues` contains the x and y offset of the line from the top left hand corner of a 750 by 750 canvas. This allows words to be placed relative to a central line, which is essential for certain symbols.
+The `letterGroupings` and `specialOutlineMeanings` values are arrays of strings rather than just strings because sometimes outlines can have multiple meanings. Each path corresponds to one line in that outline, and `translateValues` contains the x and y offset of the line from the top left hand corner of a 750 by 750 canvas. This allows words to be placed relative to a central line, which is essential for certain symbols.
 
 These outline objects can be fed into `OutlineCard.svelte`, which contains an SVG with the given path (or paths) and a label. They look a little like this:
 
@@ -34,8 +38,11 @@ The outlines were 'hand drawn' on a tablet in [Krita](https://krita.org/en/) and
 
 The font is a digitised version of my own non-cursive handwriting. This project was partly inspired by old revision cards from studying for my [NCTJ](https://www.nctj.com/) diploma and it felt like a nice nod to that.
 
-## Resources and further reading
+## Resources, kindred sites, and further reading
 
 - [How to Get Handwriting Animation With Irregular SVG Strokes](https://css-tricks.com/how-to-get-handwriting-animation-with-irregular-svg-strokes/) by Trapti Rahangdale
 - [SVG paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths) in MDN Web Docs
 - [Teeline Mate](https://github.com/adxsoft/TeelineMate) by [@adxsoft](https://github.com/adxsoft)
+- [A Searchable Teeline Dictionary](http://realerthinks.com/a-searchable-teeline-dictionary/) by Addie Kingsland
+- [Teeline for the curious: a story of learning things because I can](http://realerthinks.com/teeline-for-the-curious-a-story-of-learning-things-because-i-can/) by Addie Kingsland
+

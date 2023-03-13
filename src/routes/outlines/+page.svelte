@@ -12,7 +12,7 @@
 	const lowerCaseAlphabet = alphabet.map((letter) => letter.toLocaleLowerCase());
 
 	let alphabetOutlines = outlines.filter((outline) =>
-		lowerCaseAlphabet.some((letter) => outline.name.includes(letter))
+		lowerCaseAlphabet.some((letter) => outline.specialOutlineMeanings.includes(letter))
 	);
 
 	function toggleAlphabetFilter() {
@@ -25,10 +25,12 @@
 	function filterOutlines(outlines, searchTerm) {
 		if (alphabetToggleOn) {
 			displayedOutlines = alphabetOutlines.filter((outline) =>
-				outline.name.join('').includes(searchTerm)
+				outline.specialOutlineMeanings.join('').includes(searchTerm)
 			);
 		} else {
-			displayedOutlines = outlines.filter((outline) => outline.name.join('').includes(searchTerm));
+			displayedOutlines = outlines.filter((outline) =>
+				outline.specialOutlineMeanings.join('').includes(searchTerm)
+			);
 		}
 	}
 </script>
@@ -145,13 +147,5 @@
 
 	.slider.round:before {
 		border-radius: 50%;
-	}
-
-	/* Search bar */
-
-	.search-input {
-		padding: 10px 30px;
-		margin-left: 20px;
-		border-radius: 50px;
 	}
 </style>

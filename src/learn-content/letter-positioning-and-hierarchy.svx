@@ -7,13 +7,13 @@ description: Exploring the quirks of how letter placement affects meaning in Tee
     import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte'
 	import OutlineCardsSideBySide from '$lib/cards/OutlineCardsSideBySide.svelte'
     import { outlines } from '../data/outlines/outlines.ts'
-	import { findOutlineInArray } from '../scripts/helpers.ts'
+	import { findMatchingSpecialOutline } from '../scripts/helpers.ts'
 
-	const dOutline = findOutlineInArray('d', outlines);
-	const tOutline = findOutlineInArray('t', outlines);
-	const whatOutline = findOutlineInArray('what', outlines)
-	const toDoOutline = findOutlineInArray('to do', outlines)
-	const differentOutline = findOutlineInArray('different', outlines);
+	const dOutline = findMatchingSpecialOutline('d', outlines);
+	const tOutline = findMatchingSpecialOutline('t', outlines);
+	const whatOutline = findMatchingSpecialOutline('what', outlines)
+	const toDoOutline = findMatchingSpecialOutline('to do', outlines)
+	const differentOutline = findMatchingSpecialOutline('different', outlines);
 </script> 
 
 Unlike longhand, in which all letters are sat on the same line and go left to right, in Teeline shorthand thought must be given to how high or low letters are.

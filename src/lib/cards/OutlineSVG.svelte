@@ -9,7 +9,7 @@
 	width="100%"
 	viewBox="0 0 750 750"
 >
-	<desc>Teeline shorthand outline for '{prettify(outlineObject.name)}'</desc>
+	<desc>Teeline shorthand outline for '{prettify(outlineObject.specialOutlineMeanings)}'</desc>
 	<path
 		id="shape0"
 		transform="translate(0, 458.461538461538)"
