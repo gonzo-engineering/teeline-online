@@ -1,5 +1,6 @@
 <script>
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
+	import Toggle from '../../lib/toggle.svelte';
 	import { outlines } from '../../data/outlines/outlines';
 	import { sortAlphabetically } from '../../scripts/helpers';
 
@@ -15,14 +16,14 @@
 		lowerCaseAlphabet.some((letter) => outline.specialOutlineMeanings.includes(letter))
 	);
 
-	function toggleAlphabetFilter() {
+	const toggleAlphabetFilter = () => {
 		displayedOutlines = alphabetToggleOn ? outlines : alphabetOutlines;
 		alphabetToggleOn = alphabetToggleOn ? false : true;
 
 		searchTerm = null;
-	}
+	};
 
-	function filterOutlines(outlines, searchTerm) {
+	const filterOutlines = (outlines, searchTerm) => {
 		if (alphabetToggleOn) {
 			displayedOutlines = alphabetOutlines.filter((outline) =>
 				outline.specialOutlineMeanings.join('').includes(searchTerm)
@@ -32,7 +33,7 @@
 				outline.specialOutlineMeanings.join('').includes(searchTerm)
 			);
 		}
-	}
+	};
 </script>
 
 <svelte:head>
@@ -44,11 +45,7 @@
 </svelte:head>
 
 <div class="filters-container">
-	<div class="filter-label">Only show alphabet</div>
-	<label class="switch">
-		<input type="checkbox" on:click={toggleAlphabetFilter} />
-		<span class="slider round" />
-	</label>
+	<Toggle toggleLabel={`Only show alphabet`} toggleFunction={toggleAlphabetFilter} />
 	<input
 		class="search-input"
 		placeholder="Search for outlines..."
@@ -80,72 +77,5 @@
 	.filters-container {
 		margin: 0 auto 2rem auto;
 		width: max-content;
-	}
-	.filter-label {
-		margin-right: 0.5rem;
-		display: inline-block;
-		font-size: 1.8rem;
-	}
-	/* The switch - the box around the slider */
-	.switch {
-		position: relative;
-		display: inline-block;
-		width: 60px;
-		height: 34px;
-	}
-
-	/* Hide default HTML checkbox */
-	.switch input {
-		opacity: 0;
-		width: 0;
-		height: 0;
-	}
-
-	/* The slider */
-	.slider {
-		position: absolute;
-		cursor: pointer;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-color: #ccc;
-		-webkit-transition: 0.4s;
-		transition: 0.4s;
-	}
-
-	.slider:before {
-		position: absolute;
-		content: '';
-		height: 26px;
-		width: 26px;
-		left: 4px;
-		bottom: 4px;
-		background-color: white;
-		-webkit-transition: 0.4s;
-		transition: 0.4s;
-	}
-
-	input:checked + .slider {
-		background-color: black;
-	}
-
-	input:focus + .slider {
-		box-shadow: 0 0 1px black;
-	}
-
-	input:checked + .slider:before {
-		-webkit-transform: translateX(26px);
-		-ms-transform: translateX(26px);
-		transform: translateX(26px);
-	}
-
-	/* Rounded sliders */
-	.slider.round {
-		border-radius: 34px;
-	}
-
-	.slider.round:before {
-		border-radius: 50%;
 	}
 </style>
