@@ -1,25 +1,31 @@
 <script>
 	import { outlines } from '../../data/outlines/outlines';
 	import FlippingOutlineCard from '../../lib/cards/OutlineCardFlipping.svelte';
+	import Toggle from '../../lib/toggle.svelte';
 	import { shuffle } from '../../scripts/helpers';
 
 	const shuffledOutlines = shuffle(outlines);
 
 	let counter = 0;
 	let outlineObject = shuffledOutlines[counter];
+	let outlineFirst = false;
 
-	function changeOutline() {
+	const changeOutline = () => {
 		if (counter === outlines.length - 1) counter = 0;
 		else counter++;
 		console.log(counter);
 		outlineObject = shuffledOutlines[counter];
-	}
+	};
 
-	function handleKeydown(event) {
+	const handleKeydown = (event) => {
 		if (event.keyCode === 32) {
 			changeOutline();
 		}
-	}
+	};
+
+	const toggleCardOrientation = () => {
+		outlineFirst = !outlineFirst;
+	};
 </script>
 
 <svelte:head>
@@ -33,14 +39,17 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <div class="content">
-	<p>Hover/tap to see what the outline stands for</p>
+	<div class="info-container">
+		<p>Hover over / tap on the flash card to see what it stands for</p>
+		<Toggle toggleLabel={`Show outlines first`} toggleFunction={toggleCardOrientation} />
+	</div>
 
 	<div class="flipcard-container">
-		<FlippingOutlineCard {outlineObject} />
+		<FlippingOutlineCard {outlineObject} {outlineFirst} />
 	</div>
 
 	<div class="button-container">
-		<button class="button" on:click={changeOutline}>New outline</button>
+		<button class="button" on:click={changeOutline}>Next card</button>
 	</div>
 </div>
 
@@ -49,7 +58,7 @@
 		padding: 20px 0;
 	}
 
-	p {
+	.info-container {
 		text-align: center;
 	}
 
