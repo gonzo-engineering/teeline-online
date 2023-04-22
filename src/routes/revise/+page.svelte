@@ -49,7 +49,7 @@
 	</div>
 
 	<div class="button-container">
-		<button class="button" on:click={changeOutline}>Next card</button>
+		<button class="button" on:click={changeOutline}>Next card...</button>
 	</div>
 </div>
 
