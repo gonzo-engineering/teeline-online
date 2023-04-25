@@ -2,19 +2,32 @@
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import OutlineSvg from './OutlineSVG.svelte';
 	import { prettify } from '../../scripts/helpers';
-
+  
 	export let outlineObject: OutlineObject;
+	export let outlineFirst;
 </script>
 
 <div class="flip-card">
 	<div class="flip-card-inner">
 		<div class="flip-card-front">
 			<div class="svg-container">
-				<OutlineSvg {outlineObject} />
+				{#if outlineFirst}
+					<div class="svg-container">
+						<OutlineSvg {outlineObject} />
+					</div>
+				{:else}
+					<div>{prettify(outlineObject.specialOutlineMeanings)}</div>
+				{/if}
 			</div>
 		</div>
 		<div class="flip-card-back">
-			<div>{prettify(outlineObject.specialOutlineMeanings)}</div>
+			<div class="svg-container">
+				{#if outlineFirst}
+					<div>{prettify(outlineObject.specialOutlineMeanings)}</div>
+				{:else}
+					<OutlineSvg {outlineObject} />
+				{/if}
+			</div>
 		</div>
 	</div>
 </div>
