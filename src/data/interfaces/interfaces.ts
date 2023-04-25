@@ -1,6 +1,6 @@
 export type OutlineObject = {
 	letterGroupings?: string[];
-	specialOutlineMeanings: string[];
+	specialOutlineMeanings?: string[];
 	lines: LineDetails[];
 };
 

@@ -1,8 +1,8 @@
-type SyllabusSection = {
+interface SyllabusSection {
 	order: number;
 	name: string;
 	slug: string;
-};
+}
 
 export const syllabusDetails: SyllabusSection[] = [
 	{

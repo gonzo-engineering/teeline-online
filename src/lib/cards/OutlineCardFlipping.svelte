@@ -1,8 +1,9 @@
-<script>
+<script lang="ts">
+	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import OutlineSvg from './OutlineSVG.svelte';
 	import { prettify } from '../../scripts/helpers';
 
-	export let outlineObject;
+	export let outlineObject: OutlineObject;
 </script>
 
 <div class="flip-card">
