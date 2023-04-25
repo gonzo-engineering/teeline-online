@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import { outlines } from '../../data/outlines/outlines';
 	import FlippingOutlineCard from '../../lib/cards/OutlineCardFlipping.svelte';
 	import Toggle from '../../lib/toggle.svelte';

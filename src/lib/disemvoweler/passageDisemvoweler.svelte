@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { disemvowelBodyOfText } from '../../scripts/disemvowel';
 	let textToDisemvowel = '';
 </script>

@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
 	import WordDisemvoweler from './disemvoweler/wordDisemvoweler.svelte';
 	import OutlineCardAnimated from './cards/OutlineCardAnimated.svelte';
 	import { findMatchingOutline } from '../scripts/helpers';
 	import { disemvowelWord } from '../scripts/disemvowel';
+	import type { OutlineObject } from '../data/interfaces/interfaces';
 
-	export let word;
-	export let outlines;
+	export let word: string;
+	export let outlines: OutlineObject[];
 
 	let wordLetters = disemvowelWord(word).split('');
 </script>

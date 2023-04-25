@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
+	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 	import Toggle from '../../lib/toggle.svelte';
 	import { outlines } from '../../data/outlines/outlines';
 	import { sortAlphabetically } from '../../scripts/helpers';
 
-	let displayedOutlines = outlines;
+	let displayedOutlines: OutlineObject[] = outlines;
 	let alphabetToggleOn = false;
 	let searchTerm = null;
 
@@ -23,7 +24,7 @@
 		searchTerm = null;
 	};
 
-	const filterOutlines = (outlines, searchTerm) => {
+	const filterOutlines = (outlines: OutlineObject[], searchTerm: string) => {
 		if (alphabetToggleOn) {
 			displayedOutlines = alphabetOutlines.filter((outline) =>
 				outline.specialOutlineMeanings.join('').includes(searchTerm)
@@ -50,7 +51,7 @@
 		class="search-input"
 		placeholder="Search for outlines..."
 		bind:value={searchTerm}
-		on:input={filterOutlines(outlines, searchTerm)}
+		on:input={() => filterOutlines(outlines, searchTerm)}
 	/>
 </div>
 

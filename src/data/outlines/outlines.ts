@@ -1,13 +1,4 @@
-export type OutlineObject = {
-	letterGroupings?: string[];
-	specialOutlineMeanings: string[];
-	lines: LineDetails[];
-};
-
-type LineDetails = {
-	path: string;
-	translateValues: [number, number];
-};
+import type { OutlineObject } from '../interfaces/interfaces';
 
 export const outlines: OutlineObject[] = [
 	{
