@@ -8,3 +8,9 @@ type LineDetails = {
 	path: string;
 	translateValues: [number, number];
 };
+
+export interface SyllabusSection {
+	order: number;
+	name: string;
+	slug: string;
+}
