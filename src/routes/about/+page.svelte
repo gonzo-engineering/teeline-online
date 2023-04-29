@@ -12,7 +12,7 @@
 		This is teeline.online, a free, interactive learning resource for Teeline shorthand. It is
 		developed by <a href="https://frederickobrien.com">Frederick O'Brien</a>, a software engineer
 		and occasional journalist based in London. It's mainly a way of avoiding the revision he should
-		have been doing to reach 100 wpm.
+		be doing to reach 100 wpm.
 	</p>
 	<p>
 		The source code is publicly available on <a
