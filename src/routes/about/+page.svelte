@@ -26,7 +26,7 @@
 		while studying for his own NCTJ diploma.
 	</p>
 	<p>
-		You can support the project by <a href="https://ko-fi.com/frederickobrien"
+		You can support the site's development by <a href="https://ko-fi.com/frederickobrien"
 			>buying Fred a coffee</a
 		>, if you like.
 	</p>
