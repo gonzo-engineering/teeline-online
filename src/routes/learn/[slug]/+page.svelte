@@ -16,16 +16,4 @@
 	h2 {
 		text-align: center;
 	}
-	.copy-container {
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: 50px;
-	}
-
-	@media (min-width: 1025px) {
-		.copy-container {
-			width: 60%;
-		}
-	}
 </style>

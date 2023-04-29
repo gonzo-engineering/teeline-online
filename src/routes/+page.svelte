@@ -45,9 +45,11 @@
 		sectionImageAlt="A Teeline shorthand revision flashcard."
 	/>
 </div>
+<div class="copy-container">
+	<p>Want to learn more about the project? Visit <a href="/about">the about page</a>.</p>
+</div>
 
 <style>
-	.copy-container,
 	.site-sections-container {
 		width: 100%;
 		margin-left: auto;
@@ -63,7 +65,6 @@
 	}
 
 	@media (min-width: 1025px) {
-		.copy-container,
 		.site-sections-container {
 			width: 60%;
 		}
