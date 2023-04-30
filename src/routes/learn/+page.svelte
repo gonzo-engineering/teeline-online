@@ -1,5 +1,8 @@
-<script>
-	import { syllabusDetails } from '../../data/syllabus/syllabus';
+<script lang="ts">
+	import type { SyllabusSection } from '../../data/interfaces/interfaces';
+	import syllabusDetails from '../../data/syllabus.json';
+
+	const syllabus = syllabusDetails as SyllabusSection[];
 
 	const learnSections = import.meta.glob('../../learn-content/*.svx');
 
@@ -21,7 +24,7 @@
 <div class="copy-container">
 	<div class="learn-menu">
 		<ul>
-			{#each syllabusDetails as section}
+			{#each syllabus as section}
 				<li>
 					<a href="/learn/{section.slug}">
 						{section.name}

@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
-	import { outlines } from '../../data/outlines/outlines';
+	import outlines from '../../data/outlines.json';
 	import FlippingOutlineCard from '../../lib/cards/OutlineCardFlipping.svelte';
 	import Toggle from '../../lib/toggle.svelte';
 	import { shuffle } from '../../scripts/helpers';
 
-	const shuffledOutlines = shuffle(outlines);
+	const shuffledOutlines: OutlineObject[] = shuffle(outlines);
 
 	let counter = 0;
 	let outlineObject = shuffledOutlines[counter];

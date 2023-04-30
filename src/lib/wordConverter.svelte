@@ -1,5 +1,5 @@
 <script>
-	import { outlines } from '../data/outlines/outlines';
+	import outlines from '../data/outlines.json';
 	import OutlineCardAnimated from './cards/OutlineCardAnimated.svelte';
 	import { findMatchingOutline } from '../scripts/helpers';
 

@@ -6,5 +6,11 @@ export type OutlineObject = {
 
 type LineDetails = {
 	path: string;
-	translateValues: [number, number];
+	translateValues: number[];
 };
+
+export interface SyllabusSection {
+	order: number;
+	name: string;
+	slug: string;
+}
