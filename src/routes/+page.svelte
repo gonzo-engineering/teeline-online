@@ -1,7 +1,5 @@
 <script>
 	import HomepageSection from '$lib/homepageSection.svelte';
-	import WordToOutline from '$lib/wordToOutline.svelte';
-	import { outlines } from '../data/outlines/outlines';
 </script>
 
 <svelte:head>

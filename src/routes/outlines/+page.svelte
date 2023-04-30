@@ -2,7 +2,7 @@
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 	import Toggle from '../../lib/toggle.svelte';
-	import { outlines } from '../../data/outlines/outlines';
+	import outlines from '../../data/outlines.json';
 	import { sortAlphabetically } from '../../scripts/helpers';
 
 	let displayedOutlines: OutlineObject[] = outlines;

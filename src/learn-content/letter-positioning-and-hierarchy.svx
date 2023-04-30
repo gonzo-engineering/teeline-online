@@ -6,7 +6,7 @@ description: Exploring the quirks of how letter placement affects meaning in Tee
 <script>
     import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte'
 	import OutlineCardsSideBySide from '$lib/cards/OutlineCardsSideBySide.svelte'
-    import { outlines } from '../data/outlines/outlines.ts'
+    import outlines from '../data/outlines.json'
 	import { findMatchingSpecialOutline } from '../scripts/helpers.ts'
 
 	const dOutline = findMatchingSpecialOutline('d', outlines);

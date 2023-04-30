@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { SyllabusSection } from '../../data/interfaces/interfaces';
-	import syllabusDetails from '../../data/syllabus/syllabus.json';
+	import syllabusDetails from '../../data/syllabus.json';
 
 	const syllabus = syllabusDetails as SyllabusSection[];
 
