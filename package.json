@@ -9,7 +9,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"copy-data": "cp src/data/outlines.json static/data"
+		"copy-data": "mkdir static/data && cp src/data/outlines.json static/data/outlines.json"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-netlify": "^2.0.6",
