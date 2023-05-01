@@ -12,7 +12,7 @@
 		"copy-data": "mkdir static/data && cp src/data/outlines.json static/data/outlines.json"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-netlify": "^2.0.6",
+		"@sveltejs/adapter-netlify": "^2.0.7",
 		"@sveltejs/kit": "1.15.8",
 		"@tsconfig/svelte": "^4.0.1",
 		"@typescript-eslint/eslint-plugin": "^5.10.1",
