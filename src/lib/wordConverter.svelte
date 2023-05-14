@@ -21,7 +21,7 @@
 <div class="word-converter-container">
 	<input class="search-input" placeholder="Search for outlines..." bind:value={word} />
 	{#if matchingOutline}
-		<OutlineCardAnimated outlineObject={matchingOutline} displayName={false} --width={'50%'} />
+		<OutlineCardAnimated outlineObject={matchingOutline} --width={'50%'} />
 	{/if}
 	{#if !matchingOutline}
 		<OutlineCardAnimated outlineObject={emptyOutline} displayName={false} --width={'50%'} />

@@ -3,9 +3,11 @@
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 	import Toggle from '../../lib/toggle.svelte';
 	import outlines from '../../data/outlines.json';
-	import { sortAlphabetically } from '../../scripts/helpers';
+	import { sortSpecialOutlinesAlphabetically } from '../../scripts/helpers';
 
-	let displayedOutlines: OutlineObject[] = outlines;
+	let displayedOutlines: OutlineObject[] = outlines.filter(
+		(outline) => outline.specialOutlineMeanings
+	);
 	let alphabetToggleOn = false;
 	let searchTerm = null;
 
@@ -14,7 +16,9 @@
 	const lowerCaseAlphabet = alphabet.map((letter) => letter.toLocaleLowerCase());
 
 	let alphabetOutlines = outlines.filter((outline) =>
-		lowerCaseAlphabet.some((letter) => outline.specialOutlineMeanings.includes(letter))
+		lowerCaseAlphabet.some(
+			(letter) => outline.specialOutlineMeanings && outline.specialOutlineMeanings.includes(letter)
+		)
 	);
 
 	const toggleAlphabetFilter = () => {
@@ -56,7 +60,7 @@
 </div>
 
 <div class="animated-container">
-	{#each sortAlphabetically(displayedOutlines) as outlineObject}
+	{#each sortSpecialOutlinesAlphabetically(displayedOutlines) as outlineObject}
 		<OutlineCardAnimated {outlineObject} />
 	{/each}
 </div>

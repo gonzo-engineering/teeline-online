@@ -10,8 +10,11 @@
 <div class="outline-container">
 	<div class="outline-content">
 		<OutlineSvg {outlineObject} class="path" />
-		{#if displayName}
+		{#if displayName && outlineObject.specialOutlineMeanings}
 			<div class="outline-label">{prettify(outlineObject.specialOutlineMeanings)}</div>
+		{/if}
+		{#if displayName && !outlineObject.specialOutlineMeanings && outlineObject.letterGroupings}
+			<div class="outline-label">{prettify(outlineObject.letterGroupings)}</div>
 		{/if}
 	</div>
 </div>

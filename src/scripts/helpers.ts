@@ -4,7 +4,7 @@ export function prettify(outlineNames: string[]): string {
 	return outlineNames.toString().replace(/,/g, ' / ');
 }
 
-export function sortAlphabetically(outlinesArray: OutlineObject[]): OutlineObject[] {
+export function sortSpecialOutlinesAlphabetically(outlinesArray: OutlineObject[]): OutlineObject[] {
 	outlinesArray.sort(function (a, b) {
 		const textA = a.specialOutlineMeanings[0].toUpperCase();
 		const textB = b.specialOutlineMeanings[0].toUpperCase();
@@ -33,18 +33,21 @@ export function findMatchingSpecialOutline(
 		outline.specialOutlineMeanings.includes(outlineName)
 	);
 
-	if (foundOutline === undefined)
-		console.log(`Special outline for '${outlineName}' could not be found.`);
+	// if (foundOutline === undefined)
+	// 	console.log(`Special outline for '${outlineName}' could not be found.`);
 
 	return foundOutline;
 }
 
-export function findMatchingOutline(word, outlinesArray) {
+export function findMatchingOutline(word: string, outlinesArray: OutlineObject[]) {
 	const disemvoweledWord = disemvowelWord(word);
 	const matchingLetterSequenceOutline = outlinesArray
 		.filter((outline) => outline.letterGroupings)
 		.find((outline) => outline.letterGroupings.includes(disemvoweledWord));
-	const matchingSpecialOutline = findMatchingSpecialOutline(word, outlinesArray);
+	const matchingSpecialOutline = findMatchingSpecialOutline(
+		word,
+		outlinesArray.filter((outline) => outline.specialOutlineMeanings)
+	);
 
 	if (matchingSpecialOutline) return matchingSpecialOutline;
 	else if (matchingLetterSequenceOutline) return matchingLetterSequenceOutline;
