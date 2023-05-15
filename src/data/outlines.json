@@ -880,6 +880,9 @@
         ]
     },
     {
+        "letterGroupings": [
+            "dft"
+        ],
         "specialOutlineMeanings": [
             "different"
         ],

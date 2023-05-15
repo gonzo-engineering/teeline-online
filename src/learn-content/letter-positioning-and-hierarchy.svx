@@ -7,13 +7,14 @@ description: Exploring the quirks of how letter placement affects meaning in Tee
     import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte'
 	import OutlineCardsSideBySide from '$lib/cards/OutlineCardsSideBySide.svelte'
     import outlines from '../data/outlines.json'
-	import { findMatchingSpecialOutline } from '../scripts/helpers.ts'
+	import { findMatchingOutline } from '../scripts/helpers.ts'
+	import SyllabusLink from '$lib/syllabusLink.svelte'
 
-	const dOutline = findMatchingSpecialOutline('d', outlines);
-	const tOutline = findMatchingSpecialOutline('t', outlines);
-	const whatOutline = findMatchingSpecialOutline('what', outlines)
-	const toDoOutline = findMatchingSpecialOutline('to do', outlines)
-	const differentOutline = findMatchingSpecialOutline('different', outlines);
+	const dOutline = findMatchingOutline('d', outlines);
+	const tOutline = findMatchingOutline('t', outlines);
+	const whatOutline = findMatchingOutline('what', outlines)
+	const toDoOutline = findMatchingOutline('to do', outlines)
+	const differentOutline = findMatchingOutline('different', outlines);
 </script> 
 
 Unlike longhand, in which all letters are sat on the same line and go left to right, in Teeline shorthand thought must be given to how high or low letters are.
@@ -46,4 +47,6 @@ If you have a 't' next to a 'd', put the 'd' just below. If the situation is rev
 
 <OutlineCardsSideBySide leftOutline={toDoOutline} rightOutline={differentOutline} />
 
-We'll get into this in more depth in the ['Connecting letters'](/learn/connecting-letters) section. For now it is enough to know that the vertical position of certain letters is essential to what they mean, and this makes those letters more dominant than their kin. 
+We'll get into this in more depth in the ['Connecting letters'](/learn/connecting-letters) section. For now it is enough to know that the vertical position of certain letters is essential to what they mean, and this makes those letters more dominant than their kin.
+
+<SyllabusLink sectionKey="letter-positioning-and-hierarchy" />

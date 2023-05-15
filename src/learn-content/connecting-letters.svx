@@ -9,6 +9,7 @@ description: How and why to join letters together in Teeline shorthand
     import WordDisemvoweler from '$lib/disemvoweler/wordDisemvoweler.svelte'
     import WordConverter from '$lib/wordConverter.svelte'
     import WordToOutline from '$lib/wordToOutline.svelte'
+    import SyllabusLink from '$lib/syllabusLink.svelte'
 
     import outlines from '../data/outlines.json'
 	import { findMatchingSpecialOutline } from '../scripts/helpers.ts'
@@ -41,6 +42,4 @@ Look at that. One motion of the pen. Eleven would be needed to write it out in l
 
 This is an extreme example given 'conference' has an extra succinct special outline, but it represents a key tenet of shorthand: **the fewer pen strokes the better**.
 
-Type in a word below to see if a corresponding outline exists in [our library](/outlines).
-
-<WordConverter />
+<SyllabusLink sectionKey="connecting-letters" />
