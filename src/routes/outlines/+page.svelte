@@ -73,6 +73,10 @@
 	{/each}
 </div>
 
+{#if displayedOutlines.length === 0}
+	<div class="nothing-found-message">No outlines found matching your search.</div>
+{/if}
+
 <style>
 	.animated-container {
 		display: flex;
@@ -90,5 +94,10 @@
 	.filters-container {
 		margin: 0 auto 2rem auto;
 		width: max-content;
+	}
+	.nothing-found-message {
+		margin: 10rem auto;
+		text-align: center;
+		font-size: 1.8rem;
 	}
 </style>
