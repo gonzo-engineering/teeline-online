@@ -1,5 +1,6 @@
 <script>
 	import HomepageSection from '$lib/homepageSection.svelte';
+	import outlines from '../data/outlines.json';
 </script>
 
 <svelte:head>
@@ -29,7 +30,7 @@
 	/>
 	<HomepageSection
 		sectionName="Outlines"
-		sectionBlurb="Browse hundreds of animated Teeline outlines"
+		sectionBlurb="Browse and search hundreds of animated Teeline outlines"
 		sectionPath="/outlines"
 		sectionImage="/images/section-teaser-outlines.webp"
 		sectionImageAlt="A grid of cards with Teeline shorthand outlines drawn on them."

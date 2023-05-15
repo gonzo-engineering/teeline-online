@@ -3,9 +3,9 @@
 	import outlines from '../../data/outlines.json';
 	import FlippingOutlineCard from '../../lib/cards/OutlineCardFlipping.svelte';
 	import Toggle from '../../lib/toggle.svelte';
-	import { shuffle } from '../../scripts/helpers';
+	import { shuffleOutlines } from '../../scripts/helpers';
 
-	const shuffledOutlines: OutlineObject[] = shuffle(outlines);
+	const shuffledOutlines: OutlineObject[] = shuffleOutlines(outlines);
 
 	let counter = 0;
 	let outlineObject = shuffledOutlines[counter];

@@ -58,6 +58,10 @@ input {
 	font-size: var(--regular-font-size);
 }
 
+small {
+	font-size: 0.9rem;
+}
+
 /* Search bar */
 
 .search-input {

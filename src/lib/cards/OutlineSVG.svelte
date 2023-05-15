@@ -2,6 +2,10 @@
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	export let outlineObject: OutlineObject;
 	import { prettify } from '../../scripts/helpers';
+
+	let outlineName = outlineObject.specialOutlineMeanings
+		? prettify(outlineObject.specialOutlineMeanings)
+		: prettify(outlineObject.letterGroupings);
 </script>
 
 <svg
@@ -10,7 +14,7 @@
 	width="100%"
 	viewBox="0 0 750 750"
 >
-	<desc>Teeline shorthand outline for '{prettify(outlineObject.specialOutlineMeanings)}'</desc>
+	<desc>Teeline shorthand outline for '{outlineName}'</desc>
 	<path
 		id="shape0"
 		transform="translate(0, 458.461538461538)"

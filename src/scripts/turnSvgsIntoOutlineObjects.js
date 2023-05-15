@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync, writeFile } from 'fs';
 
-const svgFolderPath = '../static/outlines/shortcuts/';
+const svgFolderPath = '../../static/outlines/groupings/';
 
 let outlinesObjectArray = [];
 
@@ -26,7 +26,8 @@ readdirSync(svgFolderPath).forEach(file => {
     }
 
     let outlineObject = {
-        name: [file.replace('.svg', '')],
+        letterGroupings: [file.replace('.svg', '')],
+        specialOutlineMeanings: [],
         lines: []
     }
 

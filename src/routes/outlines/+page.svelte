@@ -3,7 +3,8 @@
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 	import Toggle from '../../lib/toggle.svelte';
 	import outlines from '../../data/outlines.json';
-	import { sortAlphabetically } from '../../scripts/helpers';
+	import { findMatchingOutline, sortOutlinesAlphabetically } from '../../scripts/helpers';
+	import { disemvowelWord } from '../../scripts/disemvowel';
 
 	let displayedOutlines: OutlineObject[] = outlines;
 	let alphabetToggleOn = false;
@@ -14,7 +15,9 @@
 	const lowerCaseAlphabet = alphabet.map((letter) => letter.toLocaleLowerCase());
 
 	let alphabetOutlines = outlines.filter((outline) =>
-		lowerCaseAlphabet.some((letter) => outline.specialOutlineMeanings.includes(letter))
+		lowerCaseAlphabet.some(
+			(letter) => outline.letterGroupings && outline.letterGroupings.includes(letter)
+		)
 	);
 
 	const toggleAlphabetFilter = () => {
@@ -26,13 +29,22 @@
 
 	const filterOutlines = (outlines: OutlineObject[], searchTerm: string) => {
 		if (alphabetToggleOn) {
-			displayedOutlines = alphabetOutlines.filter((outline) =>
-				outline.specialOutlineMeanings.join('').includes(searchTerm)
-			);
+			displayedOutlines = alphabetOutlines.filter((outline) => {
+				return (
+					(outline.specialOutlineMeanings &&
+						outline.specialOutlineMeanings.join('').includes(searchTerm)) ||
+					(outline.letterGroupings && outline.letterGroupings.join('').includes(searchTerm))
+				);
+			});
 		} else {
-			displayedOutlines = outlines.filter((outline) =>
-				outline.specialOutlineMeanings.join('').includes(searchTerm)
-			);
+			displayedOutlines = outlines.filter((outline) => {
+				return (
+					(outline.specialOutlineMeanings &&
+						outline.specialOutlineMeanings.join('').includes(searchTerm)) ||
+					(outline.letterGroupings && outline.letterGroupings.join('').includes(searchTerm)) ||
+					(outline.letterGroupings && outline.letterGroupings.includes(disemvowelWord(searchTerm)))
+				);
+			});
 		}
 	};
 </script>
@@ -56,10 +68,14 @@
 </div>
 
 <div class="animated-container">
-	{#each sortAlphabetically(displayedOutlines) as outlineObject}
+	{#each sortOutlinesAlphabetically(displayedOutlines) as outlineObject}
 		<OutlineCardAnimated {outlineObject} />
 	{/each}
 </div>
+
+{#if displayedOutlines.length === 0}
+	<div class="nothing-found-message">No outlines found matching your search.</div>
+{/if}
 
 <style>
 	.animated-container {
@@ -72,11 +88,16 @@
 		.animated-container {
 			display: grid;
 			column-gap: 30px;
-			grid-template-columns: repeat(7, 1fr);
+			grid-template-columns: repeat(6, 1fr);
 		}
 	}
 	.filters-container {
 		margin: 0 auto 2rem auto;
 		width: max-content;
+	}
+	.nothing-found-message {
+		margin: 10rem auto;
+		text-align: center;
+		font-size: 1.8rem;
 	}
 </style>

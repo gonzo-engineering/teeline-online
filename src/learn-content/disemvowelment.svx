@@ -6,6 +6,7 @@ description: The glorious gory art of removing superflous letters from words in 
 <script>
     import PassageDisemvoweler from '$lib/disemvoweler/passageDisemvoweler.svelte'
     import WordDisemvoweler from '$lib/disemvoweler/wordDisemvoweler.svelte'
+    import SyllabusLink from '$lib/syllabusLink.svelte'
 </script>    
 
 One of the main ways Teeline saves time and space is by removing as many vowels as possible.
@@ -43,3 +44,5 @@ The sum total of this is saving a lot of time and space even before you get into
 <PassageDisemvoweler />
 
 When the time comes to read what you've written, a lot depends on context. Does ‘tb’ mean ‘tab’ or ‘tub’? Or tube?! In the context of the sentence the word is in the answers will usually be clear.
+
+<SyllabusLink sectionKey="disemvowelment" />
