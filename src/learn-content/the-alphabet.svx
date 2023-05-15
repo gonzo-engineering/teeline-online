@@ -3,10 +3,10 @@ title: The alphabet
 description: Even shorthand begins with learning your ABCs. This is an intro to the Teeline alphabet
 ---
 
-Teeline is spelling-based rather than phonetic and as such has a typical A-to-Z alphabet. You can view this below, and an interactive view is availabe on [the outlines page](/outlines).
+Teeline is spelling-based rather than phonetic and as such has a typical A-to-Z alphabet. You can view this below. An interactive version is availabe on through a filter on [the outlines page](/outlines).
 
 ![A grid view of the Teeline shorthand alphabet](/images/teeline-alphabet.webp)
 
-You'll notice most letters have meanings in addition to their letter. As will become clear, reading Teeline is often heavily reliant on context. If you see an 'f' on its own it's unlikely that you've transcribed someone saying the letter 'f'. 
+You'll notice most letters have [special meanings](/learn/special-outlines) in addition to the letter itself. As will become clear, reading Teeline is often heavily reliant on context. If you see an 'f' on its own it's unlikely that you've transcribed someone saying the letter 'f' - rather you've taken of a nice quick way of writing 'from'. 
 
-You don't _always_ write words as they are spelt - sometimes it's faster to opt for a phonetic approach - but more often than not in Teeline you'll be writing the spelling.
+You don't _always_ write words as they are spelt - sometimes it's faster to opt for a phonetic approach - but more often than not in Teeline you'll be writing the words as they're spelt (that is, after they've been [disemvoweled](/learn/disemvowelment) and [the silent and double letters are done away with](/learn/silent-and-double-letters)).

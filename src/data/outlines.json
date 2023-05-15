@@ -1,7 +1,9 @@
 [
     {
+        "letterGroupings": [
+            "a"
+        ],
         "specialOutlineMeanings": [
-            "a",
             "able",
             "able to",
             "ability",
@@ -18,7 +20,7 @@
         ]
     },
     {
-        "specialOutlineMeanings": [
+        "letterGroupings": [
             "a"
         ],
         "lines": [
@@ -435,8 +437,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "b"
+        ],
         "specialOutlineMeanings": [
-            "b",
             "be",
             "been"
         ],
@@ -516,8 +520,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "c"
+        ],
         "specialOutlineMeanings": [
-            "c",
             "once",
             "offence"
         ],
@@ -804,8 +810,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "d"
+        ],
         "specialOutlineMeanings": [
-            "d",
             "do",
             "day"
         ],
@@ -952,7 +960,7 @@
         ]
     },
     {
-        "specialOutlineMeanings": [
+        "letterGroupings": [
             "e"
         ],
         "lines": [
@@ -966,8 +974,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "e"
+        ],
         "specialOutlineMeanings": [
-            "e",
             "ever",
             "every"
         ],
@@ -1431,8 +1441,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "f"
+        ],
         "specialOutlineMeanings": [
-            "f",
             "from"
         ],
         "lines": [
@@ -1589,8 +1601,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "g"
+        ],
         "specialOutlineMeanings": [
-            "g",
             "go",
             "gentleman"
         ],
@@ -1653,8 +1667,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "h"
+        ],
         "specialOutlineMeanings": [
-            "h",
             "he"
         ],
         "lines": [
@@ -1748,9 +1764,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "i"
+        ],
         "specialOutlineMeanings": [
-            "i",
-            "I",
             "eye"
         ],
         "lines": [
@@ -2047,7 +2064,7 @@
         ]
     },
     {
-        "specialOutlineMeanings": [
+        "letterGroupings": [
             "j"
         ],
         "lines": [
@@ -2089,8 +2106,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "k"
+        ],
         "specialOutlineMeanings": [
-            "k",
             "kind",
             "like",
             "knowledge"
@@ -2122,8 +2141,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "l"
+        ],
         "specialOutlineMeanings": [
-            "l",
             "letter ",
             "local"
         ],
@@ -2180,8 +2201,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "m"
+        ],
         "specialOutlineMeanings": [
-            "m",
             "me",
             "my"
         ],
@@ -2351,8 +2374,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "n"
+        ],
         "specialOutlineMeanings": [
-            "n",
             "and"
         ],
         "lines": [
@@ -2499,7 +2524,7 @@
         ]
     },
     {
-        "specialOutlineMeanings": [
+        "letterGroupings": [
             "o"
         ],
         "lines": [
@@ -2720,8 +2745,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "p"
+        ],
         "specialOutlineMeanings": [
-            "p",
             "page",
             "pence ",
             "police"
@@ -3013,8 +3040,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "q"
+        ],
         "specialOutlineMeanings": [
-            "q",
             "question",
             "equal"
         ],
@@ -3029,8 +3058,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "r"
+        ],
         "specialOutlineMeanings": [
-            "r",
             "are"
         ],
         "lines": [
@@ -3180,8 +3211,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "s"
+        ],
         "specialOutlineMeanings": [
-            "s",
             "south",
             "southern",
             "survive"
@@ -3456,8 +3489,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "t"
+        ],
         "specialOutlineMeanings": [
-            "t",
             "to"
         ],
         "lines": [
@@ -3730,7 +3765,7 @@
         ]
     },
     {
-        "specialOutlineMeanings": [
+        "letterGroupings": [
             "u"
         ],
         "lines": [
@@ -3744,8 +3779,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "v"
+        ],
         "specialOutlineMeanings": [
-            "v",
             "very",
             "have ",
             "village ",
@@ -3776,8 +3813,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "w"
+        ],
         "specialOutlineMeanings": [
-            "w",
             "we ",
             "way"
         ],
@@ -3959,8 +3998,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "x"
+        ],
         "specialOutlineMeanings": [
-            "x",
             "accident"
         ],
         "lines": [
@@ -3981,8 +4022,10 @@
         ]
     },
     {
+        "letterGroupings": [
+            "y"
+        ],
         "specialOutlineMeanings": [
-            "y",
             "your",
             "you're"
         ],
@@ -4025,7 +4068,7 @@
         ]
     },
     {
-        "specialOutlineMeanings": [
+        "letterGroupings": [
             "z"
         ],
         "lines": [
@@ -4068,7 +4111,8 @@
     },
     {
         "letterGroupings": [
-            "hd"
+            "hd",
+            "ht"
         ],
         "lines": [
             {
