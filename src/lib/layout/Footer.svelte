@@ -1,8 +1,9 @@
 <footer>
 	<div class="footer-content">
 		<p>
-			teeline.online is developed by <a href="https://frederickobrien.com">Fred O'Brien</a>, a man
-			of no particular consequence. Visit <a href="/about">the about page</a> for more information.
+			teeline.online is maintained by <a href="https://frederickobrien.com">Fred O'Brien</a>. You
+			can support the site's development by
+			<a href="https://ko-fi.com/frederickobrien">buying Fred a coffee</a>, if you like.
 		</p>
 	</div>
 </footer>

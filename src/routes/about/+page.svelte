@@ -28,6 +28,7 @@
 	<p>
 		You can support the site's development by <a href="https://ko-fi.com/frederickobrien"
 			>buying Fred a coffee</a
-		>, if you like.
+		>, if you like, and don't be shy about getting in touch with any feedback or ideas. Several of
+		its features were suggested by users.
 	</p>
 </div>
