@@ -7,7 +7,6 @@ description: How and why to join letters together in Teeline shorthand
     import type { OutlineObject } from '$lib/types.ts'
     import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte'
     import WordDisemvoweler from '$lib/disemvoweler/wordDisemvoweler.svelte'
-    import WordConverter from '$lib/wordConverter.svelte'
     import WordToOutline from '$lib/wordToOutline.svelte'
     import SyllabusLink from '$lib/syllabusLink.svelte'
 
