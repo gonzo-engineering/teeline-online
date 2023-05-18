@@ -8,7 +8,7 @@
 
 	const sectionsArray = [];
 
-	for (const [key, value] of Object.entries(learnSections)) {
+	for (const key of Object.keys(learnSections)) {
 		sectionsArray.push(key.replace('../../learn-content/', '').replace('.svx', ''));
 	}
 </script>

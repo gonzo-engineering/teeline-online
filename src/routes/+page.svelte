@@ -1,6 +1,5 @@
 <script>
 	import HomepageSection from '$lib/homepageSection.svelte';
-	import outlines from '../data/outlines.json';
 </script>
 
 <svelte:head>

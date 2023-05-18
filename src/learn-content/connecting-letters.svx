@@ -11,9 +11,9 @@ description: How and why to join letters together in Teeline shorthand
     import SyllabusLink from '$lib/syllabusLink.svelte'
 
     import outlines from '../data/outlines.json'
-	import { findMatchingSpecialOutline } from '../scripts/helpers.ts'
+	import { findMatchingOutline } from '../scripts/helpers.ts'
 
-	const conferenceOutline: OutlineObject = findMatchingSpecialOutline('conference', outlines);
+	const conferenceOutline: OutlineObject = findMatchingOutline('conference', outlines);
 </script> 
 
 The full process going on in the shorthand writer's brain is as follows:

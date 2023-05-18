@@ -2,50 +2,27 @@
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 	import Toggle from '../../lib/toggle.svelte';
-	import outlines from '../../data/outlines.json';
-	import { findMatchingOutline, sortOutlinesAlphabetically } from '../../scripts/helpers';
-	import { disemvowelWord } from '../../scripts/disemvowel';
+	import allOutlines from '../../data/outlines.json';
+	import { outlineMatchesSearchTerm, sortOutlinesAlphabetically } from '../../scripts/helpers';
 
-	let displayedOutlines: OutlineObject[] = outlines;
+	let displayedOutlines: OutlineObject[] = allOutlines;
 	let alphabetToggleOn = false;
 	let searchTerm = null;
 
-	const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+	const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
-	const lowerCaseAlphabet = alphabet.map((letter) => letter.toLocaleLowerCase());
-
-	let alphabetOutlines = outlines.filter((outline) =>
-		lowerCaseAlphabet.some(
-			(letter) => outline.letterGroupings && outline.letterGroupings.includes(letter)
-		)
+	const alphabetOutlines = allOutlines.filter((outline) =>
+		alphabet.some((letter) => outline.letterGroupings && outline.letterGroupings.includes(letter))
 	);
 
 	const toggleAlphabetFilter = () => {
-		displayedOutlines = alphabetToggleOn ? outlines : alphabetOutlines;
-		alphabetToggleOn = alphabetToggleOn ? false : true;
-
+		displayedOutlines = alphabetToggleOn ? allOutlines : alphabetOutlines;
+		alphabetToggleOn = !alphabetToggleOn;
 		searchTerm = null;
 	};
 
 	const filterOutlines = (outlines: OutlineObject[], searchTerm: string) => {
-		if (alphabetToggleOn) {
-			displayedOutlines = alphabetOutlines.filter((outline) => {
-				return (
-					(outline.specialOutlineMeanings &&
-						outline.specialOutlineMeanings.join('').includes(searchTerm)) ||
-					(outline.letterGroupings && outline.letterGroupings.join('').includes(searchTerm))
-				);
-			});
-		} else {
-			displayedOutlines = outlines.filter((outline) => {
-				return (
-					(outline.specialOutlineMeanings &&
-						outline.specialOutlineMeanings.join('').includes(searchTerm)) ||
-					(outline.letterGroupings && outline.letterGroupings.join('').includes(searchTerm)) ||
-					(outline.letterGroupings && outline.letterGroupings.includes(disemvowelWord(searchTerm)))
-				);
-			});
-		}
+		displayedOutlines = outlines.filter((outline) => outlineMatchesSearchTerm(outline, searchTerm));
 	};
 </script>
 
@@ -63,7 +40,10 @@
 		class="search-input"
 		placeholder="Search for outlines..."
 		bind:value={searchTerm}
-		on:input={() => filterOutlines(outlines, searchTerm)}
+		on:input={() => {
+			const outlinesToFilter = alphabetToggleOn ? alphabetOutlines : allOutlines;
+			filterOutlines(outlinesToFilter, searchTerm.trim());
+		}}
 	/>
 </div>
 
@@ -83,14 +63,6 @@
 		flex-direction: column;
 		row-gap: 30px;
 	}
-
-	@media (min-width: 1025px) {
-		.animated-container {
-			display: grid;
-			column-gap: 30px;
-			grid-template-columns: repeat(6, 1fr);
-		}
-	}
 	.filters-container {
 		margin: 0 auto 2rem auto;
 		width: max-content;
@@ -99,5 +71,12 @@
 		margin: 10rem auto;
 		text-align: center;
 		font-size: 1.8rem;
+	}
+	@media (min-width: 1025px) {
+		.animated-container {
+			display: grid;
+			column-gap: 30px;
+			grid-template-columns: repeat(6, 1fr);
+		}
 	}
 </style>

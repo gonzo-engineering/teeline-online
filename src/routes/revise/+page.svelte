@@ -1,32 +1,28 @@
 <script lang="ts">
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
-	import outlines from '../../data/outlines.json';
+	import allOutlines from '../../data/outlines.json';
 	import FlippingOutlineCard from '../../lib/cards/OutlineCardFlipping.svelte';
 	import Toggle from '../../lib/toggle.svelte';
 	import { shuffleOutlines } from '../../scripts/helpers';
 
-	const shuffledOutlines: OutlineObject[] = shuffleOutlines(outlines);
+	const shuffledSpecialOutlines: OutlineObject[] = shuffleOutlines(
+		allOutlines.filter((outline) => outline.specialOutlineMeanings)
+	);
 
 	let counter = 0;
-	let outlineObject = shuffledOutlines[counter];
+	let outlineObject = shuffledSpecialOutlines[counter];
 	let outlineFirst = false;
 
 	const changeOutline = () => {
-		if (counter === outlines.length - 1) counter = 0;
-		else counter++;
-		console.log(counter);
-		outlineObject = shuffledOutlines[counter];
+		counter === allOutlines.length - 1 ? (counter = 0) : counter++;
+		outlineObject = shuffledSpecialOutlines[counter];
 	};
 
-	const handleKeydown = (event) => {
-		if (event.keyCode === 32) {
-			changeOutline();
-		}
+	const handleKeydown = (event: { keyCode: number }) => {
+		event.keyCode === 32 ? changeOutline() : null;
 	};
 
-	const toggleCardOrientation = () => {
-		outlineFirst = !outlineFirst;
-	};
+	const toggleCardOrientation = () => (outlineFirst = !outlineFirst);
 </script>
 
 <svelte:head>
@@ -58,25 +54,20 @@
 	.content {
 		padding: 20px 0;
 	}
-
 	.info-container {
 		text-align: center;
 	}
-
 	.button-container {
 		text-align: center;
 	}
-
 	button {
 		font-size: 2rem;
 		border-radius: 10px;
 		padding: 10px 20px;
 	}
-
 	.flipcard-container {
 		width: 100%;
 	}
-
 	@media (min-width: 1025px) {
 		.flipcard-container {
 			width: 30%;
