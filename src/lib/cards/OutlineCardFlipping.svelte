@@ -2,9 +2,9 @@
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import OutlineSvg from './OutlineSVG.svelte';
 	import { prettify } from '../../scripts/helpers';
-  
+
 	export let outlineObject: OutlineObject;
-	export let outlineFirst;
+	export let outlineFirst: boolean;
 </script>
 
 <div class="flip-card">
@@ -12,9 +12,7 @@
 		<div class="flip-card-front">
 			<div class="svg-container">
 				{#if outlineFirst}
-					<div class="svg-container">
-						<OutlineSvg {outlineObject} />
-					</div>
+					<OutlineSvg {outlineObject} />
 				{:else}
 					<div>{prettify(outlineObject.specialOutlineMeanings)}</div>
 				{/if}
@@ -41,7 +39,6 @@
 		perspective: 1000px;
 		margin: 5vw auto;
 	}
-
 	.flip-card-inner {
 		position: relative;
 		width: 100%;
@@ -50,11 +47,9 @@
 		transition: transform 0.8s;
 		transform-style: preserve-3d;
 	}
-
 	.flip-card:hover .flip-card-inner {
 		transform: rotateY(180deg);
 	}
-
 	.flip-card-front,
 	.flip-card-back {
 		position: absolute;
@@ -66,13 +61,11 @@
 		border-radius: 10px;
 		/* transform: perspective(1000px) rotateX(4deg) rotateY(-16deg) rotateZ(4deg); */
 	}
-
 	.flip-card-front {
 		background-color: white;
 		color: black;
 		display: flex;
 	}
-
 	.flip-card-back {
 		background-color: white;
 		transform: rotateY(180deg);
@@ -81,7 +74,6 @@
 		justify-content: center;
 		align-items: center;
 	}
-
 	.svg-container {
 		width: 60%;
 		margin: auto;
