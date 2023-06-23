@@ -9,7 +9,7 @@
 <div class="container">
 	<a href={sectionPath}>
 		<div class="card-contents">
-			<h3>{sectionName}</h3>
+			<h2>{sectionName}</h2>
 			<img src={sectionImage} alt={sectionImageAlt} />
 			<div>{sectionBlurb}</div>
 		</div>
@@ -28,6 +28,9 @@
 		border-radius: 20px;
 		padding: 30px;
 		font-size: 1.8rem;
+	}
+	.card-contents h2 {
+		font-size: 3rem;
 	}
 	img {
 		margin: 20px 0;
