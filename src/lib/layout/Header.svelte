@@ -50,7 +50,4 @@
 		margin: 0 20px;
 		list-style-type: none;
 	}
-	.active {
-		color: red;
-	}
 </style>
