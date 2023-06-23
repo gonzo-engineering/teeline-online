@@ -46,6 +46,7 @@
 		text-align: center;
 		transition: transform 0.8s;
 		transform-style: preserve-3d;
+		font-size: 2.3rem;
 	}
 	.flip-card:hover .flip-card-inner {
 		transform: rotateY(180deg);
