@@ -34,6 +34,7 @@
 	}
 	img {
 		margin: 20px 0;
+		aspect-ratio: 4 / 3;
 	}
 
 	@media (min-width: 1025px) {
