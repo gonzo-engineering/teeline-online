@@ -29,6 +29,10 @@ h3 {
 	font-size: 3rem;
 }
 
+h4 {
+	font-size: 2.5rem;
+}
+
 a {
 	text-decoration: underline;
 	text-decoration-thickness: 8%;
