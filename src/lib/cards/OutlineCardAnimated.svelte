@@ -22,13 +22,17 @@
 			<div class="outline-label">
 				{makeLetterLabel(outlineObject.letterGroupings)}
 			</div>
-			<div class="outline-meaning">{prettify(outlineObject.letterGroupings)}</div>
+			<div class="outline-meaning">
+				{prettify(outlineObject.letterGroupings)}
+			</div>
 		{/if}
 		{#if displayName && outlineObject.specialOutlineMeanings}
 			<div class="outline-label">
 				Special meaning{outlineObject.specialOutlineMeanings.length > 1 ? 's' : ''}
 			</div>
-			<div class="outline-meaning">{prettify(outlineObject.specialOutlineMeanings)}</div>
+			<div class="outline-meaning">
+				{prettify(outlineObject.specialOutlineMeanings)}
+			</div>
 		{/if}
 	</div>
 </div>

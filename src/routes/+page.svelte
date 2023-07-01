@@ -44,7 +44,9 @@
 	/>
 </div>
 <div class="copy-container">
-	<p>Want to learn more about the project? Visit <a href="/about">the about page</a>.</p>
+	<p>
+		Want to learn more about the project? Visit <a href="/about">the about page</a>.
+	</p>
 </div>
 
 <style>

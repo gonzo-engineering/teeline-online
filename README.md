@@ -45,4 +45,3 @@ The font is a digitised version of my own non-cursive handwriting. This project 
 - [Teeline Mate](https://github.com/adxsoft/TeelineMate) by [@adxsoft](https://github.com/adxsoft)
 - [A Searchable Teeline Dictionary](http://realerthinks.com/a-searchable-teeline-dictionary/) by Addie Kingsland
 - [Teeline for the curious: a story of learning things because I can](http://realerthinks.com/teeline-for-the-curious-a-story-of-learning-things-because-i-can/) by Addie Kingsland
-

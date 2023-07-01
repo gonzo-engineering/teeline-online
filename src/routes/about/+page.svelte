@@ -18,8 +18,8 @@
 		The source code is publicly available on <a
 			href="https://github.com/frederickobrien/teeline-online">GitHub</a
 		>
-		and the data at its core is available <a href="/data/outlines.json">here</a>. The site is built
-		with
+		and the data at its core is available
+		<a href="/data/outlines.json">here</a>. The site is built with
 		<a href="https://svelte.dev/">Svelte</a>
 		and hosted on <a href="https://netlify.com/">Netlify</a>. The font is based on Fred's own
 		handwriting - a nod to the project being partly inspired by the revision flash cards he made
