@@ -2,14 +2,14 @@
 	"name": "teeline.online",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "npm run copy-data && vite dev",
-		"build": "npm run copy-data && vite build",
+		"dev": "npm run format && npm run lint && rm -r static/data && npm run copy-data && vite dev",
+		"build": "npm run format && npm run lint && npm run copy-data && vite build",
 		"preview": "npm run copy-data && vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"copy-data": "rm -r static/data && mkdir static/data && cp src/data/outlines.json static/data/outlines.json"
+		"copy-data": "mkdir static/data && cp src/data/outlines.json static/data/outlines.json"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-netlify": "^2.0.7",
