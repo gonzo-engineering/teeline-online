@@ -2,7 +2,7 @@
 	"name": "teeline.online",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "npm run format && npm run lint && rm -r static/data && npm run copy-data && vite dev",
+		"dev": "npm run format && npm run lint && npm run copy-data && vite dev",
 		"build": "npm run format && npm run lint && npm run copy-data && vite build",
 		"preview": "npm run copy-data && vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
@@ -17,7 +17,7 @@
 		"@tsconfig/svelte": "^4.0.1",
 		"@typescript-eslint/eslint-plugin": "^5.60.0",
 		"@typescript-eslint/parser": "^5.60.0",
-		"eslint": "^8.44.0",
+		"eslint": "^8.43.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"mdsvex": "^0.11.0",
