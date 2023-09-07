@@ -65,7 +65,9 @@
 	}
 	.filters-container {
 		margin: 0 auto 2rem auto;
-		width: max-content;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 	}
 	.nothing-found-message {
 		margin: 10rem auto;

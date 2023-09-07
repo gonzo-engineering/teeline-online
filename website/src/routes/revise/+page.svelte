@@ -52,7 +52,7 @@
 
 <style>
 	.content {
-		padding: 20px 0;
+		padding: 0 0 20px 0;
 	}
 	.info-container {
 		text-align: center;

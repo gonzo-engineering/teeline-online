@@ -47,7 +47,10 @@
 	}
 
 	body {
-		width: 90%;
+		width: 85vw;
 		margin: auto;
+	}
+	main {
+		width: 100%;
 	}
 </style>
