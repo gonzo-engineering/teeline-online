@@ -3,17 +3,23 @@
 	export let toggleFunction;
 </script>
 
-<div class="filter-label">{toggleLabel}</div>
-<label class="switch">
-	<input type="checkbox" on:click={toggleFunction} />
-	<span class="slider round" />
-</label>
+<div class="toggle-container">
+	<div class="filter-label">{toggleLabel}</div>
+	<label class="switch">
+		<input type="checkbox" on:click={toggleFunction} />
+		<span class="slider round" />
+	</label>
+</div>
 
 <style>
+	.toggle-container {
+		margin-bottom: 1rem;
+	}
 	.filter-label {
 		margin-right: 0.5rem;
 		display: inline-block;
 		font-size: 1.8rem;
+		vertical-align: middle;
 	}
 	/* The switch - the box around the slider */
 	.switch {
@@ -21,6 +27,7 @@
 		display: inline-block;
 		width: 60px;
 		height: 34px;
+		vertical-align: middle;
 	}
 
 	/* Hide default HTML checkbox */
@@ -76,5 +83,12 @@
 
 	.slider.round:before {
 		border-radius: 50%;
+	}
+
+	/* Set responsive styling for desktop */
+	@media (min-width: 768px) {
+		.toggle-container {
+			margin-bottom: 0;
+		}
 	}
 </style>

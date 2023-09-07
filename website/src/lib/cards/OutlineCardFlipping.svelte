@@ -34,8 +34,8 @@
 	.flip-card {
 		background-color: transparent;
 		aspect-ratio: 450 / 300;
-		width: 450px;
-		height: 300px;
+		width: 100%;
+		height: auto;
 		perspective: 1000px;
 		margin: 5vw auto;
 	}
