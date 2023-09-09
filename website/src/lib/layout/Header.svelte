@@ -4,7 +4,7 @@
 
 <header>
 	<h1><a href="/">teeline.online</a></h1>
-	<div class="tagline">A (short)handy site</div>
+	<div class="tagline">Very (short)handy</div>
 	<nav>
 		<ul>
 			<li><HeaderLink href="/learn" title="Learn" /></li>
