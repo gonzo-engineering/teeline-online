@@ -1,6 +1,7 @@
 {
 	"short_name": "teeline.online",
 	"name": "teeline.online",
+	"categories": ["education", "news"],
 	"icons": [
 		{
 			"src": "windows11/SmallTile.scale-100.png",
@@ -326,7 +327,7 @@
 			"src": "android/maskable_icon.png",
 			"sizes": "512x512",
 			"type": "image/png",
-			"purpose": "any maskable"
+			"purpose": "maskable"
 		},
 		{
 			"src": "android/maskable_icon.png",
