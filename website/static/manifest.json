@@ -470,7 +470,7 @@
 	"display": "standalone",
 	"scope": "/",
 	"theme_color": "#ffffff",
-	"display_override": "minimal-ui",
+	"display_override": ["minimal-ui", "window-controls-overlay"],
 	"edge_side_panel": {
 		"preferred_width": 480
 	},
@@ -531,5 +531,8 @@
 			"sizes": "581x917",
 			"form_factor": "narrow"
 		}
-	]
+	],
+	"prefer_related_applications": false,
+	"lang": "en",
+	"dir": "ltr"
 }
