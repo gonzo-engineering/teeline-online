@@ -323,6 +323,18 @@
 			"sizes": "256x256"
 		},
 		{
+			"src": "android/maskable_icon.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "android/maskable_icon.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
 			"src": "android/android-launchericon-512-512.png",
 			"sizes": "512x512"
 		},
@@ -345,12 +357,6 @@
 		{
 			"src": "android/android-launchericon-48-48.png",
 			"sizes": "48x48"
-		},
-		{
-			"src": "android/maskable_icon.png",
-			"sizes": "512x512",
-			"type": "image/png",
-			"purpose": "any maskable"
 		},
 		{
 			"src": "ios/16.png",
@@ -463,6 +469,15 @@
 	"display": "standalone",
 	"scope": "/",
 	"theme_color": "#ffffff",
+	"display_override": "minimal-ui",
+	"edge_side_panel": {
+		"preferred_width": 480
+	},
+	"handle_links": "auto",
+	"launch_handler": {
+		"client_mode": ["focus-existing", "auto"]
+	},
+	"orientation": "landscape-primary",
 	"shortcuts": [
 		{
 			"name": "Study Teeline shorthand",
