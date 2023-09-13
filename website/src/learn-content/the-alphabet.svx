@@ -1,6 +1,8 @@
 ---
 title: The alphabet
 description: Even shorthand begins with learning your ABCs. This is an intro to the Teeline alphabet
+slug: the-alphabet
+order: 2
 ---
 
 <script>
@@ -14,5 +16,3 @@ Teeline is spelling-based rather than phonetic and as such has a typical A-to-Z 
 You'll notice most letters have [special meanings](/learn/special-outlines) in addition to the letter itself. You'll know which is which translating your notes. Reading Teeline is often heavily reliant on context. If you see an 'f' on its own it's unlikely that you've transcribed someone saying the letter 'f'. Odds are you've taken advantage of a nice quick way of writing 'from'. 
 
 You don't _always_ write words as they are spelt - sometimes it's faster to opt for a phonetic approach - but more often than not in Teeline that will be your starting point. The words still need to be [disemvoweled](/learn/disemvowelment) and [have their silent and double letters done away with](/learn/silent-and-double-letters), but we'll get to that.
-
-<SyllabusLink sectionKey="the-alphabet" />

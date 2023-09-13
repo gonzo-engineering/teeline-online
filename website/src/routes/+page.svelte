@@ -1,5 +1,5 @@
 <script>
-	import HomepageSection from '$lib/homepageSection.svelte';
+	import PageTeaserCard from '$lib/pageTeaserCard.svelte';
 </script>
 
 <svelte:head>
@@ -20,22 +20,21 @@
 	<p>This site is a resource for anyone who wants to learn or practice Teeline shorthand.</p>
 </div>
 <div class="site-sections-container">
-	<HomepageSection
+	<PageTeaserCard
 		sectionName="Learn"
 		sectionBlurb="Study the basics and core theory of Teeline shorthand"
 		sectionPath="/learn"
 		sectionImage="/images/section-teaser-learn.webp"
 		sectionImageAlt="Ink drawing of a man scratching his head in confusion."
 	/>
-	<HomepageSection
+	<PageTeaserCard
 		sectionName="Outlines"
 		sectionBlurb="Browse and search hundreds of animated Teeline outlines"
 		sectionPath="/outlines"
 		sectionImage="/images/section-teaser-outlines.webp"
 		sectionImageAlt="A grid of cards with Teeline shorthand outlines drawn on them."
 	/>
-
-	<HomepageSection
+	<PageTeaserCard
 		sectionName="Revise"
 		sectionBlurb="Put your knowledge to the test with virtual flashcards"
 		sectionPath="/revise"
@@ -55,9 +54,6 @@
 		margin-left: auto;
 		margin-right: auto;
 		margin-top: 50px;
-	}
-
-	.site-sections-container {
 		display: flex;
 		flex-wrap: wrap;
 		column-gap: 4%;
@@ -67,6 +63,11 @@
 	@media (min-width: 1025px) {
 		.site-sections-container {
 			width: 60%;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: 1fr;
+			grid-column-gap: 2rem;
+			grid-row-gap: 0px;
 		}
 	}
 </style>

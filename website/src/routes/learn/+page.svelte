@@ -1,16 +1,6 @@
 <script lang="ts">
-	import type { SyllabusSection } from '../../data/interfaces/interfaces';
-	import syllabusDetails from '../../data/syllabus.json';
-
-	const syllabus = syllabusDetails as SyllabusSection[];
-
-	const learnSections = import.meta.glob('../../learn-content/*.svx');
-
-	const sectionsArray = [];
-
-	for (const key of Object.keys(learnSections)) {
-		sectionsArray.push(key.replace('../../learn-content/', '').replace('.svx', ''));
-	}
+	import PageTeaserCard from '$lib/pageTeaserCard.svelte';
+	import { syllabusMetadata } from '../../data/syllabus';
 </script>
 
 <svelte:head>
@@ -23,14 +13,34 @@
 
 <div class="copy-container">
 	<div class="learn-menu">
-		<ul>
-			{#each syllabus as section}
-				<li>
-					<a href="/learn/{section.slug}">
-						{section.name}
-					</a>
-				</li>
-			{/each}
-		</ul>
+		{#each syllabusMetadata as section}
+			<div class="test">
+				<PageTeaserCard
+					sectionName="{section.order}. {section.title}"
+					sectionBlurb={section.description}
+					sectionPath="/learn/{section.slug}"
+				/>
+			</div>
+		{/each}
 	</div>
 </div>
+
+<style>
+	.learn-menu {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		row-gap: 1rem;
+	}
+
+	@media (min-width: 768px) {
+		.learn-menu {
+			flex-direction: row;
+			flex-wrap: wrap;
+			column-gap: 1rem;
+		}
+		.test {
+			width: 30%;
+		}
+	}
+</style>

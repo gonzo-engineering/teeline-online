@@ -1,6 +1,8 @@
 ---
 title: Introduction
 description: Getting started with Teeline shorthand
+slug: introduction
+order: 1
 ---
 
 <script>
@@ -12,5 +14,3 @@ Shorthand is a way of writing lots of words really quickly. Teeline is a type of
 Although audio recording technology makes shorthand less essential than it once was, it remains an important part of the journalist skillset. In a pinch it can be the difference between getting a killer quote and going home empty handed.
 
 The core principles of Teeline shorthand are pretty simple - remove as many letters as possible and write words using as few pen strokes as possible - but there are lots of tricks and techniques for cranking the speed up. With (a shitload of) practice you won't need to think, which is just as well given you won't have time to.
-
-<SyllabusLink sectionKey="introduction" />

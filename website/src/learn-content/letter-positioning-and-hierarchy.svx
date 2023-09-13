@@ -1,6 +1,8 @@
 ---
 title: Letter positioning and hierarchy
 description: Exploring the quirks of how letter placement affects meaning in Teeline shorthand
+slug: letter-positioning-and-hierarchy
+order: 3
 ---
 
 <script>
@@ -48,5 +50,3 @@ If you have a 't' next to a 'd', put the 'd' just below. If the situation is rev
 <OutlineCardsSideBySide leftOutline={toDoOutline} rightOutline={differentOutline} />
 
 We'll get into this in more depth in the ['Connecting letters'](/learn/connecting-letters) section. For now it is enough to know that the vertical position of certain letters is essential to what they mean, and this makes those letters more dominant than their kin.
-
-<SyllabusLink sectionKey="letter-positioning-and-hierarchy" />

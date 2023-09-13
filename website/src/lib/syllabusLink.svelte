@@ -1,24 +1,25 @@
 <script lang="ts">
+	import type { SyllabusSection } from '../data/interfaces/interfaces';
+
 	export let sectionKey: string;
+	export let syllabusMetadata: SyllabusSection[];
 
-	import syllabus from '../data/syllabus.json';
-
-	const thisSection = syllabus.find((section) => section.slug === sectionKey);
+	const thisSection = syllabusMetadata.find((section) => section.slug === sectionKey);
 	const previousSection =
 		thisSection.order === 1
-			? null
-			: syllabus.find((section) => section.order === thisSection.order - 1);
+			? undefined
+			: syllabusMetadata.find((section) => section.order === thisSection.order - 1);
 	const nextSection =
-		thisSection.order === syllabus.length
-			? null
-			: syllabus.find((section) => section.order === thisSection.order + 1);
+		thisSection.order === syllabusMetadata.length
+			? undefined
+			: syllabusMetadata.find((section) => section.order === thisSection.order + 1);
 </script>
 
 <div class="links-container">
 	{#if previousSection}
 		<div>
 			← <a href={`/learn/${previousSection.slug}`}>
-				{previousSection.name}
+				{previousSection.title}
 			</a>
 		</div>
 	{/if}
@@ -28,7 +29,7 @@
 	{#if nextSection}
 		<div>
 			<a href={`/learn/${nextSection.slug}`}>
-				{nextSection.name}
+				{nextSection.title}
 			</a> →
 		</div>
 	{/if}
