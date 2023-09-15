@@ -1,8 +1,7 @@
 <script lang="ts">
-	import type { SyllabusSection } from '../data/interfaces/interfaces';
+	import { syllabusMetadata } from '../data/syllabus';
 
 	export let sectionKey: string;
-	export let syllabusMetadata: SyllabusSection[];
 
 	const thisSection = syllabusMetadata.find((section) => section.slug === sectionKey);
 	const previousSection =

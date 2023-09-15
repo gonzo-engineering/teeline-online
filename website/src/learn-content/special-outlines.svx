@@ -29,3 +29,5 @@ Here are a few examples:
 Imagine how much longer it would take to write those out fully, even in Teeline. When you're desperately scrawling down a statement those fractions of a second will be invaluable.
 
 There is no real trick to special outlines. Of course it doesn't hurt to understand _why_ it represents what it represents, but the main thing is that they are remembered. It's with special outlines that it's especially important to [revise](/revise). When you hear 'ladies and gentlemen' the special outline should come instinctively.
+
+<SyllabusLink sectionKey={slug} />

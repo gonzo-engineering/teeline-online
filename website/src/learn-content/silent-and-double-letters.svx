@@ -27,3 +27,5 @@ In a similar vein, silent letters should also be cut.
 <WordDisemvoweler word="bone" />
 
 The same applies to groupings of silent letters. For example, the word 'right' can afford to lose the 'g' and the 'h' and be just as understandable. Put all these little savings together and they can really add up: **'Th dbl dcr bs trnd rt at th trfc lts'**.
+
+<SyllabusLink sectionKey={slug} />
