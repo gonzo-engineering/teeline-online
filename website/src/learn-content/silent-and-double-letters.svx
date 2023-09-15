@@ -1,6 +1,8 @@
 ---
 title: Silent and double letters
 description: The nitty gritty of removing unheard letters from words in Teeline shorthand
+slug: silent-and-double-letters
+order: 5
 ---
 
 <script>
@@ -26,4 +28,4 @@ In a similar vein, silent letters should also be cut.
 
 The same applies to groupings of silent letters. For example, the word 'right' can afford to lose the 'g' and the 'h' and be just as understandable. Put all these little savings together and they can really add up: **'Th dbl dcr bs trnd rt at th trfc lts'**.
 
-<SyllabusLink sectionKey="silent-and-double-letters" />
+<SyllabusLink sectionKey={slug} />

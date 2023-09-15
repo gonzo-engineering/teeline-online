@@ -2,15 +2,17 @@
 	export let sectionName;
 	export let sectionBlurb;
 	export let sectionPath;
-	export let sectionImage;
-	export let sectionImageAlt;
+	export let sectionImage = '';
+	export let sectionImageAlt = '';
 </script>
 
 <div class="container">
 	<a href={sectionPath}>
 		<div class="card-contents">
 			<h2>{sectionName}</h2>
-			<img src={sectionImage} alt={sectionImageAlt} />
+			{#if sectionImage !== ''}
+				<img src={sectionImage} alt={sectionImageAlt} />
+			{/if}
 			<div>{sectionBlurb}</div>
 		</div>
 	</a>
@@ -22,6 +24,7 @@
 		text-decoration: none;
 		font-weight: normal;
 		text-align: center;
+		width: 100%;
 	}
 	.card-contents {
 		box-shadow: 0px 0px 10px 1px #e1e1e1;
@@ -30,16 +33,10 @@
 		font-size: 1.8rem;
 	}
 	.card-contents h2 {
-		font-size: 3rem;
+		font-size: 2.6rem;
 	}
 	img {
 		margin: 20px 0;
 		aspect-ratio: 4 / 3;
-	}
-
-	@media (min-width: 1025px) {
-		.container {
-			width: 30%;
-		}
 	}
 </style>

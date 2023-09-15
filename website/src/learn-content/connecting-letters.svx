@@ -1,6 +1,8 @@
 ---
 title: Connecting letters
 description: How and why to join letters together in Teeline shorthand
+slug: connecting-letters
+order: 6
 ---
 
 <script lang="ts">
@@ -41,4 +43,4 @@ Look at that. One motion of the pen. Eleven would be needed to write it out in l
 
 This is an extreme example given 'conference' has an extra succinct special outline, but it represents a key tenet of shorthand: **the fewer pen strokes the better**.
 
-<SyllabusLink sectionKey="connecting-letters" />
+<SyllabusLink sectionKey={slug} />

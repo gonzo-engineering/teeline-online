@@ -1,6 +1,8 @@
 ---
 title: The alphabet
 description: Even shorthand begins with learning your ABCs. This is an intro to the Teeline alphabet
+slug: the-alphabet
+order: 2
 ---
 
 <script>
@@ -15,4 +17,4 @@ You'll notice most letters have [special meanings](/learn/special-outlines) in a
 
 You don't _always_ write words as they are spelt - sometimes it's faster to opt for a phonetic approach - but more often than not in Teeline that will be your starting point. The words still need to be [disemvoweled](/learn/disemvowelment) and [have their silent and double letters done away with](/learn/silent-and-double-letters), but we'll get to that.
 
-<SyllabusLink sectionKey="the-alphabet" />
+<SyllabusLink sectionKey={slug} />

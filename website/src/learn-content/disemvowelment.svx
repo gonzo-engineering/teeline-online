@@ -1,6 +1,8 @@
 ---
 title: Disemvowelment
 description: The glorious gory art of removing superflous letters from words in Teeline shorthand
+slug: disemvowelment
+order: 4
 ---
 
 <script>
@@ -45,4 +47,4 @@ The sum total of this is saving a lot of time and space even before you get into
 
 When the time comes to read what you've written, a lot depends on context. Does ‘tb’ mean ‘tab’ or ‘tub’? Or tube?! In the context of the sentence the word is in the answers will usually be clear.
 
-<SyllabusLink sectionKey="disemvowelment" />
+<SyllabusLink sectionKey={slug} />

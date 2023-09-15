@@ -10,7 +10,8 @@ type LineDetails = {
 };
 
 export interface SyllabusSection {
-	order: number;
-	name: string;
+	title: string;
+	description: string;
 	slug: string;
+	order: number;
 }
