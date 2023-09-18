@@ -39,7 +39,9 @@
 		font-weight: 500;
 		font-display: swap;
 		src: url('/fonts/handwriting.otf'); /* IE9 Compat Modes */
-		src: local(''), url('/fonts/handwriting.otf') format('embedded-opentype'),
+		src:
+			local(''),
+			url('/fonts/handwriting.otf') format('embedded-opentype'),
 			/* IE6-IE8 */ url('/fonts/handwriting.otf') format('woff2'),
 			/* Super Modern Browsers */ url('/fonts/handwriting.otf') format('woff'),
 			/* Modern Browsers */ url('/fonts/handwriting.otf') format('truetype'),

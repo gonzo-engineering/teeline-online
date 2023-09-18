@@ -7,8 +7,8 @@
 		"preview": "npm run copy-data && vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
-		"lint": "prettier --plugin-search-dir . --check .",
-		"format": "prettier --plugin-search-dir . --write .",
+		"lint": "prettier --check  --plugin prettier-plugin-svelte .",
+		"format": "prettier --write --plugin prettier-plugin-svelte .",
 		"copy-data": "mkdir static/data && cp src/data/outlines.json static/data/outlines.json"
 	},
 	"devDependencies": {
