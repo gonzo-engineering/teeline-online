@@ -3,9 +3,10 @@
 	export let outlineObject: OutlineObject;
 	import { prettify } from '../../scripts/helpers';
 
-	let outlineName = outlineObject.specialOutlineMeanings
-		? prettify(outlineObject.specialOutlineMeanings)
-		: prettify(outlineObject.letterGroupings);
+	let outlineName =
+		outlineObject.specialOutlineMeanings.length > 0
+			? prettify(outlineObject.specialOutlineMeanings)
+			: prettify(outlineObject.letterGroupings);
 </script>
 
 <svg
