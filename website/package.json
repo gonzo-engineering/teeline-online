@@ -30,6 +30,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"vite": "^4.4.9"
+		"vite": "^4.4.11"
 	}
 }
