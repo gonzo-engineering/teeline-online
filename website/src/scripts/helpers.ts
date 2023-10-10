@@ -7,12 +7,14 @@ export const prettify = (outlineNames: string[]): string => {
 
 export const sortOutlinesAlphabetically = (outlinesArray: OutlineObject[]): OutlineObject[] => {
 	outlinesArray.sort((outlineA, outlineB) => {
-		const outlineLabelA = outlineA.letterGroupings
-			? outlineA.letterGroupings[0].toUpperCase()
-			: outlineA.specialOutlineMeanings[0].toUpperCase();
-		const outlineLabelB = outlineB.letterGroupings
-			? outlineB.letterGroupings[0].toUpperCase()
-			: outlineB.specialOutlineMeanings[0].toUpperCase();
+		const outlineLabelA =
+			outlineA.letterGroupings.length > 0
+				? outlineA.letterGroupings[0].toUpperCase()
+				: outlineA.specialOutlineMeanings[0].toUpperCase();
+		const outlineLabelB =
+			outlineB.letterGroupings.length > 0
+				? outlineB.letterGroupings[0].toUpperCase()
+				: outlineB.specialOutlineMeanings[0].toUpperCase();
 		return outlineLabelA < outlineLabelB ? -1 : outlineLabelA > outlineLabelB ? 1 : 0;
 	});
 	return outlinesArray;
@@ -32,11 +34,11 @@ export const randomIntFromInterval = (min: number, max: number) => {
 
 export const findMatchingOutline = (word: string, outlinesArray: OutlineObject[]) => {
 	const disemvoweledWord = disemvowelWord(word);
-	const matchingLetterSequenceOutline = outlinesArray.find(
-		(outline) => outline.letterGroupings && outline.letterGroupings.includes(disemvoweledWord)
+	const matchingLetterSequenceOutline = outlinesArray.find((outline) =>
+		outline.letterGroupings.includes(disemvoweledWord)
 	);
-	const matchingSpecialOutline = outlinesArray.find(
-		(outline) => outline.specialOutlineMeanings && outline.specialOutlineMeanings.includes(word)
+	const matchingSpecialOutline = outlinesArray.find((outline) =>
+		outline.specialOutlineMeanings.includes(word)
 	);
 
 	if (matchingSpecialOutline) return matchingSpecialOutline;
@@ -46,9 +48,8 @@ export const findMatchingOutline = (word: string, outlinesArray: OutlineObject[]
 
 export const outlineMatchesSearchTerm = (outline: OutlineObject, searchTerm: string) => {
 	return (
-		(outline.specialOutlineMeanings &&
-			outline.specialOutlineMeanings.join('').includes(searchTerm)) ||
-		(outline.letterGroupings && outline.letterGroupings.join('').includes(searchTerm)) ||
-		(outline.letterGroupings && outline.letterGroupings.includes(disemvowelWord(searchTerm)))
+		outline.specialOutlineMeanings.join('').includes(searchTerm) ||
+		outline.letterGroupings.join('').includes(searchTerm) ||
+		outline.letterGroupings.includes(disemvowelWord(searchTerm))
 	);
 };

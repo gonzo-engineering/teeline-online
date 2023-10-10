@@ -6,7 +6,7 @@
 	import { shuffleOutlines } from '../../scripts/helpers';
 
 	const shuffledSpecialOutlines: OutlineObject[] = shuffleOutlines(
-		allOutlines.filter((outline) => outline.specialOutlineMeanings)
+		allOutlines.filter((outline) => outline.specialOutlineMeanings.length > 0)
 	);
 
 	let counter = 0;

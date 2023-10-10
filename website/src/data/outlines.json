@@ -11,6 +11,7 @@
 	},
 	{
 		"letterGroupings": ["a"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
 				"path": "M0 0.109179C2.97633 -2.12307 32.4813 30.4077 50.9305 48.857",
@@ -19,6 +20,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["a lot of"],
 		"lines": [
 			{
@@ -58,6 +60,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["after all"],
 		"lines": [
 			{
@@ -67,6 +70,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["air ", "arch"],
 		"lines": [
 			{
@@ -76,6 +80,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["already"],
 		"lines": [
 			{
@@ -85,6 +90,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["also"],
 		"lines": [
 			{
@@ -94,6 +100,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["alternative"],
 		"lines": [
 			{
@@ -103,6 +110,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["always"],
 		"lines": [
 			{
@@ -112,6 +120,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["amount"],
 		"lines": [
 			{
@@ -121,6 +130,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["and the"],
 		"lines": [
 			{
@@ -130,6 +140,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["anything"],
 		"lines": [
 			{
@@ -143,6 +154,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["appropriate"],
 		"lines": [
 			{
@@ -170,6 +182,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["area"],
 		"lines": [
 			{
@@ -183,6 +196,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["arrange"],
 		"lines": [
 			{
@@ -196,6 +210,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["as a result"],
 		"lines": [
 			{
@@ -213,6 +228,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["association"],
 		"lines": [
 			{
@@ -222,6 +238,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["at"],
 		"lines": [
 			{
@@ -231,6 +248,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["at the"],
 		"lines": [
 			{
@@ -240,6 +258,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["at the same time"],
 		"lines": [
 			{
@@ -249,6 +268,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["atomic"],
 		"lines": [
 			{
@@ -258,6 +278,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["attention"],
 		"lines": [
 			{
@@ -267,6 +288,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["auto"],
 		"lines": [
 			{
@@ -286,6 +308,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["because"],
 		"lines": [
 			{
@@ -295,6 +318,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["begin", "began", "begun"],
 		"lines": [
 			{
@@ -334,6 +358,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["chairman"],
 		"lines": [
 			{
@@ -353,6 +378,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["children"],
 		"lines": [
 			{
@@ -362,6 +388,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["church"],
 		"lines": [
 			{
@@ -395,6 +422,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["city"],
 		"lines": [
 			{
@@ -414,6 +442,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["committee"],
 		"lines": [
 			{
@@ -423,6 +452,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["communication"],
 		"lines": [
 			{
@@ -436,6 +466,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["community"],
 		"lines": [
 			{
@@ -445,6 +476,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["conference"],
 		"lines": [
 			{
@@ -454,6 +486,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["congratulate"],
 		"lines": [
 			{
@@ -467,6 +500,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["consequent"],
 		"lines": [
 			{
@@ -476,6 +510,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["convenient"],
 		"lines": [
 			{
@@ -485,6 +520,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["country"],
 		"lines": [
 			{
@@ -514,6 +550,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["department"],
 		"lines": [
 			{
@@ -533,6 +570,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["difference"],
 		"lines": [
 			{
@@ -560,6 +598,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["difficult"],
 		"lines": [
 			{
@@ -569,6 +608,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["difficulty"],
 		"lines": [
 			{
@@ -578,6 +618,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["discontinue"],
 		"lines": [
 			{
@@ -598,6 +639,7 @@
 	},
 	{
 		"letterGroupings": ["e"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
 				"path": "M0 1.58539e-05C0 -0.0161497 3.25077 12.3348 3.36842 15.8057C3.72459 26.3126 5.50441 37.0311 3.88664 47.5466C3.68471 48.8591 0.915179 58.7164 1.81377 59.2065C4.98583 60.9367 55.8191 59.4887 65.8138 60.1134C68.4376 60.2774 70.1017 59.7057 68.2753 62.4454",
@@ -616,6 +658,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["each"],
 		"lines": [
 			{
@@ -625,6 +668,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["electric"],
 		"lines": [
 			{
@@ -634,6 +678,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["electrician"],
 		"lines": [
 			{
@@ -647,6 +692,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["electricity"],
 		"lines": [
 			{
@@ -656,6 +702,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["electronic"],
 		"lines": [
 			{
@@ -665,6 +712,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["employ"],
 		"lines": [
 			{
@@ -678,6 +726,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["enclose"],
 		"lines": [
 			{
@@ -687,6 +736,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["enclosed"],
 		"lines": [
 			{
@@ -700,6 +750,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["enclosure"],
 		"lines": [
 			{
@@ -709,6 +760,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["england"],
 		"lines": [
 			{
@@ -726,6 +778,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["english"],
 		"lines": [
 			{
@@ -743,6 +796,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["enthusiasm"],
 		"lines": [
 			{
@@ -752,6 +806,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["enthusiastic"],
 		"lines": [
 			{
@@ -761,6 +816,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["equivalent"],
 		"lines": [
 			{
@@ -780,6 +836,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["everything"],
 		"lines": [
 			{
@@ -793,6 +850,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["evidence", "evident"],
 		"lines": [
 			{
@@ -802,6 +860,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["examination"],
 		"lines": [
 			{
@@ -819,6 +878,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["exchange"],
 		"lines": [
 			{
@@ -832,6 +892,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["exist"],
 		"lines": [
 			{
@@ -845,6 +906,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["expect"],
 		"lines": [
 			{
@@ -858,6 +920,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["experience"],
 		"lines": [
 			{
@@ -871,6 +934,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["extra"],
 		"lines": [
 			{
@@ -884,6 +948,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["extraordinary"],
 		"lines": [
 			{
@@ -907,6 +972,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["fact"],
 		"lines": [
 			{
@@ -916,6 +982,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["financial"],
 		"lines": [
 			{
@@ -929,6 +996,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["for ever and ever"],
 		"lines": [
 			{
@@ -946,6 +1014,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["for the"],
 		"lines": [
 			{
@@ -969,6 +1038,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["from the"],
 		"lines": [
 			{
@@ -978,6 +1048,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["from time to time"],
 		"lines": [
 			{
@@ -1025,6 +1096,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["guilty"],
 		"lines": [
 			{
@@ -1054,6 +1126,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["hand"],
 		"lines": [
 			{
@@ -1063,6 +1136,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["hospital"],
 		"lines": [
 			{
@@ -1072,6 +1146,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["however"],
 		"lines": [
 			{
@@ -1085,6 +1160,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["husband"],
 		"lines": [
 			{
@@ -1104,6 +1180,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["I think"],
 		"lines": [
 			{
@@ -1117,6 +1194,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["identification"],
 		"lines": [
 			{
@@ -1130,6 +1208,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["if the"],
 		"lines": [
 			{
@@ -1139,6 +1218,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["immediate"],
 		"lines": [
 			{
@@ -1148,6 +1228,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["immediately"],
 		"lines": [
 			{
@@ -1157,6 +1238,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["importance"],
 		"lines": [
 			{
@@ -1180,6 +1262,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["impossible"],
 		"lines": [
 			{
@@ -1189,6 +1272,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["improve"],
 		"lines": [
 			{
@@ -1202,6 +1286,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["individual"],
 		"lines": [
 			{
@@ -1211,6 +1296,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["inform"],
 		"lines": [
 			{
@@ -1220,6 +1306,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["information"],
 		"lines": [
 			{
@@ -1233,6 +1320,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["insurance"],
 		"lines": [
 			{
@@ -1242,6 +1330,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["intention"],
 		"lines": [
 			{
@@ -1251,6 +1340,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["involve"],
 		"lines": [
 			{
@@ -1260,6 +1350,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["is the"],
 		"lines": [
 			{
@@ -1269,6 +1360,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["it is my pleasure"],
 		"lines": [
 			{
@@ -1283,6 +1375,7 @@
 	},
 	{
 		"letterGroupings": ["j"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
 				"path": "M107.919 0.642606C107.919 -2.51698 106.65 6.83834 106.235 9.97054C104.807 20.7439 106.217 31.8003 105.717 42.6183C104.403 70.9912 103.825 100.165 100.405 128.383C96.7319 158.685 89.3711 208.25 65.9433 231.12C52.6349 244.112 36.5294 252.595 19.5628 259.234C16.7182 260.347 0.504738 258.122 0 260.141",
@@ -1291,6 +1384,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["job"],
 		"lines": [
 			{
@@ -1300,6 +1394,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["jury"],
 		"lines": [
 			{
@@ -1319,6 +1414,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["know ", "and ", "new"],
 		"lines": [
 			{
@@ -1338,6 +1434,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["ladies and gentlemen"],
 		"lines": [
 			{
@@ -1351,6 +1448,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["landlord"],
 		"lines": [
 			{
@@ -1374,6 +1472,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["man and woman", "men and women"],
 		"lines": [
 			{
@@ -1387,6 +1486,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["man or woman", "men or women"],
 		"lines": [
 			{
@@ -1396,6 +1496,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["manufacture"],
 		"lines": [
 			{
@@ -1405,6 +1506,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["maximum"],
 		"lines": [
 			{
@@ -1418,6 +1520,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["mayor"],
 		"lines": [
 			{
@@ -1447,6 +1550,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["motorway"],
 		"lines": [
 			{
@@ -1460,6 +1564,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["much"],
 		"lines": [
 			{
@@ -1479,6 +1584,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["necessary"],
 		"lines": [
 			{
@@ -1488,6 +1594,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["nevertheless"],
 		"lines": [
 			{
@@ -1497,6 +1604,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["newspaper"],
 		"lines": [
 			{
@@ -1506,6 +1614,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["next"],
 		"lines": [
 			{
@@ -1519,6 +1628,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["no doubt"],
 		"lines": [
 			{
@@ -1532,6 +1642,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["north"],
 		"lines": [
 			{
@@ -1541,6 +1652,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["not guilty"],
 		"lines": [
 			{
@@ -1550,6 +1662,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["nothing"],
 		"lines": [
 			{
@@ -1564,6 +1677,7 @@
 	},
 	{
 		"letterGroupings": ["o"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
 				"path": "M0.429231 18.0749C0.567341 17.8677 0.128179 25.5667 0.0405675 27.1437C-0.317389 33.5869 1.59082 45.1513 9.88672 46.1883C25.0307 48.0813 45.7798 33.3513 48.2349 18.0749C52.8101 -10.3931 -2.02838 -2.6224 1.20656 23.2571",
@@ -1572,6 +1686,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["o'clock"],
 		"lines": [
 			{
@@ -1581,6 +1696,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["obvious"],
 		"lines": [
 			{
@@ -1590,6 +1706,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["obviously"],
 		"lines": [
 			{
@@ -1599,6 +1716,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["of", "officer"],
 		"lines": [
 			{
@@ -1608,6 +1726,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["of the"],
 		"lines": [
 			{
@@ -1617,6 +1736,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["on the other hand"],
 		"lines": [
 			{
@@ -1626,6 +1746,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["only"],
 		"lines": [
 			{
@@ -1635,6 +1756,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["opportunity"],
 		"lines": [
 			{
@@ -1644,6 +1766,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["or"],
 		"lines": [
 			{
@@ -1653,6 +1776,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["organisation"],
 		"lines": [
 			{
@@ -1670,6 +1794,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["ought"],
 		"lines": [
 			{
@@ -1679,6 +1804,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["our", "hour", "were", "world"],
 		"lines": [
 			{
@@ -1688,6 +1814,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["over and done with"],
 		"lines": [
 			{
@@ -1711,6 +1838,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["particular"],
 		"lines": [
 			{
@@ -1724,6 +1852,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["people"],
 		"lines": [
 			{
@@ -1733,6 +1862,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["perfect"],
 		"lines": [
 			{
@@ -1752,6 +1882,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["prejudice"],
 		"lines": [
 			{
@@ -1765,6 +1896,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["preliminary"],
 		"lines": [
 			{
@@ -1778,6 +1910,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["prepare"],
 		"lines": [
 			{
@@ -1791,6 +1924,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["principle", "principal"],
 		"lines": [
 			{
@@ -1800,6 +1934,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["probable"],
 		"lines": [
 			{
@@ -1809,6 +1944,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["probably"],
 		"lines": [
 			{
@@ -1822,6 +1958,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["problem"],
 		"lines": [
 			{
@@ -1845,6 +1982,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["proportion"],
 		"lines": [
 			{
@@ -1858,6 +1996,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["prosecution"],
 		"lines": [
 			{
@@ -1901,6 +2040,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["recognise"],
 		"lines": [
 			{
@@ -1940,6 +2080,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["remark"],
 		"lines": [
 			{
@@ -1953,6 +2094,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["remember"],
 		"lines": [
 			{
@@ -1992,6 +2134,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["satisfactory"],
 		"lines": [
 			{
@@ -2001,6 +2144,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["school"],
 		"lines": [
 			{
@@ -2020,6 +2164,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["sh", "shall"],
 		"lines": [
 			{
@@ -2029,6 +2174,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["signature"],
 		"lines": [
 			{
@@ -2048,6 +2194,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["social"],
 		"lines": [
 			{
@@ -2061,6 +2208,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["society"],
 		"lines": [
 			{
@@ -2070,6 +2218,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["something"],
 		"lines": [
 			{
@@ -2083,6 +2232,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["station"],
 		"lines": [
 			{
@@ -2092,6 +2242,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["substantial"],
 		"lines": [
 			{
@@ -2101,6 +2252,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["success"],
 		"lines": [
 			{
@@ -2114,6 +2266,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["successful"],
 		"lines": [
 			{
@@ -2123,6 +2276,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["such"],
 		"lines": [
 			{
@@ -2132,6 +2286,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["super"],
 		"lines": [
 			{
@@ -2141,6 +2296,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["supermarket"],
 		"lines": [
 			{
@@ -2164,6 +2320,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["technical"],
 		"lines": [
 			{
@@ -2173,6 +2330,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["telephone"],
 		"lines": [
 			{
@@ -2182,6 +2340,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["thank you"],
 		"lines": [
 			{
@@ -2195,6 +2354,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["thank you for your"],
 		"lines": [
 			{
@@ -2208,6 +2368,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["that"],
 		"lines": [
 			{
@@ -2221,6 +2382,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["that the"],
 		"lines": [
 			{
@@ -2234,6 +2396,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["the"],
 		"lines": [
 			{
@@ -2243,6 +2406,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["their", "there"],
 		"lines": [
 			{
@@ -2252,6 +2416,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["therefore"],
 		"lines": [
 			{
@@ -2261,6 +2426,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["they"],
 		"lines": [
 			{
@@ -2270,6 +2436,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["time"],
 		"lines": [
 			{
@@ -2293,6 +2460,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["to the"],
 		"lines": [
 			{
@@ -2316,6 +2484,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["tomorrow"],
 		"lines": [
 			{
@@ -2326,6 +2495,7 @@
 	},
 	{
 		"letterGroupings": ["u"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
 				"path": "M3.31531 1.07448C3.31531 -4.17671 0.410944 11.251 0.0764433 16.4915C-0.519162 25.8226 2.20131 40.9541 14.0683 40.3295C27.428 39.6264 31.0542 23.2412 30.0036 12.7344C29.8592 11.2905 28.0602 -1.07671 28.0602 2.49958",
@@ -2344,6 +2514,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["vandalism"],
 		"lines": [
 			{
@@ -2363,6 +2534,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["we have the"],
 		"lines": [
 			{
@@ -2382,6 +2554,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["where"],
 		"lines": [
 			{
@@ -2391,6 +2564,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["which"],
 		"lines": [
 			{
@@ -2400,6 +2574,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["with"],
 		"lines": [
 			{
@@ -2409,6 +2584,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["with the"],
 		"lines": [
 			{
@@ -2418,6 +2594,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["within"],
 		"lines": [
 			{
@@ -2427,6 +2604,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["without"],
 		"lines": [
 			{
@@ -2446,6 +2624,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["witnesses"],
 		"lines": [
 			{
@@ -2459,6 +2638,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["worthwhile"],
 		"lines": [
 			{
@@ -2492,6 +2672,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["yesterday"],
 		"lines": [
 			{
@@ -2501,6 +2682,7 @@
 		]
 	},
 	{
+		"letterGroupings": [],
 		"specialOutlineMeanings": ["you"],
 		"lines": [
 			{
@@ -2511,6 +2693,7 @@
 	},
 	{
 		"letterGroupings": ["z"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
 				"path": "M10.8583 1.55817C6.98705 2.8486 18.7223 6.93598 18.6316 11.0157C17.8684 45.3578 -26.4321 1.95598 24.332 0.00351658C27.3101 -0.111027 29.9287 2.59448 31.328 4.92659C39.8222 19.0837 26.2393 38.6317 17.9838 49.3638C14.0518 54.4755 3.12713 69.8157 4.89881 63.6149",
@@ -2520,117 +2703,130 @@
 	},
 	{
 		"letterGroupings": ["as"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
-				"path": "M0 0C12.0956 11.7291 23.6694 43.2185 38.1998 49.8306C50.609 55.4775 67.2721 46.5604 57.4946 31.8941C51.2625 22.546 36.9404 26.7632 36.9404 38.1968\" sodipodi:nodetypes=\"cccc",
+				"path": "M0 0C12.0956 11.7291 23.6694 43.2185 38.1998 49.8306C50.609 55.4775 67.2721 46.5604 57.4946 31.8941C51.2625 22.546 36.9404 26.7632 36.9404 38.1968",
 				"translateValues": [320, 400]
 			}
 		]
 	},
 	{
 		"letterGroupings": ["fr"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
-				"path": "M141.478 85.8955C114.713 59.5428 -45.1939 206.243 12.432 227.346C34.8187 235.544 60.0285 183.903 69.8276 169.371C86.5742 144.537 202.705 11.592 223.014 0\" sodipodi:nodetypes=\"cccc",
+				"path": "M141.478 85.8955C114.713 59.5428 -45.1939 206.243 12.432 227.346C34.8187 235.544 60.0285 183.903 69.8276 169.371C86.5742 144.537 202.705 11.592 223.014 0",
 				"translateValues": [240, 220]
 			}
 		]
 	},
 	{
 		"letterGroupings": ["hd", "ht"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
-				"path": "M3.85325 1.25523C3.85325 -4.98147 3.85325 13.7286 3.85325 19.9653C3.85325 32.5469 3.65894 45.0049 2.20412 57.4845C-2.09717 94.3814 0.975741 134.72 2.39902 172.081C2.82633 183.298 1.36117 218.635 6.37192 228.505C6.79514 229.339 10.5957 228.108 11.3163 228.019C27.787 225.984 43.9991 226.661 60.4723 226.661C63.9312 226.661 77.8142 225.952 77.3413 226.661\" sodipodi:nodetypes=\"cccccccc",
+				"path": "M3.85325 1.25523C3.85325 -4.98147 3.85325 13.7286 3.85325 19.9653C3.85325 32.5469 3.65894 45.0049 2.20412 57.4845C-2.09717 94.3814 0.975741 134.72 2.39902 172.081C2.82633 183.298 1.36117 218.635 6.37192 228.505C6.79514 229.339 10.5957 228.108 11.3163 228.019C27.787 225.984 43.9991 226.661 60.4723 226.661C63.9312 226.661 77.8142 225.952 77.3413 226.661",
 				"translateValues": [310, 230]
 			}
 		]
 	},
 	{
 		"letterGroupings": ["in"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
-				"path": "M34.4853 0.00456537C34.3537 -0.250635 27.7898 10.2715 26.7284 11.9293C18.9571 24.0662 10.2769 35.4211 4.52512 48.5788C4.21656 49.2847 1.8127 55.3643 0.843072 55.3643C-2.45888 55.3643 4.83975 50.068 7.24168 47.8023C11.5593 43.7295 21.9683 35.8159 28.6683 38.786C43.6162 45.4124 40.6912 72.9428 40.0113 85.6122C39.2986 98.8954 33.3609 115.173 38.2663 128.271C40.3518 133.839 39.5105 143.53 38.3622 149.308C38.255 149.847 38.1673 150.079 38.1673 149.212\" sodipodi:nodetypes=\"cccccccccc",
+				"path": "M34.4853 0.00456537C34.3537 -0.250635 27.7898 10.2715 26.7284 11.9293C18.9571 24.0662 10.2769 35.4211 4.52512 48.5788C4.21656 49.2847 1.8127 55.3643 0.843072 55.3643C-2.45888 55.3643 4.83975 50.068 7.24168 47.8023C11.5593 43.7295 21.9683 35.8159 28.6683 38.786C43.6162 45.4124 40.6912 72.9428 40.0113 85.6122C39.2986 98.8954 33.3609 115.173 38.2663 128.271C40.3518 133.839 39.5105 143.53 38.3622 149.308C38.255 149.847 38.1673 150.079 38.1673 149.212",
 				"translateValues": [330, 310]
 			}
 		]
 	},
 	{
 		"letterGroupings": ["is"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
-				"path": "M43.5705 0C37.2596 0 -4.65611 64.8619 0.4263 78.4325C4.48242 89.2627 29.3796 70.1286 16.2309 62.4359C14.3487 61.3347 7.73421 58.2306 6.53407 61.7583\" sodipodi:nodetypes=\"cccc",
+				"path": "M43.5705 0C37.2596 0 -4.65611 64.8619 0.4263 78.4325C4.48242 89.2627 29.3796 70.1286 16.2309 62.4359C14.3487 61.3347 7.73421 58.2306 6.53407 61.7583",
 				"translateValues": [320, 380]
 			}
 		]
 	},
 	{
 		"letterGroupings": ["it"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
-				"path": "M38.7852 0C31.0325 3.87634 4.17266 32.0182 0.198597 39.8459C-1.40826 43.0109 7.15873 38.4322 10.6691 37.9059C16.4098 37.0453 22.3319 36.2951 28.1228 35.6751C46.6541 33.6911 66.565 35.6998 85.1286 36.6466C90.672 36.9293 96.5176 36.7425 102.097 36.7425C105.267 36.7425 114.769 37.1293 111.599 37.1293\" sodipodi:nodetypes=\"ccccccc",
+				"path": "M38.7852 0C31.0325 3.87634 4.17266 32.0182 0.198597 39.8459C-1.40826 43.0109 7.15873 38.4322 10.6691 37.9059C16.4098 37.0453 22.3319 36.2951 28.1228 35.6751C46.6541 33.6911 66.565 35.6998 85.1286 36.6466C90.672 36.9293 96.5176 36.7425 102.097 36.7425C105.267 36.7425 114.769 37.1293 111.599 37.1293",
 				"translateValues": [300, 260]
 			}
 		]
 	},
 	{
 		"letterGroupings": ["nt"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
-				"path": "M0 14.2764C0 -0.396743 23.3401 -3.00893 31.8012 3.02939C58.6925 22.2206 15.9234 60.6354 56.2322 58.2901C73.4816 57.2865 91.6281 56.2542 108.588 56.2542\" sodipodi:nodetypes=\"cccc",
+				"path": "M0 14.2764C0 -0.396743 23.3401 -3.00893 31.8012 3.02939C58.6925 22.2206 15.9234 60.6354 56.2322 58.2901C73.4816 57.2865 91.6281 56.2542 108.588 56.2542",
 				"translateValues": [300, 230]
 			}
 		]
 	},
 	{
 		"letterGroupings": ["on"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
-				"path": "M0.525943 2.71797C-1.86918 3.89711 4.62811 12.8657 5.76117 14.6427C15.4651 29.8611 42.3077 12.7373 46.1888 0.972892C47.829 -3.99917 46.3837 11.4429 46.3837 16.6786C46.3837 26.5065 45.6071 36.2351 45.6071 46.054C45.6071 49.9332 45.3162 61.567 45.3162 57.6879\" sodipodi:nodetypes=\"cccccc",
+				"path": "M0.525943 2.71797C-1.86918 3.89711 4.62811 12.8657 5.76117 14.6427C15.4651 29.8611 42.3077 12.7373 46.1888 0.972892C47.829 -3.99917 46.3837 11.4429 46.3837 16.6786C46.3837 26.5065 45.6071 36.2351 45.6071 46.054C45.6071 49.9332 45.3162 61.567 45.3162 57.6879",
 				"translateValues": [330, 400]
 			}
 		]
 	},
 	{
 		"letterGroupings": ["sm"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
-				"path": "M6.24687 30.6662C1.77041 30.6662 15.9071 29.3376 19.6258 31.8296C28.6904 37.9037 13.2223 52.3857 5.08349 49.6671C-13.7809 43.366 23.8605 4.30213 52.4914 0.999881C60.7554 0.0467211 69.0079 -0.579077 77.3122 0.804984C97.1142 4.10531 111.221 11.3807 126.951 23.6859C131.297 27.0855 135.169 32.5541 138.489 36.9688C140.212 39.2602 144.938 46.2735 144.015 43.5593\" sodipodi:nodetypes=\"cccccccc",
+				"path": "M6.24687 30.6662C1.77041 30.6662 15.9071 29.3376 19.6258 31.8296C28.6904 37.9037 13.2223 52.3857 5.08349 49.6671C-13.7809 43.366 23.8605 4.30213 52.4914 0.999881C60.7554 0.0467211 69.0079 -0.579077 77.3122 0.804984C97.1142 4.10531 111.221 11.3807 126.951 23.6859C131.297 27.0855 135.169 32.5541 138.489 36.9688C140.212 39.2602 144.938 46.2735 144.015 43.5593",
 				"translateValues": [280, 400]
 			}
 		]
 	},
 	{
 		"letterGroupings": ["sn"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
-				"path": "M12.0501 8.46012C13.5505 7.00515 19.0326 9.12895 20.5836 10.0103C36.3817 18.9881 9.6419 37.4539 1.96641 25.9109C-8.94978 9.49428 28.6138 -4.8705 40.2651 1.57577C59.3214 12.1189 51.9949 55.4128 51.9949 72.6411\" sodipodi:nodetypes=\"ccccc",
+				"path": "M12.0501 8.46012C13.5505 7.00515 19.0326 9.12895 20.5836 10.0103C36.3817 18.9881 9.6419 37.4539 1.96641 25.9109C-8.94978 9.49428 28.6138 -4.8705 40.2651 1.57577C59.3214 12.1189 51.9949 55.4128 51.9949 72.6411",
 				"translateValues": [330, 380]
 			}
 		]
 	},
 	{
 		"letterGroupings": ["wr"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
-				"path": "M0 3.8663C8.0117 3.8663 25.9741 21.8641 34.7096 25.8717C87.5555 50.1154 138.887 57.9053 196.33 50.2068C226.488 46.165 248.179 35.1722 274.96 23.254C282.715 19.8031 292.662 14.2007 298.714 8.13004C299.764 7.07613 309.23 -0.907763 307.244 0.0853045\" sodipodi:nodetypes=\"cccccc",
+				"path": "M0 3.8663C8.0117 3.8663 25.9741 21.8641 34.7096 25.8717C87.5555 50.1154 138.887 57.9053 196.33 50.2068C226.488 46.165 248.179 35.1722 274.96 23.254C282.715 19.8031 292.662 14.2007 298.714 8.13004C299.764 7.07613 309.23 -0.907763 307.244 0.0853045",
 				"translateValues": [210, 400]
 			}
 		]
 	},
 	{
 		"letterGroupings": ["wrd"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
-				"path": "M0.00357575 3.97589C-0.31778 3.97589 21.1159 19.2405 26.0838 21.7175C45.3335 31.3153 64.2336 42.8048 85.4193 47.3119C137.684 58.4311 195.155 64.1739 240.059 30.5388C250.835 22.4675 255.606 7.07604 268.853 3.29526C286.191 -1.65293 307.419 1.87531 325.571 0.677641C326.345 0.626561 332.842 0.612511 332.842 0\" sodipodi:nodetypes=\"ccccccc",
+				"path": "M0.00357575 3.97589C-0.31778 3.97589 21.1159 19.2405 26.0838 21.7175C45.3335 31.3153 64.2336 42.8048 85.4193 47.3119C137.684 58.4311 195.155 64.1739 240.059 30.5388C250.835 22.4675 255.606 7.07604 268.853 3.29526C286.191 -1.65293 307.419 1.87531 325.571 0.677641C326.345 0.626561 332.842 0.612511 332.842 0",
 				"translateValues": [200, 400]
 			}
 		]
 	},
 	{
 		"letterGroupings": ["ws"],
+		"specialOutlineMeanings": [],
 		"lines": [
 			{
-				"path": "M0.204399 11.6507C-1.52991 10.7969 8.28559 16.0802 10.2881 17.4676C17.9035 22.7441 26.2629 27.0039 34.6232 31.0414C60.9134 43.7381 81.3113 52.8431 111.895 51.5956C132.759 50.7445 202.512 42.0013 198.184 8.16056C194.562 -20.155 150.508 35.0971 186.742 25.2245\" sodipodi:nodetypes=\"cccccc",
+				"path": "M0.204399 11.6507C-1.52991 10.7969 8.28559 16.0802 10.2881 17.4676C17.9035 22.7441 26.2629 27.0039 34.6232 31.0414C60.9134 43.7381 81.3113 52.8431 111.895 51.5956C132.759 50.7445 202.512 42.0013 198.184 8.16056C194.562 -20.155 150.508 35.0971 186.742 25.2245",
 				"translateValues": [250, 400]
 			}
 		]

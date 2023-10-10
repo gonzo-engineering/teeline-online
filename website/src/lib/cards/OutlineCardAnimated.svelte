@@ -18,7 +18,7 @@
 <div class="outline-container">
 	<div class="outline-content">
 		<OutlineSvg {outlineObject} class="path" />
-		{#if displayName && outlineObject.letterGroupings}
+		{#if displayName && outlineObject.letterGroupings.length > 0}
 			<div class="outline-label">
 				{makeLetterLabel(outlineObject.letterGroupings)}
 			</div>
@@ -26,7 +26,7 @@
 				{prettify(outlineObject.letterGroupings)}
 			</div>
 		{/if}
-		{#if displayName && outlineObject.specialOutlineMeanings}
+		{#if displayName && outlineObject.specialOutlineMeanings.length > 0}
 			<div class="outline-label">
 				Special meaning{outlineObject.specialOutlineMeanings.length > 1 ? 's' : ''}
 			</div>

@@ -12,7 +12,7 @@
 	const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
 	const alphabetOutlines = allOutlines.filter((outline) =>
-		alphabet.some((letter) => outline.letterGroupings && outline.letterGroupings.includes(letter))
+		alphabet.some((letter) => outline.letterGroupings.includes(letter))
 	);
 
 	const toggleAlphabetFilter = () => {
