@@ -13,7 +13,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-netlify": "^2.0.8",
-		"@sveltejs/kit": "1.25.1",
+		"@sveltejs/kit": "1.27.1",
 		"@tsconfig/svelte": "^5.0.2",
 		"@typescript-eslint/eslint-plugin": "^6.8.0",
 		"@typescript-eslint/parser": "^6.9.0",
