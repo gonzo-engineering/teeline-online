@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync, writeFile } from 'fs';
 
-const svgFolderPath = '../../static/outlines/groupings/';
+const svgFolderPath = './new-batch/';
 
 let outlinesObjectArray = [];
 
