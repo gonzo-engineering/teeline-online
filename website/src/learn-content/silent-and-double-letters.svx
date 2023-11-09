@@ -10,7 +10,7 @@ order: 5
     import SyllabusLink from '$lib/syllabusLink.svelte'
 </script>
 
-Another way to cut down on letters is to remove silent snd double letters. Although Teeline is spelling based there's seldom use in writing letters that can't be heard. There are two main ways that this happens.
+Another way to cut down on letters is to remove silent and double letters. Although Teeline is spelling based there's seldom use in writing letters that can't be heard. There are two main ways that this happens.
 
 The first is double letters. Plenty of words have two of the same letter next to each other (dollar, lettuce, cobbler, dwell, etc.). When translating such words to their Teeline equivalents, having one is enough.
 
