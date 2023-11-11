@@ -1,6 +1,8 @@
 <script lang="ts">
-	import type { LineDetails, OutlineObject } from '../../data/interfaces/interfaces';
 	export let outlineObject: OutlineObject;
+	export let animationSpeedInSecs: number = 1;
+
+	import type { LineDetails, OutlineObject } from '../../data/interfaces/interfaces';
 	import { prettify } from '../../scripts/helpers';
 
 	const outlineName =
@@ -14,13 +16,17 @@
 		return Math.floor(svgPath.getTotalLength());
 	};
 
-	const inferAnimationDelay = (lineIndex: number, lineDetailsArray: LineDetails[]) => {
+	const inferAnimationDelay = (
+		lineIndex: number,
+		lineDetailsArray: LineDetails[],
+		animationSpeed: number
+	) => {
 		if (lineIndex === 0) return 0;
 		const precedingLines = lineDetailsArray.slice(0, lineIndex);
 		const precedingLinesCombinedLength = precedingLines
 			.map((line) => inferPathLength(line.path))
 			.reduce((a, b) => a + b, 0);
-		const delayInSeconds = precedingLinesCombinedLength / 500;
+		const delayInSeconds = (precedingLinesCombinedLength / 900) * animationSpeed;
 		return delayInSeconds;
 	};
 </script>
@@ -53,7 +59,7 @@
 			stroke-width="10"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			style="animation-delay: {inferAnimationDelay(i, outlineObject.lines)}s"
+			style="animation-delay: {inferAnimationDelay(i, outlineObject.lines, animationSpeedInSecs)}s"
 			d={line.path}
 		/>
 	{/each}
