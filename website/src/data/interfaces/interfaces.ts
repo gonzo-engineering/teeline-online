@@ -4,7 +4,7 @@ export type OutlineObject = {
 	lines: LineDetails[];
 };
 
-type LineDetails = {
+export type LineDetails = {
 	path: string;
 	translateValues: number[];
 };
