@@ -1,12 +1,38 @@
 <script lang="ts">
-	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	export let outlineObject: OutlineObject;
+	export let animationSpeedInSecs: number = 1;
+
+	import type { LineDetails, OutlineObject } from '../../data/interfaces/interfaces';
 	import { prettify } from '../../scripts/helpers';
 
-	let outlineName =
+	const outlineName =
 		outlineObject.specialOutlineMeanings.length > 0
 			? prettify(outlineObject.specialOutlineMeanings)
 			: prettify(outlineObject.letterGroupings);
+
+	const inferAnimationDelay = (
+		lineIndex: number,
+		lineDetailsArray: LineDetails[],
+		animationSpeed: number
+	) => {
+		if (lineIndex === 0) return 0;
+		// Nasty hack to get around SSR
+		else if (typeof document === 'undefined') return 1;
+		else {
+			const inferPathLength = (pathString: string) => {
+				const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+				path.setAttribute('d', pathString);
+				return path.getTotalLength();
+			};
+
+			const precedingLines = lineDetailsArray.slice(0, lineIndex);
+			const precedingLinesCombinedLength = precedingLines
+				.map((line) => inferPathLength(line.path))
+				.reduce((a, b) => a + b, 0);
+			const delayInSeconds = (precedingLinesCombinedLength / 900) * animationSpeed;
+			return delayInSeconds;
+		}
+	};
 </script>
 
 <svg
@@ -37,7 +63,7 @@
 			stroke-width="10"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			style="animation-delay: {i}s"
+			style="animation-delay: {inferAnimationDelay(i, outlineObject.lines, animationSpeedInSecs)}s"
 			d={line.path}
 		/>
 	{/each}
