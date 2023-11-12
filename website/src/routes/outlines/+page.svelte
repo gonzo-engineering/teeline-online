@@ -6,8 +6,8 @@
 	import { outlineMatchesSearchTerm, sortOutlinesAlphabetically } from '../../scripts/helpers';
 
 	let displayedOutlines: OutlineObject[] = allOutlines;
-	let alphabetToggleOn = false;
-	let searchTerm = null;
+	let alphabetToggleOn: boolean = false;
+	let searchTerm: string = '';
 
 	const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
@@ -18,7 +18,7 @@
 	const toggleAlphabetFilter = () => {
 		displayedOutlines = alphabetToggleOn ? allOutlines : alphabetOutlines;
 		alphabetToggleOn = !alphabetToggleOn;
-		searchTerm = null;
+		searchTerm = '';
 	};
 
 	const filterOutlines = (outlines: OutlineObject[], searchTerm: string) => {
@@ -42,7 +42,7 @@
 		bind:value={searchTerm}
 		on:input={() => {
 			const outlinesToFilter = alphabetToggleOn ? alphabetOutlines : allOutlines;
-			filterOutlines(outlinesToFilter, searchTerm.trim());
+			filterOutlines(outlinesToFilter, searchTerm.trim().toLowerCase());
 		}}
 	/>
 </div>
