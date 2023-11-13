@@ -6,7 +6,7 @@
 	export let outlineObject: OutlineObject;
 	export let displayName = true;
 
-	let animationSpeedInSecs = 1;
+	let drawingSpeed = 900;
 
 	const makeLetterLabel = (letterGroupings: string[]) => {
 		if (letterGroupings.length === 1 && letterGroupings[0].length === 1) {
@@ -17,9 +17,9 @@
 	};
 </script>
 
-<div class="outline-container" style="--speed: {animationSpeedInSecs}s">
+<div class="outline-container">
 	<div class="outline-content">
-		<OutlineSvg {outlineObject} {animationSpeedInSecs} class="path" />
+		<OutlineSvg {outlineObject} {drawingSpeed} />
 		{#if displayName && outlineObject.letterGroupings.length > 0}
 			<div class="outline-label">
 				{makeLetterLabel(outlineObject.letterGroupings)}
@@ -48,12 +48,6 @@
 		margin: 0 auto;
 	}
 
-	.outline-container:hover :global(.path) {
-		stroke-dasharray: 1000;
-		stroke-dashoffset: 1000;
-		animation: dash var(--speed) linear forwards;
-	}
-
 	.outline-label {
 		text-align: center;
 		font-size: 1.2rem;
@@ -70,14 +64,5 @@
 
 	.outline-content {
 		padding: 20px;
-	}
-
-	@keyframes dash {
-		from {
-			stroke-dashoffset: 1100;
-		}
-		to {
-			stroke-dashoffset: 0;
-		}
 	}
 </style>
