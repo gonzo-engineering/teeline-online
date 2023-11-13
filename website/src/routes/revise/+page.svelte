@@ -42,7 +42,9 @@
 	</div>
 
 	<div class="flipcard-container">
-		<FlippingOutlineCard {outlineObject} {outlineFirst} />
+		{#key outlineObject}
+			<FlippingOutlineCard {outlineObject} {outlineFirst} />
+		{/key}
 	</div>
 
 	<div class="button-container">
