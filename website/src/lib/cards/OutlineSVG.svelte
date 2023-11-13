@@ -4,6 +4,7 @@
 
 	import type { LineDetails, OutlineObject } from '../../data/interfaces/interfaces';
 	import { prettify } from '../../scripts/helpers';
+	import SVGPathCommander from 'svg-path-commander';
 
 	const outlineName =
 		outlineObject.specialOutlineMeanings.length > 0
@@ -16,22 +17,13 @@
 		animationSpeed: number
 	) => {
 		if (lineIndex === 0) return 0;
-		// Nasty hack to get around SSR
-		else if (typeof document === 'undefined') return 1;
-		else {
-			const inferPathLength = (pathString: string) => {
-				const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-				path.setAttribute('d', pathString);
-				return path.getTotalLength();
-			};
 
-			const precedingLines = lineDetailsArray.slice(0, lineIndex);
-			const precedingLinesCombinedLength = precedingLines
-				.map((line) => inferPathLength(line.path))
-				.reduce((a, b) => a + b, 0);
-			const delayInSeconds = (precedingLinesCombinedLength / 900) * animationSpeed;
-			return delayInSeconds;
-		}
+		const precedingLines = lineDetailsArray.slice(0, lineIndex);
+		const precedingLinesCombinedLength = precedingLines
+			.map((line) => SVGPathCommander.getTotalLength(line.path))
+			.reduce((a, b) => a + b, 0);
+		const delayInSeconds = (precedingLinesCombinedLength / 900) * animationSpeed;
+		return delayInSeconds;
 	};
 </script>
 
