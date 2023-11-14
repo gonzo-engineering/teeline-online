@@ -83,7 +83,8 @@
 	:global(.outline-container:hover) :is(.path, .dot) {
 		animation-name: dash;
 		animation-duration: calc(1s * var(--length) / var(--speed));
-		animation-timing-function: ease-out;
+		/* This is trying to mimic a hand movement… https://cubic-bezier.com/#.12,0,.84,1 */
+		animation-timing-function: cubic-bezier(0.12, 0, 0.84, 1);
 		animation-delay: var(--delay);
 		animation-iteration-count: 1;
 		animation-fill-mode: both;
