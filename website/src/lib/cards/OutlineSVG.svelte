@@ -65,6 +65,10 @@
 		width: 100%;
 	}
 
+	g {
+		mix-blend-mode: multiply;
+	}
+
 	path {
 		stroke-linecap: round;
 		stroke-linejoin: round;
@@ -93,10 +97,8 @@
 	.dot {
 		stroke: lightgrey;
 		stroke-width: 96;
-		stroke-opacity: 0.6;
 		stroke-dashoffset: 1;
 		animation-fill-mode: none !important;
-		mix-blend-mode: multiply;
 	}
 
 	@keyframes dash {
