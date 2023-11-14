@@ -44,7 +44,7 @@
 	<path class="line" d="M 80 460 H 650" />
 	{#each outlineObject.lines as line, i}
 		{@const length = Math.ceil(SVGPathCommander.getTotalLength(line.path))}
-		<path
+		<g
 			style={Object.entries({
 				length,
 				speed: drawingSpeed,
@@ -53,16 +53,20 @@
 				.map(([key, value]) => `--${key}: ${value}`)
 				.join(';')}
 			transform="translate({line.translateValues})"
-			class="path"
-			stroke-dasharray={length}
-			d={line.path}
-		/>
+		>
+			<path class="dot" stroke-dasharray="0 {1 + length}" d={line.path} />
+			<path class="path" stroke-dasharray={length} d={line.path} />
+		</g>
 	{/each}
 </svg>
 
 <style>
 	svg {
 		width: 100%;
+	}
+
+	g {
+		mix-blend-mode: multiply;
 	}
 
 	path {
@@ -79,16 +83,22 @@
 	.path {
 		stroke-width: 10;
 		stroke: currentColor;
-		stroke-dasharray: var(--length);
 	}
-
-	:global(.outline-container:hover) .path {
+	:global(.outline-container:hover) :is(.path, .dot) {
 		animation-name: dash;
 		animation-duration: calc(1s * var(--length) / var(--speed));
-		animation-timing-function: ease-out;
+		/* This is trying to mimic a hand movement… https://cubic-bezier.com/#.12,0,.84,1 */
+		animation-timing-function: cubic-bezier(0.12, 0, 0.84, 1);
 		animation-delay: var(--delay);
 		animation-iteration-count: 1;
 		animation-fill-mode: both;
+	}
+
+	.dot {
+		stroke: lightgrey;
+		stroke-width: 96;
+		stroke-dashoffset: 1;
+		animation-fill-mode: none !important;
 	}
 
 	@keyframes dash {
