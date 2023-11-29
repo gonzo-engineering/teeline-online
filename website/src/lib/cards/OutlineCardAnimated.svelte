@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
-	import OutlineSvg from './OutlineSVG.svelte';
+	import OutlineSvg from '../outlineSVGs/OutlineSVG.svelte';
 	import { prettify } from '../../scripts/helpers';
 
 	export let outlineObject: OutlineObject;
