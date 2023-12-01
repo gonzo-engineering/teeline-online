@@ -2,7 +2,7 @@
 	"name": "teeline.online",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "npm run format && npm run lint && npm run copy-data && vite dev",
+		"dev": "npm run copy-data && vite dev",
 		"build": "npm run format && npm run lint && npm run copy-data && vite build",
 		"preview": "npm run copy-data && vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",

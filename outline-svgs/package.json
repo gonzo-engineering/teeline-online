@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "svg-path-commander": "2.0.9",
+    "svgo": "3.0.5"
+  }
+}
