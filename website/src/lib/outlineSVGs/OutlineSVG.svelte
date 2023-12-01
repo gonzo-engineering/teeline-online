@@ -1,17 +1,26 @@
 <script lang="ts">
-	export let outlineObject: OutlineObject;
+	import SVGPathCommander from 'svg-path-commander';
 
-	/**
-	 * The number of SVG units drawn per second.
-	 *
-	 * For reference, a value of `750` would take one second to draw a straight
-	 * line across the entire width of the canvas, and `250` would take 333.3ms.
-	 */
-	export let drawingSpeed: number = 750;
+	export let outlineObject: OutlineObject;
 
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import { prettify } from '../../scripts/helpers';
-	import OutlineSvgGroup from './OutlineSVGGroup.svelte';
+
+	const width = 750;
+	const margin = 100;
+	const horizontal = 460;
+
+	/**
+	 * Typical distance between the end of the previous line and the start of the next
+	 * We could calculate this precisely from the paths, but it’s probably too much effort.
+	 */
+	const pause = 60;
+
+	const getPreviousLinesLength = (index: number) =>
+		outlineObject.lines
+			.slice(0, index)
+			.map((line) => SVGPathCommander.getTotalLength(line.path))
+			.reduce((a, b) => a + b + pause, 0);
 
 	const outlineName =
 		outlineObject.specialOutlineMeanings.length > 0
@@ -21,9 +30,9 @@
 
 <svg viewBox="0 0 750 750">
 	<desc>Teeline shorthand outline for '{outlineName}'</desc>
-	<path class="line" d="M 80 460 H 650" />
-	{#each outlineObject.lines as line, i}
-		<OutlineSvgGroup {i} {line} {drawingSpeed} parentOutline={outlineObject} />
+	<line x1={margin} x2={width - margin} y1={horizontal} y2={horizontal} />
+	{#each outlineObject.lines as line, index}
+		<slot {line} {index} previousLinesLength={getPreviousLinesLength(index)} />
 	{/each}
 </svg>
 
@@ -31,7 +40,8 @@
 	svg {
 		width: 100%;
 	}
-	.line {
+
+	line {
 		stroke: #d3d3d3;
 		stroke-width: 5;
 	}

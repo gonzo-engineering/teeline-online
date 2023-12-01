@@ -1,12 +1,11 @@
 <script lang="ts">
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
-	import OutlineSvg from '../outlineSVGs/OutlineSVG.svelte';
+	import Container from '../outlineSVGs/OutlineSVG.svelte';
+	import Lines from '../outlineSVGs/Lines.svelte';
 	import { prettify } from '../../scripts/helpers';
 
 	export let outlineObject: OutlineObject;
 	export let displayName = true;
-
-	let drawingSpeed = 900;
 
 	const makeLetterLabel = (letterGroupings: string[]) => {
 		if (letterGroupings.length === 1 && letterGroupings[0].length === 1) {
@@ -19,7 +18,9 @@
 
 <div class="outline-container">
 	<div class="outline-content">
-		<OutlineSvg {outlineObject} {drawingSpeed} />
+		<Container {outlineObject} let:line let:previousLinesLength>
+			<Lines {line} {previousLinesLength} drawingSpeed={900} />
+		</Container>
 		{#if displayName && outlineObject.letterGroupings.length > 0}
 			<div class="outline-label">
 				{makeLetterLabel(outlineObject.letterGroupings)}

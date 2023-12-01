@@ -1,43 +1,36 @@
 <script lang="ts">
 	import SVGPathCommander from 'svg-path-commander';
-	import type { LineDetails, OutlineObject } from '../../data/interfaces/interfaces';
+	import type { LineDetails } from '../../data/interfaces/interfaces';
 
-	export let i: number;
+	export let previousLinesLength = 0;
 	export let line: LineDetails;
-	export let drawingSpeed: number;
-	export let parentOutline: OutlineObject;
+	/**
+	 * The number of SVG units drawn per second.
+	 *
+	 * For reference, a value of `750` would take one second to draw a straight
+	 * line across the entire width of the canvas, and `250` would take 333.3ms.
+	 */
+	export let drawingSpeed: number = 750;
 
 	const length = Math.ceil(SVGPathCommander.getTotalLength(line.path));
 
 	/**
-	 * Typical distance between the end of the previous line and the start of the next
-	 * We could calculate this precisely from the paths, but it’s probably too much effort.
+	 * Transform an object of into CSS custom properties that can be used
+	 * in the `style` attribute. For example, it would turn an object like
+	 * `{ colour: 'red', delay: 3 }` into `--colour:red;--delay:3`
 	 */
-	const pause = 60;
-
-	const inferAnimationDelay = (
-		lineIndex: number,
-		lineDetailsArray: LineDetails[],
-		drawingSpeed: number
-	): `${number}s` => {
-		const precedingLines = lineDetailsArray.slice(0, lineIndex);
-		const precedingLinesCombinedLength = precedingLines
-			.map((line) => SVGPathCommander.getTotalLength(line.path))
-			.reduce((a, b) => a + b, 0);
-		const delayInSeconds =
-			0.125 + (precedingLinesCombinedLength + precedingLines.length * pause) / drawingSpeed;
-		return `${delayInSeconds}s`;
-	};
+	const getCSSCustomProperties = (properties: Record<string, unknown>) =>
+		Object.entries(properties)
+			.map(([key, value]) => `--${key}: ${value}`)
+			.join(';');
 </script>
 
 <g
-	style={Object.entries({
+	style={getCSSCustomProperties({
 		length,
 		speed: drawingSpeed,
-		delay: inferAnimationDelay(i, parentOutline.lines, drawingSpeed)
-	})
-		.map(([key, value]) => `--${key}: ${value}`)
-		.join(';')}
+		delay: `${0.125 + previousLinesLength / drawingSpeed}s`
+	})}
 	transform="translate({line.translateValues})"
 >
 	<path class="dot" stroke-dasharray="0 {1 + length}" d={line.path} />
