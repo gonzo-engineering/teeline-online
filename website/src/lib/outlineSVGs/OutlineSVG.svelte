@@ -1,6 +1,4 @@
 <script lang="ts">
-	import SVGPathCommander from 'svg-path-commander';
-
 	export let outlineObject: OutlineObject;
 
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
@@ -19,7 +17,7 @@
 	const getPreviousLinesLength = (index: number) =>
 		outlineObject.lines
 			.slice(0, index)
-			.map((line) => SVGPathCommander.getTotalLength(line.path))
+			.map(({ length }) => length)
 			.reduce((a, b) => a + b + pause, 0);
 
 	const outlineName =

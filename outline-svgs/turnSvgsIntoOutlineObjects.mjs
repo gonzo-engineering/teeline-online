@@ -3,7 +3,6 @@
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, basename } from 'node:path';
-import svgo from 'svgo';
 import { parseHTML } from 'linkedom';
 import SVGPathCommander from 'svg-path-commander';
 
@@ -21,21 +20,28 @@ const filepaths = groupings.flatMap((grouping) =>
 		.map(({ path, name }) => join(path, name))
 );
 
+console.log({ filepaths });
+
 const outlines = filepaths.map((path) => {
 	const fileContent = readFileSync(path, { encoding: 'utf8' });
 
-	/**
-	 * Optimised SVG, which should most notably:
-	 * - get rid of translate attribute in favour of `Mx y`
-	 * - reduce the precision of the path to a few decimals
-	 */
-	const svg = svgo.optimize(fileContent, { floatPrecision: 0 }).data;
-
-	const { document } = parseHTML(svg);
+	const { document } = parseHTML(fileContent);
 	const lines = [...document.querySelectorAll('path')]
 		.flatMap((path) => {
 			const d = path.getAttribute('d');
-			return d ? [d] : [];
+			const translate = path.getAttribute('transform');
+			if (!d) return [];
+			if (!translate) return d;
+
+			const [, x, y] =
+				translate
+					.match(/([\d\.]+), ?([\d\.]+)/)
+					?.map(Number)
+					.map(Math.round) ?? [];
+
+			return SVGPathCommander.pathToString(
+				SVGPathCommander.pathToRelative(SVGPathCommander.transformPath(d, { translate: [x, y] }))
+			);
 		})
 		.map((path) => {
 			const length = Math.ceil(SVGPathCommander.getTotalLength(path));
@@ -45,11 +51,18 @@ const outlines = filepaths.map((path) => {
 			return { path, length, start, end };
 		});
 
-	return {
-		letterGroupings: [basename(path, '.svg')],
-		specialOutlineMeanings: [],
-		lines
-	};
+	return path.split('/').at(-2) === 'specials'
+		? {
+				letterGroupings: [],
+				specialOutlineMeanings: [basename(path, '.svg').split(',')],
+				lines
+		  }
+		: {
+				letterGroupings: [basename(path, '.svg').split(',')],
+				specialOutlineMeanings: [],
+				lines
+		  };
 });
 
-writeFileSync('outlines.json', JSON.stringify(outlines, null, 2), 'utf-8');
+// writeFileSync('../website/src/data/outlines.json', JSON.stringify(outlines, null, 2), 'utf-8');
+writeFileSync('./outlines.json', JSON.stringify(outlines, null, 2), 'utf-8');
