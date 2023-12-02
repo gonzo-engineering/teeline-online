@@ -3,9 +3,10 @@
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 	import Toggle from '../../lib/toggle.svelte';
 	import allOutlines from '../../data/outlines.json';
-	import { outlineMatchesSearchTerm, sortOutlinesAlphabetically } from '../../scripts/helpers';
+	import { sortOutlinesAlphabetically } from '../../scripts/helpers';
+	import { filterAndSortOutlines } from '../../scripts/search';
 
-	let displayedOutlines: OutlineObject[] = allOutlines;
+	let displayedOutlines: OutlineObject[] = sortOutlinesAlphabetically(allOutlines);
 	let alphabetToggleOn: boolean = false;
 	let searchTerm: string = '';
 
@@ -19,10 +20,6 @@
 		displayedOutlines = alphabetToggleOn ? allOutlines : alphabetOutlines;
 		alphabetToggleOn = !alphabetToggleOn;
 		searchTerm = '';
-	};
-
-	const filterOutlines = (outlines: OutlineObject[], searchTerm: string) => {
-		displayedOutlines = outlines.filter((outline) => outlineMatchesSearchTerm(outline, searchTerm));
 	};
 </script>
 
@@ -42,13 +39,13 @@
 		bind:value={searchTerm}
 		on:input={() => {
 			const outlinesToFilter = alphabetToggleOn ? alphabetOutlines : allOutlines;
-			filterOutlines(outlinesToFilter, searchTerm.trim().toLowerCase());
+			displayedOutlines = filterAndSortOutlines(outlinesToFilter, searchTerm.trim().toLowerCase());
 		}}
 	/>
 </div>
 
 <div class="animated-container">
-	{#each sortOutlinesAlphabetically(displayedOutlines) as outlineObject}
+	{#each displayedOutlines as outlineObject}
 		<OutlineCardAnimated {outlineObject} />
 	{/each}
 </div>

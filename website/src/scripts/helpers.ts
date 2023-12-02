@@ -45,11 +45,3 @@ export const findMatchingOutline = (word: string, outlinesArray: OutlineObject[]
 	else if (matchingLetterSequenceOutline) return matchingLetterSequenceOutline;
 	else return null;
 };
-
-export const outlineMatchesSearchTerm = (outline: OutlineObject, searchTerm: string) => {
-	return (
-		outline.specialOutlineMeanings.join('').includes(searchTerm) ||
-		outline.letterGroupings.join('').includes(searchTerm) ||
-		outline.letterGroupings.includes(disemvowelWord(searchTerm))
-	);
-};
