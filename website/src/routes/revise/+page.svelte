@@ -48,7 +48,9 @@
 				<div slot="front">
 					{prettify(outlineObject.specialOutlineMeanings)}
 				</div>
-				<OutlineSvg {outlineObject} slot="back" />
+				<div slot="back" style="width: 60%;">
+					<OutlineSvg {outlineObject} />
+				</div>
 			</FlippingOutlineCard>
 		{/key}
 	</div>
