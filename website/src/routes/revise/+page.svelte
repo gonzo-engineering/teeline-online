@@ -2,8 +2,9 @@
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import allOutlines from '../../data/outlines.json';
 	import FlippingOutlineCard from '../../lib/cards/OutlineCardFlipping.svelte';
+	import OutlineSvg from '../../lib/outlineSVGs/OutlineSVG.svelte';
 	import Toggle from '../../lib/toggle.svelte';
-	import { shuffleOutlines } from '../../scripts/helpers';
+	import { prettify, shuffleOutlines } from '../../scripts/helpers';
 
 	const shuffledSpecialOutlines: OutlineObject[] = shuffleOutlines(
 		allOutlines.filter((outline) => outline.specialOutlineMeanings.length > 0)
@@ -43,7 +44,12 @@
 
 	<div class="flipcard-container">
 		{#key outlineObject}
-			<FlippingOutlineCard {outlineObject} {outlineFirst} />
+			<FlippingOutlineCard flipped={outlineFirst}>
+				<div slot="front">
+					{prettify(outlineObject.specialOutlineMeanings)}
+				</div>
+				<OutlineSvg {outlineObject} slot="back" />
+			</FlippingOutlineCard>
 		{/key}
 	</div>
 
