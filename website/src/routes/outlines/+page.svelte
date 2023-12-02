@@ -45,9 +45,11 @@
 </div>
 
 <div class="animated-container">
-	{#each displayedOutlines as outlineObject}
-		<OutlineCardAnimated {outlineObject} />
-	{/each}
+	{#key displayedOutlines}
+		{#each displayedOutlines as outlineObject}
+			<OutlineCardAnimated {outlineObject} />
+		{/each}
+	{/key}
 </div>
 
 {#if displayedOutlines.length === 0}
