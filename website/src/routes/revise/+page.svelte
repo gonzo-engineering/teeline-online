@@ -2,7 +2,8 @@
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import allOutlines from '../../data/outlines.json';
 	import FlippingOutlineCard from '../../lib/cards/OutlineCardFlipping.svelte';
-	import OutlineSvg from '../../lib/outlineSVGs/OutlineSVG.svelte';
+	import Container from '../../lib/outlineSVGs/OutlineSVG.svelte';
+	import Lines from '../../lib/outlineSVGs/Lines.svelte';
 	import Toggle from '../../lib/toggle.svelte';
 	import { prettify, shuffleOutlines } from '../../scripts/helpers';
 
@@ -49,7 +50,9 @@
 					{prettify(outlineObject.specialOutlineMeanings)}
 				</div>
 				<div slot="back" style="width: 60%;">
-					<OutlineSvg {outlineObject} />
+					<Container {outlineObject} let:line let:previousLinesLength>
+						<Lines {line} {previousLinesLength} />
+					</Container>
 				</div>
 			</FlippingOutlineCard>
 		{/key}
