@@ -31,14 +31,6 @@
 >
 	<path class="dot" stroke-dasharray="0 {1 + line.length}" d={line.path} />
 	<path class="path" stroke-dasharray={line.length} d={line.path} />
-	<circle cx={line.start.x} cy={line.start.y} r="20" />
-	<circle cx={line.end.x} cy={line.end.y} r="20" />
-
-	<path
-		class="path"
-		stroke-dasharray={line.length}
-		d={`M${line.end.x},${line.end.y}` + line.path.replace(/M[\d\.]+( |,)[\d\.]+/, '')}
-	/>
 </g>
 
 <style>
@@ -59,11 +51,6 @@
 		stroke-width: 96;
 		stroke-dashoffset: 1;
 		animation-fill-mode: none !important;
-	}
-
-	circle {
-		fill: orange;
-		opacity: 0.12;
 	}
 
 	:global(.outline-container:hover) :is(.path, .dot) {
