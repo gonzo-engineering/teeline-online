@@ -1,5 +1,4 @@
 <script lang="ts">
-	import SVGPathCommander from 'svg-path-commander';
 	import type { LineDetails } from '../../data/interfaces/interfaces';
 
 	export let previousLinesLength = 0;
@@ -11,8 +10,6 @@
 	 * line across the entire width of the canvas, and `250` would take 333.3ms.
 	 */
 	export let drawingSpeed: number = 750;
-
-	const length = Math.ceil(SVGPathCommander.getTotalLength(line.path));
 
 	/**
 	 * Transform an object of into CSS custom properties that can be used
@@ -27,14 +24,13 @@
 
 <g
 	style={getCSSCustomProperties({
-		length,
+		length: line.length,
 		speed: drawingSpeed,
 		delay: `${0.125 + previousLinesLength / drawingSpeed}s`
 	})}
-	transform="translate({line.translateValues})"
 >
-	<path class="dot" stroke-dasharray="0 {1 + length}" d={line.path} />
-	<path class="path" stroke-dasharray={length} d={line.path} />
+	<path class="dot" stroke-dasharray="0 {1 + line.length}" d={line.path} />
+	<path class="path" stroke-dasharray={line.length} d={line.path} />
 </g>
 
 <style>
@@ -56,6 +52,7 @@
 		stroke-dashoffset: 1;
 		animation-fill-mode: none !important;
 	}
+
 	:global(.outline-container:hover) :is(.path, .dot) {
 		animation-name: dash;
 		animation-duration: calc(1s * var(--length) / var(--speed));

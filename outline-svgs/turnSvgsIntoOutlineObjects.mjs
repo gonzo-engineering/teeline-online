@@ -1,50 +1,68 @@
-import { readdirSync, readFileSync, writeFile } from 'fs';
+// @ts-check
 
-const svgFolderPath = './new-batch/';
+import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join, basename } from 'node:path';
+import { parseHTML } from 'linkedom';
+import SVGPathCommander from 'svg-path-commander';
 
-let outlinesObjectArray = [];
+const dir = dirname(fileURLToPath(import.meta.url));
 
-function roundToNearest10(num) {
-	return Math.round(num / 10) * 10;
-}
+/** get the grouping folders that are siblings to this file */
+const groupings = readdirSync(dir, { withFileTypes: true })
+	.filter((entry) => entry.isDirectory())
+	.filter(({ name }) => name !== 'node_modules')
+	.map(({ path, name }) => join(path, name));
 
-readdirSync(svgFolderPath).forEach((file) => {
-	const fileContent = readFileSync(svgFolderPath + file, { encoding: 'utf8' });
-	const lineCount = (fileContent.match(/translate/g) || []).length;
+const filepaths = groupings.flatMap((grouping) =>
+	readdirSync(grouping, { withFileTypes: true })
+		.filter(({ name }) => name.endsWith('.svg'))
+		.map(({ path, name }) => join(path, name))
+);
 
-	function inferLinePath(stringifiedSvg, lineNumber) {
-		const linePath = stringifiedSvg.split(' d="')[lineNumber].split('"/>')[0];
-		return linePath;
-	}
+console.log({ filepaths });
 
-	function inferTranslateValues(stringifiedSvg, lineNumber) {
-		const translateValuesAsStrings = stringifiedSvg.split('translate(')[lineNumber].split(')"')[0];
-		const [x, y] = translateValuesAsStrings.split(',');
-		return [roundToNearest10(+x), roundToNearest10(+y)];
-	}
+const outlines = filepaths.map((path) => {
+	const fileContent = readFileSync(path, { encoding: 'utf8' });
 
-	let outlineObject = {
-		letterGroupings: [file.replace('.svg', '')],
-		specialOutlineMeanings: [],
-		lines: []
-	};
+	const { document } = parseHTML(fileContent);
+	const lines = [...document.querySelectorAll('path')]
+		.flatMap((path) => {
+			const d = path.getAttribute('d');
+			const translate = path.getAttribute('transform');
+			if (!d) return [];
+			if (!translate) return d;
 
-	for (let i = 0; i < lineCount; i++) {
-		outlineObject.lines.push({
-			path: inferLinePath(fileContent, i + 1),
-			translateValues: inferTranslateValues(fileContent, i + 1)
+			const [, x, y] =
+				translate
+					.match(/([\d\.]+), ?([\d\.]+)/)
+					?.map(Number)
+					.map(Math.round) ?? [];
+
+			return SVGPathCommander.pathToString(
+				SVGPathCommander.pathToRelative(SVGPathCommander.transformPath(d, { translate: [x, y] }))
+			);
+		})
+		.map((path) => {
+			const length = Math.ceil(SVGPathCommander.getTotalLength(path));
+			const start = SVGPathCommander.getPointAtLength(path, 0);
+			const end = SVGPathCommander.getPointAtLength(path, length);
+
+			return { path, length, start, end };
 		});
-	}
 
-	outlinesObjectArray.push(outlineObject);
+	return path.split('/').at(-2) === 'specials'
+		? {
+				letterGroupings: [],
+				specialOutlineMeanings: [basename(path, '.svg').split(',')],
+				lines
+		  }
+		: {
+				letterGroupings: [basename(path, '.svg').split(',')],
+				specialOutlineMeanings: [],
+				lines
+		  };
 });
 
-console.log(JSON.stringify(outlinesObjectArray));
-
-// fs.writeFile('/test.json', JSON.stringify(outlinesObjectArray), err => {
-//     if (err) {
-//         console.error(err)
-//         return
-//     }
-//     //file written successfully
-// })
+// writeFileSync('../website/src/data/outlines.json', JSON.stringify(outlines, null, 2), 'utf-8');
+writeFileSync('./outlines.json', JSON.stringify(outlines, null, 2), 'utf-8');

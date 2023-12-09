@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "linkedom": "0.16.4",
+    "svg-path-commander": "2.0.9"
+  }
+}

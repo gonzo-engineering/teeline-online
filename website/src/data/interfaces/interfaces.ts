@@ -1,12 +1,19 @@
 export type OutlineObject = {
 	letterGroupings: string[];
 	specialOutlineMeanings: string[];
-	lines: LineDetails[];
+	lines: readonly LineDetails[];
+};
+
+type Point = {
+	readonly x: number;
+	readonly y: number;
 };
 
 export type LineDetails = {
 	path: string;
-	translateValues: number[];
+	length: number;
+	start: Point;
+	end: Point;
 };
 
 export interface SyllabusSection {

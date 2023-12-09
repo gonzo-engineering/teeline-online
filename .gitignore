@@ -1,0 +1,10 @@
+# System
+.DS_Store
+
+# Node
+node_modules
+
+# Environment
+.env
+.env.*
+!.env.example
