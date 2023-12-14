@@ -3,7 +3,7 @@
 	import { disemvowelWord } from '../../scripts/disemvowel';
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 
-	const outlineObject = createOutlineObject(disemvowelWord('dog'));
+	const outlineObject = createOutlineObject(disemvowelWord('dogged'));
 </script>
 
 <div class="container">
