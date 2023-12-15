@@ -18,6 +18,7 @@ export const disemvowelWord = (word: string) => {
 		.replace('ss', 's')
 		.replace('tt', 't')
 		.replace('vv', 'v')
+		.replace('zz', 'z')
 		.replace('ck', 'c')
 		.replace(/[aeiou]/gi, '');
 	if (word.length === 1) return word;
