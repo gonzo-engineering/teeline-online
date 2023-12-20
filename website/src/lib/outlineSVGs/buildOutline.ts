@@ -1,7 +1,12 @@
 import allOutlines from '../../data/outlines.json';
 import type { LineDetails, OutlineObject } from '../../data/interfaces/interfaces';
 
-export const createOutlineObject = (word: string): OutlineObject => {
+export const createOutlineObject = (
+	word: string,
+	config: {
+		singleOrMultiple: 'single' | 'multiple';
+	}
+): OutlineObject => {
 	// Break word into array of letters
 	const lettersArray = word.split('');
 	// Find outline object of each letter
@@ -10,6 +15,8 @@ export const createOutlineObject = (word: string): OutlineObject => {
 	);
 	// Approach A: Combine outline line paths into one
 	let combinedOutlinePath = '';
+	let combinedLength = 0;
+	// TODO: Track x and y coordinates
 	for (let i = 0; i < lettersObjectArray.length; i++) {
 		for (let j = 0; j < lettersObjectArray[i].lines.length; j++) {
 			if (i === 0 && j === 0) {
@@ -20,6 +27,7 @@ export const createOutlineObject = (word: string): OutlineObject => {
 					''
 				);
 			}
+			combinedLength += lettersObjectArray[i].lines[j].length;
 		}
 	}
 	// Approach B: Combine outline line paths into array of line details
@@ -55,6 +63,16 @@ export const createOutlineObject = (word: string): OutlineObject => {
 	return {
 		letterGroupings: [word],
 		specialOutlineMeanings: [],
-		lines: combinedLineDetails
+		lines:
+			config.singleOrMultiple === 'single'
+				? [
+						{
+							path: combinedOutlinePath,
+							length: combinedLength,
+							start: { x: 0, y: 0 },
+							end: { x: 0, y: 0 }
+						}
+				  ]
+				: combinedLineDetails
 	};
 };

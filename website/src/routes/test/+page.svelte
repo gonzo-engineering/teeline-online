@@ -3,7 +3,9 @@
 	import { disemvowelWord } from '../../scripts/disemvowel';
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 
-	const outlineObject = createOutlineObject(disemvowelWord('dogged'));
+	const outlineObject = createOutlineObject(disemvowelWord('magic'), {
+		singleOrMultiple: 'single'
+	});
 </script>
 
 <div class="container">
