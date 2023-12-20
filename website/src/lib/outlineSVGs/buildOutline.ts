@@ -8,13 +8,21 @@ export const createOutlineObject = (word: string): OutlineObject => {
 	const lettersObjectArray: OutlineObject[] = lettersArray.map((letter) =>
 		allOutlines.find((outline) => outline.letterGroupings.includes(letter))
 	);
-	// Combine outline line paths into one
+	// Approach A: Combine outline line paths into one
 	let combinedOutlinePath = '';
 	for (let i = 0; i < lettersObjectArray.length; i++) {
 		for (let j = 0; j < lettersObjectArray[i].lines.length; j++) {
-			combinedOutlinePath += lettersObjectArray[i].lines[j].path;
+			if (i === 0 && j === 0) {
+				combinedOutlinePath += lettersObjectArray[i].lines[j].path;
+			} else {
+				combinedOutlinePath += lettersObjectArray[i].lines[j].path.replace(
+					/M[\d\.]+( |,)[\d\.]+/,
+					''
+				);
+			}
 		}
 	}
+	// Approach B: Combine outline line paths into array of line details
 	let combinedLineDetails: LineDetails[] = [];
 	let xTracker = lettersObjectArray[0].lines[0].end.x;
 	let yTracker = lettersObjectArray[0].lines[0].end.y;
