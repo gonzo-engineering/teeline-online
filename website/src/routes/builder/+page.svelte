@@ -3,7 +3,7 @@
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 
 	let inputText = '';
-	$: wordsInSearchTerm = inputText.split(' ');
+	$: wordsInSearchTerm = inputText.trim().split(' ');
 	$: outlineObjects = wordsInSearchTerm.map((word) =>
 		createOutlineObject(word, {
 			singleOrMultiple: 'single'
