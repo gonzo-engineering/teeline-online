@@ -47,6 +47,7 @@
 		width: var(--width);
 		padding-bottom: 30px;
 		margin: 0 auto;
+		max-width: 300px;
 	}
 
 	.outline-label {
