@@ -7,7 +7,9 @@ export const createOutlineObject = (
 		singleOrMultiple: 'single' | 'multiple';
 	}
 ): OutlineObject => {
-	if (word.length === 0) {
+	// Remove special characters from word
+	const cleanedWord = word.replace(/[^a-zA-Z]/g, '');
+	if (cleanedWord.length === 0) {
 		return {
 			letterGroupings: [],
 			specialOutlineMeanings: [],
@@ -15,7 +17,7 @@ export const createOutlineObject = (
 		};
 	}
 	// Break word into array of letters
-	const lettersArray = word.split('');
+	const lettersArray = cleanedWord.split('');
 	// Find outline object of each letter
 	const lettersObjectArray: OutlineObject[] = lettersArray.map((letter) =>
 		allOutlines.find((outline) => outline.letterGroupings.includes(letter))
@@ -68,7 +70,7 @@ export const createOutlineObject = (
 	}
 	// Return new outline object
 	return {
-		letterGroupings: [word],
+		letterGroupings: [cleanedWord],
 		specialOutlineMeanings: [],
 		lines:
 			config.singleOrMultiple === 'single'
