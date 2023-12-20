@@ -1,5 +1,6 @@
 import allOutlines from '../../data/outlines.json';
 import type { LineDetails, OutlineObject } from '../../data/interfaces/interfaces';
+import { disemvowelWord } from '../../scripts/disemvowel';
 
 export const createOutlineObject = (
 	word: string,
@@ -7,8 +8,15 @@ export const createOutlineObject = (
 		singleOrMultiple: 'single' | 'multiple';
 	}
 ): OutlineObject => {
+	// Check if special outline exists for word
+	const specialOutline = allOutlines.find((outline) =>
+		outline.specialOutlineMeanings.includes(word)
+	);
+	if (specialOutline) {
+		return specialOutline;
+	}
 	// Remove special characters from word
-	const cleanedWord = word.replace(/[^a-zA-Z]/g, '');
+	const cleanedWord = disemvowelWord(word).replace(/[^a-zA-Z]/g, '');
 	if (cleanedWord.length === 0) {
 		return {
 			letterGroupings: [],

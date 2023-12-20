@@ -1,12 +1,10 @@
 <script lang="ts">
 	import { createOutlineObject } from '../../lib/outlineSVGs/buildOutline';
-	import { disemvowelWord } from '../../scripts/disemvowel';
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 
 	let inputText = '';
 	$: wordsInSearchTerm = inputText.split(' ');
-	$: disemvoweledWords = wordsInSearchTerm.map((word) => disemvowelWord(word));
-	$: outlineObjects = disemvoweledWords.map((word) =>
+	$: outlineObjects = wordsInSearchTerm.map((word) =>
 		createOutlineObject(word, {
 			singleOrMultiple: 'single'
 		})
