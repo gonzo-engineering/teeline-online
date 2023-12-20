@@ -1,6 +1,6 @@
-import allOutlines from '../../data/outlines.json';
-import type { LineDetails, OutlineObject } from '../../data/interfaces/interfaces';
-import { disemvowelWord } from '../../scripts/disemvowel';
+import allOutlines from '../data/outlines.json';
+import type { LineDetails, OutlineObject } from '../data/interfaces/interfaces';
+import { disemvowelWord } from './disemvowel';
 
 interface Config {
 	singleOrMultiple: 'single' | 'multiple';

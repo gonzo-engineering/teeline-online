@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createOutlineObjects } from '../../lib/outlineSVGs/buildOutline';
+	import { createOutlineObjects } from '../../scripts/build-outline-objects';
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 
 	let inputText = '';
