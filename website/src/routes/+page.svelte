@@ -41,6 +41,13 @@
 		sectionImage="/images/section-teaser-revise.webp"
 		sectionImageAlt="A Teeline shorthand revision flashcard."
 	/>
+	<PageTeaserCard
+		sectionName="Builder"
+		sectionBlurb="Watch words turn into outlines before your very eyes"
+		sectionPath="/builder"
+		sectionImage="/images/section-teaser-builder.webp"
+		sectionImageAlt="Fuck yeah meme."
+	/>
 </div>
 <div class="copy-container">
 	<p>
@@ -67,7 +74,6 @@
 			grid-template-columns: repeat(3, 1fr);
 			grid-template-rows: 1fr;
 			grid-column-gap: 2rem;
-			grid-row-gap: 0px;
 		}
 	}
 </style>

@@ -10,6 +10,14 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Builder | teeline.online</title>
+	<meta
+		name="description"
+		content="Type words and watch them turn into Teeline shorthand outlines before your very eyes."
+	/>
+</svelte:head>
+
 <div class="container">
 	<input
 		bind:value={searchTerm}
