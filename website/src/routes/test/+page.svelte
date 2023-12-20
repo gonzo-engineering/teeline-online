@@ -3,12 +3,20 @@
 	import { disemvowelWord } from '../../scripts/disemvowel';
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 
-	const outlineObject = createOutlineObject(disemvowelWord('magic'), {
+	let searchTerm = '';
+	$: disemvoweledSearchTerm = disemvowelWord(searchTerm);
+	$: outlineObject = createOutlineObject(disemvoweledSearchTerm, {
 		singleOrMultiple: 'single'
 	});
 </script>
 
 <div class="container">
+	<input
+		bind:value={searchTerm}
+		type="text"
+		class="search-input blah"
+		placeholder="Construct a word..."
+	/>
 	<OutlineCardAnimated {outlineObject} displayName={true} />
 </div>
 
@@ -16,5 +24,10 @@
 	.container {
 		width: 500px;
 		margin: 0 auto;
+	}
+	.blah {
+		margin: 0 auto;
+		display: block;
+		margin-bottom: 3rem;
 	}
 </style>

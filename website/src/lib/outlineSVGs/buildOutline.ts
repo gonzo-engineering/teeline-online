@@ -7,6 +7,13 @@ export const createOutlineObject = (
 		singleOrMultiple: 'single' | 'multiple';
 	}
 ): OutlineObject => {
+	if (word.length === 0) {
+		return {
+			letterGroupings: [],
+			specialOutlineMeanings: [],
+			lines: []
+		};
+	}
 	// Break word into array of letters
 	const lettersArray = word.split('');
 	// Find outline object of each letter
