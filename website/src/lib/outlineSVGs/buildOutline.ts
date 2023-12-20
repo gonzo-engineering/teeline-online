@@ -2,12 +2,19 @@ import allOutlines from '../../data/outlines.json';
 import type { LineDetails, OutlineObject } from '../../data/interfaces/interfaces';
 import { disemvowelWord } from '../../scripts/disemvowel';
 
-export const createOutlineObject = (
-	word: string,
-	config: {
-		singleOrMultiple: 'single' | 'multiple';
-	}
-): OutlineObject => {
+interface Config {
+	singleOrMultiple: 'single' | 'multiple';
+}
+
+export const createOutlineObjects = (text: string, config: Config): OutlineObject[] => {
+	// TODO: Account for punctuation
+	// TODO: Account for multi-word special outlines
+	const wordsInText = text.split(' ');
+	const outlineObjects = wordsInText.map((word) => createOutlineObject(word, config));
+	return outlineObjects;
+};
+
+const createOutlineObject = (word: string, config: Config): OutlineObject => {
 	// Check if special outline exists for word
 	const specialOutline = allOutlines.find((outline) =>
 		outline.specialOutlineMeanings.includes(word)

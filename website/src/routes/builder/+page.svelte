@@ -1,14 +1,11 @@
 <script lang="ts">
-	import { createOutlineObject } from '../../lib/outlineSVGs/buildOutline';
+	import { createOutlineObjects } from '../../lib/outlineSVGs/buildOutline';
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 
 	let inputText = '';
-	$: wordsInSearchTerm = inputText.trim().split(' ');
-	$: outlineObjects = wordsInSearchTerm.map((word) =>
-		createOutlineObject(word, {
-			singleOrMultiple: 'single'
-		})
-	);
+	$: outlineObjects = createOutlineObjects(inputText.trim(), {
+		singleOrMultiple: 'single'
+	});
 </script>
 
 <svelte:head>
