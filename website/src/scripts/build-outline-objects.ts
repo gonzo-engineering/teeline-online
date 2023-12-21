@@ -9,7 +9,7 @@ interface Config {
 export const createOutlineObjects = (text: string, config: Config): OutlineObject[] => {
 	// TODO: Account for punctuation
 	// TODO: Account for multi-word special outlines
-	const wordsInText = text.split(' ');
+	const wordsInText = text.toLowerCase().split(' ');
 	const outlineObjects = wordsInText.map((word) => createOutlineObject(word, config));
 	return outlineObjects;
 };
