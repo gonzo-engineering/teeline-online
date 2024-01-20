@@ -37,6 +37,7 @@
 <style>
 	svg {
 		width: 100%;
+		max-height: 400px;
 	}
 
 	line {

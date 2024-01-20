@@ -1,11 +1,7 @@
 <script lang="ts">
-	import { createOutlineObjects } from '../../scripts/build-outline-objects';
-	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
+	import ShorthandPassage from '$lib/ShorthandPassage.svelte';
 
 	let inputText = '';
-	$: outlineObjects = createOutlineObjects(inputText.trim(), {
-		singleOrMultiple: 'single'
-	});
 </script>
 
 <svelte:head>
@@ -23,11 +19,7 @@
 		class="search-input blah"
 		placeholder="Construct a word..."
 	/>
-	<div style="display: flex; gap: 3%; margin: 50px auto;">
-		{#each outlineObjects as outlineObject}
-			<OutlineCardAnimated {outlineObject} --width={`${100 / outlineObjects.length}%`} />
-		{/each}
-	</div>
+	<ShorthandPassage text={inputText.trim()} />
 </div>
 
 <style>

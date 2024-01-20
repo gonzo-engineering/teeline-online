@@ -53,7 +53,7 @@
 		animation-fill-mode: none !important;
 	}
 
-	:global(.outline-container:hover) :is(.path, .dot) {
+	:global(.animation-container:hover) :is(.path, .dot) {
 		animation-name: dash;
 		animation-duration: calc(1s * var(--length) / var(--speed));
 		/* This is trying to mimic a hand movement… https://cubic-bezier.com/#.12,0,.84,1 */

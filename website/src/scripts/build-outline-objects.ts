@@ -2,19 +2,17 @@ import allOutlines from '../data/outlines.json';
 import type { LineDetails, OutlineObject } from '../data/interfaces/interfaces';
 import { disemvowelWord } from './disemvowel';
 
-interface Config {
-	singleOrMultiple: 'single' | 'multiple';
-}
-
-export const createOutlineObjects = (text: string, config: Config): OutlineObject[] => {
-	// TODO: Account for punctuation
+export const createOutlineObjects = (text: string): OutlineObject[] => {
+	// Remove punctuation
+	const punctuationRegex = /[.,\/#!$%\^&\*;:{}=\-_`~()]/g;
+	text = text.replace(punctuationRegex, '');
 	// TODO: Account for multi-word special outlines
 	const wordsInText = text.toLowerCase().split(' ');
-	const outlineObjects = wordsInText.map((word) => createOutlineObject(word, config));
+	const outlineObjects = wordsInText.map((word) => createOutlineObject(word));
 	return outlineObjects;
 };
 
-const createOutlineObject = (word: string, config: Config): OutlineObject => {
+const createOutlineObject = (word: string): OutlineObject => {
 	// Check if special outline exists for word
 	const specialOutline = allOutlines.find((outline) =>
 		outline.specialOutlineMeanings.includes(word)
@@ -54,7 +52,7 @@ const createOutlineObject = (word: string, config: Config): OutlineObject => {
 				const dx = line.start.x - first.start.x;
 				const dy = line.start.y - first.start.y;
 				const path = line.path.replace(/M[\d\.]+( |,)[\d\.]+/, `M${x + dx} ${y + dy}`);
-				console.log({ then: line.path, now: path });
+				// console.log({ then: line.path, now: path });
 				return { ...line, path };
 			});
 
