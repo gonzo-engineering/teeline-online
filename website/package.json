@@ -15,7 +15,7 @@
 		"copy-data": "mkdir -p static/data && cp src/data/outlines.json static/data/outlines.json"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-netlify": "^3.0.0",
+		"@sveltejs/adapter-netlify": "^4.1.0",
 		"@sveltejs/kit": "^2.4.3",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@tsconfig/svelte": "^5.0.2",
