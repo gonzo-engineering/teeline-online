@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Builder | teeline.online</title>
+	<title>Generator | teeline.online</title>
 	<meta
 		name="description"
 		content="Type words and watch them turn into Teeline shorthand outlines before your very eyes."

@@ -10,7 +10,7 @@
 			<li><HeaderLink href="/learn" title="Learn" /></li>
 			<li><HeaderLink href="/outlines" title="Outlines" /></li>
 			<li><HeaderLink href="/revise" title="Revise" /></li>
-			<li><HeaderLink href="/builder" title="Builder" /></li>
+			<li><HeaderLink href="/generator" title="Generator" /></li>
 		</ul>
 	</nav>
 </header>

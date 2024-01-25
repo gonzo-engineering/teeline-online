@@ -42,11 +42,11 @@
 		sectionImageAlt="A Teeline shorthand revision flashcard."
 	/>
 	<PageTeaserCard
-		sectionName="Builder"
+		sectionName="Generator"
 		sectionBlurb="Watch words turn into outlines before your very eyes"
-		sectionPath="/builder"
-		sectionImage="/images/section-teaser-builder.webp"
-		sectionImageAlt="Fuck yeah meme."
+		sectionPath="/generator"
+		sectionImage="/images/section-teaser-generator.webp"
+		sectionImageAlt="Black and white illustration of an ink pot and quill."
 	/>
 </div>
 <div class="copy-container">
