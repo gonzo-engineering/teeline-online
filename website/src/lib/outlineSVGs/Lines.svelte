@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { LineDetails } from '../../data/interfaces/interfaces';
 
+	export let precedingOutlinesLength = 0;
 	export let previousLinesLength = 0;
 	export let line: LineDetails;
 	/**
@@ -26,7 +27,7 @@
 	style={getCSSCustomProperties({
 		length: line.length,
 		speed: drawingSpeed,
-		delay: `${0.125 + previousLinesLength / drawingSpeed}s`
+		delay: `${0.125 + (precedingOutlinesLength + previousLinesLength) / drawingSpeed}s`
 	})}
 >
 	<path class="dot" stroke-dasharray="0 {1 + line.length}" d={line.path} />

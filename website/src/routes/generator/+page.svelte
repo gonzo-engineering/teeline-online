@@ -16,7 +16,7 @@
 	<input
 		bind:value={inputText}
 		type="text"
-		class="search-input blah"
+		class="search-input search-input-generator"
 		placeholder="Construct a word..."
 	/>
 	<ShorthandPassage text={inputText.trim()} />
@@ -27,7 +27,7 @@
 		width: 100%;
 		margin: 0 auto;
 	}
-	.blah {
+	.search-input-generator {
 		margin: 0 auto;
 		display: block;
 		margin-bottom: 3rem;
