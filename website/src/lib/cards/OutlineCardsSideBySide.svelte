@@ -6,7 +6,7 @@
 	export let rightOutline: OutlineObject;
 </script>
 
-<div style="display: flex; gap: 5%; margin: 50px auto;">
+<div style="display: flex; gap: 5%; margin: 50px auto; justify-content: center;">
 	<OutlineCardAnimated outlineObject={leftOutline} --width={'50%'} />
 	<OutlineCardAnimated outlineObject={rightOutline} --width={'50%'} />
 </div>

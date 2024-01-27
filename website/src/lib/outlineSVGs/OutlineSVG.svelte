@@ -1,5 +1,7 @@
 <script lang="ts">
+	export let precedingOutlinesLength = 0;
 	export let outlineObject: OutlineObject;
+	export let isStandalone = true;
 
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import { prettify } from '../../scripts/helpers';
@@ -28,15 +30,26 @@
 
 <svg viewBox="0 0 750 750">
 	<desc>Teeline shorthand outline for '{outlineName}'</desc>
-	<line x1={margin} x2={width - margin} y1={horizontal} y2={horizontal} />
+	<line
+		x1={isStandalone ? margin : 0}
+		x2={isStandalone ? width - margin : width}
+		y1={horizontal}
+		y2={horizontal}
+	/>
 	{#each outlineObject.lines as line, index}
-		<slot {line} {index} previousLinesLength={getPreviousLinesLength(index)} />
+		<slot
+			{line}
+			{index}
+			{precedingOutlinesLength}
+			previousLinesLength={getPreviousLinesLength(index)}
+		/>
 	{/each}
 </svg>
 
 <style>
 	svg {
 		width: 100%;
+		max-height: 400px;
 	}
 
 	line {

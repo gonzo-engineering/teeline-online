@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { LineDetails } from '../../data/interfaces/interfaces';
 
+	export let precedingOutlinesLength = 0;
 	export let previousLinesLength = 0;
 	export let line: LineDetails;
 	/**
@@ -26,7 +27,7 @@
 	style={getCSSCustomProperties({
 		length: line.length,
 		speed: drawingSpeed,
-		delay: `${0.125 + previousLinesLength / drawingSpeed}s`
+		delay: `${0.125 + (precedingOutlinesLength + previousLinesLength) / drawingSpeed}s`
 	})}
 >
 	<path class="dot" stroke-dasharray="0 {1 + line.length}" d={line.path} />
@@ -53,7 +54,7 @@
 		animation-fill-mode: none !important;
 	}
 
-	:global(.outline-container:hover) :is(.path, .dot) {
+	:global(.animation-container:hover) :is(.path, .dot) {
 		animation-name: dash;
 		animation-duration: calc(1s * var(--length) / var(--speed));
 		/* This is trying to mimic a hand movement… https://cubic-bezier.com/#.12,0,.84,1 */

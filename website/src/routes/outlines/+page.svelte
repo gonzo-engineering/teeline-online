@@ -5,6 +5,7 @@
 	import allOutlines from '../../data/outlines.json';
 	import { sortOutlinesAlphabetically } from '../../scripts/helpers';
 	import { filterAndSortOutlines } from '../../scripts/search';
+	import ShorthandPassage from '$lib/ShorthandPassage.svelte';
 
 	let displayedOutlines: OutlineObject[] = sortOutlinesAlphabetically(allOutlines);
 	let alphabetToggleOn: boolean = false;
@@ -53,7 +54,15 @@
 </div>
 
 {#if displayedOutlines.length === 0}
-	<div class="nothing-found-message">No outlines found matching your search.</div>
+	<div class="nothing-found-message">
+		An exact match for '{searchTerm}' could not be found in the outline dictionary. Here's our best
+		guess using the
+		<a href="/generator">generator</a>:
+	</div>
+	<ShorthandPassage text={searchTerm} />
+	<div style="width: 50%; margin: auto; text-align: center; padding-top: 2rem;">
+		<p>This feature is a work in progress so take results with a grain of salt.</p>
+	</div>
 {/if}
 
 <style>
@@ -69,9 +78,11 @@
 		justify-content: center;
 	}
 	.nothing-found-message {
-		margin: 10rem auto;
+		margin: 3rem auto;
 		text-align: center;
 		font-size: 1.8rem;
+		line-height: 1.5;
+		max-width: 800px;
 	}
 	@media (min-width: 1025px) {
 		.animated-container {
