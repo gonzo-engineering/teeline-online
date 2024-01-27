@@ -17,15 +17,19 @@
 		bind:value={inputText}
 		type="text"
 		class="search-input search-input-generator"
-		placeholder="Construct a word..."
+		placeholder="Generate outlines..."
 	/>
 	<ShorthandPassage text={inputText.trim()} />
+	<div style="width: 50%; margin: auto; text-align: center;">
+		<p>This feature is a work in progress so take results with a grain of salt.</p>
+	</div>
 </div>
 
 <style>
 	.container {
 		width: 100%;
 		margin: 0 auto;
+		padding-top: 2rem;
 	}
 	.search-input-generator {
 		margin: 0 auto;

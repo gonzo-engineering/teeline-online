@@ -55,10 +55,14 @@
 
 {#if displayedOutlines.length === 0}
 	<div class="nothing-found-message">
-		An exact match for '{searchTerm}' could not be found. Here's our best guess using the
+		An exact match for '{searchTerm}' could not be found in the outline dictionary. Here's our best
+		guess using the
 		<a href="/generator">generator</a>:
 	</div>
 	<ShorthandPassage text={searchTerm} />
+	<div style="width: 50%; margin: auto; text-align: center; padding-top: 2rem;">
+		<p>This feature is a work in progress so take results with a grain of salt.</p>
+	</div>
 {/if}
 
 <style>
@@ -78,7 +82,7 @@
 		text-align: center;
 		font-size: 1.8rem;
 		line-height: 1.5;
-		width: 60%;
+		max-width: 800px;
 	}
 	@media (min-width: 1025px) {
 		.animated-container {
