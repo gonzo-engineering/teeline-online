@@ -2,9 +2,10 @@ import allOutlines from '../data/outlines.json';
 import type { LineDetails, OutlineObject } from '../data/interfaces/interfaces';
 import { disemvowelWord } from './disemvowel';
 
+const punctuationRegex = /[.,\/#!$%\^&\*;:{}=\-_`~()]/g;
+
 export const createOutlineObjects = (text: string): OutlineObject[] => {
 	// Remove punctuation
-	const punctuationRegex = /[.,\/#!$%\^&\*;:{}=\-_`~()]/g;
 	text = text.replace(punctuationRegex, '');
 	// TODO: Account for multi-word special outlines
 	const wordsInText = text.toLowerCase().split(' ');
