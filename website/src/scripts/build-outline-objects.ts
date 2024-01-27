@@ -18,8 +18,14 @@ const createOutlineObject = (word: string): OutlineObject => {
 	const specialOutline = allOutlines.find((outline) =>
 		outline.specialOutlineMeanings.includes(word)
 	);
+	const letterGrouping = allOutlines.find((outline) =>
+		outline.letterGroupings.includes(disemvowelWord(word))
+	);
 	if (specialOutline) {
 		return specialOutline;
+	}
+	if (letterGrouping) {
+		return letterGrouping;
 	}
 	// Remove special characters from word
 	const cleanedWord = disemvowelWord(word).replace(/[^a-zA-Z]/g, '');
