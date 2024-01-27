@@ -1,40 +1,45 @@
 # teeline.online
 
-[teeline.online](https://teeline.online) is a website for studying the [Teeline](https://en.wikipedia.org/wiki/Teeline_Shorthand) shorthand system. It is currently built with [Svelte](https://kit.svelte.dev/). To run locally download the repository then run `npm install npm` followed by `run dev -- --open`.
+[teeline.online](https://teeline.online) is a website for studying the [Teeline](https://en.wikipedia.org/wiki/Teeline_Shorthand) shorthand system. It is currently built with [SvelteKit](https://kit.svelte.dev/). To run locally download the repository then run `npm install npm` followed by `run dev -- --open`.
 
 ## Overview
 
-Most of the site revolves around an array of outline objects, which contain all the information necessary to render 240+ unique outlines. Below is an example of what one looks like.
+Most of the site revolves around an array of outline objects, which contain all the information necessary to render 240+ specific outlines as well as generate infinite combinations. Below is an example of what one looks like.
 
 ```ts
 {
-		"letterGroupings": [
-			"imp"
-		],
-		"specialOutlineMeanings": [
-			"important"
-		],
+		"letterGroupings": ["mm"],
+		"specialOutlineMeanings": ["member"],
 		"lines": [
 			{
-				"path": "M31.6328 0C32.12 1.02423 31.8825 0.163041 31.6328 1.38786C27.9727 19.3407 11.5986 39.3923 4.18692 56.7039C4.06859 56.9803 1.81512 63.4449 1.0745 63.4449C-3.05311 63.4449 5.82 56.5632 8.99703 53.9281C21.4059 43.636 36.6253 34.5244 50.5903 26.171C88.6116 3.42776 149.34 -14.4002 188.386 20.4213C228.762 56.4296 191.779 205.786 201.401 259.727",
-				"translateValues": [
-					240,
-					400
-				]
+				"path": "M192.3868 456.9313c-6.7784 -7.1246 77.4725 -38.2629 101.2242 -34.7955c17.479 2.5517 37.501 10.4433 51.78 21.1152c2.376 1.7759 12.71 12.3451 14.854 12.0446c35.051 -4.9121 45.992 -39.9392 100.164 -35.9851c17.04 1.2438 40.409 8.9492 55.387 17.6952c6.964 4.0666 12.628 7.0169 18.886 12.342c1.623 1.3803 8.044 7.3629 7.852 6.6914",
+				"length": 387,
+				"start": {
+					"x": 192.3868,
+					"y": 456.9313
+				},
+				"end": {
+					"x": 542.5339999999999,
+					"y": 456.0391
+				}
 			}
 		]
 	}
 ```
 
-The `letterGroupings` and `specialOutlineMeanings` values are arrays of strings rather than just strings because sometimes outlines can have multiple meanings. Each path corresponds to one line in that outline, and `translateValues` contains the x and y offset of the line from the top left hand corner of a 750 by 750 canvas. This allows words to be placed relative to a central line, which is essential for certain symbols.
+The `letterGroupings` and `specialOutlineMeanings` values are arrays of strings rather than just strings because sometimes outlines can have multiple meanings. Each entry in the `lines` array corresponds to one line in that outline. The `start` and `end` coordindates are for a 750 by 750 canvas. This allows words to be placed relative to a central line, which is essential for certain symbols.
 
-These outline objects can be fed into `OutlineCard.svelte`, which contains an SVG with the given path (or paths) and a label. They look a little like this:
+These outline objects can be fed into `OutlineSVG.svelte`, which contains an SVG with the given path (or paths) and a label. These in turn can be used to render cards...
 
 ![Example of teeline.online outline cards](/docs/assets/cards-example.png)
 
-If you hover over a card you can watch the outline being drawn as if by an invisible hand, which I'm super fucking happy about.
+Or even entire sentences...
 
-The outlines were 'hand drawn' on a tablet in [Krita](https://krita.org/en/) and saved as SVGs. These were then converted into the outline objects described above. To start with this was done manually then was eventually handled by the catchily named `turnSvgsIntoOutlineObjects.js`.
+![Example of teeline.online outline passages](/docs/assets/passage-example.png)
+
+If you hover over these things you can watch the outline(s) being drawn as if by an invisible hand, which I'm super fucking happy about.
+
+The outlines were 'hand drawn' on a tablet in [Krita](https://krita.org/en/) and saved as SVGs. These were then converted into the outline objects described above. To start with this was done manually then was eventually handled by the catchily named `turnSvgsIntoOutlineObjects.mjs`.
 
 The font is a digitised version of my own non-cursive handwriting. This project was partly inspired by old revision cards from studying for my [NCTJ](https://www.nctj.com/) diploma and it felt like a nice nod to that.
 
