@@ -28,10 +28,8 @@ export const disemvowelWord = (word: string) => {
 		return firstLetter + wordNoVowelsOrDoubles + finalLetter;
 	else if (!isVowel(firstLetter) && finalLetterIsSoundedVowel)
 		return wordNoVowelsOrDoubles + finalLetter;
-	else if (isVowel(firstLetter) && endsWithUe)
-		return firstLetter + wordNoVowelsOrDoubles + 'u'
-	else if (!isVowel(firstLetter) && endsWithUe)
-		return wordNoVowelsOrDoubles + 'u';
+	else if (isVowel(firstLetter) && endsWithUe) return firstLetter + wordNoVowelsOrDoubles + 'u';
+	else if (!isVowel(firstLetter) && endsWithUe) return wordNoVowelsOrDoubles + 'u';
 	else if (isVowel(firstLetter)) return firstLetter + wordNoVowelsOrDoubles;
 	else return wordNoVowelsOrDoubles;
 };

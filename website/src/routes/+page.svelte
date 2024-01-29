@@ -71,7 +71,7 @@
 		.site-sections-container {
 			width: 60%;
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(4, 1fr);
 			grid-template-rows: 1fr;
 			grid-column-gap: 2rem;
 		}
