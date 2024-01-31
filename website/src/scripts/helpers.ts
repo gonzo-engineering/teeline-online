@@ -1,5 +1,4 @@
 import type { OutlineObject } from '../data/interfaces/interfaces';
-import { disemvowelWord } from './disemvowel';
 
 export const prettify = (outlineNames: string[]): string => {
 	return outlineNames.toString().replace(/,/g, ' / ');
@@ -30,18 +29,4 @@ export const shuffleOutlines = (outlinesArray: OutlineObject[]): OutlineObject[]
 
 export const randomIntFromInterval = (min: number, max: number) => {
 	return Math.floor(Math.random() * (max - min + 1) + min);
-};
-
-export const findMatchingOutline = (word: string, outlinesArray: OutlineObject[]) => {
-	const disemvoweledWord = disemvowelWord(word);
-	const matchingLetterSequenceOutline = outlinesArray.find((outline) =>
-		outline.letterGroupings.includes(disemvoweledWord)
-	);
-	const matchingSpecialOutline = outlinesArray.find((outline) =>
-		outline.specialOutlineMeanings.includes(word)
-	);
-
-	if (matchingSpecialOutline) return matchingSpecialOutline;
-	else if (matchingLetterSequenceOutline) return matchingLetterSequenceOutline;
-	else return null;
 };

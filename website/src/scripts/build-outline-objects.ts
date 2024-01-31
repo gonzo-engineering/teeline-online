@@ -9,21 +9,23 @@ export const createOutlineObjects = (text: string): OutlineObject[] => {
 	text = text.replace(punctuationRegex, '');
 	// TODO: Account for multi-word special outlines
 	const wordsInText = text.toLowerCase().split(' ');
-	const outlineObjects = wordsInText.map((word) => createOutlineObject(word));
+	const outlineObjects = wordsInText.map((word) => findOrCreateOutlineObject(word, allOutlines));
 	return outlineObjects;
 };
 
-const createOutlineObject = (word: string): OutlineObject => {
+export const findOrCreateOutlineObject = (
+	word: string,
+	outlines: OutlineObject[]
+): OutlineObject => {
 	// Check if special outline exists for word
-	const specialOutline = allOutlines.find((outline) =>
-		outline.specialOutlineMeanings.includes(word)
-	);
-	const letterGrouping = allOutlines.find((outline) =>
-		outline.letterGroupings.includes(disemvowelWord(word))
-	);
-	if (specialOutline) {
+	const specialOutline = outlines.find((outline) => outline.specialOutlineMeanings.includes(word));
+	if (outlines.find((outline) => outline.specialOutlineMeanings.includes(word))) {
 		return specialOutline;
 	}
+	// Check if letter grouping exists for word
+	const letterGrouping = outlines.find((outline) =>
+		outline.letterGroupings.includes(disemvowelWord(word))
+	);
 	if (letterGrouping) {
 		return letterGrouping;
 	}
@@ -40,7 +42,7 @@ const createOutlineObject = (word: string): OutlineObject => {
 	const lettersArray = cleanedWord.split('');
 	// Find outline object of each letter
 	const lettersObjectArray = lettersArray
-		.map((letter) => allOutlines.find((outline) => outline.letterGroupings.includes(letter)))
+		.map((letter) => outlines.find((outline) => outline.letterGroupings.includes(letter)))
 		.map(({ lines }) => lines);
 
 	// we need to get the first starting point

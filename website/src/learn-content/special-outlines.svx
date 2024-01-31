@@ -8,14 +8,14 @@ order: 7
 <script>
     import OutlineCardsSideBySide from '$lib/cards/OutlineCardsSideBySide.svelte'
     import outlines from '../data/outlines.json'
-	import { findMatchingOutline } from '../scripts/helpers.ts'
+	import { findOrCreateOutlineObject } from '../scripts/build-outline-objects.ts'
     import SyllabusLink from '$lib/SyllabusLink.svelte'
 
-	const dOutline = findMatchingOutline('ladies and gentlemen', outlines);
-	const tOutline = findMatchingOutline('on the other hand', outlines);
+	const dOutline = findOrCreateOutlineObject('ladies and gentlemen', outlines);
+	const tOutline = findOrCreateOutlineObject('on the other hand', outlines);
 
-    const governmentOutline = findMatchingOutline('government', outlines);
-    const satisfactoryOutline = findMatchingOutline('satisfactory', outlines);
+    const governmentOutline = findOrCreateOutlineObject('government', outlines);
+    const satisfactoryOutline = findOrCreateOutlineObject('satisfactory', outlines);
 </script> 
 
 There are words and turns of phrases so common that it makes sense to have succinct versions of them, even by the standards of Teeline. These abbreviated - or sometimes straight up symbolic - words are called **special outlines**.

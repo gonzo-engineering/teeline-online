@@ -13,9 +13,9 @@ order: 6
     import SyllabusLink from '$lib/SyllabusLink.svelte'
 
     import outlines from '../data/outlines.json'
-	import { findMatchingOutline } from '../scripts/helpers.ts'
+	import { findOrCreateOutlineObject } from '../scripts/build-outline-objects.ts'
 
-	const conferenceOutline: OutlineObject = findMatchingOutline('conference', outlines);
+	const conferenceOutline: OutlineObject = findOrCreateOutlineObject('conference', outlines);
 </script> 
 
 The full process going on in the shorthand writer's brain is as follows:
@@ -27,9 +27,9 @@ Part of Teeline's beauty is the way letters flow into each other. Cast off your 
 
 The efficiency of shorthand is in the way it connects letters together. Let's look at a few examples.
 
-<WordToOutline word={'rose'} {outlines} />
-<WordToOutline word={'fort'} {outlines} />
-<WordToOutline word={'sage'} {outlines} />
+<WordToOutline word={'rose'} />
+<WordToOutline word={'fort'} />
+<WordToOutline word={'blue'} />
 
 With each step of the process, you are saving time. Going from 'rose' to 'rs' cuts the number of longhand pen strokes from four to two - then the conversion to shorthand makes it one. Letter combinations are fluid and efficient.
 
