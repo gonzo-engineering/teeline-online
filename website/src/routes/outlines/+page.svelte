@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-	<title>Outlines | teeline.online</title>
+	<title>Dictionary | teeline.online</title>
 	<meta
 		name="description"
 		content="Browse and search an interactive library of hundreds of animated Teeline shorthand outlines, ranging from the alphabet to special abbreviations."

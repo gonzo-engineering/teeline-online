@@ -19,12 +19,19 @@
 </div>
 
 <style>
+	.container:hover {
+		transform: scale(1.02);
+		/* transition: transform 0.2s; */
+	}
 	a {
 		border-radius: 20px;
 		text-decoration: none;
 		font-weight: normal;
 		text-align: center;
 		width: 100%;
+	}
+	a:hover {
+		opacity: 1;
 	}
 	.card-contents {
 		box-shadow: 0px 0px 10px 1px #e1e1e1;

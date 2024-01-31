@@ -28,8 +28,8 @@
 		sectionImageAlt="Ink drawing of a man scratching his head in confusion."
 	/>
 	<PageTeaserCard
-		sectionName="Outlines"
-		sectionBlurb="Browse and search hundreds of animated Teeline outlines"
+		sectionName="Dictionary"
+		sectionBlurb="Browse hundreds of animated Teeline outlines"
 		sectionPath="/outlines"
 		sectionImage="/images/section-teaser-outlines.webp"
 		sectionImageAlt="A grid of cards with Teeline shorthand outlines drawn on them."
@@ -43,7 +43,7 @@
 	/>
 	<PageTeaserCard
 		sectionName="Generator"
-		sectionBlurb="Watch words turn into outlines before your very eyes"
+		sectionBlurb="Watch words turn into shorthand before your very eyes"
 		sectionPath="/generator"
 		sectionImage="/images/section-teaser-generator.webp"
 		sectionImageAlt="Black and white illustration of an ink pot and quill."
@@ -69,7 +69,7 @@
 
 	@media (min-width: 1025px) {
 		.site-sections-container {
-			width: 60%;
+			width: 75%;
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
 			grid-template-rows: 1fr;
