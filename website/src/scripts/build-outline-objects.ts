@@ -29,10 +29,30 @@ export const findOrCreateOutlineObject = (
 			lines: []
 		};
 	}
+
+	// Check if cleaned word contains any multi-letter groupings
+	// If so, return the outline object for the multi-letter grouping and the
+	// position of the multi-letter grouping in the word.
+	// Keep doing this until no multi-letter groupings are found.
+
+	const findMultiLetterGroupings = (word: string, outlines: OutlineObject[]) => {
+		const multiLetterGrouping = outlines.find((outline) =>
+			outline.letterGroupings.some((grouping) => word.includes(grouping) && grouping.length > 1)
+		);
+		if (!multiLetterGrouping) return null;
+		const multiLetterGroupingIndex = word.indexOf(
+			multiLetterGrouping.letterGroupings.find(
+				(grouping) => word.includes(grouping) && grouping.length > 1
+			) as string
+		);
+		return { multiLetterGrouping, multiLetterGroupingIndex };
+	};
+	console.log(findMultiLetterGroupings(cleanedWord, outlines));
+
 	// Break word into array of letters, find outline object of each letter
-	const lettersObjectArray = cleanedWord.split('').map((letter) =>
-		outlines.find((outline) => outline.letterGroupings.includes(letter))
-	);
+	const lettersObjectArray = cleanedWord
+		.split('')
+		.map((letter) => outlines.find((outline) => outline.letterGroupings.includes(letter)));
 
 	// we need to get the first starting point
 	const startingObject = createStartingObject(cleanedWord, lettersObjectArray);
@@ -64,7 +84,9 @@ export const findOrCreateOutlineObject = (
 		};
 	}, startingObject);
 
-	const specialOutlineMeanings = checkedSpecials.find((outline) => outline.letterGrouping === cleanedWord);
+	const specialOutlineMeanings = checkedSpecials.find(
+		(outline) => outline.letterGrouping === cleanedWord
+	);
 
 	const groupingIsSpecial = specialOutlineMeanings !== undefined;
 
