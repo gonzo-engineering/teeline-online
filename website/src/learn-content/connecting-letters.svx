@@ -8,9 +8,9 @@ order: 6
 <script lang="ts">
     import type { OutlineObject } from '$lib/types.ts'
     import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte'
-    import WordDisemvoweler from '$lib/disemvoweler/wordDisemvoweler.svelte'
-    import WordToOutline from '$lib/wordToOutline.svelte'
-    import SyllabusLink from '$lib/syllabusLink.svelte'
+    import WordDisemvoweler from '$lib/disemvoweler/WordDisemvoweler.svelte'
+    import WordToOutline from '$lib/WordToOutline.svelte'
+    import SyllabusLink from '$lib/SyllabusLink.svelte'
 
     import outlines from '../data/outlines.json'
 	import { findMatchingOutline } from '../scripts/helpers.ts'

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import WordDisemvoweler from './disemvoweler/wordDisemvoweler.svelte';
+	import WordDisemvoweler from './disemvoweler/WordDisemvoweler.svelte';
 	import OutlineCardAnimated from './cards/OutlineCardAnimated.svelte';
 	import { findMatchingOutline } from '../scripts/helpers';
 	import { disemvowelWord } from '../scripts/disemvowel';

@@ -9,7 +9,7 @@ order: 7
     import OutlineCardsSideBySide from '$lib/cards/OutlineCardsSideBySide.svelte'
     import outlines from '../data/outlines.json'
 	import { findMatchingOutline } from '../scripts/helpers.ts'
-    import SyllabusLink from '$lib/syllabusLink.svelte'
+    import SyllabusLink from '$lib/SyllabusLink.svelte'
 
 	const dOutline = findMatchingOutline('ladies and gentlemen', outlines);
 	const tOutline = findMatchingOutline('on the other hand', outlines);

@@ -6,8 +6,8 @@ order: 5
 ---
 
 <script>
-    import WordDisemvoweler from '$lib/disemvoweler/wordDisemvoweler.svelte'
-    import SyllabusLink from '$lib/syllabusLink.svelte'
+    import WordDisemvoweler from '$lib/disemvoweler/WordDisemvoweler.svelte'
+    import SyllabusLink from '$lib/SyllabusLink.svelte'
 </script>
 
 Another way to cut down on letters is to remove silent and double letters. Although Teeline is spelling based there's seldom use in writing letters that can't be heard. There are two main ways that this happens.

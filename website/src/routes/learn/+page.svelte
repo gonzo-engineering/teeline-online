@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PageTeaserCard from '$lib/pageTeaserCard.svelte';
+	import PageTeaserCard from '$lib/PageTeaserCard.svelte';
 	import { syllabusMetadata } from '../../data/syllabus';
 </script>
 

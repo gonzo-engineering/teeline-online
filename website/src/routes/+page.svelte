@@ -1,5 +1,5 @@
 <script>
-	import PageTeaserCard from '$lib/pageTeaserCard.svelte';
+	import PageTeaserCard from '$lib/PageTeaserCard.svelte';
 </script>
 
 <svelte:head>

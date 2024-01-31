@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
-	import Toggle from '../../lib/toggle.svelte';
+	import Toggle from '../../lib/Toggle.svelte';
 	import allOutlines from '../../data/outlines.json';
 	import { sortOutlinesAlphabetically } from '../../scripts/helpers';
 	import { filterAndSortOutlines } from '../../scripts/search';
