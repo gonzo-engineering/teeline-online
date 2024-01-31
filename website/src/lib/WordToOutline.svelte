@@ -1,8 +1,6 @@
 <script lang="ts">
 	import WordDisemvoweler from './disemvoweler/WordDisemvoweler.svelte';
 	import OutlineCardAnimated from './cards/OutlineCardAnimated.svelte';
-	import allOutlines from '../data/outlines.json';
-	import { findOrCreateOutlineObject } from '../scripts/build-outline-objects';
 
 	export let word: string;
 </script>
@@ -12,11 +10,7 @@
 		<WordDisemvoweler {word} />
 	</div>
 	<div>
-		<OutlineCardAnimated
-			outlineObject={findOrCreateOutlineObject(word, allOutlines)}
-			displayName={false}
-			--width={'100%'}
-		/>
+		<OutlineCardAnimated outlineOrWord={word} displayName={false} --width={'100%'} />
 	</div>
 </div>
 

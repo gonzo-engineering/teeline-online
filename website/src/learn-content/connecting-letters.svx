@@ -11,11 +11,6 @@ order: 6
     import WordDisemvoweler from '$lib/disemvoweler/WordDisemvoweler.svelte'
     import WordToOutline from '$lib/WordToOutline.svelte'
     import SyllabusLink from '$lib/SyllabusLink.svelte'
-
-    import outlines from '../data/outlines.json'
-	import { findOrCreateOutlineObject } from '../scripts/build-outline-objects.ts'
-
-	const conferenceOutline: OutlineObject = findOrCreateOutlineObject('conference', outlines);
 </script> 
 
 The full process going on in the shorthand writer's brain is as follows:
@@ -35,7 +30,7 @@ With each step of the process, you are saving time. Going from 'rose' to 'rs' cu
 
 The savings are even better with [special outlines](/learn/special-outlines). Let's take the one for 'conference' as an example.
 
-<OutlineCardAnimated outlineObject={conferenceOutline} --width={"50%"} />
+<OutlineCardAnimated outlineOrWord="conference" --width={"50%"} />
 
 Look at that. One motion of the pen. Eleven would be needed to write it out in longhand. Even the disemvoweled version takes seven.
 

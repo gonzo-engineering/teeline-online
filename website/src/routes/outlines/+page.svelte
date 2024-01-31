@@ -48,7 +48,7 @@
 <div class="animated-container">
 	{#key displayedOutlines}
 		{#each displayedOutlines as outlineObject}
-			<OutlineCardAnimated {outlineObject} />
+			<OutlineCardAnimated outlineOrWord={outlineObject} />
 		{/each}
 	{/key}
 </div>
