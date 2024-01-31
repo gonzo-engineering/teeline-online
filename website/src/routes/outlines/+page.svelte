@@ -45,6 +45,12 @@
 	/>
 </div>
 
+{#if searchTerm.length > 0 && displayedOutlines.length > 0}
+	<div class="search-subheading">
+		Matches found for <span class="search-term">'{searchTerm}'</span>
+	</div>
+{/if}
+
 <div class="animated-container">
 	{#key displayedOutlines}
 		{#each displayedOutlines as outlineObject}
@@ -76,6 +82,13 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+	}
+	.search-subheading {
+		font-size: 1.8rem;
+		margin: 2rem auto;
+	}
+	.search-term {
+		font-weight: 700;
 	}
 	.nothing-found-message {
 		margin: 3rem auto;
