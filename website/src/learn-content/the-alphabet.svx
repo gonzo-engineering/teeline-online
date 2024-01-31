@@ -6,7 +6,7 @@ order: 2
 ---
 
 <script>
-    import SyllabusLink from '$lib/syllabusLink.svelte'
+    import SyllabusLink from '$lib/SyllabusLink.svelte'
 </script>
 
 Teeline is spelling-based rather than phonetic and as such has a typical A-to-Z alphabet. You can view this below. An interactive version is availabe on through a filter on [the outlines page](/outlines).

@@ -6,9 +6,9 @@ order: 4
 ---
 
 <script>
-    import PassageDisemvoweler from '$lib/disemvoweler/passageDisemvoweler.svelte'
-    import WordDisemvoweler from '$lib/disemvoweler/wordDisemvoweler.svelte'
-    import SyllabusLink from '$lib/syllabusLink.svelte'
+    import PassageDisemvoweler from '$lib/disemvoweler/PassageDisemvoweler.svelte'
+    import WordDisemvoweler from '$lib/disemvoweler/WordDisemvoweler.svelte'
+    import SyllabusLink from '$lib/SyllabusLink.svelte'
 </script>    
 
 One of the main ways Teeline saves time and space is by removing as many vowels as possible.

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
-	import Toggle from '../../lib/toggle.svelte';
+	import Toggle from '../../lib/Toggle.svelte';
 	import allOutlines from '../../data/outlines.json';
 	import { sortOutlinesAlphabetically } from '../../scripts/helpers';
 	import { filterAndSortOutlines } from '../../scripts/search';
@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-	<title>Outlines | teeline.online</title>
+	<title>Dictionary | teeline.online</title>
 	<meta
 		name="description"
 		content="Browse and search an interactive library of hundreds of animated Teeline shorthand outlines, ranging from the alphabet to special abbreviations."
@@ -45,10 +45,16 @@
 	/>
 </div>
 
+{#if searchTerm.length > 0 && displayedOutlines.length > 0}
+	<div class="search-subheading">
+		Matches found for <span class="search-term">'{searchTerm}'</span>
+	</div>
+{/if}
+
 <div class="animated-container">
 	{#key displayedOutlines}
 		{#each displayedOutlines as outlineObject}
-			<OutlineCardAnimated {outlineObject} />
+			<OutlineCardAnimated outlineOrWord={outlineObject} />
 		{/each}
 	{/key}
 </div>
@@ -76,6 +82,13 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+	}
+	.search-subheading {
+		font-size: 1.8rem;
+		margin: 2rem auto;
+	}
+	.search-term {
+		font-weight: 700;
 	}
 	.nothing-found-message {
 		margin: 3rem auto;

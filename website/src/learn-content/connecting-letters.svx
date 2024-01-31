@@ -8,14 +8,9 @@ order: 6
 <script lang="ts">
     import type { OutlineObject } from '$lib/types.ts'
     import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte'
-    import WordDisemvoweler from '$lib/disemvoweler/wordDisemvoweler.svelte'
-    import WordToOutline from '$lib/wordToOutline.svelte'
-    import SyllabusLink from '$lib/syllabusLink.svelte'
-
-    import outlines from '../data/outlines.json'
-	import { findMatchingOutline } from '../scripts/helpers.ts'
-
-	const conferenceOutline: OutlineObject = findMatchingOutline('conference', outlines);
+    import WordDisemvoweler from '$lib/disemvoweler/WordDisemvoweler.svelte'
+    import WordToOutline from '$lib/WordToOutline.svelte'
+    import SyllabusLink from '$lib/SyllabusLink.svelte'
 </script> 
 
 The full process going on in the shorthand writer's brain is as follows:
@@ -27,15 +22,15 @@ Part of Teeline's beauty is the way letters flow into each other. Cast off your 
 
 The efficiency of shorthand is in the way it connects letters together. Let's look at a few examples.
 
-<WordToOutline word={'rose'} {outlines} />
-<WordToOutline word={'fort'} {outlines} />
-<WordToOutline word={'sage'} {outlines} />
+<WordToOutline word={'rose'} />
+<WordToOutline word={'fort'} />
+<WordToOutline word={'blue'} />
 
 With each step of the process, you are saving time. Going from 'rose' to 'rs' cuts the number of longhand pen strokes from four to two - then the conversion to shorthand makes it one. Letter combinations are fluid and efficient.
 
 The savings are even better with [special outlines](/learn/special-outlines). Let's take the one for 'conference' as an example.
 
-<OutlineCardAnimated outlineObject={conferenceOutline} --width={"50%"} />
+<OutlineCardAnimated outlineOrWord="conference" --width={"50%"} />
 
 Look at that. One motion of the pen. Eleven would be needed to write it out in longhand. Even the disemvoweled version takes seven.
 

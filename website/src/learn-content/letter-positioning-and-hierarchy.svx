@@ -8,22 +8,14 @@ order: 3
 <script>
     import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte'
 	import OutlineCardsSideBySide from '$lib/cards/OutlineCardsSideBySide.svelte'
-    import outlines from '../data/outlines.json'
-	import { findMatchingOutline } from '../scripts/helpers.ts'
-	import SyllabusLink from '$lib/syllabusLink.svelte'
-
-	const dOutline = findMatchingOutline('d', outlines);
-	const tOutline = findMatchingOutline('t', outlines);
-	const whatOutline = findMatchingOutline('what', outlines)
-	const toDoOutline = findMatchingOutline('to do', outlines)
-	const differentOutline = findMatchingOutline('different', outlines);
+	import SyllabusLink from '$lib/SyllabusLink.svelte'
 </script> 
 
 Unlike longhand, in which all letters are sat on the same line and go left to right, in Teeline shorthand thought must be given to how high or low letters are.
 
 Some Teeline strokes mean different things depending on where they are in relation to the line being written on. For example, a short dash on the line means 'd' while one floating above means 't'.
 
-<OutlineCardsSideBySide leftOutline={dOutline} rightOutline={tOutline} />
+<OutlineCardsSideBySide leftOutline="d" rightOutline="t" />
 
 The result is that what's written for 'need' is the same as what's written for 'not', only it's in a different position relative to the line.
 
@@ -39,7 +31,7 @@ If a word contains one or more of these letters you must take them into account 
 
 Take 'what' as example (which becomes 'wt' when written in Teeline). Even though the first letter is 'w', which as a default sits on the line, the other letter is a 't', which takes precedence. The right place to put the word is therefore _above_ the line.
 
-<OutlineCardAnimated outlineObject={whatOutline} --width={"50%"} />
+<OutlineCardAnimated outlineOrWord="what" --width={"50%"} />
 
 The same shape on the line would translate to 'wd'.
 
@@ -47,7 +39,7 @@ As for how dominant letters relate to each other, as a rule of thumb if there ar
 
 If you have a 't' next to a 'd', put the 'd' just below. If the situation is reversed then the 't' dash is above. Keeping them close together makes writing faster. 
 
-<OutlineCardsSideBySide leftOutline={toDoOutline} rightOutline={differentOutline} />
+<OutlineCardsSideBySide leftOutline="toad" rightOutline="different" />
 
 We'll get into this in more depth in the ['Connecting letters'](/learn/connecting-letters) section. For now it is enough to know that the vertical position of certain letters is essential to what they mean, and this makes those letters more dominant than their kin.
 
