@@ -1,7 +1,9 @@
 import lettersAndLetterGroupings from './outlines.json';
 import specialOutlines from './special-outlines.json';
-import type { LineDetails, OutlineObject } from './interfaces/interfaces';
+import type { LineDetails, OutlineObject, SpecialOutline } from './interfaces/interfaces';
 import { disemvowelWord } from '../scripts/disemvowel';
+
+const specials: SpecialOutline[] = specialOutlines;
 
 export const findOrCreateOutlineObject = (
 	word: string,
@@ -70,7 +72,7 @@ export const findOrCreateOutlineObject = (
 		}
 	);
 
-	const specialOutlineMeanings = specialOutlines.find((outline) =>
+	const specialOutlineMeanings = specials.find((outline) =>
 		outline.letterGrouping.includes(cleanedWord)
 	);
 
@@ -79,16 +81,36 @@ export const findOrCreateOutlineObject = (
 	// Return new outline object
 	return {
 		letterGroupings: [cleanedWord],
-		specialOutlineMeanings: groupingIsSpecial ? [specialOutlineMeanings?.meaning] : [],
+		specialOutlineMeanings: groupingIsSpecial ? specialOutlineMeanings?.meanings : [],
 		lines: combinedLineDetails
 	};
 };
 
-const specialOutlineObjects = specialOutlines.map((specialOutline) =>
-	findOrCreateOutlineObject(specialOutline.letterGrouping, lettersAndLetterGroupings)
-);
+// Combine letter groupings and special outlines where applicable
+const combinedOutlines = lettersAndLetterGroupings.map((outline) => {
+	// Check if letter grouping already exists in special outline
+	const specialOutline = specials.find((specialOutline) =>
+		outline.letterGroupings.includes(specialOutline.letterGrouping)
+	);
+	if (specialOutline) {
+		// Append special meaning to outline
+		return {
+			...outline,
+			specialOutlineMeanings: specialOutline.meanings
+		};
+	}
+	return outline;
+});
 
-export const allOutlines: OutlineObject[] = [
-	...lettersAndLetterGroupings,
-	...specialOutlineObjects
-];
+// Create outline objects for special outlines without letter grouping
+const specialOutlinesWithoutLetterGrouping = specials.filter(
+	(specialOutline) =>
+		!lettersAndLetterGroupings.some((outline) =>
+			outline.letterGroupings.includes(specialOutline.letterGrouping)
+		)
+);
+const specialOutlineObjects = specialOutlinesWithoutLetterGrouping.map((specialOutline) => {
+	return findOrCreateOutlineObject(specialOutline.letterGrouping, combinedOutlines);
+});
+
+export const allOutlines: OutlineObject[] = [...combinedOutlines, ...specialOutlineObjects];

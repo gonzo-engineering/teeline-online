@@ -1,18 +1,46 @@
 [
 	{
 		"letterGrouping": "ac",
-		"meaning": "account"
+		"meanings": ["account"]
+	},
+	{
+		"letterGrouping": "bs",
+		"meanings": ["business"]
 	},
 	{
 		"letterGrouping": "co",
-		"meaning": "company"
+		"meanings": ["company"]
+	},
+	{
+		"letterGrouping": "dv",
+		"meanings": ["develop"]
 	},
 	{
 		"letterGrouping": "etc",
-		"meaning": "et cetera"
+		"meanings": ["et cetera"]
+	},
+	{
+		"letterGrouping": "f",
+		"meanings": ["from"]
+	},
+	{
+		"letterGrouping": "gn",
+		"meanings": ["general"]
+	},
+	{
+		"letterGrouping": "gv",
+		"meanings": ["government"]
+	},
+	{
+		"letterGrouping": "imp",
+		"meanings": ["important"]
+	},
+	{
+		"letterGrouping": "prm",
+		"meanings": ["permanent"]
 	},
 	{
 		"letterGrouping": "rp",
-		"meaning": "representative"
+		"meanings": ["representative"]
 	}
 ]
