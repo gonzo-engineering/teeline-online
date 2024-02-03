@@ -16,6 +16,11 @@ export type LineDetails = {
 	end: Point;
 };
 
+export type SpecialOutline = {
+	letterGrouping: string;
+	meaning: string;
+};
+
 export interface SyllabusSection {
 	title: string;
 	description: string;

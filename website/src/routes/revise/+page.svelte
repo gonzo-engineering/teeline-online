@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
-	import allOutlines from '../../data/outlines.json';
+	import { allOutlines } from '../../data/combined-outlines';
 	import FlippingOutlineCard from '../../lib/cards/OutlineCardFlipping.svelte';
 	import Container from '../../lib/outlineSVGs/OutlineSVG.svelte';
 	import Lines from '../../lib/outlineSVGs/Lines.svelte';

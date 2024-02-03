@@ -1,0 +1,18 @@
+[
+	{
+		"letterGrouping": "ac",
+		"meaning": "account"
+	},
+	{
+		"letterGrouping": "co",
+		"meaning": "company"
+	},
+	{
+		"letterGrouping": "etc",
+		"meaning": "et cetera"
+	},
+	{
+		"letterGrouping": "rp",
+		"meaning": "representative"
+	}
+]

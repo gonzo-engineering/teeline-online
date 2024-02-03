@@ -2,11 +2,11 @@
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 	import Toggle from '../../lib/Toggle.svelte';
-	import allOutlines from '../../data/outlines.json';
 	import { sortOutlinesAlphabetically } from '../../scripts/helpers';
 	import { filterAndSortOutlines } from '../../scripts/search';
 	import ShorthandPassage from '$lib/ShorthandPassage.svelte';
 	import { alphabet } from '../../data/letter-hierarchy';
+	import { allOutlines } from '../../data/combined-outlines';
 
 	let displayedOutlines: OutlineObject[] = sortOutlinesAlphabetically(allOutlines);
 	let alphabetToggleOn: boolean = false;

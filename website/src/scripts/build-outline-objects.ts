@@ -1,7 +1,8 @@
-import allOutlines from '../data/outlines.json';
+import { allOutlines } from '../data/combined-outlines';
 import type { LineDetails, OutlineObject } from '../data/interfaces/interfaces';
 import { disemvowelWord } from './disemvowel';
 import { createStartingObject } from './calculate-starting-point';
+import specialOutlines from '../data/special-outlines.json';
 
 const punctuationRegex = /[.,\/#!$%\^&\*;:{}=\-_`~()]/g;
 
@@ -18,7 +19,7 @@ export const findOrCreateOutlineObject = (
 	word: string,
 	outlines: OutlineObject[]
 ): OutlineObject => {
-	// Check if special outline exists for word
+	// Check if custom special outline exists for word
 	const specialOutline = outlines.find((outline) => outline.specialOutlineMeanings.includes(word));
 	if (outlines.find((outline) => outline.specialOutlineMeanings.includes(word))) {
 		return specialOutline;
@@ -77,10 +78,16 @@ export const findOrCreateOutlineObject = (
 		};
 	}, startingObject);
 
+	const specialOutlineMeanings = specialOutlines.find((outline) =>
+		outline.letterGrouping.includes(cleanedWord)
+	);
+
+	const groupingIsSpecial = specialOutlineMeanings !== undefined;
+
 	// Return new outline object
 	return {
 		letterGroupings: [cleanedWord],
-		specialOutlineMeanings: [],
+		specialOutlineMeanings: groupingIsSpecial ? [specialOutlineMeanings?.meaning] : [],
 		lines: combinedLineDetails
 	};
 };

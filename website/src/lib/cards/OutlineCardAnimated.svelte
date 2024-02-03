@@ -4,7 +4,7 @@
 	import Lines from '../outlineSVGs/Lines.svelte';
 	import OutlineDetails from './OutlineDetails.svelte';
 	import { findOrCreateOutlineObject } from '../../scripts/build-outline-objects';
-	import allOutlines from '../../data/outlines.json';
+	import { allOutlines } from '../../data/combined-outlines';
 
 	export let outlineOrWord: OutlineObject | string;
 	export let displayName = true;
