@@ -7,7 +7,7 @@ order: 7
 
 <script>
     import OutlineCardsSideBySide from '$lib/cards/OutlineCardsSideBySide.svelte'
-    import { findOrCreateOutlineObject } from '../scripts/build-outline-objects.ts'
+    import { findOrCreateOutlineObject } from '../data/combined-outlines.ts'
     import { allOutlines } from '../data/combined-outlines.ts'
     import SyllabusLink from '$lib/SyllabusLink.svelte'
 
