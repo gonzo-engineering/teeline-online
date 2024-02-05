@@ -8,6 +8,10 @@
 		"meanings": ["business"]
 	},
 	{
+		"letterGrouping": "cb",
+		"meanings": ["club"]
+	},
+	{
 		"letterGrouping": "co",
 		"meanings": ["company"]
 	},
@@ -32,8 +36,16 @@
 		"meanings": ["government"]
 	},
 	{
+		"letterGrouping": "imd",
+		"meanings": ["immediate"]
+	},
+	{
 		"letterGrouping": "imp",
 		"meanings": ["important"]
+	},
+	{
+		"letterGrouping": "oh",
+		"meanings": ["of the"]
 	},
 	{
 		"letterGrouping": "prm",
