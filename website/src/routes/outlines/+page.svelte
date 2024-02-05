@@ -6,12 +6,11 @@
 	import { sortOutlinesAlphabetically } from '../../scripts/helpers';
 	import { filterAndSortOutlines } from '../../scripts/search';
 	import ShorthandPassage from '$lib/ShorthandPassage.svelte';
+	import { alphabet } from '../../data/letter-hierarchy';
 
 	let displayedOutlines: OutlineObject[] = sortOutlinesAlphabetically(allOutlines);
 	let alphabetToggleOn: boolean = false;
 	let searchTerm: string = '';
-
-	const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
 	const alphabetOutlines = allOutlines.filter((outline) =>
 		alphabet.some((letter) => outline.letterGroupings.includes(letter))
