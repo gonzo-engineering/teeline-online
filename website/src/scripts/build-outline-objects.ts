@@ -1,6 +1,7 @@
 import allOutlines from '../data/outlines.json';
 import type { LineDetails, OutlineObject } from '../data/interfaces/interfaces';
 import { disemvowelWord } from './disemvowel';
+import { createStartingObject } from './calculate-starting-point';
 
 const punctuationRegex = /[.,\/#!$%\^&\*;:{}=\-_`~()]/g;
 
@@ -38,47 +39,43 @@ export const findOrCreateOutlineObject = (
 			lines: []
 		};
 	}
+
 	// Break word into array of letters
 	const lettersArray = cleanedWord.split('');
 	// Find outline object of each letter
-	const lettersObjectArray = lettersArray
-		.map((letter) => outlines.find((outline) => outline.letterGroupings.includes(letter)))
-		.map(({ lines }) => lines);
+	const lettersObjectArray = lettersArray.map((letter) =>
+		outlines.find((outline) => outline.letterGroupings.includes(letter))
+	);
 
-	// we need to get the first starting point
-	const { x = 0, y = 0 } = lettersObjectArray[0]?.[0]?.start ?? {};
+	// We need to get the first starting point
+	const startingObject = createStartingObject(cleanedWord, lettersObjectArray);
 
-	const { combinedLineDetails } = lettersObjectArray.reduce<{
+	const letterObjectLines = lettersObjectArray.map((outline) => outline.lines);
+
+	const { combinedLineDetails } = letterObjectLines.reduce<{
 		combinedLineDetails: LineDetails[];
 		x: number;
 		y: number;
-	}>(
-		({ combinedLineDetails, x, y }, lines) => {
-			const [first, ...rest] = lines;
-			const last = rest.at(-1) ?? first;
+	}>(({ combinedLineDetails, x, y }, lines) => {
+		const [first, ...rest] = lines;
+		const last = rest.at(-1) ?? first;
 
-			const offsetLines = lines.map((line) => {
-				const dx = line.start.x - first.start.x;
-				const dy = line.start.y - first.start.y;
-				const path = line.path.replace(/M[\d\.]+( |,)[\d\.]+/, `M${x + dx} ${y + dy}`);
-				// console.log({ then: line.path, now: path });
-				return { ...line, path };
-			});
+		const offsetLines = lines.map((line) => {
+			const dx = line.start.x - first.start.x;
+			const dy = line.start.y - first.start.y;
+			const path = line.path.replace(/M[\d\.]+( |,)[\d\.]+/, `M${x + dx} ${y + dy}`);
+			// console.log({ then: line.path, now: path });
+			return { ...line, path };
+		});
 
-			combinedLineDetails.push(...offsetLines);
+		combinedLineDetails.push(...offsetLines);
 
-			return {
-				combinedLineDetails,
-				x: x + last.end.x - first.start.x,
-				y: y + last.end.y - first.start.y
-			};
-		},
-		{
-			combinedLineDetails: [],
-			x,
-			y
-		}
-	);
+		return {
+			combinedLineDetails,
+			x: x + last.end.x - first.start.x,
+			y: y + last.end.y - first.start.y
+		};
+	}, startingObject);
 
 	// Return new outline object
 	return {
