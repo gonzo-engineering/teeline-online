@@ -1,23 +1,31 @@
 <script lang="ts">
-	import type { OutlineObject } from '../../data/interfaces/interfaces';
+	import lettersAndGroupings from '../../data/outlines.json';
+	import specials from '../../data/special-outlines.json';
+	import type { OutlineObject, SpecialOutline } from '../../data/interfaces/interfaces';
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 	import Toggle from '../../lib/Toggle.svelte';
 	import { sortOutlinesAlphabetically } from '../../scripts/helpers';
 	import { filterAndSortOutlines } from '../../scripts/search';
 	import ShorthandPassage from '$lib/ShorthandPassage.svelte';
-	import { alphabet } from '../../data/letter-hierarchy';
-	import { allOutlines } from '../../data/combined-outlines';
+	import { hydrateOutlineData } from '../../scripts/hydrate-outline-data';
 
-	let displayedOutlines: OutlineObject[] = sortOutlinesAlphabetically(allOutlines);
+	const hydratedOutlineData = hydrateOutlineData(
+		lettersAndGroupings as OutlineObject[],
+		specials as SpecialOutline[]
+	);
+
+	let displayedOutlines: OutlineObject[] = sortOutlinesAlphabetically(hydratedOutlineData);
 	let alphabetToggleOn: boolean = false;
 	let searchTerm: string = '';
 
-	const alphabetOutlines = allOutlines.filter((outline) =>
+	const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+	const alphabetOutlines = hydratedOutlineData.filter((outline) =>
 		alphabet.some((letter) => outline.letterGroupings.includes(letter))
 	);
 
 	const toggleAlphabetFilter = () => {
-		displayedOutlines = alphabetToggleOn ? allOutlines : alphabetOutlines;
+		displayedOutlines = alphabetToggleOn ? hydratedOutlineData : alphabetOutlines;
 		alphabetToggleOn = !alphabetToggleOn;
 		searchTerm = '';
 	};
@@ -38,7 +46,7 @@
 		placeholder="Search for outlines..."
 		bind:value={searchTerm}
 		on:input={() => {
-			const outlinesToFilter = alphabetToggleOn ? alphabetOutlines : allOutlines;
+			const outlinesToFilter = alphabetToggleOn ? alphabetOutlines : hydratedOutlineData;
 			displayedOutlines = filterAndSortOutlines(outlinesToFilter, searchTerm.trim().toLowerCase());
 		}}
 	/>

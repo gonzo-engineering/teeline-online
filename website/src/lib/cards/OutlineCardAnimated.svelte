@@ -1,16 +1,24 @@
 <script lang="ts">
-	import type { OutlineObject } from '../../data/interfaces/interfaces';
+	import lettersAndGroupings from '../../data/outlines.json';
+	import specials from '../../data/special-outlines.json';
+	import type { OutlineObject, SpecialOutline } from '../../data/interfaces/interfaces';
 	import Container from '../outlineSVGs/OutlineSVG.svelte';
 	import Lines from '../outlineSVGs/Lines.svelte';
 	import OutlineDetails from './OutlineDetails.svelte';
-	import { allOutlines, findOrCreateOutlineObject } from '../../data/combined-outlines';
+	import { findOrCreateOutlineObject } from '../../scripts/build-outline-objects';
+	import { hydrateOutlineData } from '../../scripts/hydrate-outline-data';
 
 	export let outlineOrWord: OutlineObject | string;
 	export let displayName = true;
 
+	const hydratedOutlines = hydrateOutlineData(
+		lettersAndGroupings as OutlineObject[],
+		specials as SpecialOutline[]
+	);
+
 	const outlineObject =
 		typeof outlineOrWord === 'string'
-			? findOrCreateOutlineObject(outlineOrWord, allOutlines)
+			? findOrCreateOutlineObject(outlineOrWord, hydratedOutlines)
 			: outlineOrWord;
 </script>
 
