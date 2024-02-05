@@ -9,11 +9,9 @@
 	export let outlineOrWord: OutlineObject | string;
 	export let displayName = true;
 
-	const hydratedOutlines = hydratedData;
-
 	const outlineObject =
 		typeof outlineOrWord === 'string'
-			? findOrCreateOutlineObject(outlineOrWord, hydratedOutlines)
+			? findOrCreateOutlineObject(outlineOrWord, hydratedData)
 			: outlineOrWord;
 </script>
 

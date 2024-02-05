@@ -7,20 +7,18 @@
 	import ShorthandPassage from '$lib/ShorthandPassage.svelte';
 	import { hydratedData } from '../../scripts/hydrate-outline-data';
 
-	const hydratedOutlineData = hydratedData;
-
-	let displayedOutlines: OutlineObject[] = sortOutlinesAlphabetically(hydratedOutlineData);
+	let displayedOutlines: OutlineObject[] = sortOutlinesAlphabetically(hydratedData);
 	let alphabetToggleOn: boolean = false;
 	let searchTerm: string = '';
 
 	const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
-	const alphabetOutlines = hydratedOutlineData.filter((outline) =>
+	const alphabetOutlines = hydratedData.filter((outline) =>
 		alphabet.some((letter) => outline.letterGroupings.includes(letter))
 	);
 
 	const toggleAlphabetFilter = () => {
-		displayedOutlines = alphabetToggleOn ? hydratedOutlineData : alphabetOutlines;
+		displayedOutlines = alphabetToggleOn ? hydratedData : alphabetOutlines;
 		alphabetToggleOn = !alphabetToggleOn;
 		searchTerm = '';
 	};
@@ -41,7 +39,7 @@
 		placeholder="Search for outlines..."
 		bind:value={searchTerm}
 		on:input={() => {
-			const outlinesToFilter = alphabetToggleOn ? alphabetOutlines : hydratedOutlineData;
+			const outlinesToFilter = alphabetToggleOn ? alphabetOutlines : hydratedData;
 			displayedOutlines = filterAndSortOutlines(outlinesToFilter, searchTerm.trim().toLowerCase());
 		}}
 	/>

@@ -7,10 +7,8 @@
 	import { prettify, shuffleOutlines } from '../../scripts/helpers';
 	import { hydratedData } from '../../scripts/hydrate-outline-data';
 
-	const hydratedOutlineData = hydratedData;
-
 	const shuffledSpecialOutlines: OutlineObject[] = shuffleOutlines(
-		hydratedOutlineData.filter((outline) => outline.specialOutlineMeanings.length > 0)
+		hydratedData.filter((outline) => outline.specialOutlineMeanings.length > 0)
 	);
 
 	let counter = 0;
@@ -18,7 +16,7 @@
 	let outlineFirst = false;
 
 	const changeOutline = () => {
-		counter === hydratedOutlineData.length - 1 ? (counter = 0) : counter++;
+		counter === hydratedData.length - 1 ? (counter = 0) : counter++;
 		outlineObject = shuffledSpecialOutlines[counter];
 	};
 
