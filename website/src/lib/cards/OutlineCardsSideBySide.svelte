@@ -1,9 +1,8 @@
 <script lang="ts">
-	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import OutlineCardAnimated from './OutlineCardAnimated.svelte';
 
-	export let leftOutline: OutlineObject | string;
-	export let rightOutline: OutlineObject | string;
+	export let leftOutline: string;
+	export let rightOutline: string;
 </script>
 
 <div style="display: flex; gap: 5%; margin: 50px auto; justify-content: center;">
