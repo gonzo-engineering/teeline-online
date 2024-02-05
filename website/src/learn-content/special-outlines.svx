@@ -8,12 +8,12 @@ order: 7
 <script>
     import OutlineCardsSideBySide from '$lib/cards/OutlineCardsSideBySide.svelte'
     import { findOrCreateOutlineObject } from '../scripts/build-outline-objects.ts'
-    import { hydrateOutlineData } from '../scripts/hydrate-outline-data.ts'
+    import { hydratedData } from '../scripts/hydrate-outline-data.ts'
     import lettersAndGroupings from '../data/outlines.json'
     import specials from '../data/special-outlines.json'
     import SyllabusLink from '$lib/SyllabusLink.svelte'
 
-    const hydratedOutlineData = hydrateOutlineData(lettersAndGroupings, specials);
+    const hydratedOutlineData = hydratedData;
 
 	const dOutline = findOrCreateOutlineObject('ladies and gentlemen', hydratedOutlineData);
 	const tOutline = findOrCreateOutlineObject('on the other hand', hydratedOutlineData);

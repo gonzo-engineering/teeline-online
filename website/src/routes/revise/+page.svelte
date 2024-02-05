@@ -1,18 +1,13 @@
 <script lang="ts">
-	import lettersAndGroupings from '../../data/outlines.json';
-	import specials from '../../data/special-outlines.json';
-	import type { OutlineObject, SpecialOutline } from '../../data/interfaces/interfaces';
+	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import FlippingOutlineCard from '../../lib/cards/OutlineCardFlipping.svelte';
 	import Container from '../../lib/outlineSVGs/OutlineSVG.svelte';
 	import Lines from '../../lib/outlineSVGs/Lines.svelte';
 	import Toggle from '../../lib/Toggle.svelte';
 	import { prettify, shuffleOutlines } from '../../scripts/helpers';
-	import { hydrateOutlineData } from '../../scripts/hydrate-outline-data';
+	import { hydratedData } from '../../scripts/hydrate-outline-data';
 
-	const hydratedOutlineData = hydrateOutlineData(
-		lettersAndGroupings as OutlineObject[],
-		specials as SpecialOutline[]
-	);
+	const hydratedOutlineData = hydratedData;
 
 	const shuffledSpecialOutlines: OutlineObject[] = shuffleOutlines(
 		hydratedOutlineData.filter((outline) => outline.specialOutlineMeanings.length > 0)

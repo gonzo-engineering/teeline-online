@@ -1,8 +1,6 @@
-import lettersAndGroupings from '../data/outlines.json';
 import specials from '../data/special-outlines.json';
 import type { LineDetails, OutlineObject } from '../data/interfaces/interfaces';
 import { disemvowelWord } from './disemvowel';
-import { hydrateOutlineData } from './hydrate-outline-data';
 
 const punctuationRegex = /[.,\/#!$%\^&\*;:{}=\-_`~()]/g;
 
@@ -87,13 +85,16 @@ export const findOrCreateOutlineObject = (
 	};
 };
 
-export const createOutlineObjects = (text: string): OutlineObject[] => {
+export const createOutlineObjects = (
+	text: string,
+	outlineObjects: OutlineObject[]
+): OutlineObject[] => {
 	// Remove punctuation
 	text = text.replace(punctuationRegex, '');
 	// TODO: Account for multi-word special outlines
 	const wordsInText = text.toLowerCase().split(' ');
-	const outlineObjects = wordsInText.map((word) =>
-		findOrCreateOutlineObject(word, hydrateOutlineData(lettersAndGroupings, specials))
+	const createdOutlineObjects = wordsInText.map((word) =>
+		findOrCreateOutlineObject(word, outlineObjects)
 	);
-	return outlineObjects;
+	return createdOutlineObjects;
 };

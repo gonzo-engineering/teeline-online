@@ -4,9 +4,10 @@
 	import { createOutlineObjects } from '../scripts/build-outline-objects';
 	import OutlineDetails from './cards/OutlineDetails.svelte';
 	import type { OutlineObject } from '../data/interfaces/interfaces';
+	import { hydratedData } from '../scripts/hydrate-outline-data';
 
 	export let text: string;
-	$: outlineObjects = createOutlineObjects(text);
+	$: outlineObjects = createOutlineObjects(text, hydratedData);
 
 	const getPrecedingOutlinesLength = (outlineObjects: OutlineObject[], index: number) =>
 		outlineObjects

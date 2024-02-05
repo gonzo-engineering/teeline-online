@@ -1,18 +1,13 @@
 <script lang="ts">
-	import lettersAndGroupings from '../../data/outlines.json';
-	import specials from '../../data/special-outlines.json';
-	import type { OutlineObject, SpecialOutline } from '../../data/interfaces/interfaces';
+	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 	import Toggle from '../../lib/Toggle.svelte';
 	import { sortOutlinesAlphabetically } from '../../scripts/helpers';
 	import { filterAndSortOutlines } from '../../scripts/search';
 	import ShorthandPassage from '$lib/ShorthandPassage.svelte';
-	import { hydrateOutlineData } from '../../scripts/hydrate-outline-data';
+	import { hydratedData } from '../../scripts/hydrate-outline-data';
 
-	const hydratedOutlineData = hydrateOutlineData(
-		lettersAndGroupings as OutlineObject[],
-		specials as SpecialOutline[]
-	);
+	const hydratedOutlineData = hydratedData;
 
 	let displayedOutlines: OutlineObject[] = sortOutlinesAlphabetically(hydratedOutlineData);
 	let alphabetToggleOn: boolean = false;
