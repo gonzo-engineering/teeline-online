@@ -1,6 +1,7 @@
 import allOutlines from '../data/outlines.json';
 import type { LineDetails, OutlineObject } from '../data/interfaces/interfaces';
 import { disemvowelWord } from './disemvowel';
+import { dominantConsonants, passiveConsonants, vowels } from '../data/letter-hierarchy';
 
 const punctuationRegex = /[.,\/#!$%\^&\*;:{}=\-_`~()]/g;
 
@@ -38,6 +39,21 @@ export const findOrCreateOutlineObject = (
 			lines: []
 		};
 	}
+	// Identify the dominant letter
+	const findDominantLetter = (word: string | undefined) => {
+		const dominantConsonant = word.split('').find((letter) => dominantConsonants.includes(letter));
+		if (dominantConsonant) {
+			return dominantConsonant;
+		}
+		const passiveConsonant = word.split('').find((letter) => passiveConsonants.includes(letter));
+		if (passiveConsonant) {
+			return passiveConsonant;
+		}
+		return undefined;
+	};
+	const dominantLetter = findDominantLetter(cleanedWord);
+	console.log('Word: ', cleanedWord);
+	console.log('Dominant Letter: ', dominantLetter);
 	// Break word into array of letters
 	const lettersArray = cleanedWord.split('');
 	// Find outline object of each letter

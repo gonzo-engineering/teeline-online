@@ -1,8 +1,8 @@
-const vowels = ['a', 'e', 'i', 'o', 'u'];
+export const vowels = ['a', 'e', 'i', 'o', 'u'];
 
-const dominantConsonants = ['b', 'd', 'h', 'l', 'p', 't'];
+export const dominantConsonants = ['b', 'd', 'h', 'l', 'p', 't'];
 
-const passiveConsonants = [
+export const passiveConsonants = [
 	'c',
 	'f',
 	'g',
