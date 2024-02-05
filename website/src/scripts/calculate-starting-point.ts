@@ -25,8 +25,6 @@ export const createStartingObject = (text: string, lettersObjectArray: OutlineOb
 	const dominantLetter = findDominantLetter(text);
 
 	const calculateStartingPoint = (dominantLetter: { letter: string; index: number }) => {
-		console.log('Word: ', text);
-		console.log('Dominant Letter: ', dominantLetter);
 		const dominantLetterStart = findOrCreateOutlineObject(dominantLetter.letter ?? '', allOutlines)
 			.lines[0].start;
 		const precedingLetters = lettersObjectArray.slice(0, dominantLetter.index).reverse();
