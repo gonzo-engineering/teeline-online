@@ -47,6 +47,7 @@ export const findOrCreateOutlineObject = (
 		outlines.find((outline) => outline.letterGroupings.includes(letter))
 	);
 
+	// We need to get the first starting point
 	const startingObject = createStartingObject(cleanedWord, lettersObjectArray);
 
 	const letterObjectLines = lettersObjectArray.map((outline) => outline.lines);

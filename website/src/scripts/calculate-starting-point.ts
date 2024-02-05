@@ -30,13 +30,29 @@ export const createStartingObject = (text: string, lettersObjectArray: OutlineOb
 		const dominantLetterStart = findOrCreateOutlineObject(dominantLetter.letter ?? '', allOutlines)
 			.lines[0].start;
 		const precedingLetters = lettersObjectArray.slice(0, dominantLetter.index).reverse();
-		const precedingLetterLines = precedingLetters.map((letterObject) => letterObject.lines);
+		const precedingLetterLines = precedingLetters
+			.map((letterObject) => letterObject.lines)
+			.reverse();
 		// Work backwards from the dominant letter to find the overall starting point
-		// This is a placeholder until the above TODO is implemented
-		return lettersObjectArray[0].lines[0].start;
+		const startingPoint = precedingLetterLines.reduce(
+			({ x, y }, lines) => {
+				const [first, ...rest] = lines;
+				const last = rest.at(-1) ?? first;
+				const start = first.start;
+				const end = last.end;
+				return {
+					x: x + (start.x - end.x),
+					y: y + (start.y - end.y)
+				};
+			},
+			{
+				x: dominantLetterStart.x,
+				y: dominantLetterStart.y
+			}
+		);
+		return startingPoint;
 	};
 
-	// we need to get the first starting point
 	const { x = 0, y = 0 } = !dominantLetter
 		? lettersObjectArray[0].lines[0].start
 		: calculateStartingPoint(dominantLetter);
