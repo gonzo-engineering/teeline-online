@@ -2,22 +2,22 @@
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 	import Toggle from '../../lib/Toggle.svelte';
-	import allOutlines from '../../data/outlines.json';
 	import { sortOutlinesAlphabetically } from '../../scripts/helpers';
 	import { filterAndSortOutlines } from '../../scripts/search';
 	import ShorthandPassage from '$lib/ShorthandPassage.svelte';
+	import { hydratedData } from '../../scripts/hydrate-outline-data';
 	import { alphabet } from '../../data/letter-hierarchy';
 
-	let displayedOutlines: OutlineObject[] = sortOutlinesAlphabetically(allOutlines);
+	let displayedOutlines: OutlineObject[] = sortOutlinesAlphabetically(hydratedData);
 	let alphabetToggleOn: boolean = false;
 	let searchTerm: string = '';
 
-	const alphabetOutlines = allOutlines.filter((outline) =>
+	const alphabetOutlines = hydratedData.filter((outline) =>
 		alphabet.some((letter) => outline.letterGroupings.includes(letter))
 	);
 
 	const toggleAlphabetFilter = () => {
-		displayedOutlines = alphabetToggleOn ? allOutlines : alphabetOutlines;
+		displayedOutlines = alphabetToggleOn ? hydratedData : alphabetOutlines;
 		alphabetToggleOn = !alphabetToggleOn;
 		searchTerm = '';
 	};
@@ -38,7 +38,7 @@
 		placeholder="Search for outlines..."
 		bind:value={searchTerm}
 		on:input={() => {
-			const outlinesToFilter = alphabetToggleOn ? alphabetOutlines : allOutlines;
+			const outlinesToFilter = alphabetToggleOn ? alphabetOutlines : hydratedData;
 			displayedOutlines = filterAndSortOutlines(outlinesToFilter, searchTerm.trim().toLowerCase());
 		}}
 	/>

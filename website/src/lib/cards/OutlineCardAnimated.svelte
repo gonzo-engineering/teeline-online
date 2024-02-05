@@ -4,14 +4,14 @@
 	import Lines from '../outlineSVGs/Lines.svelte';
 	import OutlineDetails from './OutlineDetails.svelte';
 	import { findOrCreateOutlineObject } from '../../scripts/build-outline-objects';
-	import allOutlines from '../../data/outlines.json';
+	import { hydratedData } from '../../scripts/hydrate-outline-data';
 
 	export let outlineOrWord: OutlineObject | string;
 	export let displayName = true;
 
 	const outlineObject =
 		typeof outlineOrWord === 'string'
-			? findOrCreateOutlineObject(outlineOrWord, allOutlines)
+			? findOrCreateOutlineObject(outlineOrWord, hydratedData)
 			: outlineOrWord;
 </script>
 

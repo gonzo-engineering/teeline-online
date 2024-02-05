@@ -1,24 +1,15 @@
-import allOutlines from '../data/outlines.json';
+import specials from '../data/special-outlines.json';
 import type { LineDetails, OutlineObject } from '../data/interfaces/interfaces';
 import { disemvowelWord } from './disemvowel';
 import { createStartingObject } from './calculate-starting-point';
 
 const punctuationRegex = /[.,\/#!$%\^&\*;:{}=\-_`~()]/g;
 
-export const createOutlineObjects = (text: string): OutlineObject[] => {
-	// Remove punctuation
-	text = text.replace(punctuationRegex, '');
-	// TODO: Account for multi-word special outlines
-	const wordsInText = text.toLowerCase().split(' ');
-	const outlineObjects = wordsInText.map((word) => findOrCreateOutlineObject(word, allOutlines));
-	return outlineObjects;
-};
-
 export const findOrCreateOutlineObject = (
 	word: string,
 	outlines: OutlineObject[]
 ): OutlineObject => {
-	// Check if special outline exists for word
+	// Check if custom special outline exists for word
 	const specialOutline = outlines.find((outline) => outline.specialOutlineMeanings.includes(word));
 	if (outlines.find((outline) => outline.specialOutlineMeanings.includes(word))) {
 		return specialOutline;
@@ -39,7 +30,6 @@ export const findOrCreateOutlineObject = (
 			lines: []
 		};
 	}
-
 	// Break word into array of letters
 	const lettersArray = cleanedWord.split('');
 	// Find outline object of each letter
@@ -47,10 +37,10 @@ export const findOrCreateOutlineObject = (
 		outlines.find((outline) => outline.letterGroupings.includes(letter))
 	);
 
-	// We need to get the first starting point
+	// we need to get the first starting point
 	const startingObject = createStartingObject(cleanedWord, lettersObjectArray);
 
-	const letterObjectLines = lettersObjectArray.map((outline) => outline.lines);
+	const letterObjectLines = lettersObjectArray.map((letterObject) => letterObject?.lines);
 
 	const { combinedLineDetails } = letterObjectLines.reduce<{
 		combinedLineDetails: LineDetails[];
@@ -77,10 +67,30 @@ export const findOrCreateOutlineObject = (
 		};
 	}, startingObject);
 
+	const specialOutlineMeanings = specials.find((outline) =>
+		outline.letterGrouping.includes(cleanedWord)
+	);
+
+	const groupingIsSpecial = specialOutlineMeanings !== undefined;
+
 	// Return new outline object
 	return {
 		letterGroupings: [cleanedWord],
-		specialOutlineMeanings: [],
+		specialOutlineMeanings: groupingIsSpecial ? specialOutlineMeanings?.meanings : [],
 		lines: combinedLineDetails
 	};
+};
+
+export const createOutlineObjects = (
+	text: string,
+	outlineObjects: OutlineObject[]
+): OutlineObject[] => {
+	// Remove punctuation
+	text = text.replace(punctuationRegex, '');
+	// TODO: Account for multi-word special outlines
+	const wordsInText = text.toLowerCase().split(' ');
+	const createdOutlineObjects = wordsInText.map((word) =>
+		findOrCreateOutlineObject(word, outlineObjects)
+	);
+	return createdOutlineObjects;
 };

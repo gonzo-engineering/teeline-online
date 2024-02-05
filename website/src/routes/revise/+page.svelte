@@ -1,14 +1,14 @@
 <script lang="ts">
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
-	import allOutlines from '../../data/outlines.json';
 	import FlippingOutlineCard from '../../lib/cards/OutlineCardFlipping.svelte';
 	import Container from '../../lib/outlineSVGs/OutlineSVG.svelte';
 	import Lines from '../../lib/outlineSVGs/Lines.svelte';
 	import Toggle from '../../lib/Toggle.svelte';
 	import { prettify, shuffleOutlines } from '../../scripts/helpers';
+	import { hydratedData } from '../../scripts/hydrate-outline-data';
 
 	const shuffledSpecialOutlines: OutlineObject[] = shuffleOutlines(
-		allOutlines.filter((outline) => outline.specialOutlineMeanings.length > 0)
+		hydratedData.filter((outline) => outline.specialOutlineMeanings.length > 0)
 	);
 
 	let counter = 0;
@@ -16,7 +16,7 @@
 	let outlineFirst = false;
 
 	const changeOutline = () => {
-		counter === allOutlines.length - 1 ? (counter = 0) : counter++;
+		counter === hydratedData.length - 1 ? (counter = 0) : counter++;
 		outlineObject = shuffledSpecialOutlines[counter];
 	};
 

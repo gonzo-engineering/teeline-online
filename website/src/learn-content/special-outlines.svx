@@ -7,24 +7,16 @@ order: 7
 
 <script>
     import OutlineCardsSideBySide from '$lib/cards/OutlineCardsSideBySide.svelte'
-    import outlines from '../data/outlines.json'
-	import { findOrCreateOutlineObject } from '../scripts/build-outline-objects.ts'
     import SyllabusLink from '$lib/SyllabusLink.svelte'
-
-	const dOutline = findOrCreateOutlineObject('ladies and gentlemen', outlines);
-	const tOutline = findOrCreateOutlineObject('on the other hand', outlines);
-
-    const governmentOutline = findOrCreateOutlineObject('government', outlines);
-    const satisfactoryOutline = findOrCreateOutlineObject('satisfactory', outlines);
 </script> 
 
 There are words and turns of phrases so common that it makes sense to have succinct versions of them, even by the standards of Teeline. These abbreviated - or sometimes straight up symbolic - words are called **special outlines**.
 
 Here are a few examples:
 
-<OutlineCardsSideBySide leftOutline={dOutline} rightOutline={tOutline} />
+<OutlineCardsSideBySide leftOutline="ladies and gentlemen" rightOutline="on the other hand" />
 
-<OutlineCardsSideBySide leftOutline={governmentOutline} rightOutline={satisfactoryOutline} />
+<OutlineCardsSideBySide leftOutline="government" rightOutline="satisfactory" />
 
 Imagine how much longer it would take to write those out fully, even in Teeline. When you're desperately scrawling down a statement those fractions of a second will be invaluable.
 
