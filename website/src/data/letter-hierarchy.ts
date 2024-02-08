@@ -19,4 +19,4 @@ export const passiveConsonants = [
 	'z'
 ];
 
-export const alphabet = [...vowels, ...dominantConsonants, ...passiveConsonants];
+export const alphabet = [...vowels, ...dominantConsonants, ...passiveConsonants].sort();
