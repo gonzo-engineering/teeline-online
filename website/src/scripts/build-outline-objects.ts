@@ -67,9 +67,7 @@ export const findOrCreateOutlineObject = (
 		};
 	}, startingObject);
 
-	const specialOutlineMeanings = specials.find((outline) =>
-		outline.letterGrouping.includes(cleanedWord)
-	);
+	const specialOutlineMeanings = specials.find((outline) => outline.letterGrouping === cleanedWord);
 
 	const groupingIsSpecial = specialOutlineMeanings !== undefined;
 
