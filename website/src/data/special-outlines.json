@@ -4,6 +4,10 @@
 		"meanings": ["account"]
 	},
 	{
+		"letterGrouping": "altv",
+		"meanings": ["alternative"]
+	},
+	{
 		"letterGrouping": "bs",
 		"meanings": ["business"]
 	},
@@ -18,6 +22,10 @@
 	{
 		"letterGrouping": "dv",
 		"meanings": ["develop"]
+	},
+	{
+		"letterGrouping": "ec",
+		"meanings": ["enclose"]
 	},
 	{
 		"letterGrouping": "etc",
@@ -48,11 +56,23 @@
 		"meanings": ["of the"]
 	},
 	{
+		"letterGrouping": "opr",
+		"meanings": ["opportunity"]
+	},
+	{
 		"letterGrouping": "prm",
 		"meanings": ["permanent"]
 	},
 	{
 		"letterGrouping": "rp",
 		"meanings": ["representative"]
+	},
+	{
+		"letterGrouping": "tg",
+		"meanings": ["together"]
+	},
+	{
+		"letterGrouping": "wt",
+		"meanings": ["what"]
 	}
 ]
