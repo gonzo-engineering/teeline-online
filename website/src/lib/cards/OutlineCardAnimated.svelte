@@ -33,6 +33,6 @@
 		width: var(--width);
 		padding: 10% 10% 20% 10%;
 		margin: 0 auto;
-		max-width: 300px;
+		max-width: 200px;
 	}
 </style>

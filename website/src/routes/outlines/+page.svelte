@@ -1,14 +1,13 @@
 <script lang="ts">
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
-	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
 	import Toggle from '../../lib/Toggle.svelte';
-	import { sortOutlinesAlphabetically } from '../../scripts/helpers';
 	import { filterAndSortOutlines } from '../../scripts/search';
 	import ShorthandPassage from '$lib/ShorthandPassage.svelte';
 	import { hydratedData } from '../../scripts/hydrate-outline-data';
 	import { alphabet } from '../../data/letter-hierarchy';
+	import OutlineCardGrid from '$lib/cards/OutlineCardGrid.svelte';
 
-	let displayedOutlines: OutlineObject[] = sortOutlinesAlphabetically(hydratedData);
+	let displayedOutlines: OutlineObject[] = hydratedData;
 	let alphabetToggleOn: boolean = false;
 	let searchTerm: string = '';
 
@@ -50,13 +49,9 @@
 	</div>
 {/if}
 
-<div class="animated-container">
-	{#key displayedOutlines}
-		{#each displayedOutlines as outlineObject}
-			<OutlineCardAnimated outlineOrWord={outlineObject} />
-		{/each}
-	{/key}
-</div>
+{#key displayedOutlines}
+	<OutlineCardGrid outlines={displayedOutlines} />
+{/key}
 
 {#if displayedOutlines.length === 0}
 	<div class="nothing-found-message">
@@ -71,11 +66,6 @@
 {/if}
 
 <style>
-	.animated-container {
-		display: flex;
-		flex-direction: column;
-		row-gap: 30px;
-	}
 	.filters-container {
 		margin: 0 auto 2rem auto;
 		display: flex;

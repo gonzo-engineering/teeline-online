@@ -2,6 +2,7 @@ import lettersAndGroupings from '../data/outlines.json';
 import specials from '../data/special-outlines.json';
 import type { OutlineObject, SpecialOutline } from '../data/interfaces/interfaces';
 import { findOrCreateOutlineObject } from './build-outline-objects';
+import { sortOutlinesAlphabetically } from './helpers';
 
 const hydrateOutlineData = (lettersAndGroupings: OutlineObject[], specials: SpecialOutline[]) => {
 	const combinedOutlines = lettersAndGroupings.map((outline) => {
@@ -28,4 +29,6 @@ const hydrateOutlineData = (lettersAndGroupings: OutlineObject[], specials: Spec
 	return [...combinedOutlines, ...specialOutlineObjects];
 };
 
-export const hydratedData = hydrateOutlineData(lettersAndGroupings, specials);
+export const hydratedData = sortOutlinesAlphabetically(
+	hydrateOutlineData(lettersAndGroupings, specials)
+);
