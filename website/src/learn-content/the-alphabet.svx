@@ -7,11 +7,12 @@ order: 2
 
 <script>
     import SyllabusLink from '$lib/SyllabusLink.svelte'
+    import OutlineCardGrid from '$lib/cards/OutlineCardGrid.svelte'
 </script>
 
-Teeline is spelling-based rather than phonetic and as such has a typical A-to-Z alphabet. You can view this below. An interactive version is availabe on through a filter on [the outlines page](/outlines).
+Teeline is spelling-based rather than phonetic and as such has a typical A-to-Z alphabet. You can view this below. Hover over (or tap on) an outline to see how it's drawn.
 
-![A grid view of the Teeline shorthand alphabet](/images/teeline-alphabet.webp)
+<OutlineCardGrid alphabetMode={true} />
 
 You'll notice most letters have [special meanings](/learn/special-outlines) in addition to the letter itself. You'll know which is which translating your notes. Reading Teeline is often heavily reliant on context. If you see an 'f' on its own it's unlikely that you've transcribed someone saying the letter 'f'. Odds are you've taken advantage of a nice quick way of writing 'from'. 
 

@@ -7,7 +7,7 @@ order: 3
 
 <script>
     import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte'
-	import OutlineCardsSideBySide from '$lib/cards/OutlineCardsSideBySide.svelte'
+	import OutlineCardGrid from '$lib/cards/OutlineCardGrid.svelte'
 	import SyllabusLink from '$lib/SyllabusLink.svelte'
 </script> 
 
@@ -15,7 +15,7 @@ Unlike longhand, in which all letters are sat on the same line and go left to ri
 
 Some Teeline strokes mean different things depending on where they are in relation to the line being written on. For example, a short dash on the line means 'd' while one floating above means 't'.
 
-<OutlineCardsSideBySide leftOutline="d" rightOutline="t" />
+<OutlineCardGrid wordsAndPhrases={["d", "t"]} />
 
 The result is that what's written for 'need' is the same as what's written for 'not', only it's in a different position relative to the line.
 
@@ -39,7 +39,7 @@ As for how dominant letters relate to each other, as a rule of thumb if there ar
 
 If you have a 't' next to a 'd', put the 'd' just below. If the situation is reversed then the 't' dash is above. Keeping them close together makes writing faster. 
 
-<OutlineCardsSideBySide leftOutline="toad" rightOutline="different" />
+<OutlineCardGrid wordsAndPhrases={["toad", "different"]} />
 
 We'll get into this in more depth in the ['Connecting letters'](/learn/connecting-letters) section. For now it is enough to know that the vertical position of certain letters is essential to what they mean, and this makes those letters more dominant than their kin.
 
