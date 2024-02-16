@@ -1,5 +1,5 @@
-<script>
-	export let data;
+<script lang="ts">
+	export let data: { title: string; description: string; content: any };
 </script>
 
 <svelte:head>
