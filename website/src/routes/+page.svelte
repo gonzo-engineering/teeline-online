@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import PageTeaserCard from '$lib/PageTeaserCard.svelte';
 </script>
 

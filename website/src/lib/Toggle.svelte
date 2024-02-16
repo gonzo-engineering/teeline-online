@@ -1,6 +1,6 @@
-<script>
-	export let toggleLabel;
-	export let toggleFunction;
+<script lang="ts">
+	export let toggleLabel: string;
+	export let toggleFunction: () => void;
 </script>
 
 <div class="toggle-container">

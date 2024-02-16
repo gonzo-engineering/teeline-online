@@ -1,16 +1,16 @@
-<script>
-	export let sectionName;
-	export let sectionBlurb;
-	export let sectionPath;
-	export let sectionImage = '';
-	export let sectionImageAlt = '';
+<script lang="ts">
+	export let sectionName: string;
+	export let sectionBlurb: string;
+	export let sectionPath: string;
+	export let sectionImage: string = null;
+	export let sectionImageAlt: string = null;
 </script>
 
 <div class="container">
 	<a href={sectionPath}>
 		<div class="card-contents">
 			<h2>{sectionName}</h2>
-			{#if sectionImage !== ''}
+			{#if sectionImage}
 				<img src={sectionImage} alt={sectionImageAlt} />
 			{/if}
 			<div>{sectionBlurb}</div>
