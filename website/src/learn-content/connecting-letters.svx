@@ -10,7 +10,6 @@ order: 6
     import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte'
     import WordDisemvoweler from '$lib/disemvoweler/WordDisemvoweler.svelte'
     import WordToOutline from '$lib/WordToOutline.svelte'
-    import SyllabusLink from '$lib/SyllabusLink.svelte'
 </script> 
 
 The full process going on in the shorthand writer's brain is as follows:
@@ -37,5 +36,3 @@ Look at that. One motion of the pen. Eleven would be needed to write it out in l
 <WordDisemvoweler word="conference" />
 
 This is an extreme example given 'conference' has an extra succinct special outline, but it represents a key tenet of shorthand: **the fewer pen strokes the better**.
-
-<SyllabusLink sectionKey={slug} />
