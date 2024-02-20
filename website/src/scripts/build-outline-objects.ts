@@ -1,8 +1,9 @@
 import specials from '../data/special-outlines.json';
-import type { LineDetails, OutlineObject } from '../data/interfaces/interfaces';
+import type { LineDetails, OutlineObject, SpecialOutline } from '../data/interfaces/interfaces';
 import { disemvowelWord } from './disemvowel';
 import { createStartingObject } from './calculate-starting-point';
 
+const checkedSpecials: SpecialOutline[] = specials;
 const punctuationRegex = /[.,\/#!$%\^&\*;:{}=\-_`~()]/g;
 
 export const findOrCreateOutlineObject = (
@@ -11,18 +12,16 @@ export const findOrCreateOutlineObject = (
 ): OutlineObject => {
 	// Check if custom special outline exists for word
 	const specialOutline = outlines.find((outline) => outline.specialOutlineMeanings.includes(word));
-	if (outlines.find((outline) => outline.specialOutlineMeanings.includes(word))) {
-		return specialOutline;
-	}
+	if (specialOutline) return specialOutline;
+
 	// Check if letter grouping exists for word
 	const letterGrouping = outlines.find((outline) =>
 		outline.letterGroupings.includes(disemvowelWord(word))
 	);
-	if (letterGrouping) {
-		return letterGrouping;
-	}
+	if (letterGrouping) return letterGrouping;
+
 	// Remove special characters from word
-	const cleanedWord = disemvowelWord(word).replace(/[^a-zA-Z]/g, '');
+	const cleanedWord = disemvowelWord(word).replace(punctuationRegex, '');
 	if (cleanedWord.length === 0) {
 		return {
 			letterGroupings: [],
@@ -30,10 +29,8 @@ export const findOrCreateOutlineObject = (
 			lines: []
 		};
 	}
-	// Break word into array of letters
-	const lettersArray = cleanedWord.split('');
-	// Find outline object of each letter
-	const lettersObjectArray = lettersArray.map((letter) =>
+	// Break word into array of letters, find outline object of each letter
+	const lettersObjectArray = cleanedWord.split('').map((letter) =>
 		outlines.find((outline) => outline.letterGroupings.includes(letter))
 	);
 
@@ -67,7 +64,7 @@ export const findOrCreateOutlineObject = (
 		};
 	}, startingObject);
 
-	const specialOutlineMeanings = specials.find((outline) => outline.letterGrouping === cleanedWord);
+	const specialOutlineMeanings = checkedSpecials.find((outline) => outline.letterGrouping === cleanedWord);
 
 	const groupingIsSpecial = specialOutlineMeanings !== undefined;
 
