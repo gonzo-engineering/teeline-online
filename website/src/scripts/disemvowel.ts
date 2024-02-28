@@ -1,11 +1,12 @@
 export const disemvowelWord = (word: string) => {
+	if (word.length === 1) return word;
+
+	const firstLetter = word.slice(0, 1);
 	const isVowel = (letter: string) => {
 		return ['a', 'e', 'i', 'o', 'u'].includes(letter.toLowerCase());
 	};
-	const firstLetter = word.charAt(0);
-	const finalLetter = word.charAt(word.length - 1);
-	const finalLetterIsSoundedVowel = ['a', 'i', 'o', 'u'].includes(finalLetter.toLowerCase());
-	const endsWithUe = word.slice(-2) === 'ue';
+	const start = isVowel(firstLetter) ? firstLetter : '';
+
 	const wordNoVowelsOrDoubles = word
 		.replace('bb', 'b')
 		.replace('cc', 'c')
@@ -25,15 +26,31 @@ export const disemvowelWord = (word: string) => {
 		.replace('ck', 'c')
 		.replace('ght', 't')
 		.replace(/[aeiou]/gi, '');
-	if (word.length === 1) return word;
-	else if (isVowel(firstLetter) && finalLetterIsSoundedVowel)
-		return firstLetter + wordNoVowelsOrDoubles + finalLetter;
-	else if (!isVowel(firstLetter) && finalLetterIsSoundedVowel)
-		return wordNoVowelsOrDoubles + finalLetter;
-	else if (isVowel(firstLetter) && endsWithUe) return firstLetter + wordNoVowelsOrDoubles + 'u';
-	else if (!isVowel(firstLetter) && endsWithUe) return wordNoVowelsOrDoubles + 'u';
-	else if (isVowel(firstLetter)) return firstLetter + wordNoVowelsOrDoubles;
-	else return wordNoVowelsOrDoubles;
+
+	const inferEnd = (word: string) => {
+		const lastLetter = word.slice(-1);
+		const lastTwoLetters = word.slice(-2);
+		const finalLetterIsSoundedVowel = ['a', 'i', 'o', 'u'].includes(lastLetter.toLowerCase());
+		if (finalLetterIsSoundedVowel) return lastLetter;
+		else
+			switch (lastTwoLetters) {
+				case 'ue':
+					return 'u';
+				case 'ee':
+					return 'e';
+				case 'ae':
+					return 'i';
+				case 'ie':
+					return 'i';
+				case 'oe':
+					return 'o';
+				default:
+					return '';
+			}
+	};
+	const end = inferEnd(word);
+
+	return start + wordNoVowelsOrDoubles + end;
 };
 
 export const disemvowelBodyOfText = (text: string) => {
