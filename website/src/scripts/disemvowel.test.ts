@@ -5,6 +5,9 @@ test('testing word disemvowelment', () => {
 	expect(disemvowelWord('bellow')).toBe('blw');
 	expect(disemvowelWord('hello')).toBe('hlo');
 	expect(disemvowelWord('amusement')).toBe('amsmnt');
+	expect(disemvowelWord('tee')).toBe('te');
+	expect(disemvowelWord('pie')).toBe('pi');
+	expect(disemvowelWord('undue')).toBe('undu');
 });
 
 test('testing passage disemvowelment', () => {
