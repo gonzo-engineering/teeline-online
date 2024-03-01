@@ -39,11 +39,17 @@ export const findOrCreateOutlineObject = (
 		const multiLetterGroupingMatch = lettersAndGroupings.find((outline) =>
 			outline.letterGroupings.some((grouping) => word.startsWith(grouping) && grouping.length > 1)
 		);
+		let match = word.charAt(0);
+		lettersAndGroupings.forEach((outline) =>
+			outline.letterGroupings.map((grouping) => {
+				if (word.startsWith(grouping) && grouping.length > match.length) match = grouping;
+			})
+		);
 		const outlineObject = multiLetterGroupingMatch
 			? multiLetterGroupingMatch
-			: lettersAndGroupings.find((outline) => outline.letterGroupings.includes(word.charAt(0)));
+			: lettersAndGroupings.find((outline) => outline.letterGroupings.includes(match));
 		const updatedWordOutlines = wordOutlines.concat(outlineObject);
-		const updatedWord = word.slice(outlineObject.letterGroupings[0].length);
+		const updatedWord = word.slice(match.length);
 		if (updatedWord.length === 0) return updatedWordOutlines;
 		else return turnWordIntoOutlineObjects(updatedWord, lettersAndGroupings, updatedWordOutlines);
 	};
