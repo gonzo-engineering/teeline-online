@@ -29,10 +29,32 @@ export const findOrCreateOutlineObject = (
 			lines: []
 		};
 	}
-	// Break word into array of letters, find outline object of each letter
-	const lettersObjectArray = cleanedWord.split('').map((letter) =>
-		outlines.find((outline) => outline.letterGroupings.includes(letter))
-	);
+
+	// Find matching letter or letter grouping at start of word until no more letters
+	const turnWordIntoOutlineObjects = (
+		word: string,
+		lettersAndGroupings: OutlineObject[],
+		wordOutlines: OutlineObject[] = []
+	): OutlineObject[] => {
+		const multiLetterGroupingMatch = lettersAndGroupings.find((outline) =>
+			outline.letterGroupings.some((grouping) => word.startsWith(grouping) && grouping.length > 1)
+		);
+		let match = word.charAt(0);
+		lettersAndGroupings.forEach((outline) =>
+			outline.letterGroupings.map((grouping) => {
+				if (word.startsWith(grouping) && grouping.length > match.length) match = grouping;
+			})
+		);
+		const outlineObject = multiLetterGroupingMatch
+			? multiLetterGroupingMatch
+			: lettersAndGroupings.find((outline) => outline.letterGroupings.includes(match));
+		const updatedWordOutlines = wordOutlines.concat(outlineObject);
+		const updatedWord = word.slice(match.length);
+		if (updatedWord.length === 0) return updatedWordOutlines;
+		else return turnWordIntoOutlineObjects(updatedWord, lettersAndGroupings, updatedWordOutlines);
+	};
+
+	const lettersObjectArray = turnWordIntoOutlineObjects(cleanedWord, outlines);
 
 	// we need to get the first starting point
 	const startingObject = createStartingObject(cleanedWord, lettersObjectArray);
@@ -64,7 +86,9 @@ export const findOrCreateOutlineObject = (
 		};
 	}, startingObject);
 
-	const specialOutlineMeanings = checkedSpecials.find((outline) => outline.letterGrouping === cleanedWord);
+	const specialOutlineMeanings = checkedSpecials.find(
+		(outline) => outline.letterGrouping === cleanedWord
+	);
 
 	const groupingIsSpecial = specialOutlineMeanings !== undefined;
 

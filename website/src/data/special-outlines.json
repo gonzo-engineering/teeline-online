@@ -20,6 +20,10 @@
 		"meanings": ["company"]
 	},
 	{
+		"letterGrouping": "cv",
+		"meanings": ["convenient"]
+	},
+	{
 		"letterGrouping": "dv",
 		"meanings": ["develop"]
 	},
