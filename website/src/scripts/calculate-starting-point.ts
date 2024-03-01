@@ -24,7 +24,10 @@ export const createStartingObject = (text: string, lettersObjectArray: OutlineOb
 	};
 	const dominantLetter = findDominantLetter(text);
 
-	const calculateStartingPoint = (dominantLetter: { letter: string; index: number }) => {
+	const calculateStartingPoint = (
+		dominantLetter: { letter: string; index: number },
+		lettersObjectArray: OutlineObject[]
+	) => {
 		const dominantLetterStart = findOrCreateOutlineObject(dominantLetter.letter ?? '', allOutlines)
 			.lines[0].start;
 		const precedingLetters = lettersObjectArray.slice(0, dominantLetter.index).reverse();
@@ -48,12 +51,18 @@ export const createStartingObject = (text: string, lettersObjectArray: OutlineOb
 				y: dominantLetterStart.y
 			}
 		);
+		// Center the word
+		const outlineWidth = lettersObjectArray.reduce((width, letterObject) => {
+			const lastLine = letterObject.lines.at(-1);
+			return lastLine.end.x - lastLine.start.x + width;
+		}, 0);
+		startingPoint.x = 750 / 2 - outlineWidth / 2;
 		return startingPoint;
 	};
 
 	const { x = 0, y = 0 } = !dominantLetter
 		? lettersObjectArray[0].lines[0].start
-		: calculateStartingPoint(dominantLetter);
+		: calculateStartingPoint(dominantLetter, lettersObjectArray);
 
 	return {
 		combinedLineDetails: [],
