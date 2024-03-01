@@ -30,29 +30,25 @@ export const findOrCreateOutlineObject = (
 		};
 	}
 
-	// Check if cleaned word contains any multi-letter groupings
-	// If so, return the outline object for the multi-letter grouping and the
-	// position of the multi-letter grouping in the word.
-	// Keep doing this until no multi-letter groupings are found.
-
-	const findMultiLetterGroupings = (word: string, outlines: OutlineObject[]) => {
-		const multiLetterGrouping = outlines.find((outline) =>
-			outline.letterGroupings.some((grouping) => word.includes(grouping) && grouping.length > 1)
+	// Find matching letter or letter grouping at start of word until no more letters
+	const turnWordIntoOutlineObjects = (
+		word: string,
+		lettersAndGroupings: OutlineObject[],
+		wordOutlines: OutlineObject[] = []
+	): OutlineObject[] => {
+		const multiLetterGroupingMatch = lettersAndGroupings.find((outline) =>
+			outline.letterGroupings.some((grouping) => word.startsWith(grouping) && grouping.length > 1)
 		);
-		if (!multiLetterGrouping) return null;
-		const multiLetterGroupingIndex = word.indexOf(
-			multiLetterGrouping.letterGroupings.find(
-				(grouping) => word.includes(grouping) && grouping.length > 1
-			) as string
-		);
-		return { multiLetterGrouping, multiLetterGroupingIndex };
+		const outlineObject = multiLetterGroupingMatch
+			? multiLetterGroupingMatch
+			: lettersAndGroupings.find((outline) => outline.letterGroupings.includes(word.charAt(0)));
+		const updatedWordOutlines = wordOutlines.concat(outlineObject);
+		const updatedWord = word.slice(outlineObject.letterGroupings[0].length);
+		if (updatedWord.length === 0) return updatedWordOutlines;
+		else return turnWordIntoOutlineObjects(updatedWord, lettersAndGroupings, updatedWordOutlines);
 	};
-	console.log(findMultiLetterGroupings(cleanedWord, outlines));
 
-	// Break word into array of letters, find outline object of each letter
-	const lettersObjectArray = cleanedWord
-		.split('')
-		.map((letter) => outlines.find((outline) => outline.letterGroupings.includes(letter)));
+	const lettersObjectArray = turnWordIntoOutlineObjects(cleanedWord, outlines);
 
 	// we need to get the first starting point
 	const startingObject = createStartingObject(cleanedWord, lettersObjectArray);
