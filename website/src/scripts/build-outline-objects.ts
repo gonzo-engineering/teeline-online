@@ -31,30 +31,37 @@ export const findOrCreateOutlineObject = (
 	}
 
 	// Find matching letter or letter grouping at start of word until no more letters
-	const turnWordIntoOutlineObjects = (
+	function mapWordToOutlines(
 		word: string,
 		lettersAndGroupings: OutlineObject[],
 		wordOutlines: OutlineObject[] = []
-	): OutlineObject[] => {
-		const multiLetterGroupingMatch = lettersAndGroupings.find((outline) =>
-			outline.letterGroupings.some((grouping) => word.startsWith(grouping) && grouping.length > 1)
-		);
-		let match = word.charAt(0);
-		lettersAndGroupings.forEach((outline) =>
-			outline.letterGroupings.map((grouping) => {
-				if (word.startsWith(grouping) && grouping.length > match.length) match = grouping;
-			})
-		);
-		const outlineObject = multiLetterGroupingMatch
-			? multiLetterGroupingMatch
-			: lettersAndGroupings.find((outline) => outline.letterGroupings.includes(match));
-		const updatedWordOutlines = wordOutlines.concat(outlineObject);
-		const updatedWord = word.slice(match.length);
-		if (updatedWord.length === 0) return updatedWordOutlines;
-		else return turnWordIntoOutlineObjects(updatedWord, lettersAndGroupings, updatedWordOutlines);
-	};
+	): OutlineObject[] {
+		if (!word) return wordOutlines; // Base case for recursion
 
-	const lettersObjectArray = turnWordIntoOutlineObjects(cleanedWord, outlines);
+		// Find the longest matching letter grouping at the start of the word
+		let longestMatch = '';
+		let matchedOutline: OutlineObject | undefined;
+
+		for (const outline of lettersAndGroupings) {
+			for (const grouping of outline.letterGroupings) {
+				if (word.startsWith(grouping) && grouping.length > longestMatch.length) {
+					longestMatch = grouping;
+					matchedOutline = outline;
+				}
+			}
+		}
+
+		// If no match was found, return the accumulated word outlines
+		if (!matchedOutline) return wordOutlines;
+
+		// Otherwise, append the found outline and continue recursively
+		return mapWordToOutlines(word.slice(longestMatch.length), lettersAndGroupings, [
+			...wordOutlines,
+			matchedOutline
+		]);
+	}
+
+	const lettersObjectArray = mapWordToOutlines(cleanedWord, outlines);
 
 	// we need to get the first starting point
 	const startingObject = createStartingObject(cleanedWord, lettersObjectArray);
@@ -100,16 +107,41 @@ export const findOrCreateOutlineObject = (
 	};
 };
 
-export const createOutlineObjects = (
-	text: string,
-	outlineObjects: OutlineObject[]
-): OutlineObject[] => {
-	// Remove punctuation
-	text = text.replace(punctuationRegex, '');
-	// TODO: Account for multi-word special outlines
-	const wordsInText = text.toLowerCase().split(' ');
-	const createdOutlineObjects = wordsInText.map((word) =>
-		findOrCreateOutlineObject(word, outlineObjects)
-	);
-	return createdOutlineObjects;
-};
+export function convertPassageToOutlines(
+	passage: string,
+	lettersAndGroupings: OutlineObject[],
+	result: OutlineObject[] = []
+): OutlineObject[] {
+	const cleanedPassage = passage.replace(punctuationRegex, '');
+	let longestMatch = '';
+	let matchedOutline: OutlineObject | undefined;
+
+	// Find the longest special meaning match
+	for (const outline of lettersAndGroupings) {
+		for (const meaning of outline.specialOutlineMeanings) {
+			if (
+				cleanedPassage.startsWith(meaning) &&
+				meaning.split(' ').length > longestMatch.split(' ').length &&
+				// Check we're not splicing matches e.g. matching
+				// 'and the' special meaning with 'and there'
+				(cleanedPassage.charAt(meaning.length) === ' ' || cleanedPassage === meaning)
+			) {
+				longestMatch = meaning;
+				matchedOutline = outline;
+			}
+		}
+	}
+
+	if (!matchedOutline) {
+		// Default to the first word if no special meaning found
+		longestMatch = cleanedPassage.split(' ')[0];
+		matchedOutline = findOrCreateOutlineObject(longestMatch, lettersAndGroupings);
+	}
+
+	const updatedResult = [...result, matchedOutline];
+	const updatedPassage = cleanedPassage.slice(longestMatch.length).trim();
+
+	return updatedPassage === ''
+		? updatedResult
+		: convertPassageToOutlines(updatedPassage, lettersAndGroupings, updatedResult);
+}
