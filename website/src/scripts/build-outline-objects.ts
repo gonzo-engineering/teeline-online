@@ -33,7 +33,7 @@ export const findOrCreateOutlineObject = (
 	// Find matching letter or letter grouping at start of word until no more letters
 	function mapWordToOutlines(
 		word: string,
-		outlines: OutlineObject[],
+		lettersAndGroupings: OutlineObject[],
 		wordOutlines: OutlineObject[] = []
 	): OutlineObject[] {
 		if (!word) return wordOutlines; // Base case for recursion
@@ -42,7 +42,7 @@ export const findOrCreateOutlineObject = (
 		let longestMatch = '';
 		let matchedOutline: OutlineObject | undefined;
 
-		for (const outline of outlines) {
+		for (const outline of lettersAndGroupings) {
 			for (const grouping of outline.letterGroupings) {
 				if (word.startsWith(grouping) && grouping.length > longestMatch.length) {
 					longestMatch = grouping;
@@ -55,7 +55,7 @@ export const findOrCreateOutlineObject = (
 		if (!matchedOutline) return wordOutlines;
 
 		// Otherwise, append the found outline and continue recursively
-		return mapWordToOutlines(word.slice(longestMatch.length), outlines, [
+		return mapWordToOutlines(word.slice(longestMatch.length), lettersAndGroupings, [
 			...wordOutlines,
 			matchedOutline
 		]);
@@ -109,7 +109,7 @@ export const findOrCreateOutlineObject = (
 
 export function convertPassageToOutlines(
 	passage: string,
-	outlines: OutlineObject[],
+	lettersAndGroupings: OutlineObject[],
 	result: OutlineObject[] = []
 ): OutlineObject[] {
 	const cleanedPassage = passage.replace(punctuationRegex, '');
@@ -117,7 +117,7 @@ export function convertPassageToOutlines(
 	let matchedOutline: OutlineObject | undefined;
 
 	// Find the longest special meaning match
-	for (const outline of outlines) {
+	for (const outline of lettersAndGroupings) {
 		for (const meaning of outline.specialOutlineMeanings) {
 			if (
 				cleanedPassage.startsWith(meaning) &&
@@ -135,7 +135,7 @@ export function convertPassageToOutlines(
 	if (!matchedOutline) {
 		// Default to the first word if no special meaning found
 		longestMatch = cleanedPassage.split(' ')[0];
-		matchedOutline = findOrCreateOutlineObject(longestMatch, outlines);
+		matchedOutline = findOrCreateOutlineObject(longestMatch, lettersAndGroupings);
 	}
 
 	const updatedResult = [...result, matchedOutline];
@@ -143,5 +143,5 @@ export function convertPassageToOutlines(
 
 	return updatedPassage === ''
 		? updatedResult
-		: convertPassageToOutlines(updatedPassage, outlines, updatedResult);
+		: convertPassageToOutlines(updatedPassage, lettersAndGroupings, updatedResult);
 }
