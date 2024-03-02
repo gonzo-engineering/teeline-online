@@ -121,9 +121,10 @@ export function convertPassageToOutlines(
 		for (const meaning of outline.specialOutlineMeanings) {
 			if (
 				cleanedPassage.startsWith(meaning) &&
-				meaning.split(' ').length > longestMatch.split(' ').length
-				// TODO: Check that the match is for complete words. 'And there are' should
-				// not be matching with the special outline 'and the'
+				meaning.split(' ').length > longestMatch.split(' ').length &&
+				// Check we're not splicing matches e.g. matching
+				// 'and the' special meaning with 'and there'
+				cleanedPassage.charAt(meaning.length) === ' '
 			) {
 				longestMatch = meaning;
 				matchedOutline = outline;
