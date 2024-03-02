@@ -1,13 +1,13 @@
 <script lang="ts">
 	import Container from './outlineSVGs/OutlineSVG.svelte';
 	import Lines from './outlineSVGs/Lines.svelte';
-	import { createOutlineObjects } from '../scripts/build-outline-objects';
+	import { convertPassageToOutlines } from '../scripts/build-outline-objects';
 	import OutlineDetails from './cards/OutlineDetails.svelte';
 	import type { OutlineObject } from '../data/interfaces/interfaces';
 	import { hydratedData } from '../scripts/hydrate-outline-data';
 
 	export let text: string;
-	$: outlineObjects = createOutlineObjects(text, hydratedData);
+	$: outlineObjects = convertPassageToOutlines(text, hydratedData);
 
 	const getPrecedingOutlinesLength = (outlineObjects: OutlineObject[], index: number) =>
 		outlineObjects
