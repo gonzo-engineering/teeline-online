@@ -41,7 +41,7 @@ export const findOrCreateOutlineObject = (
 		);
 		let match = word.charAt(0);
 		lettersAndGroupings.forEach((outline) =>
-			outline.letterGroupings.map((grouping) => {
+			outline.letterGroupings.forEach((grouping) => {
 				if (word.startsWith(grouping) && grouping.length > match.length) match = grouping;
 			})
 		);
@@ -101,15 +101,27 @@ export const findOrCreateOutlineObject = (
 };
 
 export const createOutlineObjects = (
-	text: string,
-	outlineObjects: OutlineObject[]
+	passage: string,
+	lettersAndGroupings: OutlineObject[],
+	result: OutlineObject[] = []
 ): OutlineObject[] => {
-	// Remove punctuation
-	text = text.replace(punctuationRegex, '');
-	// TODO: Account for multi-word special outlines
-	const wordsInText = text.toLowerCase().split(' ');
-	const createdOutlineObjects = wordsInText.map((word) =>
-		findOrCreateOutlineObject(word, outlineObjects)
+	const cleanedPassage = passage.replace(punctuationRegex, '');
+	const multiWordSpecialMatch = lettersAndGroupings.find((outline) =>
+		outline.specialOutlineMeanings.some(
+			(meaning) => cleanedPassage.startsWith(meaning) && meaning.split(' ').length > 1
+		)
 	);
-	return createdOutlineObjects;
+	let match = cleanedPassage.split(' ')[0];
+	lettersAndGroupings.forEach((outline) => {
+		outline.specialOutlineMeanings.forEach((meaning) => {
+			if (passage.startsWith(meaning) && meaning.split(' ').length > 1) match = meaning;
+		});
+	});
+	const outlineObject = multiWordSpecialMatch
+		? multiWordSpecialMatch
+		: findOrCreateOutlineObject(match, lettersAndGroupings);
+	const updatedResult = result.concat(outlineObject);
+	const updatedPassage = cleanedPassage.slice(match.length).trim();
+	if (updatedPassage === '') return updatedResult;
+	else return createOutlineObjects(updatedPassage, lettersAndGroupings, updatedResult);
 };
