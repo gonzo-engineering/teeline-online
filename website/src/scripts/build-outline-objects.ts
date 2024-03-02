@@ -124,7 +124,7 @@ export function convertPassageToOutlines(
 				meaning.split(' ').length > longestMatch.split(' ').length &&
 				// Check we're not splicing matches e.g. matching
 				// 'and the' special meaning with 'and there'
-				cleanedPassage.charAt(meaning.length) === ' '
+				(cleanedPassage.charAt(meaning.length) === ' ' || cleanedPassage === meaning)
 			) {
 				longestMatch = meaning;
 				matchedOutline = outline;
