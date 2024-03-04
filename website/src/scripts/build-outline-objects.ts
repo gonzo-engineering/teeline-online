@@ -10,18 +10,21 @@ export const findOrCreateOutlineObject = (
 	word: string,
 	outlines: OutlineObject[]
 ): OutlineObject => {
+	const lowerCaseWord = word.toLowerCase();
 	// Check if custom special outline exists for word
-	const specialOutline = outlines.find((outline) => outline.specialOutlineMeanings.includes(word));
+	const specialOutline = outlines.find((outline) =>
+		outline.specialOutlineMeanings.includes(lowerCaseWord)
+	);
 	if (specialOutline) return specialOutline;
 
 	// Check if letter grouping exists for word
 	const letterGrouping = outlines.find((outline) =>
-		outline.letterGroupings.includes(disemvowelWord(word))
+		outline.letterGroupings.includes(disemvowelWord(lowerCaseWord))
 	);
 	if (letterGrouping) return letterGrouping;
 
 	// Remove special characters from word
-	const cleanedWord = disemvowelWord(word).replace(punctuationRegex, '');
+	const cleanedWord = disemvowelWord(lowerCaseWord).replace(punctuationRegex, '');
 	if (cleanedWord.length === 0) {
 		return {
 			letterGroupings: [],
@@ -38,13 +41,14 @@ export const findOrCreateOutlineObject = (
 	): OutlineObject[] {
 		if (!word) return wordOutlines; // Base case for recursion
 
+		const lowerCaseWord = word.toLowerCase();
 		// Find the longest matching letter grouping at the start of the word
 		let longestMatch = '';
 		let matchedOutline: OutlineObject | undefined;
 
 		for (const outline of lettersAndGroupings) {
 			for (const grouping of outline.letterGroupings) {
-				if (word.startsWith(grouping) && grouping.length > longestMatch.length) {
+				if (lowerCaseWord.startsWith(grouping) && grouping.length > longestMatch.length) {
 					longestMatch = grouping;
 					matchedOutline = outline;
 				}
@@ -55,7 +59,7 @@ export const findOrCreateOutlineObject = (
 		if (!matchedOutline) return wordOutlines;
 
 		// Otherwise, append the found outline and continue recursively
-		return mapWordToOutlines(word.slice(longestMatch.length), lettersAndGroupings, [
+		return mapWordToOutlines(lowerCaseWord.slice(longestMatch.length), lettersAndGroupings, [
 			...wordOutlines,
 			matchedOutline
 		]);
