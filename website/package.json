@@ -17,7 +17,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-netlify": "^4.1.0",
-		"@sveltejs/kit": "^2.5.5",
+		"@sveltejs/kit": "^2.5.7",
 		"@sveltejs/vite-plugin-svelte": "^3.0.2",
 		"@tsconfig/svelte": "^5.0.4",
 		"@typescript-eslint/eslint-plugin": "7.5.0",
