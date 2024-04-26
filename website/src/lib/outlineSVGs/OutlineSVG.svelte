@@ -5,22 +5,11 @@
 
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import { prettify } from '../../scripts/helpers';
+	import { inferPrecedingLinesLength } from '../../scripts/line-length-inference';
 
 	const width = 750;
 	const margin = 100;
 	const horizontal = 460;
-
-	/**
-	 * Typical distance between the end of the previous line and the start of the next
-	 * We could calculate this precisely from the paths, but it’s probably too much effort.
-	 */
-	const pause = 60;
-
-	const getPreviousLinesLength = (index: number) =>
-		outlineObject.lines
-			.slice(0, index)
-			.map(({ length }) => length)
-			.reduce((a, b) => a + b + pause, 0);
 
 	const outlineName =
 		outlineObject.specialOutlineMeanings.length > 0
@@ -41,7 +30,7 @@
 			{line}
 			{index}
 			{precedingOutlinesLength}
-			previousLinesLength={getPreviousLinesLength(index)}
+			previousLinesLength={inferPrecedingLinesLength(outlineObject, index)}
 		/>
 	{/each}
 </svg>

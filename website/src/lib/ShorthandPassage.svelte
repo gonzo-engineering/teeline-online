@@ -3,17 +3,11 @@
 	import Lines from './outlineSVGs/Lines.svelte';
 	import { convertPassageToOutlines } from '../scripts/build-outline-objects';
 	import OutlineDetails from './cards/OutlineDetails.svelte';
-	import type { OutlineObject } from '../data/interfaces/interfaces';
 	import { hydratedData } from '../scripts/hydrate-outline-data';
+	import { inferPrecedingOutlinesLength } from '../scripts/line-length-inference';
 
 	export let text: string;
 	$: outlineObjects = convertPassageToOutlines(text, hydratedData);
-
-	const getPrecedingOutlinesLength = (outlineObjects: OutlineObject[], index: number) =>
-		outlineObjects
-			.slice(0, index)
-			.map(({ lines }) => lines.map(({ length }) => length).reduce((a, b) => a + b + 60, 0))
-			.reduce((a, b) => a + b, 0);
 </script>
 
 <div class="animation-container passage-container">
@@ -22,7 +16,7 @@
 			<Container {outlineObject} isStandalone={false} let:line let:previousLinesLength>
 				<Lines
 					{line}
-					precedingOutlinesLength={getPrecedingOutlinesLength(outlineObjects, i)}
+					precedingOutlinesLength={inferPrecedingOutlinesLength(outlineObjects, i)}
 					{previousLinesLength}
 					drawingSpeed={900}
 				/>
