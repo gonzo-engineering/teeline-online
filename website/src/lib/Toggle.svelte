@@ -1,6 +1,11 @@
 <script lang="ts">
-	export let toggleLabel: string;
-	export let toggleFunction: () => void;
+	let {
+		toggleLabel,
+		toggleFunction
+	}: {
+		toggleLabel: string;
+		toggleFunction: () => void;
+	} = $props();
 </script>
 
 <div class="toggle-container">
