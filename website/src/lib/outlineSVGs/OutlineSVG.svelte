@@ -1,11 +1,17 @@
 <script lang="ts">
-	export let precedingOutlinesLength = 0;
-	export let outlineObject: OutlineObject;
-	export let isStandalone = true;
-
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import { prettify } from '../../scripts/helpers';
 	import { inferPrecedingLinesLength } from '../../scripts/line-length-inference';
+
+	let {
+		outlineObject,
+		precedingOutlinesLength = 0,
+		isStandalone = true
+	}: {
+		outlineObject: OutlineObject;
+		precedingOutlinesLength?: number;
+		isStandalone?: boolean;
+	} = $props();
 
 	const width = 750;
 	const margin = 100;

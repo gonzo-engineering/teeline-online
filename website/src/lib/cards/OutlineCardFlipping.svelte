@@ -1,6 +1,6 @@
 <script lang="ts">
 	/** Whether to show the backside, when not hovered */
-	export let flipped: boolean;
+	let { flipped }: { flipped: boolean } = $props();
 </script>
 
 <div class="flip-card" style="--extra:{flipped ? '-180deg' : '0deg'}">

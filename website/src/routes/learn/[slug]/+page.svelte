@@ -1,6 +1,15 @@
 <script lang="ts">
 	import SyllabusLink from '$lib/SyllabusLink.svelte';
-	export let data: { title: string; description: string; slug: string; content: any };
+	let {
+		data
+	}: {
+		data: {
+			title: string;
+			description: string;
+			slug: string;
+			content: any;
+		};
+	} = $props();
 </script>
 
 <svelte:head>

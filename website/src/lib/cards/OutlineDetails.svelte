@@ -2,7 +2,11 @@
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import { prettify } from '../../scripts/helpers';
 
-	export let outlineObject: OutlineObject;
+	let {
+		outlineObject
+	}: {
+		outlineObject: OutlineObject;
+	} = $props();
 
 	const makeLetterLabel = (letterGroupings: string[]) => {
 		if (letterGroupings.length === 1 && letterGroupings[0].length === 1) {

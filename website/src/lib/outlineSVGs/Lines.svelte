@@ -1,16 +1,23 @@
 <script lang="ts">
 	import type { LineDetails } from '../../data/interfaces/interfaces';
 
-	export let precedingOutlinesLength = 0;
-	export let previousLinesLength = 0;
-	export let line: LineDetails;
-	/**
-	 * The number of SVG units drawn per second.
-	 *
-	 * For reference, a value of `750` would take one second to draw a straight
-	 * line across the entire width of the canvas, and `250` would take 333.3ms.
-	 */
-	export let drawingSpeed: number = 750;
+	let {
+		line,
+		precedingOutlinesLength = 0,
+		previousLinesLength = 0,
+		drawingSpeed = 750
+	}: {
+		line: LineDetails;
+		precedingOutlinesLength?: number;
+		previousLinesLength?: number;
+		/**
+		 * The number of SVG units drawn per second.
+		 *
+		 * For reference, a value of `750` would take one second to draw a straight
+		 * line across the entire width of the canvas, and `250` would take 333.3ms.
+		 */
+		drawingSpeed?: number;
+	} = $props();
 
 	/**
 	 * Transform an object of into CSS custom properties that can be used

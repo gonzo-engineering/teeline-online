@@ -6,8 +6,13 @@
 	import { findOrCreateOutlineObject } from '../../scripts/build-outline-objects';
 	import { hydratedData } from '../../scripts/hydrate-outline-data';
 
-	export let outlineOrWord: OutlineObject | string;
-	export let displayName = true;
+	let {
+		outlineOrWord,
+		displayName = true
+	}: {
+		outlineOrWord: OutlineObject | string;
+		displayName?: boolean;
+	} = $props();
 
 	const outlineObject =
 		typeof outlineOrWord === 'string'
