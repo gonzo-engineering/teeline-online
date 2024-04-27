@@ -7,9 +7,9 @@
 	import { alphabet } from '../../data/letter-hierarchy';
 	import OutlineCardGrid from '$lib/cards/OutlineCardGrid.svelte';
 
-	let displayedOutlines: OutlineObject[] = hydratedData;
-	let alphabetToggleOn: boolean = false;
-	let searchTerm: string = '';
+	let displayedOutlines: OutlineObject[] = $state(hydratedData);
+	let alphabetToggleOn: boolean = $state(false);
+	let searchTerm: string = $state('');
 
 	const alphabetOutlines = hydratedData.filter((outline) =>
 		alphabet.some((letter) => outline.letterGroupings.includes(letter))

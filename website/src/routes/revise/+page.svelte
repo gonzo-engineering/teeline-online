@@ -11,13 +11,12 @@
 		hydratedData.filter((outline) => outline.specialOutlineMeanings.length > 0)
 	);
 
-	let counter = 0;
-	let outlineObject = shuffledSpecialOutlines[counter];
-	let outlineFirst = false;
+	let counter = $state(0);
+	let outlineFirst = $state(false);
+	let outlineObject = $derived(shuffledSpecialOutlines[counter]);
 
 	const changeOutline = () => {
 		counter === hydratedData.length - 1 ? (counter = 0) : counter++;
-		outlineObject = shuffledSpecialOutlines[counter];
 	};
 
 	const handleKeydown = (event: { keyCode: number }) => {
