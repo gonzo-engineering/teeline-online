@@ -6,8 +6,9 @@
 	import { hydratedData } from '../scripts/hydrate-outline-data';
 	import { inferPrecedingOutlinesLength } from '../scripts/line-length-inference';
 
-	export let text: string;
-	$: outlineObjects = convertPassageToOutlines(text, hydratedData);
+	let { text }: { text: string } = $props();
+
+	let outlineObjects = $derived(convertPassageToOutlines(text, hydratedData));
 </script>
 
 <div class="animation-container passage-container">
