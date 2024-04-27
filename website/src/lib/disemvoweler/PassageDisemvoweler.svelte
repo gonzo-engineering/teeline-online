@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { disemvowelBodyOfText } from '../../scripts/disemvowel';
-	let textToDisemvowel = '';
+	let textToDisemvowel = $state('');
+	let disemvoweledText = $derived(disemvowelBodyOfText(textToDisemvowel));
 </script>
 
 <div class="disemvoweler-container">
@@ -10,8 +11,8 @@
 		as well as silent and double letters
 	</p>
 	<textarea bind:value={textToDisemvowel} />
-	<img src="/images/arrow.svg" alt="" />
-	<p class="output">{disemvowelBodyOfText(textToDisemvowel)}</p>
+	<img src="/images/arrow.svg" alt="An ink-drawn style arrow pointing down" />
+	<p class="output">{disemvoweledText}</p>
 	<p>
 		Disclaimer: This is a flawed tool and should be treated as such. It makes mistakes, but
 		hopefully gets across the essentials of trimming fat in Teeline shorthand
