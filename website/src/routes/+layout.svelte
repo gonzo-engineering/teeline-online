@@ -24,13 +24,11 @@
 	></script>
 </svelte:head>
 
-<body>
-	<Header />
-	<main>
-		<slot />
-	</main>
-	<Footer />
-</body>
+<Header />
+<main>
+	<slot />
+</main>
+<Footer />
 
 <style>
 	@font-face {
@@ -48,11 +46,8 @@
 			/* Safari, Android, iOS */ url('/fonts/handwriting.otf') format('svg'); /* Legacy iOS */
 	}
 
-	body {
+	main {
 		width: 85vw;
 		margin: auto;
-	}
-	main {
-		width: 100%;
 	}
 </style>
