@@ -10,7 +10,7 @@
 		Type words in the box below and watch them be trimmed - as if by magic - of unnecessary vowels
 		as well as silent and double letters
 	</p>
-	<textarea bind:value={textToDisemvowel} />
+	<textarea bind:value={textToDisemvowel}></textarea>
 	<img src="/images/arrow.svg" alt="An ink-drawn style arrow pointing down" />
 	<p class="output">{disemvoweledText}</p>
 	<p>

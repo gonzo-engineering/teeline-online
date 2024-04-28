@@ -12,7 +12,7 @@
 	<div class="filter-label">{toggleLabel}</div>
 	<label class="switch">
 		<input type="checkbox" onclick={toggleFunction} />
-		<span class="slider round" />
+		<span class="slider round"></span>
 	</label>
 </div>
 
