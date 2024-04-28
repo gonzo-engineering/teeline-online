@@ -44,15 +44,17 @@
 
 	<div class="flipcard-container">
 		{#key outlineObject}
-			<FlippingOutlineCard flipped={outlineFirst}>
-				<div slot="front">
-					{prettify(outlineObject.specialOutlineMeanings)}
-				</div>
-				<div slot="back" style="width: 60%;">
-					<Container {outlineObject} let:line let:previousLinesLength>
-						<Lines {line} {previousLinesLength} />
-					</Container>
-				</div>
+			<FlippingOutlineCard
+				flipped={outlineFirst}
+				front={prettify(outlineObject.specialOutlineMeanings)}
+			>
+				{#snippet back()}
+					<div style="width: 60%">
+						<Container {outlineObject} let:line let:previousLinesLength>
+							<Lines {line} {previousLinesLength} />
+						</Container>
+					</div>
+				{/snippet}
 			</FlippingOutlineCard>
 		{/key}
 	</div>
