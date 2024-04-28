@@ -17,21 +17,26 @@
 	};
 </script>
 
-{#if outlineObject.letterGroupings.length > 0}
+{#snippet details({ label, meaning }: { label: string; meaning: string })}
 	<div class="outline-label">
-		{makeLetterLabel(outlineObject.letterGroupings)}
+		{label}
 	</div>
 	<div class="outline-meaning">
-		{prettify(outlineObject.letterGroupings)}
+		{meaning}
 	</div>
+{/snippet}
+
+{#if outlineObject.letterGroupings.length > 0}
+	{@render details({
+		label: makeLetterLabel(outlineObject.letterGroupings),
+		meaning: prettify(outlineObject.letterGroupings)
+	})}
 {/if}
 {#if outlineObject.specialOutlineMeanings.length > 0}
-	<div class="outline-label">
-		Special meaning{outlineObject.specialOutlineMeanings.length > 1 ? 's' : ''}
-	</div>
-	<div class="outline-meaning">
-		{prettify(outlineObject.specialOutlineMeanings)}
-	</div>
+	{@render details({
+		label: `Special meaning${outlineObject.specialOutlineMeanings.length > 1 ? 's' : ''}`,
+		meaning: prettify(outlineObject.specialOutlineMeanings)
+	})}
 {/if}
 
 <style>
