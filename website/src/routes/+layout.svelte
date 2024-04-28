@@ -1,6 +1,9 @@
 <script lang="ts">
 	import Header from '../lib/layout/Header.svelte';
 	import Footer from '../lib/layout/Footer.svelte';
+	import type { Snippet } from 'svelte';
+
+	let { children }: { children: Snippet } = $props();
 </script>
 
 <svelte:head>
@@ -26,7 +29,7 @@
 
 <Header />
 <main>
-	<slot />
+	{@render children()}
 </main>
 <Footer />
 
