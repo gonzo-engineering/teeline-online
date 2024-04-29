@@ -17,6 +17,7 @@
 				{outlineObject}
 				isStandalone={false}
 				precedingOutlinesLength={inferPrecedingOutlinesLength(outlineObjects, i)}
+				drawingSpeed={900}
 			/>
 			<OutlineDetails {outlineObject} />
 		</div>
