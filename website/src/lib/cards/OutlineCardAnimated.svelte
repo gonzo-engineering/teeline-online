@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import Container from '../outlineSVGs/OutlineSVG.svelte';
-	import Lines from '../outlineSVGs/Lines.svelte';
 	import OutlineDetails from './OutlineDetails.svelte';
 	import { findOrCreateOutlineObject } from '../../scripts/build-outline-objects';
 	import { hydratedData } from '../../scripts/hydrate-outline-data';
@@ -22,9 +21,7 @@
 
 <div>
 	<div class="card animation-container">
-		<Container {outlineObject} let:line let:previousLinesLength>
-			<Lines {line} {previousLinesLength} drawingSpeed={900} />
-		</Container>
+		<Container {outlineObject} drawingSpeed={900} />
 		{#if displayName}
 			<OutlineDetails {outlineObject} />
 		{/if}

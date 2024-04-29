@@ -2,15 +2,18 @@
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import { prettify } from '../../scripts/helpers';
 	import { inferPrecedingLinesLength } from '../../scripts/line-length-inference';
+	import Lines from './Lines.svelte';
 
 	let {
 		outlineObject,
 		precedingOutlinesLength = 0,
-		isStandalone = true
+		isStandalone = true,
+		drawingSpeed = 750
 	}: {
 		outlineObject: OutlineObject;
 		precedingOutlinesLength?: number;
 		isStandalone?: boolean;
+		drawingSpeed?: number;
 	} = $props();
 
 	const width = 750;
@@ -32,11 +35,11 @@
 		y2={horizontal}
 	/>
 	{#each outlineObject.lines as line, index}
-		<slot
+		<Lines
 			{line}
-			{index}
 			{precedingOutlinesLength}
 			previousLinesLength={inferPrecedingLinesLength(outlineObject, index)}
+			{drawingSpeed}
 		/>
 	{/each}
 </svg>
