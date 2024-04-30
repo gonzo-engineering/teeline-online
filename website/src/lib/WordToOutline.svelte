@@ -2,7 +2,7 @@
 	import WordDisemvoweler from './disemvoweler/WordDisemvoweler.svelte';
 	import OutlineCardAnimated from './cards/OutlineCardAnimated.svelte';
 
-	export let word: string;
+	let { word }: { word: string } = $props();
 </script>
 
 <div class="word-converter-container">

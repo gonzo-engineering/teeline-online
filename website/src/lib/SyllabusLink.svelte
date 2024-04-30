@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { syllabusMetadata } from '../data/syllabus';
 
-	export let sectionKey: string;
+	let { sectionKey }: { sectionKey: string } = $props();
 
 	const thisSection = syllabusMetadata.find((section) => section.slug === sectionKey);
 	const previousSection =

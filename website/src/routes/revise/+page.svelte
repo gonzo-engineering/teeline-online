@@ -11,13 +11,12 @@
 		hydratedData.filter((outline) => outline.specialOutlineMeanings.length > 0)
 	);
 
-	let counter = 0;
-	let outlineObject = shuffledSpecialOutlines[counter];
-	let outlineFirst = false;
+	let counter = $state(0);
+	let outlineFirst = $state(false);
+	let outlineObject = $derived(shuffledSpecialOutlines[counter]);
 
 	const changeOutline = () => {
 		counter === hydratedData.length - 1 ? (counter = 0) : counter++;
-		outlineObject = shuffledSpecialOutlines[counter];
 	};
 
 	const handleKeydown = (event: { keyCode: number }) => {
@@ -45,21 +44,23 @@
 
 	<div class="flipcard-container">
 		{#key outlineObject}
-			<FlippingOutlineCard flipped={outlineFirst}>
-				<div slot="front">
-					{prettify(outlineObject.specialOutlineMeanings)}
-				</div>
-				<div slot="back" style="width: 60%;">
-					<Container {outlineObject} let:line let:previousLinesLength>
-						<Lines {line} {previousLinesLength} />
-					</Container>
-				</div>
+			<FlippingOutlineCard
+				flipped={outlineFirst}
+				front={prettify(outlineObject.specialOutlineMeanings)}
+			>
+				{#snippet back()}
+					<div style="width: 60%">
+						<Container {outlineObject} let:line let:previousLinesLength>
+							<Lines {line} {previousLinesLength} />
+						</Container>
+					</div>
+				{/snippet}
 			</FlippingOutlineCard>
 		{/key}
 	</div>
 
 	<div class="button-container">
-		<button class="button" on:click={changeOutline}>Next card...</button>
+		<button class="button" onclick={changeOutline}>Next card...</button>
 	</div>
 </div>
 

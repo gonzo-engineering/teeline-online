@@ -1,26 +1,24 @@
 <script lang="ts">
 	import Container from './outlineSVGs/OutlineSVG.svelte';
-	import Lines from './outlineSVGs/Lines.svelte';
 	import { convertPassageToOutlines } from '../scripts/build-outline-objects';
 	import OutlineDetails from './cards/OutlineDetails.svelte';
 	import { hydratedData } from '../scripts/hydrate-outline-data';
 	import { inferPrecedingOutlinesLength } from '../scripts/line-length-inference';
 
-	export let text: string;
-	$: outlineObjects = convertPassageToOutlines(text, hydratedData);
+	let { text }: { text: string } = $props();
+
+	let outlineObjects = $derived(convertPassageToOutlines(text, hydratedData));
 </script>
 
 <div class="animation-container passage-container">
 	{#each outlineObjects as outlineObject, i}
 		<div>
-			<Container {outlineObject} isStandalone={false} let:line let:previousLinesLength>
-				<Lines
-					{line}
-					precedingOutlinesLength={inferPrecedingOutlinesLength(outlineObjects, i)}
-					{previousLinesLength}
-					drawingSpeed={900}
-				/>
-			</Container>
+			<Container
+				{outlineObject}
+				isStandalone={false}
+				precedingOutlinesLength={inferPrecedingOutlinesLength(outlineObjects, i)}
+				drawingSpeed={900}
+			/>
 			<OutlineDetails {outlineObject} />
 		</div>
 	{/each}

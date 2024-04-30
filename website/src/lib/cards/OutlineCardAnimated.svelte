@@ -1,13 +1,17 @@
 <script lang="ts">
 	import type { OutlineObject } from '../../data/interfaces/interfaces';
 	import Container from '../outlineSVGs/OutlineSVG.svelte';
-	import Lines from '../outlineSVGs/Lines.svelte';
 	import OutlineDetails from './OutlineDetails.svelte';
 	import { findOrCreateOutlineObject } from '../../scripts/build-outline-objects';
 	import { hydratedData } from '../../scripts/hydrate-outline-data';
 
-	export let outlineOrWord: OutlineObject | string;
-	export let displayName = true;
+	let {
+		outlineOrWord,
+		displayName = true
+	}: {
+		outlineOrWord: OutlineObject | string;
+		displayName?: boolean;
+	} = $props();
 
 	const outlineObject =
 		typeof outlineOrWord === 'string'
@@ -17,9 +21,7 @@
 
 <div>
 	<div class="card animation-container">
-		<Container {outlineObject} let:line let:previousLinesLength>
-			<Lines {line} {previousLinesLength} drawingSpeed={900} />
-		</Container>
+		<Container {outlineObject} drawingSpeed={900} />
 		{#if displayName}
 			<OutlineDetails {outlineObject} />
 		{/if}

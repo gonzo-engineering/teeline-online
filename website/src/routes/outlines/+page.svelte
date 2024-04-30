@@ -7,9 +7,9 @@
 	import { alphabet } from '../../data/letter-hierarchy';
 	import OutlineCardGrid from '$lib/cards/OutlineCardGrid.svelte';
 
-	let displayedOutlines: OutlineObject[] = hydratedData;
-	let alphabetToggleOn: boolean = false;
-	let searchTerm: string = '';
+	let displayedOutlines: OutlineObject[] = $state(hydratedData);
+	let alphabetToggleOn: boolean = $state(false);
+	let searchTerm: string = $state('');
 
 	const alphabetOutlines = hydratedData.filter((outline) =>
 		alphabet.some((letter) => outline.letterGroupings.includes(letter))
@@ -36,7 +36,7 @@
 		class="search-input"
 		placeholder="Search for outlines..."
 		bind:value={searchTerm}
-		on:input={() => {
+		oninput={() => {
 			const outlinesToFilter = alphabetToggleOn ? alphabetOutlines : hydratedData;
 			displayedOutlines = filterAndSortOutlines(outlinesToFilter, searchTerm.trim().toLowerCase());
 		}}
@@ -85,12 +85,5 @@
 		font-size: 1.8rem;
 		line-height: 1.5;
 		max-width: 800px;
-	}
-	@media (min-width: 1025px) {
-		.animated-container {
-			display: grid;
-			column-gap: 30px;
-			grid-template-columns: repeat(6, 1fr);
-		}
 	}
 </style>

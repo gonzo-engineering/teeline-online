@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ShorthandPassage from '$lib/ShorthandPassage.svelte';
 
-	let inputText = '';
+	let inputText = $state('');
 </script>
 
 <svelte:head>

@@ -1,15 +1,17 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
+
 	/** Whether to show the backside, when not hovered */
-	export let flipped: boolean;
+	let { flipped, front, back }: { flipped: boolean; front: string; back: Snippet } = $props();
 </script>
 
 <div class="flip-card" style="--extra:{flipped ? '-180deg' : '0deg'}">
 	<div class="inner">
 		<div class="front">
-			<slot name="front" />
+			{front}
 		</div>
 		<div class="back">
-			<slot name="back" />
+			{@render back()}
 		</div>
 	</div>
 </div>

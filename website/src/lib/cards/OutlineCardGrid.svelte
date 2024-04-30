@@ -5,11 +5,13 @@
 	import { findOrCreateOutlineObject } from '../../scripts/build-outline-objects';
 	import { hydratedData } from '../../scripts/hydrate-outline-data';
 
-	export let outlines: OutlineObject[] = [];
-	export let wordsAndPhrases: string[] = [];
-	export let alphabetMode: boolean = false;
+	let {
+		outlines = [],
+		wordsAndPhrases = [],
+		alphabetMode = false
+	}: { outlines?: OutlineObject[]; wordsAndPhrases?: string[]; alphabetMode?: boolean } = $props();
 
-	$: displayedOutlines = alphabetMode
+	let displayedOutlines = alphabetMode
 		? hydratedData.filter((outline) =>
 				alphabet.some((letter) => outline.letterGroupings.includes(letter))
 			)

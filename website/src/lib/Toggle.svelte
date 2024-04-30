@@ -1,13 +1,18 @@
 <script lang="ts">
-	export let toggleLabel: string;
-	export let toggleFunction: () => void;
+	let {
+		toggleLabel,
+		toggleFunction
+	}: {
+		toggleLabel: string;
+		toggleFunction: () => void;
+	} = $props();
 </script>
 
 <div class="toggle-container">
 	<div class="filter-label">{toggleLabel}</div>
 	<label class="switch">
-		<input type="checkbox" on:click={toggleFunction} />
-		<span class="slider round" />
+		<input type="checkbox" onclick={toggleFunction} />
+		<span class="slider round"></span>
 	</label>
 </div>
 

@@ -1,6 +1,9 @@
 <script lang="ts">
 	import Header from '../lib/layout/Header.svelte';
 	import Footer from '../lib/layout/Footer.svelte';
+	import type { Snippet } from 'svelte';
+
+	let { children }: { children: Snippet } = $props();
 </script>
 
 <svelte:head>
@@ -24,13 +27,11 @@
 	></script>
 </svelte:head>
 
-<body>
-	<Header />
-	<main>
-		<slot />
-	</main>
-	<Footer />
-</body>
+<Header />
+<main>
+	{@render children()}
+</main>
+<Footer />
 
 <style>
 	@font-face {
@@ -48,11 +49,8 @@
 			/* Safari, Android, iOS */ url('/fonts/handwriting.otf') format('svg'); /* Legacy iOS */
 	}
 
-	body {
+	main {
 		width: 85vw;
 		margin: auto;
-	}
-	main {
-		width: 100%;
 	}
 </style>

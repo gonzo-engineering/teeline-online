@@ -1,9 +1,17 @@
 <script lang="ts">
-	export let sectionName: string;
-	export let sectionBlurb: string;
-	export let sectionPath: string;
-	export let sectionImage: string = null;
-	export let sectionImageAlt: string = null;
+	let {
+		sectionName,
+		sectionBlurb,
+		sectionPath,
+		sectionImage,
+		sectionImageAlt
+	}: {
+		sectionName: string;
+		sectionBlurb: string;
+		sectionPath: string;
+		sectionImage?: string;
+		sectionImageAlt?: string;
+	} = $props();
 </script>
 
 <div class="container">
