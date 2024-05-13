@@ -15,9 +15,7 @@ One of the main ways Teeline saves time and space is by removing as many vowels 
 Why does this work? Well, consider the following sentence. **Evn thgh mst of th vwls hv bn rmvd its stl prty esy to undrstnd wht im wrtng.** The same principle applies to shorthand. Meaning can be preserved with fewer letters.
 
 <WordDisemvoweler word="footballer" />
-
 <WordDisemvoweler word="parliament" />
-
 <WordDisemvoweler word="dog" />
 
 However, it's not quite as simple as removing all vowels. That would be anarchy. The goal with shorthand is to keep just enough letters to understand what you've written. To that end there are times when vowels get a stay of execution.
@@ -25,19 +23,16 @@ However, it's not quite as simple as removing all vowels. That would be anarchy.
 One of these is when a word starts with a vowel, keep it.
 
 <WordDisemvoweler word="argument" />
-
 <WordDisemvoweler word="imbecile" />
 
 You keep vowels at the end of words if they are not silent.
 
 <WordDisemvoweler word="banjo" />
-
 <WordDisemvoweler word="gondola" />
 
 Occasionally you come across words that start with a vowel and end with an articulated vowel. In such cases you keep both.
 
 <WordDisemvoweler word="igloo" />
-
 <WordDisemvoweler word="algebra" />
 
 The sum total of this is saving a lot of time and space even before you get into the business of writing in the Teeline alphabet. 

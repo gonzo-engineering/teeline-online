@@ -14,11 +14,8 @@ Another way to cut down on letters is to remove silent and double letters. Altho
 The first is double letters. Plenty of words have two of the same letter next to each other (dollar, lettuce, cobbler, dwell, etc.). When translating such words to their Teeline equivalents, having one is enough.
 
 <WordDisemvoweler word="dollar" />
-
 <WordDisemvoweler word="lettuce" />
-
 <WordDisemvoweler word="cobbler" />
-
 <WordDisemvoweler word="dwell" />
 
 In a similar vein, silent letters should also be cut.

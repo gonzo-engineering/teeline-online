@@ -13,7 +13,12 @@ There are words and turns of phrases so common that it makes sense to have succi
 
 Here are a few examples:
 
-<OutlineCardGrid wordsAndPhrases={['ladies and gentlemen', 'on the other hand', 'government', 'satisfactory']} />
+<OutlineCardGrid wordsAndPhrases={[
+    'ladies and gentlemen', 
+    'on the other hand', 
+    'government', 
+    'satisfactory'
+]} />
 
 Imagine how much longer it would take to write those out fully, even in Teeline. When you're desperately scrawling down a statement those fractions of a second will be invaluable.
 
