@@ -36,5 +36,6 @@
 		padding: 10% 10% 20% 10%;
 		margin: 0 auto;
 		max-width: 200px;
+		font-family: 'Handwriting', sans-serif;
 	}
 </style>
