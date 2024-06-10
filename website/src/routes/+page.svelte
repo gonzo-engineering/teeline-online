@@ -67,9 +67,8 @@
 		row-gap: 30px;
 	}
 
-	@media (min-width: 1025px) {
+	@media (min-width: 768px) {
 		.site-sections-container {
-			width: 75%;
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
 			grid-template-rows: 1fr;

@@ -31,7 +31,6 @@
 </svelte:head>
 
 <div class="filters-container">
-	<Toggle toggleLabel={`Only show alphabet`} toggleFunction={toggleAlphabetFilter} />
 	<input
 		class="search-input"
 		placeholder="Search for outlines..."
@@ -41,6 +40,7 @@
 			displayedOutlines = filterAndSortOutlines(outlinesToFilter, searchTerm.trim().toLowerCase());
 		}}
 	/>
+	<Toggle toggleLabel={`Only show alphabet`} toggleFunction={toggleAlphabetFilter} />
 </div>
 
 {#if searchTerm.length > 0 && displayedOutlines.length > 0}
@@ -69,8 +69,10 @@
 	.filters-container {
 		margin: 0 auto 2rem auto;
 		display: flex;
-		flex-wrap: wrap;
+		flex-direction: column;
+		gap: 1rem;
 		justify-content: center;
+		align-items: center;
 	}
 	.search-subheading {
 		font-size: 1.8rem;
