@@ -37,18 +37,24 @@
 		margin-bottom: 2rem;
 	}
 
-	nav {
-		font-size: 2rem;
-		font-weight: 700;
-	}
-
 	ul {
 		display: flex;
 		justify-content: center;
+		gap: 1rem;
 	}
 
 	li {
-		margin: 0 20px;
+		font-size: 1.5rem;
+		margin: 0;
 		list-style-type: none;
+		padding-left: 0;
+	}
+	@media (min-width: 768px) {
+		ul {
+			gap: 2rem;
+		}
+		li {
+			font-size: 1.8rem;
+		}
 	}
 </style>
