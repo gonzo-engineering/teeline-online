@@ -63,12 +63,21 @@
 		margin-top: 50px;
 		display: flex;
 		flex-wrap: wrap;
-		column-gap: 4%;
 		row-gap: 30px;
 	}
 
 	@media (min-width: 768px) {
 		.site-sections-container {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: 1fr 1fr;
+			grid-column-gap: 2rem;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.site-sections-container {
+			width: 75%;
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
 			grid-template-rows: 1fr;
