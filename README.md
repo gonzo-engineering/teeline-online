@@ -50,3 +50,9 @@ The font is a digitised version of my own non-cursive handwriting. This project 
 - [Teeline Mate](https://github.com/adxsoft/TeelineMate) by [@adxsoft](https://github.com/adxsoft)
 - [A Searchable Teeline Dictionary](http://realerthinks.com/a-searchable-teeline-dictionary/) by Addie Kingsland
 - [Teeline for the curious: a story of learning things because I can](http://realerthinks.com/teeline-for-the-curious-a-story-of-learning-things-because-i-can/) by Addie Kingsland
+
+## Website image credits
+
+- **Confused man**: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Headscratcher.png), originally published in _The Evening Ledger_, Philadelphia, May 4 1916
+- **Old book**: [Rawpixel](https://www.rawpixel.com/image/6261613/png-paper-sticker)
+- **Quill and bottle**: [PublicDomainPictures.net](https://www.publicdomainpictures.net/en/view-image.php?image=75286&picture=ink-amp-feather-quill-clipart), originally drawn by Karen Arnold
