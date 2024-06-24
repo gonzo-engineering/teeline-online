@@ -22,7 +22,7 @@
 		"@storybook/addon-essentials": "^8.1.0",
 		"@storybook/addon-interactions": "^8.1.0",
 		"@storybook/addon-links": "^8.1.0",
-		"@storybook/blocks": "^8.1.0",
+		"@storybook/blocks": "^8.1.10",
 		"@storybook/svelte": "^8.1.0",
 		"@storybook/svelte-vite": "^8.1.0",
 		"@storybook/sveltekit": "^8.1.0",
