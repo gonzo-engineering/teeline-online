@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '$lib/styles/global.css';
 	import Header from '../lib/layout/Header.svelte';
 	import Footer from '../lib/layout/Footer.svelte';
 	import type { Snippet } from 'svelte';
@@ -34,21 +35,6 @@
 <Footer />
 
 <style>
-	@font-face {
-		font-family: 'Handwriting';
-		font-style: normal;
-		font-weight: 500;
-		font-display: swap;
-		src: url('/fonts/handwriting.otf'); /* IE9 Compat Modes */
-		src:
-			local(''),
-			url('/fonts/handwriting.otf') format('embedded-opentype'),
-			/* IE6-IE8 */ url('/fonts/handwriting.otf') format('woff2'),
-			/* Super Modern Browsers */ url('/fonts/handwriting.otf') format('woff'),
-			/* Modern Browsers */ url('/fonts/handwriting.otf') format('truetype'),
-			/* Safari, Android, iOS */ url('/fonts/handwriting.otf') format('svg'); /* Legacy iOS */
-	}
-
 	main {
 		width: 85vw;
 		margin: auto;
