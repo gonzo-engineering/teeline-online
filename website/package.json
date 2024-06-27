@@ -24,7 +24,7 @@
 		"@storybook/addon-links": "^8.1.0",
 		"@storybook/blocks": "^8.1.0",
 		"@storybook/svelte": "^8.1.0",
-		"@storybook/svelte-vite": "^8.1.0",
+		"@storybook/svelte-vite": "^8.1.10",
 		"@storybook/sveltekit": "^8.1.0",
 		"@storybook/test": "^8.1.0",
 		"@sveltejs/adapter-netlify": "^4.2.0",
