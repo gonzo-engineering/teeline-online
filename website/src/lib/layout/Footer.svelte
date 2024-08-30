@@ -1,8 +1,9 @@
 <footer>
 	<div class="footer-content">
 		<p>
-			teeline.online is maintained by <a href="https://frederickobrien.com">Fred O'Brien</a>. You
-			can support the site's development by
+			teeline.online is maintained by <a href="https://frederickobrien.com">Fred O'Brien</a> as part
+			of the <a href="https://github.com/gonzo-engineering">Gonzo Engineering</a> project. You can
+			support the site's development by
 			<a href="https://ko-fi.com/frederickobrien">buying Fred a coffee</a>, if you like.
 		</p>
 	</div>
