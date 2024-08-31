@@ -24,7 +24,7 @@
 		his own NCTJ diploma.
 	</p>
 	<p>
-		The site has become a centrepiece of the <a href="https://github.com/gonzo-engineering"
+		The site has become a centrepiece of the <a href="https://gonzo.engineering"
 			>Gonzo Engineering</a
 		>
 		project, which creates free, open-source tools for journalists and artists. You can support development
