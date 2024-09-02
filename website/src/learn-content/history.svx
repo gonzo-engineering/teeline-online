@@ -1,0 +1,30 @@
+---
+title: History
+description: A brief review of Teeline shorthand's origins and its place in the world today
+slug: history
+order: 2
+---
+
+Shorthand has been around for a long time. One of the first systems recorded [was developed by Marcus Tullius Tiro](https://web.archive.org/web/20160708114901/http://faculty.ithaca.edu/direnzo/docs/scholarship/mastersvoice.pdf), a slave of Cicero, in the first century BC. Tironian shorthand was used by scribes in the Roman Empire and later adapted by European monasteries in the medieval period.
+
+<figure>
+    <img src="/images/tironian-notes.png" alt="An example of Tironian notes" />
+    <figcaption>An example of Tironian notes</figcaption>
+</figure>
+
+One of the early forms of modern shorthand to appear in the UK was Gurney's Brachygraphy, developed by Thomas Gurney in the 18th century. The system was used by journalists, court reporters, and [Charles Dickens](https://le.ac.uk/news/2022/february/dickens-code-tavistock-letter), amongst others. It was eventually succeeded by Pitman shorthand, which was developed by Isaac Pitman in the 19th century.
+
+Teeline was developed by James Hill, a teacher of Pitman shorthand who wanted to create a system that was easier to learn and faster to write. Refined over decades, Teeline was recommended to the National Council for the Training of Journalists (NCTJ) in 1968. In November of that year NCTJ shorthand consultant [Harry Butler wrote](https://www.nctj.com/news/the-nctj-becomes-the-new-home-of-teeline-shorthand/): 
+
+> “We have on our hands a shorthand breakthrough which should solve longstanding shorthand problems. I have never known a shorthand system that can produce such good results in so short a time.”
+
+The Teeline system has since become the most widely used in the UK and is taught in journalism schools around the world.
+
+<figure>
+    <img style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); transform: rotate(2deg);" src="/images/james-hill.jpg" alt="A photograph of James Hill" />
+    <figcaption>James Hill</figcaption>
+</figure>
+
+In 2021 [ownership of the system was transferred to the NCTJ](https://www.nctj.com/news/the-nctj-becomes-the-new-home-of-teeline-shorthand/), which brought it out of copyright for the public benefit to support journalism training and standards.
+
+Shorthand has become a more optional part of journalism training in recent years, but it is still widely used in the industry and beyond. You should totally learn it.

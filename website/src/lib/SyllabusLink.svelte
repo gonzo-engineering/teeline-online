@@ -42,7 +42,7 @@
 		max-width: 1000px;
 		justify-content: center;
 		column-gap: 1.5rem;
-		font-size: 1rem;
+		font-size: 1.4rem;
 	}
 	@media (min-width: 1025px) {
 		.links-container {
