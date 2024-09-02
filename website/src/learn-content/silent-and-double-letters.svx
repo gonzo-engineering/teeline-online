@@ -2,7 +2,7 @@
 title: Silent and double letters
 description: The nitty gritty of removing unheard letters from words in Teeline shorthand
 slug: silent-and-double-letters
-order: 5
+order: 6
 ---
 
 <script>

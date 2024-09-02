@@ -2,7 +2,7 @@
 title: The alphabet
 description: Even shorthand begins with learning your ABCs. This is an intro to the Teeline alphabet
 slug: the-alphabet
-order: 2
+order: 3
 ---
 
 <script>

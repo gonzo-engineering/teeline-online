@@ -63,9 +63,31 @@ input {
 	font-size: var(--regular-font-size);
 }
 
+blockquote {
+	font-style: italic;
+	margin-left: 20px;
+}
+
 img {
 	width: 100%;
 	height: auto;
+}
+
+figure {
+	max-width: 400px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: gray;
+}
+
+figure img {
+	margin-bottom: 1rem;
+}
+
+figcaption {
+	font-size: 1.6rem;
 }
 
 li {

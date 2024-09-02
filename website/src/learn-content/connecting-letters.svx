@@ -2,7 +2,7 @@
 title: Connecting letters
 description: How and why to join letters together in Teeline shorthand
 slug: connecting-letters
-order: 6
+order: 7
 ---
 
 <script lang="ts">

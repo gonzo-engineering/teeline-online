@@ -2,7 +2,7 @@
 title: Disemvowelment
 description: The glorious gory art of removing superflous letters from words in Teeline shorthand
 slug: disemvowelment
-order: 4
+order: 5
 ---
 
 <script>
