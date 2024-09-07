@@ -4,7 +4,7 @@ import { disemvowelWord } from './disemvowel';
 import { createStartingObject } from './calculate-starting-point';
 
 const checkedSpecials: SpecialOutline[] = specials;
-const punctuationRegex = /[.,\/#!$%\^&\*;:{}=\-_`~()]/g;
+const punctuationRegex = /[,\/#!$%\^&\*;:{}=\-_`~()]/g;
 
 export const findOrCreateOutlineObject = (
 	word: string,
@@ -117,8 +117,15 @@ export function convertPassageToOutlines(
 	result: OutlineObject[] = []
 ): OutlineObject[] {
 	const cleanedPassage = passage.replace(punctuationRegex, '');
+
 	let longestMatch = '';
+	let longestMatchIncludesPeriod = false;
 	let matchedOutline: OutlineObject | undefined;
+
+	if (cleanedPassage.startsWith('.')) {
+		longestMatch = '.';
+		matchedOutline = findOrCreateOutlineObject(longestMatch, lettersAndGroupings);
+	}
 
 	// Find the longest special meaning match
 	for (const outline of lettersAndGroupings) {
@@ -139,11 +146,17 @@ export function convertPassageToOutlines(
 	if (!matchedOutline) {
 		// Default to the first word if no special meaning found
 		longestMatch = cleanedPassage.split(' ')[0];
-		matchedOutline = findOrCreateOutlineObject(longestMatch, lettersAndGroupings);
+		longestMatchIncludesPeriod = longestMatch.endsWith('.');
+		matchedOutline = findOrCreateOutlineObject(
+			longestMatchIncludesPeriod ? longestMatch.slice(0, -1) : longestMatch,
+			lettersAndGroupings
+		);
 	}
 
 	const updatedResult = [...result, matchedOutline];
-	const updatedPassage = cleanedPassage.slice(longestMatch.length).trim();
+	const updatedPassage = longestMatchIncludesPeriod
+		? '.' + cleanedPassage.slice(longestMatch.length)
+		: cleanedPassage.slice(longestMatch.length).trim();
 
 	return updatedPassage === ''
 		? updatedResult
