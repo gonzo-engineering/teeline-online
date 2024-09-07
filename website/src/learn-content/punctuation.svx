@@ -1,0 +1,25 @@
+---
+title: Punctuation
+description: Punctuation is streamlined in Teeline, but it's still crucial for clarity
+slug: punctuation
+order: 4
+---
+
+<script>
+    import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte'
+    import ShorthandPassage from '$lib/ShorthandPassage.svelte'
+</script>
+
+A lot of grammar falls by the wayside in shorthand, but a few essentials remain. Full stops are the main ones. In Teeline they look like slashes rather than dots.
+
+<OutlineCardAnimated outlineOrWord="." --width={"50%"} />
+
+Here is an example of how they look for the passage **'He was mad. Real mad.'**
+
+<ShorthandPassage text="He was mad. Real mad." />
+
+Another key punctuation mark in Teeline denotes capital letters. They look like two small slashes and tend to sit beneath the word they apply to. Here's an example:
+
+<OutlineCardAnimated outlineOrWord="English" --width={"50%"} />
+
+And that's it! There are other punctuation marks in Teeline but these are the big ones.
