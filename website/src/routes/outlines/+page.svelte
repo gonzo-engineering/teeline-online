@@ -59,7 +59,7 @@
 		guess using the
 		<a href="/generator">generator</a>:
 	</div>
-	<ShorthandPassage text={searchTerm} />
+	<ShorthandPassage text={searchTerm} showMeanings={true} />
 	<div style="width: 50%; margin: auto; text-align: center; padding-top: 2rem;">
 		<p>This feature is a work in progress so take results with a grain of salt.</p>
 	</div>

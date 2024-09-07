@@ -5,7 +5,7 @@
 	import { hydratedData } from '../scripts/hydrate-outline-data';
 	import { inferPrecedingOutlinesLength } from '../scripts/line-length-inference';
 
-	let { text }: { text: string } = $props();
+	let { text, showMeanings }: { text: string; showMeanings: boolean } = $props();
 
 	let outlineObjects = $derived(convertPassageToOutlines(text, hydratedData));
 </script>
@@ -19,7 +19,9 @@
 				precedingOutlinesLength={inferPrecedingOutlinesLength(outlineObjects, i)}
 				drawingSpeed={900}
 			/>
-			<OutlineDetails {outlineObject} />
+			{#if showMeanings}
+				<OutlineDetails {outlineObject} />
+			{/if}
 		</div>
 	{/each}
 </div>
