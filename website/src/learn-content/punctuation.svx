@@ -18,10 +18,16 @@ A lot of grammar falls by the wayside in shorthand, but a few essentials remain.
 
 Here is an example of full stops in action for the passage **'He was mad. Real mad.'**
 
-<ShorthandPassage text="He was mad. Real mad." showMeanings={true} />
+<ShorthandPassage text="He was mad. Real mad." showMeanings={false} />
 
-Another key punctuation mark in Teeline denotes capital letters. They look like two small slashes and tend to sit beneath the word they apply to. Here's an example:
+Another key punctuation mark in Teeline denotes capital letters. They look like two small slashes and tend to sit beneath the word they apply to. 
+
+Here is an example of it being used for the [special outline](/learn/special-outlines) **'English'**:
 
 <OutlineCardAnimated outlineOrWord="English" --width={"50%"} />
 
-And that's it! There are other punctuation marks in Teeline but these are the big ones.
+The symbol is especially useful for proper nouns and people's names. 
+
+It's unnecessary to capitalise the first letter of a sentence in Teeline as it's clear, thanks to the period slash, where one sentence ends and another begins. 
+
+There are other punctuation marks in Teeline but those are the big two.
