@@ -22,7 +22,7 @@ Here is an example of full stops in action for the passage **'He was mad. Real m
 
 Another key punctuation mark in Teeline denotes capital letters. They look like two small slashes and tend to sit beneath the word they apply to. 
 
-Here is an example of it being used for the [special outline](/learn/special-outlines) **'English'**:
+Here is an example of it being used in the [special outline](/learn/special-outlines) for **'English'**:
 
 <OutlineCardAnimated outlineOrWord="English" --width={"50%"} />
 
