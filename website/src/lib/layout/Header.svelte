@@ -1,8 +1,21 @@
 <script lang="ts">
+	import { user } from '$lib/stores/userStore';
 	import HeaderLink from './HeaderLink.svelte';
+
+	const setWpm = (wpm: number) => {
+		user.set({ wpm });
+	};
+
+	const wpmOptions = [40, 60, 80, 100, 120];
 </script>
 
 <header>
+	<div>Animation speed: {$user.wpm} words per minute</div>
+	{#each wpmOptions as wpmOption}
+		<button on:click={() => setWpm(wpmOption)}>
+			{wpmOption}
+		</button>
+	{/each}
 	<h1><a href="/">teeline.online</a></h1>
 	<div class="tagline">Very (short)handy</div>
 	<nav>
