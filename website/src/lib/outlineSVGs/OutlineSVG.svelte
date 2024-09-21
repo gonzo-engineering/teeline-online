@@ -4,6 +4,7 @@
 	import { inferPrecedingLinesLength } from '../../scripts/line-length-inference';
 	import Lines from './Lines.svelte';
 	import { user } from '$lib/stores/userStore';
+	import { speeds } from '../../scripts/speed';
 
 	let {
 		outlineObject,
@@ -40,7 +41,7 @@
 			{line}
 			{precedingOutlinesLength}
 			previousLinesLength={inferPrecedingLinesLength(outlineObject, index)}
-			drawingSpeed={$user.wpm * 15}
+			drawingSpeed={speeds[$user.wpm]}
 		/>
 	{/each}
 </svg>
