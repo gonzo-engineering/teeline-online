@@ -122,8 +122,7 @@ export const wpms: {
 	{ speed: 80, divider: 45 },
 	{ speed: 100, divider: 36 },
 	{ speed: 120, divider: 30 },
-	{ speed: 140, divider: 25 },
-	{ speed: 160, divider: 22.5 }
+	{ speed: 140, divider: 25 }
 ];
 
 export const speeds = wpms.reduce((acc, { speed, divider }) => {
