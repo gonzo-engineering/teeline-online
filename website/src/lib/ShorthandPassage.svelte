@@ -17,7 +17,6 @@
 				{outlineObject}
 				isStandalone={false}
 				precedingOutlinesLength={inferPrecedingOutlinesLength(outlineObjects, i)}
-				drawingSpeed={900}
 			/>
 			{#if showMeanings}
 				<OutlineDetails {outlineObject} />

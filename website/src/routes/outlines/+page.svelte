@@ -6,6 +6,7 @@
 	import { hydratedData } from '../../scripts/hydrate-outline-data';
 	import { alphabet } from '../../data/letter-hierarchy';
 	import OutlineCardGrid from '$lib/cards/OutlineCardGrid.svelte';
+	import SpeedToggle from '$lib/SpeedToggle.svelte';
 
 	let displayedOutlines: OutlineObject[] = $state(hydratedData);
 	let alphabetToggleOn: boolean = $state(false);
@@ -40,7 +41,10 @@
 			displayedOutlines = filterAndSortOutlines(outlinesToFilter, searchTerm.trim().toLowerCase());
 		}}
 	/>
-	<Toggle toggleLabel={`Only show alphabet`} toggleFunction={toggleAlphabetFilter} />
+	<div class="settings">
+		<Toggle toggleLabel="Alphabet only" toggleFunction={toggleAlphabetFilter} />
+		<SpeedToggle />
+	</div>
 </div>
 
 {#if searchTerm.length > 0 && displayedOutlines.length > 0}
@@ -81,11 +85,24 @@
 	.search-term {
 		font-weight: 700;
 	}
+	.settings {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+		justify-items: center;
+		align-items: center;
+	}
 	.nothing-found-message {
 		margin: 3rem auto;
 		text-align: center;
 		font-size: 1.8rem;
 		line-height: 1.5;
 		max-width: 800px;
+	}
+	@media (min-width: 768px) {
+		.settings {
+			flex-direction: row;
+			gap: 1rem;
+		}
 	}
 </style>
