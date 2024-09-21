@@ -1,23 +1,8 @@
 <script lang="ts">
-	import { user } from '$lib/stores/userStore';
-	import { wpms } from '../../scripts/speed';
 	import HeaderLink from './HeaderLink.svelte';
-
-	const setWpm = (wpm: number) => {
-		user.set({ wpm });
-	};
-
-	const wpmOptions = wpms.map((wpm) => wpm.speed);
 </script>
 
 <header>
-	<div>
-		Animation speed: <select bind:value={$user.wpm}>
-			{#each wpmOptions as wpmOption}
-				<option value={wpmOption}>{wpmOption}</option>
-			{/each}
-		</select> words per minute
-	</div>
 	<h1><a href="/">teeline.online</a></h1>
 	<div class="tagline">Very (short)handy</div>
 	<nav>
@@ -34,12 +19,6 @@
 	header {
 		margin: 0 0 50px 0;
 		width: 100%;
-	}
-
-	select {
-		height: 2rem;
-		font-size: 1rem;
-		border: none;
 	}
 
 	h1 {

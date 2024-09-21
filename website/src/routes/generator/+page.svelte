@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SpeedToggle from '$lib/SpeedToggle.svelte';
 	import ShorthandPassage from '$lib/ShorthandPassage.svelte';
 
 	let inputText = $state('');
@@ -13,12 +14,15 @@
 </svelte:head>
 
 <div class="container">
-	<input
-		bind:value={inputText}
-		type="text"
-		class="search-input search-input-generator"
-		placeholder="Generate outlines..."
-	/>
+	<div class="input-and-settings">
+		<input
+			bind:value={inputText}
+			type="text"
+			class="search-input search-input-generator"
+			placeholder="Generate outlines..."
+		/>
+		<SpeedToggle />
+	</div>
 	<ShorthandPassage text={inputText.trim()} showMeanings={true} />
 	<div style="width: 50%; margin: auto; text-align: center;">
 		<p>This feature is a work in progress so take results with a grain of salt.</p>
@@ -31,9 +35,20 @@
 		margin: 0 auto;
 		padding-top: 2rem;
 	}
+	.input-and-settings {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 2rem;
+		gap: 1rem;
+	}
 	.search-input-generator {
-		margin: 0 auto;
 		display: block;
-		margin-bottom: 3rem;
+	}
+	@media (min-width: 768px) {
+		.input-and-settings {
+			flex-direction: row;
+		}
 	}
 </style>

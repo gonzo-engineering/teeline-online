@@ -96,10 +96,6 @@ li {
 	padding-left: 20px;
 }
 
-input {
-	font-size: var(--regular-font-size);
-}
-
 small {
 	font-size: 0.9rem;
 }
