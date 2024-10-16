@@ -76,6 +76,12 @@ export const findOrCreateOutlineObject = (
 	// we need to get the first starting point
 	const startingObject = createStartingObject(cleanedWord, lettersObjectArray);
 
+	// If last letter is 'y' replace the last letterObjectLines entry with the 'i' object
+	if (cleanedWord.slice(-1) === 'y') {
+		const iObject = findOrCreateOutlineObject('i', outlines);
+		lettersObjectArray[lettersObjectArray.length - 1] = iObject;
+	}
+
 	const letterObjectLines = lettersObjectArray.map((letterObject) => letterObject?.lines);
 
 	const { combinedLineDetails } = letterObjectLines.reduce<{
