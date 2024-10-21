@@ -21,7 +21,6 @@
 			class="search-input search-input-generator"
 			placeholder="Generate outlines..."
 		/>
-		<SpeedToggle />
 	</div>
 	<ShorthandPassage text={inputText.trim()} showMeanings={true} />
 	<div style="width: 50%; margin: auto; text-align: center;">

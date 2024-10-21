@@ -43,7 +43,6 @@
 	/>
 	<div class="settings">
 		<Toggle toggleLabel="Alphabet only" toggleFunction={toggleAlphabetFilter} />
-		<SpeedToggle />
 	</div>
 </div>
 
