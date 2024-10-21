@@ -52,4 +52,16 @@
 		padding: 0.5rem 0;
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	}
+	/* Tablet media query */
+	@media (min-width: 768px) {
+		.speed-toggle-container {
+			width: fit-content;
+			height: fit-content;
+			position: fixed;
+			top: 0;
+			right: 0;
+			padding: 0.5rem 1rem;
+			border-bottom-left-radius: 0.5rem;
+		}
+	}
 </style>
