@@ -3,6 +3,7 @@
 	import Header from '../lib/layout/Header.svelte';
 	import Footer from '../lib/layout/Footer.svelte';
 	import type { Snippet } from 'svelte';
+	import SpeedToggle from '$lib/SpeedToggle.svelte';
 
 	let { children }: { children: Snippet } = $props();
 </script>
@@ -33,10 +34,22 @@
 	{@render children()}
 </main>
 <Footer />
+<div class="speed-toggle-container">
+	<SpeedToggle />
+</div>
 
 <style>
 	main {
 		width: 85vw;
 		margin: auto;
+	}
+	.speed-toggle-container {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		background-color: white;
+		padding: 0.5rem 0;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	}
 </style>
