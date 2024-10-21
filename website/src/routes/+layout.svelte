@@ -52,7 +52,6 @@
 		padding: 0.5rem 0;
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	}
-	/* Tablet media query */
 	@media (min-width: 768px) {
 		.speed-toggle-container {
 			width: fit-content;
