@@ -25,7 +25,6 @@ Here is an example of it being used in the [special outline](/learn/special-outl
 
 <OutlineCardGrid wordsAndPhrases={["English"]} />
 
-
 The symbol is especially useful for proper nouns and people's names. 
 
 It's unnecessary to capitalise the first letter of a sentence in Teeline as it's clear, thanks to the period slash, where one sentence ends and another begins. 
