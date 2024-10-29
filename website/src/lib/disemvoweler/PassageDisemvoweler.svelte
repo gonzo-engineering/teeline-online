@@ -25,6 +25,7 @@
 		text-align: center;
 		box-shadow: 0px 0px 10px 1px #e1e1e1;
 		border-radius: 30px;
+		margin-bottom: 2rem;
 	}
 	textarea {
 		font-size: 2rem;

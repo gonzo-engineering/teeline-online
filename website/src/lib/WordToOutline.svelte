@@ -10,7 +10,7 @@
 		<WordDisemvoweler {word} />
 	</div>
 	<div>
-		<OutlineCardAnimated outlineOrWord={word} displayName={false} --width={'100%'} />
+		<OutlineCardAnimated outlineOrWord={word} displayName={false} />
 	</div>
 </div>
 
