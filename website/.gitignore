@@ -3,5 +3,6 @@
 /package
 .netlify
 /static/data/*
+/storybook-static
 
 *storybook.log
