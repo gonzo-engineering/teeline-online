@@ -67,6 +67,10 @@ a:hover {
 	opacity: 0.6;
 }
 
+ul {
+	margin-bottom: 2rem;
+}
+
 input {
 	font-size: var(--regular-font-size);
 }
