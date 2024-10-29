@@ -22,6 +22,6 @@
 		column-gap: 3rem;
 		align-items: center;
 		justify-content: center;
-		margin: 5rem auto;
+		margin: 0 auto 2rem auto;
 	}
 </style>

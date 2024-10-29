@@ -6,7 +6,6 @@ order: 5
 ---
 
 <script>
-    import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte'
 	import OutlineCardGrid from '$lib/cards/OutlineCardGrid.svelte'
 </script> 
 
@@ -30,7 +29,7 @@ If a word contains one or more of these letters you must take them into account 
 
 Take 'what' as example (which becomes 'wt' when written in Teeline). Even though the first letter is 'w', which as a default sits on the line, the other letter is a 't', which takes precedence. The right place to put the word is therefore _above_ the line.
 
-<OutlineCardAnimated outlineOrWord="what" --width={"50%"} />
+<OutlineCardGrid wordsAndPhrases={["what"]} />
 
 The same shape on the line would translate to 'wd'.
 

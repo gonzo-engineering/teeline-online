@@ -17,7 +17,7 @@
 	}
 
 	.footer-content {
-		margin: 100px 0;
+		padding: 50px 0;
 	}
 
 	p {
