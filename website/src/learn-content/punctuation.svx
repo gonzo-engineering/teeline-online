@@ -6,7 +6,6 @@ order: 4
 ---
 
 <script>
-    import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte'
     import OutlineCardGrid from '$lib/cards/OutlineCardGrid.svelte'
     import ShorthandPassage from '$lib/ShorthandPassage.svelte'
 </script>
@@ -24,7 +23,7 @@ Another key punctuation mark in Teeline denotes capital letters. They look like 
 
 Here is an example of it being used in the [special outline](/learn/special-outlines) for **'English'**:
 
-<OutlineCardAnimated outlineOrWord="English" --width={"50%"} />
+<OutlineCardGrid wordsAndPhrases={["English"]} />
 
 The symbol is especially useful for proper nouns and people's names. 
 

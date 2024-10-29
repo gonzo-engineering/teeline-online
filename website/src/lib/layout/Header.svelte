@@ -23,7 +23,7 @@
 
 	h1 {
 		text-align: center;
-		margin: 50px 0 0 0;
+		margin: 2rem 0 -2rem 0;
 	}
 
 	h1 a {
@@ -34,7 +34,7 @@
 	.tagline {
 		text-align: center;
 		font-size: 2rem;
-		margin-bottom: 2rem;
+		margin: 0 0 1rem 0;
 	}
 
 	ul {

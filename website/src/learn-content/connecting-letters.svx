@@ -7,7 +7,7 @@ order: 8
 
 <script lang="ts">
     import type { OutlineObject } from '$lib/types.ts'
-    import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte'
+    import OutlineCardGrid from '$lib/cards/OutlineCardGrid.svelte'
     import WordDisemvoweler from '$lib/disemvoweler/WordDisemvoweler.svelte'
     import WordToOutline from '$lib/WordToOutline.svelte'
 </script> 
@@ -29,7 +29,7 @@ With each step of the process, you are saving time. Going from 'rose' to 'rs' cu
 
 The savings are even better with [special outlines](/learn/special-outlines). Let's take the one for 'conference' as an example.
 
-<OutlineCardAnimated outlineOrWord="conference" --width={"50%"} />
+<OutlineCardGrid wordsAndPhrases={["conference"]} />
 
 Look at that. One motion of the pen. Eleven would be needed to write it out in longhand. Even the disemvoweled version takes seven.
 

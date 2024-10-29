@@ -32,8 +32,7 @@
 	.card {
 		box-shadow: 0px 0px 10px 1px #e1e1e1;
 		border-radius: 10px;
-		width: var(--width);
-		padding: 10% 10% 20% 10%;
+		padding: 1rem 1rem 2rem 1rem;
 		margin: 0 auto;
 		max-width: 200px;
 		font-family: 'Handwriting', sans-serif;

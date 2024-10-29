@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '$lib/styles/reset.css';
 	import '$lib/styles/global.css';
 	import Header from '../lib/layout/Header.svelte';
 	import Footer from '../lib/layout/Footer.svelte';
@@ -51,6 +52,7 @@
 		background-color: white;
 		padding: 0.5rem 0;
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		line-height: 1;
 	}
 	@media (min-width: 768px) {
 		.speed-toggle-container {

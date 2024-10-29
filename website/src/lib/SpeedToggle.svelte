@@ -28,7 +28,6 @@
 		border-radius: 36px;
 		display: inline-block;
 		overflow: hidden;
-		background: #cccccc;
 		margin: 0 0.5rem;
 	}
 

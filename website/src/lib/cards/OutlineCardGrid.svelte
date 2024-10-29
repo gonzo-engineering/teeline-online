@@ -33,5 +33,6 @@
 		justify-content: center;
 		column-gap: 2rem;
 		row-gap: 2rem;
+		margin-bottom: 2rem;
 	}
 </style>
