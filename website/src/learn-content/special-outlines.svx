@@ -2,7 +2,7 @@
 title: Special outlines
 description: When Teeline shorthand needs its own shorthand, look no further than special outlines
 slug: special-outlines
-order: 9
+order: 10
 ---
 
 <script>

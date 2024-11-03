@@ -1,0 +1,25 @@
+---
+title: Numbers
+description: Punctuation is streamlined in Teeline, but it's still crucial for clarity
+slug: numbers
+order: 5
+---
+
+<script>
+    import OutlineCardGrid from '$lib/cards/OutlineCardGrid.svelte'
+    import ShorthandPassage from '$lib/ShorthandPassage.svelte'
+</script>
+
+Numbers are much the same in Teeline as they are in longhand.
+
+<ShorthandPassage text="1 2 3 4 5 6 7 8 9" showMeanings />
+
+Circles are drawn around 1, 6, and 7 to differentiate them from the outlines for **'e'**, **'b'**, and **'th'** respectively.
+
+<OutlineCardGrid wordsAndPhrases={["e", "b", "th"]} />
+
+When a number comprises of more than one digit the circles are unnecessary. Just write the number as you would in longhand.
+
+<OutlineCardGrid wordsAndPhrases={["1", "6", "7", "167"]} />
+
+It's generally faster to write numbers in shorthand than their longhand equivalents (i.e. **'five'** vs **'5'**) so take advantage of that efficiency where you can.
