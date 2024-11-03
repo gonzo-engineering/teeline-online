@@ -6,7 +6,7 @@ order: 10
 ---
 
 <script>
-    import OutlineCardGrid from '$lib/cards/OutlineCardGrid.svelte'
+    import OutlineCardGrid from '$lib/components/cards/OutlineCardGrid.svelte'
 </script> 
 
 There are words and turns of phrases so common that it makes sense to have succinct versions of them, even by the standards of Teeline. These abbreviated - or sometimes straight up symbolic - words are called **special outlines**.

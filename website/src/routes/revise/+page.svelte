@@ -1,11 +1,10 @@
 <script lang="ts">
-	import type { OutlineObject } from '../../data/interfaces/interfaces';
-	import FlippingOutlineCard from '../../lib/cards/OutlineCardFlipping.svelte';
-	import Container from '../../lib/outlineSVGs/OutlineSVG.svelte';
-	import Lines from '../../lib/outlineSVGs/Lines.svelte';
-	import Toggle from '../../lib/Toggle.svelte';
-	import { prettify, shuffleOutlines } from '../../scripts/helpers';
-	import { hydratedData } from '../../scripts/hydrate-outline-data';
+	import type { OutlineObject } from '$lib/data/interfaces/interfaces';
+	import FlippingOutlineCard from '$lib/components/cards/OutlineCardFlipping.svelte';
+	import Container from '$lib/components/outlineSVGs/OutlineSVG.svelte';
+	import Toggle from '$lib/components/Toggle.svelte';
+	import { prettify, shuffleOutlines } from '$lib/scripts/helpers';
+	import { hydratedData } from '$lib/scripts/hydrate-outline-data';
 
 	const shuffledSpecialOutlines: OutlineObject[] = shuffleOutlines(
 		hydratedData.filter((outline) => outline.specialOutlineMeanings.length > 0)
@@ -50,9 +49,7 @@
 			>
 				{#snippet back()}
 					<div style="width: 60%">
-						<Container {outlineObject} let:line let:previousLinesLength>
-							<Lines {line} {previousLinesLength} />
-						</Container>
+						<Container {outlineObject} />
 					</div>
 				{/snippet}
 			</FlippingOutlineCard>

@@ -1,6 +1,5 @@
 <script lang="ts">
-	import SpeedToggle from '$lib/SpeedToggle.svelte';
-	import ShorthandPassage from '$lib/ShorthandPassage.svelte';
+	import ShorthandPassage from '$lib/components/ShorthandPassage.svelte';
 
 	let inputText = $state('');
 </script>

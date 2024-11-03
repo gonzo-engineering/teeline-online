@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { OutlineObject } from '../../data/interfaces/interfaces';
-	import { prettify } from '../../scripts/helpers';
+	import type { OutlineObject } from '$lib/data/interfaces/interfaces';
+	import { prettify } from '$lib/scripts/helpers';
 
 	let {
 		outlineObject

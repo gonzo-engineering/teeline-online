@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PageTeaserCard from '$lib/PageTeaserCard.svelte';
+	import PageTeaserCard from '$lib/components/PageTeaserCard.svelte';
 </script>
 
 <svelte:head>

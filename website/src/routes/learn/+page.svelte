@@ -1,6 +1,6 @@
 <script lang="ts">
-	import PageTeaserCard from '$lib/PageTeaserCard.svelte';
-	import { syllabusMetadata } from '../../data/syllabus';
+	import PageTeaserCard from '$lib/components/PageTeaserCard.svelte';
+	import { syllabusMetadata } from '$lib/data/syllabus';
 </script>
 
 <svelte:head>

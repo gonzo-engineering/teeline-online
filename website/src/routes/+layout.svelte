@@ -1,10 +1,10 @@
 <script lang="ts">
 	import '$lib/styles/reset.css';
 	import '$lib/styles/global.css';
-	import Header from '../lib/layout/Header.svelte';
-	import Footer from '../lib/layout/Footer.svelte';
+	import Header from '$lib/components/layout/Header.svelte';
+	import Footer from '$lib/components/layout/Footer.svelte';
 	import type { Snippet } from 'svelte';
-	import SpeedToggle from '$lib/SpeedToggle.svelte';
+	import SpeedToggle from '$lib/components/SpeedToggle.svelte';
 
 	let { children }: { children: Snippet } = $props();
 </script>

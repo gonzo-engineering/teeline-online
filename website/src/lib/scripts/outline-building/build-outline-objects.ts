@@ -1,8 +1,8 @@
-import specials from '../data/special-outlines.json';
-import type { LineDetails, OutlineObject, SpecialOutline } from '../data/interfaces/interfaces';
-import { disemvowelWord } from './disemvowel';
+import specials from '$lib/data/special-outlines.json';
+import type { LineDetails, OutlineObject, SpecialOutline } from '$lib/data/interfaces/interfaces';
+import { disemvowelWord } from '../disemvowel';
 import { createStartingObject } from './calculate-starting-point';
-import { buildMultiDigitNumberObject, conciseNumbers } from './numbers/build-multi-digit-number';
+import { buildMultiDigitNumberObject } from './numbers/build-multi-digit-number';
 
 const checkedSpecials: SpecialOutline[] = specials;
 const punctuationRegex = /[,\/#!$%\^&\*;:{}=\-_`~()]/g;

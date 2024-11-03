@@ -6,7 +6,7 @@ order: 6
 ---
 
 <script>
-	import OutlineCardGrid from '$lib/cards/OutlineCardGrid.svelte'
+	import OutlineCardGrid from '$lib/components/cards/OutlineCardGrid.svelte'
 </script> 
 
 Unlike longhand, in which all letters are sat on the same line and go left to right, in Teeline shorthand thought must be given to how high or low letters are.

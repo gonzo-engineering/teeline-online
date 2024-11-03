@@ -1,7 +1,7 @@
-import { dominantConsonants, passiveConsonants } from '../data/letter-hierarchy';
+import { dominantConsonants, passiveConsonants } from '$lib/data/letter-hierarchy';
 import { findOrCreateOutlineObject } from './build-outline-objects';
-import allOutlines from '../data/outlines.json';
-import type { OutlineObject } from '../data/interfaces/interfaces';
+import allOutlines from '$lib/data/outlines.json';
+import type { OutlineObject } from '$lib/data/interfaces/interfaces';
 
 export const createStartingObject = (text: string, lettersObjectArray: OutlineObject[]) => {
 	// Identify dominant letter

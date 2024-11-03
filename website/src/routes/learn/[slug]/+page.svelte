@@ -1,5 +1,5 @@
 <script lang="ts">
-	import SyllabusLink from '$lib/SyllabusLink.svelte';
+	import SyllabusLink from '$lib/components/SyllabusLink.svelte';
 	let {
 		data
 	}: {
@@ -19,7 +19,7 @@
 
 <div class="copy-container">
 	<h2>{data.title}</h2>
-	<svelte:component this={data.content} />
+	<data.content />
 	{#key data.slug}
 		<SyllabusLink sectionKey={data.slug} />
 	{/key}

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { OutlineObject } from '../../data/interfaces/interfaces';
-	import Container from '../outlineSVGs/OutlineSVG.svelte';
+	import type { OutlineObject } from '$lib/data/interfaces/interfaces';
+	import Container from '$lib/components/outlineSVGs/OutlineSVG.svelte';
 	import OutlineDetails from './OutlineDetails.svelte';
-	import { findOrCreateOutlineObject } from '../../scripts/build-outline-objects';
-	import { hydratedData } from '../../scripts/hydrate-outline-data';
+	import { findOrCreateOutlineObject } from '$lib/scripts/outline-building/build-outline-objects';
+	import { hydratedData } from '$lib/scripts/hydrate-outline-data';
 
 	let {
 		outlineOrWord,

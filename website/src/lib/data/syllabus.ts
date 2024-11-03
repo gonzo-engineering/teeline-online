@@ -1,7 +1,7 @@
 import type { SyllabusSection } from './interfaces/interfaces';
 
 const learnSections: Record<string, any> = Object.values(
-	import.meta.glob('../learn-content/*.svx', {
+	import.meta.glob('../../learn-content/*.svx', {
 		eager: true
 	})
 );

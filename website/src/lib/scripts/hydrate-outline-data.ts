@@ -1,7 +1,7 @@
-import lettersAndGroupings from '../data/outlines.json';
-import specials from '../data/special-outlines.json';
-import type { OutlineObject, SpecialOutline } from '../data/interfaces/interfaces';
-import { findOrCreateOutlineObject } from './build-outline-objects';
+import lettersAndGroupings from '$lib/data/outlines.json';
+import specials from '$lib/data/special-outlines.json';
+import type { OutlineObject, SpecialOutline } from '$lib/data/interfaces/interfaces';
+import { findOrCreateOutlineObject } from './outline-building/build-outline-objects';
 import { sortOutlinesAlphabetically } from './helpers';
 
 const hydrateOutlineData = (lettersAndGroupings: OutlineObject[], specials: SpecialOutline[]) => {
