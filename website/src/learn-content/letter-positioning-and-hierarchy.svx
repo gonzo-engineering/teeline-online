@@ -2,7 +2,7 @@
 title: Letter positioning and hierarchy
 description: Exploring the quirks of how letter placement affects meaning in Teeline shorthand
 slug: letter-positioning-and-hierarchy
-order: 5
+order: 6
 ---
 
 <script>

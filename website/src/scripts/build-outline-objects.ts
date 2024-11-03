@@ -2,6 +2,7 @@ import specials from '../data/special-outlines.json';
 import type { LineDetails, OutlineObject, SpecialOutline } from '../data/interfaces/interfaces';
 import { disemvowelWord } from './disemvowel';
 import { createStartingObject } from './calculate-starting-point';
+import { buildMultiDigitNumberObject, conciseNumbers } from './numbers/build-multi-digit-number';
 
 const checkedSpecials: SpecialOutline[] = specials;
 const punctuationRegex = /[,\/#!$%\^&\*;:{}=\-_`~()]/g;
@@ -16,6 +17,11 @@ export const findOrCreateOutlineObject = (
 		outline.specialOutlineMeanings.includes(lowerCaseWord)
 	);
 	if (specialOutline) return specialOutline;
+
+	// If word parses as a number, get each digit's outline
+	if (!isNaN(parseInt(lowerCaseWord)) && lowerCaseWord.length > 1) {
+		return buildMultiDigitNumberObject(lowerCaseWord, outlines);
+	}
 
 	// Check if letter grouping exists for word
 	const letterGrouping = outlines.find((outline) =>
@@ -84,7 +90,6 @@ export const findOrCreateOutlineObject = (
 			const dx = line.start.x - first.start.x;
 			const dy = line.start.y - first.start.y;
 			const path = line.path.replace(/M[\d\.]+( |,)[\d\.]+/, `M${x + dx} ${y + dy}`);
-			// console.log({ then: line.path, now: path });
 			return { ...line, path };
 		});
 
