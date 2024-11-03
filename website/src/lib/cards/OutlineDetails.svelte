@@ -10,8 +10,11 @@
 
 	const makeLetterLabel = (letterGroupings: string[]) => {
 		if (letterGroupings.length === 1 && letterGroupings[0].length === 1) {
-			return `Letter`;
+			return !isNaN(Number(letterGroupings[0])) ? 'Number' : 'Letter';
 		} else {
+			if (letterGroupings.every((group) => !isNaN(Number(group)))) {
+				return `Number${letterGroupings.length > 1 ? 's' : ''}`;
+			}
 			return `Letter grouping${letterGroupings.length > 1 ? 's' : ''}`;
 		}
 	};
