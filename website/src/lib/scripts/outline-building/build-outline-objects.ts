@@ -3,6 +3,7 @@ import type { LineDetails, OutlineObject, SpecialOutline } from '$lib/data/inter
 import { disemvowelWord } from '../disemvowel';
 import { createStartingObject } from './calculate-starting-point';
 import { buildMultiDigitNumberObject } from './numbers/build-multi-digit-number';
+import { downUpI } from './special-endings';
 
 const checkedSpecials: SpecialOutline[] = specials;
 const punctuationRegex = /[,\/#!$%\^&\*;:{}=\-_`~()]/g;
@@ -75,6 +76,20 @@ export const findOrCreateOutlineObject = (
 
 	// we need to get the first starting point
 	const startingObject = createStartingObject(cleanedWord, lettersObjectArray);
+
+	// If last letter is 'y' replace the last letterObjectLines entry with the appropriate 'i' object
+	if (cleanedWord.slice(-1) === 'y') {
+		// Penultimate letter
+		const penultimateLetter = cleanedWord.charAt(cleanedWord.length - 2);
+		const regularIObject = findOrCreateOutlineObject('i', outlines);
+		const downUpIObject = downUpI;
+		const lettersThatShouldBeFollowedByDownUpI = ['f', 'g', 'h', 'j', 'n', 'p', 'z'];
+		if (lettersThatShouldBeFollowedByDownUpI.includes(penultimateLetter)) {
+			lettersObjectArray[lettersObjectArray.length - 1] = downUpIObject;
+		} else {
+			lettersObjectArray[lettersObjectArray.length - 1] = regularIObject;
+		}
+	}
 
 	const letterObjectLines = lettersObjectArray.map((letterObject) => letterObject?.lines);
 
