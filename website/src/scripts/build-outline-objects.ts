@@ -2,6 +2,7 @@ import specials from '../data/special-outlines.json';
 import type { LineDetails, OutlineObject, SpecialOutline } from '../data/interfaces/interfaces';
 import { disemvowelWord } from './disemvowel';
 import { createStartingObject } from './calculate-starting-point';
+import { buildMultiDigitNumberObject, conciseNumbers } from './numbers/build-multi-digit-number';
 
 const checkedSpecials: SpecialOutline[] = specials;
 const punctuationRegex = /[,\/#!$%\^&\*;:{}=\-_`~()]/g;
@@ -18,34 +19,8 @@ export const findOrCreateOutlineObject = (
 	if (specialOutline) return specialOutline;
 
 	// If word parses as a number, get each digit's outline
-	if (!isNaN(parseInt(lowerCaseWord))) {
-		const digitOutlines = lowerCaseWord.split('').map((digit) => {
-			const digitOutline = outlines.find((outline) => outline.letterGroupings.includes(digit));
-			return (
-				digitOutline ?? {
-					letterGroupings: [digit],
-					specialOutlineMeanings: [],
-					lines: []
-				}
-			);
-		});
-		// Combine digits by moving each digit to the right of the previous digit
-		const combinedLines = digitOutlines.reduce<LineDetails[]>((combinedLines, digitOutline, i) => {
-			const overallOffset = (digitOutlines.length - 1) * 60;
-			const offsetLines = digitOutline.lines.map((line) => {
-				const path = line.path.replace(
-					/M[\d\.]+( |,)[\d\.]+/,
-					`M${line.start.x + i * 120 - overallOffset} ${line.start.y}`
-				);
-				return { ...line, path };
-			});
-			return [...combinedLines, ...offsetLines];
-		}, []);
-		return {
-			letterGroupings: [lowerCaseWord],
-			specialOutlineMeanings: [],
-			lines: combinedLines
-		};
+	if (!isNaN(parseInt(lowerCaseWord)) && lowerCaseWord.length > 1) {
+		return buildMultiDigitNumberObject(lowerCaseWord, outlines);
 	}
 
 	// Check if letter grouping exists for word
