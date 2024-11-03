@@ -31,6 +31,9 @@
 		transform: scale(1.02);
 		/* transition: transform 0.2s; */
 	}
+	h2 {
+		margin: 0;
+	}
 	a {
 		border-radius: 20px;
 		text-decoration: none;
@@ -46,6 +49,7 @@
 		border-radius: 20px;
 		padding: 30px;
 		font-size: 1.8rem;
+		line-height: 1.2;
 	}
 	.card-contents h2 {
 		font-size: 2.6rem;

@@ -1,6 +1,6 @@
 ---
 title: Numbers
-description: Punctuation is streamlined in Teeline, but it's still crucial for clarity
+description: How to write numbers in Teeline shorthand
 slug: numbers
 order: 5
 ---
