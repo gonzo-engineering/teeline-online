@@ -17,6 +17,37 @@ export const findOrCreateOutlineObject = (
 	);
 	if (specialOutline) return specialOutline;
 
+	// If word parses as a number, get each digit's outline
+	if (!isNaN(parseInt(lowerCaseWord))) {
+		const digitOutlines = lowerCaseWord.split('').map((digit) => {
+			const digitOutline = outlines.find((outline) => outline.letterGroupings.includes(digit));
+			return (
+				digitOutline ?? {
+					letterGroupings: [digit],
+					specialOutlineMeanings: [],
+					lines: []
+				}
+			);
+		});
+		// Combine digits by moving each digit to the right of the previous digit
+		const combinedLines = digitOutlines.reduce<LineDetails[]>((combinedLines, digitOutline, i) => {
+			const overallOffset = (digitOutlines.length - 1) * 60;
+			const offsetLines = digitOutline.lines.map((line) => {
+				const path = line.path.replace(
+					/M[\d\.]+( |,)[\d\.]+/,
+					`M${line.start.x + i * 120 - overallOffset} ${line.start.y}`
+				);
+				return { ...line, path };
+			});
+			return [...combinedLines, ...offsetLines];
+		}, []);
+		return {
+			letterGroupings: [lowerCaseWord],
+			specialOutlineMeanings: [],
+			lines: combinedLines
+		};
+	}
+
 	// Check if letter grouping exists for word
 	const letterGrouping = outlines.find((outline) =>
 		outline.letterGroupings.includes(disemvowelWord(lowerCaseWord))
@@ -84,7 +115,6 @@ export const findOrCreateOutlineObject = (
 			const dx = line.start.x - first.start.x;
 			const dy = line.start.y - first.start.y;
 			const path = line.path.replace(/M[\d\.]+( |,)[\d\.]+/, `M${x + dx} ${y + dy}`);
-			// console.log({ then: line.path, now: path });
 			return { ...line, path };
 		});
 
