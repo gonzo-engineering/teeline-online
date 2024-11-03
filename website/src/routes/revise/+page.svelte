@@ -2,7 +2,6 @@
 	import type { OutlineObject } from '$lib/data/interfaces/interfaces';
 	import FlippingOutlineCard from '$lib/components/cards/OutlineCardFlipping.svelte';
 	import Container from '$lib/components/outlineSVGs/OutlineSVG.svelte';
-	import Lines from '$lib/components/outlineSVGs/Lines.svelte';
 	import Toggle from '$lib/components/Toggle.svelte';
 	import { prettify, shuffleOutlines } from '$lib/scripts/helpers';
 	import { hydratedData } from '$lib/scripts/hydrate-outline-data';
@@ -50,9 +49,7 @@
 			>
 				{#snippet back()}
 					<div style="width: 60%">
-						<Container {outlineObject} let:line let:previousLinesLength>
-							<Lines {line} {previousLinesLength} />
-						</Container>
+						<Container {outlineObject} />
 					</div>
 				{/snippet}
 			</FlippingOutlineCard>
