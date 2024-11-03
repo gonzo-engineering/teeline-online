@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { OutlineObject } from '../../data/interfaces/interfaces';
-	import { prettify } from '../../scripts/helpers';
-	import { inferPrecedingLinesLength } from '../../scripts/line-length-inference';
+	import type { OutlineObject } from '$lib/data/interfaces/interfaces';
+	import { prettify } from '$lib/scripts/helpers';
+	import { inferPrecedingLinesLength } from '$lib/scripts/line-length-inference';
 	import Lines from './Lines.svelte';
 	import { user } from '$lib/stores/userStore';
-	import { speeds } from '../../scripts/speed';
+	import { speeds } from '$lib/scripts/speed';
 
 	let {
 		outlineObject,

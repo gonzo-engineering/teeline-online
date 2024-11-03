@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
 import { inferPrecedingLinesLength } from './line-length-inference';
-import { findOrCreateOutlineObject } from './build-outline-objects';
+import { findOrCreateOutlineObject } from './outline-building/build-outline-objects';
 import { hydratedData } from './hydrate-outline-data';
 
 test('testing preceding line length inference', () => {

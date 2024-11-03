@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { disemvowelWord } from '../../scripts/disemvowel';
-	import { randomIntFromInterval } from '../../scripts/helpers';
+	import { disemvowelWord } from '$lib/scripts/disemvowel';
+	import { randomIntFromInterval } from '$lib/scripts/helpers';
 	let { word }: { word: string } = $props();
 </script>
 

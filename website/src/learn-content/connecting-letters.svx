@@ -6,10 +6,9 @@ order: 9
 ---
 
 <script lang="ts">
-    import type { OutlineObject } from '$lib/types.ts'
-    import OutlineCardGrid from '$lib/cards/OutlineCardGrid.svelte'
-    import WordDisemvoweler from '$lib/disemvoweler/WordDisemvoweler.svelte'
-    import WordToOutline from '$lib/WordToOutline.svelte'
+    import OutlineCardGrid from '$lib/components/cards/OutlineCardGrid.svelte'
+    import WordDisemvoweler from '$lib/components/disemvoweler/WordDisemvoweler.svelte'
+    import WordToOutline from '$lib/components/WordToOutline.svelte'
 </script> 
 
 The full process going on in the shorthand writer's brain is as follows:

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { syllabusMetadata } from '../data/syllabus';
+	import { syllabusMetadata } from '$lib/data/syllabus';
 
 	let { sectionKey }: { sectionKey: string } = $props();
 

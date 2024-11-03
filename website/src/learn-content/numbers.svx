@@ -6,8 +6,8 @@ order: 5
 ---
 
 <script>
-    import OutlineCardGrid from '$lib/cards/OutlineCardGrid.svelte'
-    import ShorthandPassage from '$lib/ShorthandPassage.svelte'
+    import OutlineCardGrid from '$lib/components/cards/OutlineCardGrid.svelte'
+    import ShorthandPassage from '$lib/components/ShorthandPassage.svelte'
 </script>
 
 Numbers are much the same in Teeline as they are in longhand.

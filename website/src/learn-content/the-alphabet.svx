@@ -6,7 +6,7 @@ order: 3
 ---
 
 <script>
-    import OutlineCardGrid from '$lib/cards/OutlineCardGrid.svelte'
+    import OutlineCardGrid from '$lib/components/cards/OutlineCardGrid.svelte'
 </script>
 
 Teeline is spelling-based rather than phonetic and as such has a typical A-to-Z alphabet. You can view this below. Hover over (or tap on) an outline to see how it's drawn.

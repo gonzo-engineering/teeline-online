@@ -1,4 +1,4 @@
-import { convertPassageToOutlines } from './build-outline-objects';
+import { convertPassageToOutlines } from './outline-building/build-outline-objects';
 import { disemvowelBodyOfText } from './disemvowel';
 import { hydratedData } from './hydrate-outline-data';
 

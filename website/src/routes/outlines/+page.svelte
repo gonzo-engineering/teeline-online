@@ -1,12 +1,11 @@
 <script lang="ts">
-	import type { OutlineObject } from '../../data/interfaces/interfaces';
-	import Toggle from '../../lib/Toggle.svelte';
-	import { filterAndSortOutlines } from '../../scripts/search';
-	import ShorthandPassage from '$lib/ShorthandPassage.svelte';
-	import { hydratedData } from '../../scripts/hydrate-outline-data';
-	import { alphabet } from '../../data/letter-hierarchy';
-	import OutlineCardGrid from '$lib/cards/OutlineCardGrid.svelte';
-	import SpeedToggle from '$lib/SpeedToggle.svelte';
+	import type { OutlineObject } from '$lib/data/interfaces/interfaces';
+	import Toggle from '$lib/components/Toggle.svelte';
+	import { filterAndSortOutlines } from '$lib/scripts/search';
+	import ShorthandPassage from '$lib/components/ShorthandPassage.svelte';
+	import { hydratedData } from '$lib/scripts/hydrate-outline-data';
+	import { alphabet } from '$lib/data/letter-hierarchy';
+	import OutlineCardGrid from '$lib/components/cards/OutlineCardGrid.svelte';
 
 	let displayedOutlines: OutlineObject[] = $state(hydratedData);
 	let alphabetToggleOn: boolean = $state(false);

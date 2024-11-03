@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { LineDetails } from '../../data/interfaces/interfaces';
+	import type { LineDetails } from '$lib/data/interfaces/interfaces';
 
 	let {
 		line,

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
-	import type { OutlineObject } from '../../data/interfaces/interfaces';
-	import { alphabet } from '../../data/letter-hierarchy';
-	import { findOrCreateOutlineObject } from '../../scripts/build-outline-objects';
-	import { hydratedData } from '../../scripts/hydrate-outline-data';
+	import OutlineCardAnimated from '$lib/components/cards/OutlineCardAnimated.svelte';
+	import type { OutlineObject } from '$lib/data/interfaces/interfaces';
+	import { alphabet } from '$lib/data/letter-hierarchy';
+	import { findOrCreateOutlineObject } from '$lib/scripts/outline-building/build-outline-objects';
+	import { hydratedData } from '$lib/scripts/hydrate-outline-data';
 
 	let {
 		outlines = [],

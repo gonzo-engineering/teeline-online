@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { user } from '$lib/stores/userStore';
-	import { wpms } from '../scripts/speed';
+	import { wpms } from '$lib/scripts/speed';
 	const wpmOptions = wpms.map((wpm) => wpm.speed);
 </script>
 

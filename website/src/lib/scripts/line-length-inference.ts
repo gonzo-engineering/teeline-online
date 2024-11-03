@@ -1,4 +1,4 @@
-import type { OutlineObject } from '../data/interfaces/interfaces';
+import type { OutlineObject } from '$lib/data/interfaces/interfaces';
 
 /**
  * Typical distance between the end of the previous line and the start of the next
