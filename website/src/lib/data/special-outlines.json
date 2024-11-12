@@ -86,5 +86,49 @@
 	{
 		"letterGrouping": "kg",
 		"meanings": ["kilogram", "kilograms"]
+	},
+	{
+		"letterGrouping": "jny",
+		"meanings": ["january"]
+	},
+	{
+		"letterGrouping": "fb",
+		"meanings": ["february"]
+	},
+	{
+		"letterGrouping": "mr",
+		"meanings": ["march"]
+	},
+	{
+		"letterGrouping": "apr",
+		"meanings": ["april"]
+	},
+	{
+		"letterGrouping": "ma",
+		"meanings": ["may"]
+	},
+	{
+		"letterGrouping": "jy",
+		"meanings": ["july"]
+	},
+	{
+		"letterGrouping": "ag",
+		"meanings": ["august"]
+	},
+	{
+		"letterGrouping": "spt",
+		"meanings": ["september"]
+	},
+	{
+		"letterGrouping": "oct",
+		"meanings": ["october"]
+	},
+	{
+		"letterGrouping": "nv",
+		"meanings": ["november"]
+	},
+	{
+		"letterGrouping": "dc",
+		"meanings": ["december"]
 	}
 ]
