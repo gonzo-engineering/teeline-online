@@ -97,7 +97,7 @@
 	},
 	{
 		"letterGrouping": "mr",
-		"meanings": ["march"]
+		"meanings": ["march", "metre"]
 	},
 	{
 		"letterGrouping": "apr",
@@ -158,5 +158,29 @@
 	{
 		"letterGrouping": "sn",
 		"meanings": ["sunday"]
+	},
+	{
+		"letterGrouping": "mrs",
+		"meanings": ["metres"]
+	},
+	{
+		"letterGrouping": "cnmr",
+		"meanings": ["centimetre"]
+	},
+	{
+		"letterGrouping": "cnmrs",
+		"meanings": ["centimetres"]
+	},
+	{
+		"letterGrouping": "kmr",
+		"meanings": ["kilometre"]
+	},
+	{
+		"letterGrouping": "kmrs",
+		"meanings": ["kilometres"]
+	},
+	{
+		"letterGrouping": "lrs",
+		"meanings": ["litres"]
 	}
 ]
