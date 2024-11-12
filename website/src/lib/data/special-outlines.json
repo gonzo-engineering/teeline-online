@@ -78,5 +78,13 @@
 	{
 		"letterGrouping": "wt",
 		"meanings": ["what"]
+	},
+	{
+		"letterGrouping": "pr",
+		"meanings": ["percent", "per cent", "%"]
+	},
+	{
+		"letterGrouping": "kg",
+		"meanings": ["kilogram", "kilograms"]
 	}
 ]
