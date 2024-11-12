@@ -130,5 +130,33 @@
 	{
 		"letterGrouping": "dc",
 		"meanings": ["december"]
+	},
+	{
+		"letterGrouping": "mn",
+		"meanings": ["monday"]
+	},
+	{
+		"letterGrouping": "ts",
+		"meanings": ["tuesday"]
+	},
+	{
+		"letterGrouping": "wd",
+		"meanings": ["wednesday"]
+	},
+	{
+		"letterGrouping": "thrs",
+		"meanings": ["thursday"]
+	},
+	{
+		"letterGrouping": "fry",
+		"meanings": ["friday"]
+	},
+	{
+		"letterGrouping": "st",
+		"meanings": ["saturday"]
+	},
+	{
+		"letterGrouping": "sn",
+		"meanings": ["sunday"]
 	}
 ]
