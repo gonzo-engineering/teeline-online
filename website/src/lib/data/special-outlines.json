@@ -78,5 +78,109 @@
 	{
 		"letterGrouping": "wt",
 		"meanings": ["what"]
+	},
+	{
+		"letterGrouping": "pr",
+		"meanings": ["percent", "per cent", "%"]
+	},
+	{
+		"letterGrouping": "kg",
+		"meanings": ["kilogram", "kilograms"]
+	},
+	{
+		"letterGrouping": "jny",
+		"meanings": ["january"]
+	},
+	{
+		"letterGrouping": "fb",
+		"meanings": ["february"]
+	},
+	{
+		"letterGrouping": "mr",
+		"meanings": ["march", "metre"]
+	},
+	{
+		"letterGrouping": "apr",
+		"meanings": ["april"]
+	},
+	{
+		"letterGrouping": "ma",
+		"meanings": ["may"]
+	},
+	{
+		"letterGrouping": "jy",
+		"meanings": ["july"]
+	},
+	{
+		"letterGrouping": "ag",
+		"meanings": ["august"]
+	},
+	{
+		"letterGrouping": "spt",
+		"meanings": ["september"]
+	},
+	{
+		"letterGrouping": "oct",
+		"meanings": ["october"]
+	},
+	{
+		"letterGrouping": "nv",
+		"meanings": ["november"]
+	},
+	{
+		"letterGrouping": "dc",
+		"meanings": ["december"]
+	},
+	{
+		"letterGrouping": "mn",
+		"meanings": ["monday"]
+	},
+	{
+		"letterGrouping": "ts",
+		"meanings": ["tuesday"]
+	},
+	{
+		"letterGrouping": "wd",
+		"meanings": ["wednesday"]
+	},
+	{
+		"letterGrouping": "thrs",
+		"meanings": ["thursday"]
+	},
+	{
+		"letterGrouping": "fry",
+		"meanings": ["friday"]
+	},
+	{
+		"letterGrouping": "st",
+		"meanings": ["saturday"]
+	},
+	{
+		"letterGrouping": "sn",
+		"meanings": ["sunday"]
+	},
+	{
+		"letterGrouping": "mrs",
+		"meanings": ["metres"]
+	},
+	{
+		"letterGrouping": "cnmr",
+		"meanings": ["centimetre"]
+	},
+	{
+		"letterGrouping": "cnmrs",
+		"meanings": ["centimetres"]
+	},
+	{
+		"letterGrouping": "kmr",
+		"meanings": ["kilometre"]
+	},
+	{
+		"letterGrouping": "kmrs",
+		"meanings": ["kilometres"]
+	},
+	{
+		"letterGrouping": "lrs",
+		"meanings": ["litres"]
 	}
 ]
