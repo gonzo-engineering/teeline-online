@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import OutlineCardAnimated from '$lib/cards/OutlineCardAnimated.svelte';
+import OutlineCardAnimated from '$lib/components/cards/OutlineCardAnimated.svelte';
 
 const meta: Meta<typeof OutlineCardAnimated> = {
 	component: OutlineCardAnimated,

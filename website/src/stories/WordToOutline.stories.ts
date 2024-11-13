@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import WordToOutline from '$lib/WordToOutline.svelte';
+import WordToOutline from '$lib/components/WordToOutline.svelte';
 
 const meta: Meta<typeof WordToOutline> = {
 	component: WordToOutline,

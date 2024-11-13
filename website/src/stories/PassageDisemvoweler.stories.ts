@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import PassageDisemvoweler from '$lib/disemvoweler/PassageDisemvoweler.svelte';
+import PassageDisemvoweler from '$lib/components/disemvoweler/PassageDisemvoweler.svelte';
 
 const meta: Meta<typeof PassageDisemvoweler> = {
 	component: PassageDisemvoweler,
