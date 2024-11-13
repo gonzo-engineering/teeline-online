@@ -1,5 +1,4 @@
 import type { Preview } from '@storybook/svelte';
-
 import '../src/lib/styles/global.css';
 
 const preview: Preview = {
