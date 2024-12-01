@@ -2,7 +2,7 @@
 title: Further resources
 description: If, god forbid, teeline.online isn't enough for you there are other resources out there
 slug: further-resources
-order: 11
+order: 12
 ---
 
 As magnificent as teeline.online is it is not (yet) the definitive resource for learning Teeline shorthand. You ought to explore other resources to get a more rounded understanding of the system.
