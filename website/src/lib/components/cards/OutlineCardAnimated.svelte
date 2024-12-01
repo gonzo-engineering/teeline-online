@@ -34,7 +34,12 @@
 		border-radius: 10px;
 		padding: 1rem 1rem 2rem 1rem;
 		margin: 0 auto;
-		max-width: 200px;
+		max-width: 150px;
 		font-family: 'Handwriting', sans-serif;
+	}
+	@media (min-width: 768px) {
+		.card {
+			max-width: 200px;
+		}
 	}
 </style>

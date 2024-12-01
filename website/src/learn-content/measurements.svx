@@ -1,0 +1,28 @@
+---
+title: Measurements
+description: If, god forbid, teeline.online isn't enough for you there are other resources out there
+slug: measurements
+order: 11
+---
+
+<script>
+	import OutlineCardGrid from '$lib/components/cards/OutlineCardGrid.svelte'
+</script> 
+
+When you're writing shorthand you're going to come across a fair few measurements. It's important to have a shorthand for these because they're so common. 
+
+Let's start with distances:
+
+<OutlineCardGrid wordsAndPhrases={["metre", "metres"]} />
+
+<OutlineCardGrid wordsAndPhrases={["centimetre", "centimetres"]} />
+
+<OutlineCardGrid wordsAndPhrases={["kilometre", "kilometres"]} />
+
+As with so much Teeline, in context it will be clear what you're referring to.
+
+Quantities get a similar treatment:
+
+<OutlineCardGrid wordsAndPhrases={["litre", "litres"]} />
+
+Every milliseconds counts when you're taking notes, so get familiar with them.
