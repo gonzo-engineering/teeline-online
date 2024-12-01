@@ -1,6 +1,6 @@
 ---
 title: Measurements
-description: If, god forbid, teeline.online isn't enough for you there are other resources out there
+description: Shorthand abbreviations for measurements of distance and quantity
 slug: measurements
 order: 11
 ---
