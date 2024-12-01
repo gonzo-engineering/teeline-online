@@ -69,6 +69,14 @@ a:hover {
 
 ul {
 	margin-bottom: 2rem;
+	margin-left: 2rem;
+}
+
+li {
+	font-size: var(--regular-font-size);
+	list-style-position: outside;
+	padding-left: 20px;
+	margin-bottom: 0.5rem;
 }
 
 input {
@@ -101,12 +109,6 @@ figure img {
 
 figcaption {
 	font-size: 1.6rem;
-}
-
-li {
-	font-size: var(--regular-font-size);
-	list-style-position: inside;
-	padding-left: 20px;
 }
 
 small {
