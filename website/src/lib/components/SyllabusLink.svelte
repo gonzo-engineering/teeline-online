@@ -16,7 +16,7 @@
 
 <div class="links-container">
 	{#if previousSection}
-		<div>
+		<div class="link">
 			← <a href={`/learn/${previousSection.slug}`}>
 				{previousSection.title}
 			</a>
@@ -26,7 +26,7 @@
 		<div>|</div>
 	{/if}
 	{#if nextSection}
-		<div>
+		<div class="link">
 			<a href={`/learn/${nextSection.slug}`}>
 				{nextSection.title}
 			</a> →
@@ -37,16 +37,22 @@
 <style>
 	.links-container {
 		display: flex;
-		margin: 5rem auto;
+		margin: 3rem auto;
 		width: 100%;
 		max-width: 1000px;
 		justify-content: center;
 		column-gap: 1.5rem;
 		font-size: 1.4rem;
 	}
+	.link {
+		max-width: 40%;
+	}
 	@media (min-width: 1025px) {
 		.links-container {
 			font-size: 1.8rem;
+		}
+		.link {
+			max-width: 100%;
 		}
 	}
 </style>
