@@ -43,7 +43,7 @@
 		padding: 1rem 2rem;
 		border: 1px solid #e1e1e1;
 		border-radius: 2rem;
-		font-size: 1.2rem;
+		font-size: 1.6rem;
 	}
 	@media (min-width: 768px) {
 		.input-and-settings {
