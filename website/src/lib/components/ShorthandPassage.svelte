@@ -12,7 +12,7 @@
 
 <div class="animation-container passage-container">
 	{#each outlineObjects as outlineObject, i}
-		<div>
+		<div class="outline">
 			<Container
 				{outlineObject}
 				isStandalone={false}
@@ -28,8 +28,17 @@
 <style>
 	.passage-container {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 0;
 		margin: 50px auto;
 		justify-content: center;
+	}
+	.outline {
+		max-width: 100px;
+	}
+	@media (min-width: 768px) {
+		.outline {
+			max-width: 150px;
+		}
 	}
 </style>
