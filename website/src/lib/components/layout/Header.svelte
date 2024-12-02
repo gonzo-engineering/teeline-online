@@ -41,6 +41,7 @@
 		display: flex;
 		justify-content: center;
 		gap: 1rem;
+		margin-left: 0;
 	}
 
 	li {
