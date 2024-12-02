@@ -2,7 +2,7 @@
 	import ShorthandPassage from '$lib/components/ShorthandPassage.svelte';
 	import Toggle from '$lib/components/Toggle.svelte';
 
-	let inputText = $state('Write and be amazed');
+	let inputText = $state('Write here and be amazed');
 	let showMeanings = $state(false);
 </script>
 
