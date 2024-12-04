@@ -6,13 +6,13 @@
 
 <div class="settings">
 	<div class="select-wrapper">
-		<select bind:value={$user.wpm}>
+		<select bind:value={$user.wpm} id="speed-select" name="speed">
 			{#each wpmOptions as wpmOption}
 				<option value={wpmOption}>{wpmOption}</option>
 			{/each}
 		</select>
 	</div>
-	words per minute
+	<label for="speed-select">words per minute</label>
 </div>
 
 <style>
