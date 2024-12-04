@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-
 @font-face {
 	font-family: 'Handwriting';
 	font-style: normal;
@@ -13,6 +11,21 @@
 		url('/fonts/handwriting.otf') format('woff'),
 		url('/fonts/handwriting.otf') format('truetype'),
 		url('/fonts/handwriting.otf') format('svg');
+}
+
+@font-face {
+	font-family: 'Indie Flower';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url('/fonts/indie-flower.ttf');
+	src:
+		local(''),
+		url('/fonts/indie-flower.ttf') format('embedded-opentype'),
+		url('/fonts/indie-flower.ttf') format('woff2'),
+		url('/fonts/indie-flower.ttf') format('woff'),
+		url('/fonts/indie-flower.ttf') format('truetype'),
+		url('/fonts/indie-flower.ttf') format('svg');
 }
 
 * {
