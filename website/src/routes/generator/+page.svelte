@@ -3,6 +3,7 @@
 	import Toggle from '$lib/components/Toggle.svelte';
 
 	let inputText = $state('Write here and be amazed');
+	let textForPassage = $derived(inputText.trim().replace(/\&nbsp;/g, ''));
 	let showMeanings = $state(false);
 </script>
 
@@ -16,10 +17,10 @@
 
 <div class="container">
 	<div class="input-and-settings">
-		<div class="generator-input" bind:innerHTML={inputText} contenteditable="plaintext-only"></div>
+		<div class="generator-input" bind:innerHTML={inputText} contenteditable="true"></div>
 		<Toggle toggleFunction={() => (showMeanings = !showMeanings)} toggleLabel="Show meanings" />
 	</div>
-	<ShorthandPassage text={inputText.trim()} {showMeanings} />
+	<ShorthandPassage text={textForPassage} {showMeanings} />
 	<div style="text-align: center;">
 		<p>This feature is a work in progress so take results with a grain of salt.</p>
 	</div>
