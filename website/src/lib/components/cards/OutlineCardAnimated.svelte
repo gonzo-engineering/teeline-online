@@ -17,9 +17,11 @@
 		typeof outlineOrWord === 'string'
 			? findOrCreateOutlineObject(outlineOrWord, hydratedData)
 			: outlineOrWord;
+
+	const randomRotationAngle = Math.random() * 4 - 2;
 </script>
 
-<div>
+<div style="transform: rotate({randomRotationAngle}deg);">
 	<div class="card animation-container">
 		<Container {outlineObject} drawingSpeed={900} />
 		{#if displayName}
