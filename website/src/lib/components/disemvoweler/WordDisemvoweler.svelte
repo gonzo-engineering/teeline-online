@@ -17,7 +17,6 @@
 		margin: 50px auto;
 		height: fit-content;
 		width: fit-content;
-		font-family: 'Handwriting', sans-serif;
 	}
 	.container-content {
 		font-size: 1.8rem;

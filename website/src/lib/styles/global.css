@@ -29,13 +29,13 @@
 }
 
 * {
-	font-family: 'Handwriting', 'Indie Flower', cursive;
+	font-family: 'Arial', sans-serif;
 	margin: 0;
 	padding: 0;
 }
 
 :root {
-	--regular-font-size: 1.8rem;
+	--regular-font-size: 1.6rem;
 }
 
 p {
