@@ -25,8 +25,8 @@
 		"@storybook/svelte": "^8.6.11",
 		"@storybook/sveltekit": "^8.6.11",
 		"@storybook/test": "^8.6.11",
-		"@sveltejs/adapter-netlify": "^4.4.1",
-		"@sveltejs/kit": "^2.17.1",
+		"@sveltejs/adapter-netlify": "^5.0.0",
+		"@sveltejs/kit": "^2.20.2",
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",
 		"@tsconfig/svelte": "^5.0.4",
 		"@typescript-eslint/eslint-plugin": "8.29.0",
@@ -39,14 +39,14 @@
 		"prettier": "^3.5.3",
 		"prettier-plugin-svelte": "^3.3.3",
 		"storybook": "^8.6.11",
-		"svelte": "^5.19.8",
-		"svelte-check": "^4.1.4",
+		"svelte": "^5.25.5",
+		"svelte-check": "^4.1.5",
 		"svelte-preprocess": "^6.0.3",
-		"typescript": "~5.7.3",
-		"vitest": "^3.0.9"
+		"typescript": "~5.8.2",
+		"vitest": "^3.1.1"
 	},
 	"type": "module",
 	"dependencies": {
-		"vite": "^6.2.3"
+		"vite": "^6.2.4"
 	}
 }
