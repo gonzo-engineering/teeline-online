@@ -47,6 +47,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"vite": "^6.3.3"
+		"vite": "^6.3.5"
 	}
 }
