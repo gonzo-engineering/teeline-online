@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { user } from '$lib/stores/userStore';
+	import { user } from '$lib/global-state/global-state.svelte';
 	import { wpms } from '$lib/scripts/speed';
 	const wpmOptions = wpms.map((wpm) => wpm.speed);
 </script>
 
 <div class="settings">
 	<div class="select-wrapper">
-		<select bind:value={$user.wpm} id="speed-select" name="speed">
+		<select bind:value={user.wpm} id="speed-select" name="speed">
 			{#each wpmOptions as wpmOption}
 				<option value={wpmOption}>{wpmOption}</option>
 			{/each}
