@@ -1,7 +1,3 @@
-export const user = $state({
+export const user: { wpm: number } = $state({
 	wpm: 60
 });
-
-export const setWPM = (newWPM: number) => {
-	user.wpm = newWPM;
-};
