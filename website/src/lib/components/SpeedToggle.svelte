@@ -22,7 +22,7 @@
 	<div class="select-wrapper">
 		<select
 			bind:value={user.fontFamily}
-			onchange={(e) => setFontFamily(e.target.value)}
+			onchange={(e) => setFontFamily(e.currentTarget.value)}
 			id="font-select"
 			name="font-family"
 		>

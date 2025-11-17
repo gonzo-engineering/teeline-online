@@ -71,8 +71,11 @@
 		background-color: black;
 	}
 
+	:global(.dark) input:checked + .slider {
+		box-shadow: 0 0 5px var(--foreground);
+	}
 	input:focus + .slider {
-		box-shadow: 0 0 1px black;
+		box-shadow: 0 0 1px var(--foreground);
 	}
 
 	input:checked + .slider:before {

@@ -3,11 +3,11 @@ export const themes = ['light', 'dark'];
 
 export const user: { wpm: number; fontFamily: string; theme: 'light' | 'dark' } = $state({
 	wpm: 60,
-	fontFamily: 'Indie Flower',
+	fontFamily: 'No Tears',
 	theme: 'light'
 });
 
-export function setFontFamily(option: (typeof fontFamilies)[number]) {
+export function setFontFamily(option: string) {
 	user.fontFamily = option;
 	document.documentElement.style.setProperty('--font-family', option);
 }
