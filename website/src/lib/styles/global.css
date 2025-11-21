@@ -28,6 +28,23 @@
 		url('/fonts/indie-flower.ttf') format('svg');
 }
 
+:root {
+	--font-family: 'Handwriting', 'Indie Flower', 'cursive';
+	--regular-font-size: 1.8rem;
+
+	--background: #fff;
+	--foreground: #000;
+	--card-background: #fff;
+	--shadow: #dedede;
+}
+
+.dark {
+	--background: #323232;
+	--foreground: #fff;
+	--card-background: #383838;
+	--shadow: #252525;
+}
+
 * {
 	font-family: 'Handwriting', 'Indie Flower', cursive;
 	margin: 0;
