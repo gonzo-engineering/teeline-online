@@ -52,9 +52,7 @@
 		font-size: 1.8rem;
 		line-height: 1.2;
 	}
-	:global(.dark) .card-contents {
-		background: var(--background);
-	}
+
 	.card-contents h2 {
 		font-size: 2.6rem;
 	}

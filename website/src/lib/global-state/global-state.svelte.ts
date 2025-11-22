@@ -1,15 +1,15 @@
-export const fontFamilies = [ 'Handwriting','No Tears', 'Indie Flower'];
+export const fontFamilies = ['No Tears', 'Handwriting', 'Indie Flower'];
 export const themes = ['light', 'dark'];
 
 export const user: { wpm: number; fontFamily: string; theme: 'light' | 'dark' } = $state({
 	wpm: 60,
-	fontFamily: 'Handwriting',
+	fontFamily: 'No Tears',
 	theme: 'light'
 });
 
 export function setFontFamily(option: string) {
 	user.fontFamily = option;
-	document.documentElement.style.setProperty('--font-family', option + ', Indie Flower, cursive');
+	document.documentElement.style.setProperty('--font-family', option);
 }
 
 export function toggleTheme() {
