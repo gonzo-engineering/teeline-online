@@ -49,7 +49,7 @@
 		bottom: 0;
 		right: 0;
 		width: 100%;
-		background-color: var(--background);
+		background-color: var(--card-background);
 		padding: 0.5rem 0;
 		box-shadow: 0px 0px 10px var(--shadow);
 		line-height: 1;
