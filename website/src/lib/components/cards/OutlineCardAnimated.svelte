@@ -32,12 +32,13 @@
 
 <style>
 	.card {
-		box-shadow: 0px 0px 10px 1px #e1e1e1;
+		background: var(--card-background);
+		box-shadow: 0px 0px 10px var(--shadow);
 		border-radius: 10px;
 		padding: 1rem 1rem 2rem 1rem;
 		margin: 0 auto;
 		max-width: 150px;
-		font-family: 'Handwriting', sans-serif;
+		font-family: 'Handwriting', 'Indie Flower', 'cursive';
 	}
 	@media (min-width: 768px) {
 		.card {

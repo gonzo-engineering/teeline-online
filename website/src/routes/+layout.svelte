@@ -51,7 +51,7 @@
 		width: 100%;
 		background-color: var(--background);
 		padding: 0.5rem 0;
-		box-shadow: 0px 0px 10px var(--shadow-2);
+		box-shadow: 0px 0px 10px var(--shadow);
 		line-height: 1;
 	}
 	@media (min-width: 768px) {

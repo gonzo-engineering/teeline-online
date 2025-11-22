@@ -59,6 +59,20 @@
 	--card-background: #101012;
 	--shadow: #19191c;
 	--shadow-2: #606060;
+	--font-family: 'Handwriting', 'Indie Flower', 'cursive';
+	--regular-font-size: 1.8rem;
+
+	--background: #fff;
+	--foreground: #000;
+	--card-background: #fff;
+	--shadow: #dedede;
+}
+
+.dark {
+	--background: #323232;
+	--foreground: #fff;
+	--card-background: #383838;
+	--shadow: #252525;
 }
 
 * {
