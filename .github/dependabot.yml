@@ -4,8 +4,4 @@ updates:
     directory: 'website'
     schedule:
       interval: 'weekly'
-    groups:
-      storybook:
-        - "@storybook/*"
-        - storybook
     
