@@ -83,6 +83,11 @@
 	--regular-font-size: 1.8rem;
 }
 
+body {
+	background: var(--background);
+	color: var(--foreground);
+}
+
 p {
 	font-size: var(--regular-font-size);
 	margin: 0 0 2rem 0;
@@ -118,7 +123,7 @@ a {
 	text-decoration: underline;
 	text-decoration-thickness: 8%;
 	font-weight: bold;
-	color: black;
+	color: var(--foreground);
 }
 
 a:hover {
