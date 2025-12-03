@@ -33,6 +33,7 @@
 <style>
 	.card {
 		background: var(--card-background);
+		color: var(--card-foreground);
 		box-shadow: 0px 0px 10px var(--shadow);
 		border-radius: 10px;
 		padding: 1rem 1rem 2rem 1rem;

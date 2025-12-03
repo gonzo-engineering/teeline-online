@@ -1,23 +1,23 @@
-export const fontFamilies = ['No Tears', 'Handwriting', 'Indie Flower'];
-export const themes = ['light', 'dark'];
+export const fontFamilies = ['Handwriting', 'No Tears', 'Indie Flower'];
+export const themes = ['light', 'dark', 'banana'];
 
-export const user: { wpm: number; fontFamily: string; theme: 'light' | 'dark' } = $state({
-	wpm: 60,
-	fontFamily: 'No Tears',
-	theme: 'light'
-});
+export const user: { wpm: number; fontFamily: string; theme: 'light' | 'dark' | 'banana' } = $state(
+	{
+		wpm: 60,
+		fontFamily: 'Handwriting',
+		theme: 'light'
+	}
+);
 
 export function setFontFamily(option: string) {
 	user.fontFamily = option;
-	document.documentElement.style.setProperty('--font-family', option);
+	document.documentElement.style.setProperty('--font-family', option + ', Indie Flower, cursive');
 }
 
 export function toggleTheme() {
-	user.theme = user.theme === 'light' ? 'dark' : 'light';
+	const currentIndex = themes.indexOf(user.theme);
+	const nextIndex = (currentIndex + 1) % themes.length;
+	user.theme = themes[nextIndex] as 'light' | 'dark' | 'banana';
 
-	if (user.theme === 'dark') {
-		document.documentElement.classList.add('dark');
-	} else {
-		document.documentElement.classList.remove('dark');
-	}
+	document.documentElement.className = user.theme;
 }

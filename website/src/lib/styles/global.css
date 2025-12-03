@@ -1,19 +1,4 @@
 @font-face {
-	font-family: 'No Tears';
-	font-style: normal;
-	font-weight: 500;
-	font-display: swap;
-	src: url('/fonts/no-tears.ttf');
-	src:
-		local(''),
-		url('/fonts/no-tears.ttf') format('embedded-opentype'),
-		url('/fonts/no-tears.ttf') format('woff2'),
-		url('/fonts/no-tears.ttf') format('woff'),
-		url('/fonts/no-tears.ttf') format('truetype'),
-		url('/fonts/no-tears.ttf') format('svg');
-}
-
-@font-face {
 	font-family: 'Handwriting';
 	font-style: normal;
 	font-weight: 500;
@@ -26,6 +11,21 @@
 		url('/fonts/handwriting.otf') format('woff'),
 		url('/fonts/handwriting.otf') format('truetype'),
 		url('/fonts/handwriting.otf') format('svg');
+}
+
+@font-face {
+	font-family: 'No Tears';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url('/fonts/no-tears.ttf');
+	src:
+		local(''),
+		url('/fonts/no-tears.ttf') format('embedded-opentype'),
+		url('/fonts/no-tears.ttf') format('woff2'),
+		url('/fonts/no-tears.ttf') format('woff'),
+		url('/fonts/no-tears.ttf') format('truetype'),
+		url('/fonts/no-tears.ttf') format('svg');
 }
 
 @font-face {
@@ -44,39 +44,43 @@
 }
 
 :root {
-	--font-family: 'No Tears';
+	--font-family: 'Handwriting';
 	--regular-font-size: 1.8rem;
-	--background: #fafafa;
+
+	--background: #fff;
 	--foreground: #000;
 	--card-background: #fff;
+	--card-foreground: #000;
 	--shadow: #e8e8e8;
 	--shadow-2: #c8c8ce;
-}
-
-.dark {
-	--background: #090909;
-	--foreground: #fff;
-	--card-background: #101012;
-	--shadow: #19191c;
-	--shadow-2: #606060;
 }
 
 .dark {
 	--background: #1a1b1d;
 	--foreground: #fff;
 	--card-background: #101012;
+	--card-foreground: #fff;
 	--shadow: #252525;
+	--shadow-2: #484848;
+}
+
+.banana {
+	--background: #44360c;
+	--foreground: #fcec63;
+	--card-background: #322b00;
+	--card-foreground: #f6ca4c;
+	--shadow: #4b3c00;
+	--shadow-2: #8f6424;
 }
 
 * {
-	font-family: var(--font-family), 'Handwriting', 'Indie Flower';
+	font-family: 'Handwriting', 'Indie Flower', cursive;
 	margin: 0;
 	padding: 0;
 }
 
-body {
-	background: var(--background);
-	color: var(--foreground);
+:root {
+	--regular-font-size: 1.8rem;
 }
 
 p {
@@ -114,7 +118,7 @@ a {
 	text-decoration: underline;
 	text-decoration-thickness: 8%;
 	font-weight: bold;
-	color: var(--foreground);
+	color: black;
 }
 
 a:hover {
@@ -154,7 +158,7 @@ figure {
 	margin-right: auto;
 	margin-bottom: 1rem;
 	text-align: center;
-	color: gray;
+	color: var(--foreground);
 }
 
 figure img {

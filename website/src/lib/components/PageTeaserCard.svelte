@@ -46,13 +46,13 @@
 	}
 	.card-contents {
 		background: var(--card-background);
+		color: var(--card-foreground);
 		box-shadow: 0px 0px 10px 1px var(--shadow);
 		border-radius: 20px;
 		padding: 30px;
 		font-size: 1.8rem;
 		line-height: 1.2;
 	}
-
 	.card-contents h2 {
 		font-size: 2.6rem;
 	}

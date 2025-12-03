@@ -52,6 +52,7 @@
 		margin: auto;
 
 		background: var(--card-background);
+		color: var(--card-foreground);
 		box-shadow: 0px 0px 10px 1px var(--shadow);
 		border-radius: 10px;
 

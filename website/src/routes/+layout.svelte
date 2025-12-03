@@ -50,8 +50,9 @@
 		right: 0;
 		width: 100%;
 		background-color: var(--card-background);
+		color: var(--card-foreground);
 		padding: 0.5rem 0;
-		box-shadow: 0px 0px 10px var(--shadow);
+		box-shadow: 0px 0px 10px var(--shadow-2);
 		line-height: 1;
 	}
 	@media (min-width: 768px) {
