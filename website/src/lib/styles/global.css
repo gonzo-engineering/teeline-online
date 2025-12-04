@@ -64,17 +64,8 @@
 	--shadow-2: #484848;
 }
 
-.banana {
-	--background: #44360c;
-	--foreground: #fcec63;
-	--card-background: #322b00;
-	--card-foreground: #f6ca4c;
-	--shadow: #4b3c00;
-	--shadow-2: #8f6424;
-}
-
 * {
-	font-family: 'Handwriting', 'Indie Flower', cursive;
+	font-family: var(--font-family);
 	margin: 0;
 	padding: 0;
 }
