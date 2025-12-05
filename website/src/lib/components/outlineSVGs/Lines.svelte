@@ -43,7 +43,7 @@
 
 <style>
 	g {
-		mix-blend-mode: multiply;
+		mix-blend-mode: normal;
 	}
 	.path {
 		stroke-width: 10;
@@ -56,7 +56,8 @@
 	}
 	.dot {
 		stroke: lightgrey;
-		stroke-width: 96;
+		opacity: 0.6;
+		stroke-width: 70;
 		stroke-dashoffset: 1;
 		animation-fill-mode: none !important;
 	}

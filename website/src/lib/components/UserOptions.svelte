@@ -66,7 +66,7 @@
 	select {
 		height: 2rem;
 		padding: 0 0.5rem;
-		font-size: 1rem;
+		font-size: 1.2rem;
 		font-weight: bold;
 		border: none;
 		border-radius: 36px;

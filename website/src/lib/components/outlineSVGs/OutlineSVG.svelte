@@ -53,7 +53,7 @@
 	}
 
 	line {
-		stroke: #d3d3d3;
+		stroke: var(--underline);
 		stroke-width: 5;
 	}
 </style>

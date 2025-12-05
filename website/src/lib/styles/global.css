@@ -44,24 +44,24 @@
 }
 
 :root {
-	--font-family: 'Handwriting';
+	--font-family: 'Handwriting', 'Indie Flower', 'cursive';
 	--regular-font-size: 1.8rem;
 
 	--background: #fff;
 	--foreground: #000;
 	--card-background: #fff;
 	--card-foreground: #000;
+	--underline: #d3d3d3;
 	--shadow: #e8e8e8;
-	--shadow-2: #c8c8ce;
 }
 
 .dark {
-	--background: #1a1b1d;
+	--background: #232426;
 	--foreground: #fff;
-	--card-background: #101012;
+	--card-background: #282828;
 	--card-foreground: #fff;
-	--shadow: #252525;
-	--shadow-2: #484848;
+	--underline: #585858;
+	--shadow: #181818;
 }
 
 * {
