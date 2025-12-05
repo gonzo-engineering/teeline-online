@@ -45,7 +45,9 @@
 		opacity: 1;
 	}
 	.card-contents {
-		box-shadow: 0px 0px 10px 1px #e1e1e1;
+		background: var(--card-background);
+		color: var(--card-foreground);
+		box-shadow: 0px 0px 10px 1px var(--shadow);
 		border-radius: 20px;
 		padding: 30px;
 		font-size: 1.8rem;

@@ -44,8 +44,6 @@
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		background-color: white;
-		color: black;
 
 		display: flex;
 		text-align: center;
@@ -53,7 +51,9 @@
 		align-items: center;
 		margin: auto;
 
-		box-shadow: 0px 0px 10px 1px #e1e1e1;
+		background: var(--card-background);
+		color: var(--card-foreground);
+		box-shadow: 0px 0px 10px 1px var(--shadow);
 		border-radius: 10px;
 
 		backface-visibility: hidden;

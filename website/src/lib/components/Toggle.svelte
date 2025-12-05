@@ -50,9 +50,9 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background-color: #ccc;
-		-webkit-transition: 0.4s;
-		transition: 0.4s;
+		background-color: var(--foreground);
+		-webkit-transition: 0.3s;
+		transition: 0.3s;
 	}
 
 	.slider:before {
@@ -62,17 +62,17 @@
 		width: 26px;
 		left: 4px;
 		bottom: 4px;
-		background-color: white;
-		-webkit-transition: 0.4s;
-		transition: 0.4s;
-	}
-
-	input:checked + .slider {
-		background-color: black;
+		background-color: var(--card-background);
+		-webkit-transition: 0.3s;
+		transition: 0.3s;
 	}
 
 	input:focus + .slider {
-		box-shadow: 0 0 1px black;
+		box-shadow: 0 0 1px var(--foreground);
+	}
+
+	input:checked + .slider {
+		box-shadow: 0 0 5px var(--foreground);
 	}
 
 	input:checked + .slider:before {

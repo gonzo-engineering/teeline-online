@@ -14,6 +14,21 @@
 }
 
 @font-face {
+	font-family: 'No Tears';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url('/fonts/no-tears.ttf');
+	src:
+		local(''),
+		url('/fonts/no-tears.ttf') format('embedded-opentype'),
+		url('/fonts/no-tears.ttf') format('woff2'),
+		url('/fonts/no-tears.ttf') format('woff'),
+		url('/fonts/no-tears.ttf') format('truetype'),
+		url('/fonts/no-tears.ttf') format('svg');
+}
+
+@font-face {
 	font-family: 'Indie Flower';
 	font-style: normal;
 	font-weight: 500;
@@ -28,14 +43,40 @@
 		url('/fonts/indie-flower.ttf') format('svg');
 }
 
+:root {
+	--font-family: 'Handwriting';
+	--regular-font-size: 1.8rem;
+
+	--background: #fff;
+	--foreground: #000;
+	--card-background: #fff;
+	--card-foreground: #000;
+	--shadow: #e8e8e8;
+	--shadow-2: #c8c8ce;
+}
+
+.dark {
+	--background: #1a1b1d;
+	--foreground: #fff;
+	--card-background: #101012;
+	--card-foreground: #fff;
+	--shadow: #252525;
+	--shadow-2: #484848;
+}
+
 * {
-	font-family: 'Handwriting', 'Indie Flower', cursive;
+	font-family: var(--font-family);
 	margin: 0;
 	padding: 0;
 }
 
 :root {
 	--regular-font-size: 1.8rem;
+}
+
+body {
+	background: var(--background);
+	color: var(--foreground);
 }
 
 p {
@@ -73,7 +114,7 @@ a {
 	text-decoration: underline;
 	text-decoration-thickness: 8%;
 	font-weight: bold;
-	color: black;
+	color: var(--foreground);
 }
 
 a:hover {
@@ -113,7 +154,7 @@ figure {
 	margin-right: auto;
 	margin-bottom: 1rem;
 	text-align: center;
-	color: gray;
+	color: var(--foreground);
 }
 
 figure img {

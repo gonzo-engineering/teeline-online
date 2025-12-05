@@ -49,9 +49,10 @@
 		bottom: 0;
 		right: 0;
 		width: 100%;
-		background-color: white;
+		background-color: var(--card-background);
+		color: var(--card-foreground);
 		padding: 0.5rem 0;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 0px 10px var(--shadow-2);
 		line-height: 1;
 	}
 	@media (min-width: 768px) {
