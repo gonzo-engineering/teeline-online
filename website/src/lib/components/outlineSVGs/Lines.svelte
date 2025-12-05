@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { LineDetails } from '$lib/data/interfaces/interfaces';
-	import { user } from '$lib/global-state/global-state.svelte';
 
 	let {
 		line,
