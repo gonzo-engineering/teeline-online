@@ -4,7 +4,7 @@
 	import Header from '$lib/components/layout/Header.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import type { Snippet } from 'svelte';
-	import SpeedToggle from '$lib/components/SpeedToggle.svelte';
+	import UserOptions from '$lib/components/UserOptions.svelte';
 
 	let { children }: { children: Snippet } = $props();
 </script>
@@ -35,8 +35,8 @@
 	{@render children()}
 </main>
 <Footer />
-<div class="speed-toggle-container">
-	<SpeedToggle />
+<div class="user-options-container">
+	<UserOptions />
 </div>
 
 <style>
@@ -44,7 +44,7 @@
 		width: 85vw;
 		margin: auto;
 	}
-	.speed-toggle-container {
+	.user-options-container {
 		position: fixed;
 		bottom: 0;
 		right: 0;
@@ -52,11 +52,11 @@
 		background-color: var(--card-background);
 		color: var(--card-foreground);
 		padding: 0.5rem 0;
-		box-shadow: 0px 0px 10px var(--shadow-2);
+		box-shadow: 0px 0px 10px var(--shadow);
 		line-height: 1;
 	}
 	@media (min-width: 768px) {
-		.speed-toggle-container {
+		.user-options-container {
 			width: fit-content;
 			height: fit-content;
 			position: fixed;
