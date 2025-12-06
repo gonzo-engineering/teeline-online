@@ -21,7 +21,6 @@
 		background-color: transparent;
 		aspect-ratio: 450 / 300;
 		perspective: 1000px;
-		margin: 5vw auto;
 	}
 
 	.inner {
