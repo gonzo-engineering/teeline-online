@@ -1,25 +1,51 @@
 <script lang="ts">
+	import Book from './images/Book.svelte';
+	import InkAndQuill from './images/InkAndQuill.svelte';
+	import ConfusedMan from './images/ConfusedMan.svelte';
+	import OutlineCardFlipping from './cards/OutlineCardFlipping.svelte';
+	import { prettify } from '$lib/scripts/helpers';
+	import OutlineSVG from './outlineSVGs/OutlineSVG.svelte';
+	import outlines from './../data/outlines.json';
+
 	let {
 		sectionName,
 		sectionBlurb,
 		sectionPath,
-		sectionImage,
-		sectionImageAlt
+		sectionImageKey
 	}: {
 		sectionName: string;
 		sectionBlurb: string;
 		sectionPath: string;
-		sectionImage?: string;
-		sectionImageAlt?: string;
+		sectionImageKey?: 'book' | 'quill' | 'man' | 'card';
 	} = $props();
+
+	const outlinesWithSpecialMeanings = outlines.filter(
+		(outline) => outline.specialOutlineMeanings && outline.specialOutlineMeanings.length > 0
+	);
+	const randomOutline =
+		outlinesWithSpecialMeanings[Math.floor(Math.random() * outlinesWithSpecialMeanings.length)];
 </script>
 
 <div class="container">
 	<a href={sectionPath}>
 		<div class="card-contents">
 			<h2>{sectionName}</h2>
-			{#if sectionImage}
-				<img src={sectionImage} alt={sectionImageAlt} />
+			{#if sectionImageKey === 'book'}
+				<Book />
+			{:else if sectionImageKey === 'quill'}
+				<InkAndQuill />
+			{:else if sectionImageKey === 'man'}
+				<ConfusedMan />
+			{:else if sectionImageKey === 'card'}
+				<div class="card-wrapper">
+					<OutlineCardFlipping flipped front={prettify(randomOutline.specialOutlineMeanings)}>
+						{#snippet back()}
+							<div style="width: 60%">
+								<OutlineSVG outlineObject={randomOutline} />
+							</div>
+						{/snippet}
+					</OutlineCardFlipping>
+				</div>
 			{/if}
 			<div>{sectionBlurb}</div>
 		</div>
@@ -56,8 +82,8 @@
 	.card-contents h2 {
 		font-size: 2.6rem;
 	}
-	img {
-		margin: 20px 0;
-		aspect-ratio: 4 / 3;
+	.card-wrapper {
+		margin: 5px auto;
+		padding: 20px;
 	}
 </style>

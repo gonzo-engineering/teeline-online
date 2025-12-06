@@ -24,29 +24,25 @@
 		sectionName="Learn"
 		sectionBlurb="Study the basics and core theory of Teeline shorthand"
 		sectionPath="/learn"
-		sectionImage="/images/section-teaser-learn.webp"
-		sectionImageAlt="Ink drawing of a man scratching his head in confusion."
+		sectionImageKey="man"
 	/>
 	<PageTeaserCard
 		sectionName="Dictionary"
 		sectionBlurb="Browse hundreds of animated Teeline outlines"
 		sectionPath="/outlines"
-		sectionImage="/images/section-teaser-outlines.webp"
-		sectionImageAlt="A grid of cards with Teeline shorthand outlines drawn on them."
+		sectionImageKey="book"
 	/>
 	<PageTeaserCard
 		sectionName="Revise"
 		sectionBlurb="Put your knowledge to the test with virtual flashcards"
 		sectionPath="/revise"
-		sectionImage="/images/section-teaser-revise.webp"
-		sectionImageAlt="A Teeline shorthand revision flashcard."
+		sectionImageKey="card"
 	/>
 	<PageTeaserCard
 		sectionName="Generator"
 		sectionBlurb="Watch words turn into shorthand before your very eyes"
 		sectionPath="/generator"
-		sectionImage="/images/section-teaser-generator.webp"
-		sectionImageAlt="Black and white illustration of an ink pot and quill."
+		sectionImageKey="quill"
 	/>
 </div>
 <div class="copy-container">
