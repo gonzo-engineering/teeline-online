@@ -78,11 +78,11 @@
 	}
 	.flipcard-container {
 		width: 100%;
+		margin: 3rem auto;
 	}
 	@media (min-width: 1025px) {
 		.flipcard-container {
 			width: 30%;
-			margin: auto;
 		}
 	}
 </style>

@@ -84,6 +84,6 @@
 	}
 	.card-wrapper {
 		margin: 5px auto;
-		padding: 10px;
+		padding: 20px;
 	}
 </style>
