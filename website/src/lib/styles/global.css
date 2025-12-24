@@ -64,6 +64,15 @@
 	--shadow: #181818;
 }
 
+.gold {
+	--background: #eaeae2;
+	--foreground: #6a6d4b;
+	--card-background: #0b212f;
+	--card-foreground: #ebb64a;
+	--underline: #585858;
+	--shadow: #dcd8bf;
+}
+
 * {
 	font-family: var(--font-family);
 	margin: 0;

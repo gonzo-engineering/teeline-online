@@ -1,6 +1,7 @@
 export const fontFamilies = ['Handwriting', 'No Tears', 'Indie Flower'];
+export const themes = ['light', 'gold', 'dark'];
 
-export const user: { wpm: number; fontFamily: string; theme: 'light' | 'dark' } = $state({
+export const user: { wpm: number; fontFamily: string; theme: string } = $state({
 	wpm: 60,
 	fontFamily: 'Handwriting',
 	theme: 'light'
@@ -12,6 +13,6 @@ export function setFontFamily(option: string) {
 }
 
 export function toggleTheme() {
-	user.theme = user.theme === 'light' ? 'dark' : 'light';
+	user.theme = themes[(themes.indexOf(user.theme) + 1) % themes.length];
 	document.documentElement.className = user.theme;
 }
