@@ -23,7 +23,7 @@
 		"@typescript-eslint/parser": "8.57.2",
 		"eslint": "^10.1.0",
 		"eslint-config-prettier": "^10.1.8",
-		"eslint-plugin-svelte": "^3.16.0",
+		"eslint-plugin-svelte": "^3.17.1",
 		"mdsvex": "^0.12.7",
 		"prettier": "^3.8.1",
 		"prettier-plugin-svelte": "^3.5.1",
