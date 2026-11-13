@@ -7,10 +7,10 @@ type DetachmentRule = { offset: { x: number; y: number } };
 const DETACH_AFTER = ['t', 'd', 'tr', 'dr', 'r', 'fr'];
 
 const DETACHED_LETTER_RULES: Record<string, DetachmentRule> = {
-	t: { offset: { x: 0, y: -24 } },
-	d: { offset: { x: 0, y: 24 } },
-	tr: { offset: { x: 0, y: -24 } },
-	dr: { offset: { x: 0, y: 24 } }
+	t: { offset: { x: 0, y: -30 } },
+	d: { offset: { x: 0, y: 30 } },
+	tr: { offset: { x: 0, y: -30 } },
+	dr: { offset: { x: 0, y: 30 } }
 };
 
 export const getDetachmentOffset = (grouping: string, precedingGrouping?: string) => {
