@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { OutlineObject } from '#lib/data/interfaces/interfaces.ts';
 	import Toggle from '#lib/components/Toggle.svelte';
+	import Meta from '#lib/components/layout/Meta.svelte';
 	import { filterAndSortOutlines } from '#lib/scripts/search.ts';
 	import ShorthandPassage from '#lib/components/ShorthandPassage.svelte';
 	import { hydratedData } from '#lib/scripts/hydrate-outline-data.ts';
@@ -22,13 +23,10 @@
 	};
 </script>
 
-<svelte:head>
-	<title>Dictionary | teeline.online</title>
-	<meta
-		name="description"
-		content="Browse and search an interactive library of hundreds of animated Teeline shorthand outlines, ranging from the alphabet to special abbreviations."
-	/>
-</svelte:head>
+<Meta
+	title="Dictionary | teeline.online"
+	description="Browse and search an interactive library of hundreds of animated Teeline shorthand outlines, ranging from the alphabet to special abbreviations."
+/>
 
 <div class="filters-container">
 	<input

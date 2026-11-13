@@ -1,14 +1,12 @@
 <script lang="ts">
 	import PageTeaserCard from '#lib/components/PageTeaserCard.svelte';
+	import Meta from '#lib/components/layout/Meta.svelte';
 </script>
 
-<svelte:head>
-	<title>teeline.online</title>
-	<meta
-		name="description"
-		content="A free, interactive learning resource for Teeline shorthand. Study theory, browse outlines, and revise with flash cards to get to 100wpm and beyond."
-	/>
-</svelte:head>
+<Meta
+	title="teeline.online"
+	description="A free, interactive learning resource for Teeline shorthand. Study theory, browse outlines, and revise with flash cards to get to 100wpm and beyond."
+/>
 
 <div class="copy-container">
 	<p>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import SyllabusLink from '#lib/components/SyllabusLink.svelte';
+	import Meta from '#lib/components/layout/Meta.svelte';
 	let {
 		data
 	}: {
@@ -12,10 +13,10 @@
 	} = $props();
 </script>
 
-<svelte:head>
-	<title>{data.title} | Learn | teeline.online</title>
-	<meta name="description" content={data.description} />
-</svelte:head>
+<Meta
+	title="{data.title} | Learn | teeline.online"
+	description={data.description}
+/>
 
 <div class="copy-container">
 	<h2>{data.title}</h2>
