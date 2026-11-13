@@ -31,7 +31,7 @@
 		flex-wrap: wrap;
 		gap: 0;
 		margin: 50px auto;
-		justify-content: center;
+		max-width: 1300px;
 	}
 	.outline {
 		max-width: 100px;

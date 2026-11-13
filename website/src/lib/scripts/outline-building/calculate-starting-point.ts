@@ -1,72 +1,54 @@
 import { dominantConsonants, passiveConsonants } from '#lib/data/letter-hierarchy.ts';
-import { findOrCreateOutlineObject } from './build-outline-objects';
-import allOutlines from '#lib/data/outlines.json';
 import type { OutlineObject } from '#lib/data/interfaces/interfaces.ts';
+import { getDetachmentOffset } from './detached-letters';
 
-export const createStartingObject = (text: string, lettersObjectArray: OutlineObject[]) => {
-	// Identify dominant letter
-	const findDominantLetter = (word: string | undefined) => {
-		const dominantConsonant = word.split('').find((letter) => dominantConsonants.includes(letter));
-		if (dominantConsonant) {
-			return {
-				letter: dominantConsonant,
-				index: word.indexOf(dominantConsonant)
-			};
-		}
-		const passiveConsonant = word.split('').find((letter) => passiveConsonants.includes(letter));
-		if (passiveConsonant) {
-			return {
-				letter: passiveConsonant,
-				index: word.indexOf(passiveConsonant)
-			};
-		}
-		return undefined;
-	};
-	const dominantLetter = findDominantLetter(text);
+const OUTLINE_CANVAS_WIDTH = 750;
 
-	const calculateStartingPoint = (
-		dominantLetter: { letter: string; index: number },
-		lettersObjectArray: OutlineObject[]
-	) => {
-		const dominantLetterStart = findOrCreateOutlineObject(dominantLetter.letter ?? '', allOutlines)
-			.lines[0].start;
-		const precedingLetters = lettersObjectArray.slice(0, dominantLetter.index).reverse();
-		const precedingLetterLines = precedingLetters
-			.map((letterObject) => letterObject.lines)
-			.reverse();
-		// Work backwards from the dominant letter to find the overall starting point
-		const startingPoint = precedingLetterLines.reduce(
-			({ x, y }, lines) => {
-				const [first, ...rest] = lines;
-				const last = rest.at(-1) ?? first;
-				const start = first.start;
-				const end = last.end;
-				return {
-					x: x + (start.x - end.x),
-					y: y + (start.y - end.y)
-				};
-			},
-			{
-				x: dominantLetterStart.x,
-				y: dominantLetterStart.y
-			}
+// Index of the first *grouping* containing a dominant consonant, falling back
+// to the first containing a passive one. Working in groupings rather than
+// characters keeps the index aligned with lettersObjectArray when a word
+// contains blends like 'fr'.
+const findAnchorIndex = (groupings: string[]) => {
+	for (const consonants of [dominantConsonants, passiveConsonants]) {
+		const index = groupings.findIndex((grouping) =>
+			grouping.split('').some((letter) => consonants.includes(letter))
 		);
-		// Center the word
-		const outlineWidth = lettersObjectArray.reduce((width, letterObject) => {
-			const lastLine = letterObject.lines.at(-1);
-			return lastLine.end.x - lastLine.start.x + width;
-		}, 0);
-		startingPoint.x = 750 / 2 - outlineWidth / 2;
-		return startingPoint;
-	};
+		if (index !== -1) return index;
+	}
+	return -1;
+};
 
-	const { x = 0, y = 0 } = !dominantLetter
-		? lettersObjectArray[0].lines[0].start
-		: calculateStartingPoint(dominantLetter, lettersObjectArray);
+export const createStartingObject = (groupings: string[], lettersObjectArray: OutlineObject[]) => {
+	const anchorIndex = findAnchorIndex(groupings);
 
-	return {
-		combinedLineDetails: [],
-		x,
-		y
-	};
+	// No dominant or passive consonant: start where the first outline naturally starts
+	if (anchorIndex === -1) {
+		const { x = 0, y = 0 } = lettersObjectArray[0].lines[0].start;
+		return { combinedLineDetails: [], x, y };
+	}
+
+	// The anchor grouping's own outline data is already positioned correctly
+	// relative to the line, so use its start directly — this works for blends
+	// like 'fr' as well as single letters
+	let { y } = lettersObjectArray[anchorIndex].lines[0].start;
+
+	// Work backwards from the anchor to the start of the word, undoing each
+	// preceding letter's travel and any detachment gap before the next letter
+	for (let i = anchorIndex; i > 0; i--) {
+		const offset = getDetachmentOffset(groupings[i], groupings[i - 1]);
+		const lines = lettersObjectArray[i - 1].lines;
+		const first = lines[0];
+		const last = lines.at(-1) ?? first;
+		y -= (offset?.y ?? 0) + (last.end.y - first.start.y);
+	}
+
+	// Centre the word horizontally
+	const outlineWidth = lettersObjectArray.reduce((width, letterObject, i) => {
+		const lastLine = letterObject.lines.at(-1);
+		const offset = getDetachmentOffset(groupings[i], groupings[i - 1]);
+		return width + (lastLine ? lastLine.end.x - lastLine.start.x : 0) + (offset?.x ?? 0);
+	}, 0);
+	const x = OUTLINE_CANVAS_WIDTH / 2 - outlineWidth / 2;
+
+	return { combinedLineDetails: [], x, y };
 };
