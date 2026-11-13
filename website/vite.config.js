@@ -3,6 +3,7 @@ import mdsvexConfig from './mdsvex.config.js';
 import adapter from '@sveltejs/adapter-netlify';
 import preprocess from 'svelte-preprocess';
 import { sveltekit } from '@sveltejs/kit/vite';
+import { svelteSitemap } from 'svelte-sitemap/vite';
 
 /** @type {import('vite').UserConfig} */ const config = {
 	plugins: [
@@ -19,7 +20,8 @@ import { sveltekit } from '@sveltejs/kit/vite';
 				precompress: false,
 				strict: true
 			})
-		})
+		}),
+		svelteSitemap({ domain: 'https://teeline.online' })
 	]
 };
 

@@ -5,6 +5,7 @@
 	import Toggle from '#lib/components/Toggle.svelte';
 	import { prettify, shuffleOutlines } from '#lib/scripts/helpers.ts';
 	import { hydratedData } from '#lib/scripts/hydrate-outline-data.ts';
+	import Meta from '#lib/components/layout/Meta.svelte';
 
 	const shuffledSpecialOutlines: OutlineObject[] = shuffleOutlines(
 		hydratedData.filter((outline) => outline.specialOutlineMeanings.length > 0)
@@ -25,13 +26,10 @@
 	const toggleCardOrientation = () => (outlineFirst = !outlineFirst);
 </script>
 
-<svelte:head>
-	<title>Revise | teeline.online</title>
-	<meta
-		name="description"
-		content="Work your way through hundreds of virtual flash cards to sear Teeline shorthand outlines into your brain and get your speed closer to the sacred 100wpm."
-	/>
-</svelte:head>
+<Meta
+	title="Revise | teeline.online"
+	description="Work your way through hundreds of virtual flash cards to sear Teeline shorthand outlines into your brain and get your speed closer to the sacred 100wpm."
+/>
 
 <svelte:window on:keydown={handleKeydown} />
 

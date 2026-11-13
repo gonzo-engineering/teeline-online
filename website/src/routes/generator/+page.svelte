@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ShorthandPassage from '#lib/components/ShorthandPassage.svelte';
 	import Toggle from '#lib/components/Toggle.svelte';
+	import Meta from '#lib/components/layout/Meta.svelte';
 
 	const placeholder = 'Write here and be amazed';
 
@@ -9,13 +10,10 @@
 	let showMeanings = $state(false);
 </script>
 
-<svelte:head>
-	<title>Generator | teeline.online</title>
-	<meta
-		name="description"
-		content="Type words and watch them turn into Teeline shorthand outlines before your very eyes."
-	/>
-</svelte:head>
+<Meta
+	title="Generator | teeline.online"
+	description="Type words and watch them turn into Teeline shorthand outlines before your very eyes."
+/>
 
 <div class="container">
 	<div class="input-and-settings">

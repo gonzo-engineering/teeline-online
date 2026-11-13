@@ -1,10 +1,11 @@
-<svelte:head>
-	<title>About | teeline.online</title>
-	<meta
-		name="description"
-		content="A little information on why teeline.online was created, who it's for, and how it works."
-	/>
-</svelte:head>
+<script lang="ts">
+	import Meta from '#lib/components/layout/Meta.svelte';
+</script>
+
+<Meta
+	title="About | teeline.online"
+	description="A little information on why teeline.online was created, who it's for, and how it works."
+/>
 
 <div class="copy-container">
 	<h2 style="text-align: center;">About</h2>

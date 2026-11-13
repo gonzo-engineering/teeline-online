@@ -1,15 +1,13 @@
 <script lang="ts">
 	import PageTeaserCard from '#lib/components/PageTeaserCard.svelte';
 	import { syllabusMetadata } from '#lib/data/syllabus.ts';
+	import Meta from '#lib/components/layout/Meta.svelte';
 </script>
 
-<svelte:head>
-	<title>Learn | teeline.online</title>
-	<meta
-		name="description"
-		content="Explore the theory and execution of Teeline shorthand - from core principles to special outlines. Be sure to play around with the Disemvoweler 9000!"
-	/>
-</svelte:head>
+<Meta
+	title="Learn | teeline.online"
+	description="Explore the theory and execution of Teeline shorthand - from core principles to special outlines. Be sure to play around with the Disemvoweler 9000!"
+/>
 
 <div class="copy-container">
 	<div class="learn-menu">

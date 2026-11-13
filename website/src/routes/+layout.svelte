@@ -10,19 +10,29 @@
 </script>
 
 <svelte:head>
-	<meta charset="UTF-8" />
-
 	<meta name="keywords" content="Shorthand, Teeline, Journalism" />
+
+	<meta property="og:site_name" content="teeline.online" />
+	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="en_GB" />
+	<meta
+		property="og:image"
+		content="https://teeline.online/images/teeline-online-social-card.webp"
+	/>
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta
+		property="og:image:alt"
+		content="Screenshot of the teeline.online outlines page, showing a selection of Teeline shorthand outline cards."
+	/>
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:creator" content="@yagayagafred" />
-	<meta name="twitter:title" content="teeline.online" />
-	<meta name="twitter:description" content="A (short)handy site" />
-	<meta name="twitter:image" content="https://teeline.online/teeline-online-social-card.webp" />
 	<meta
 		name="twitter:image:alt"
 		content="Screenshot of the teeline.online outlines page, showing a selection of Teeline shorthand outline cards."
 	/>
+
 	<script
 		data-goatcounter="https://teeline-online.goatcounter.com/count"
 		async
