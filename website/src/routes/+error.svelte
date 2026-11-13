@@ -2,10 +2,7 @@
 	import Meta from '#lib/components/layout/Meta.svelte';
 </script>
 
-<Meta
-	title="Error | teeline.online"
-	description="This page does not exist on teeline.online."
-/>
+<Meta title="Error | teeline.online" description="This page does not exist on teeline.online." />
 
 <div class="error-content-container">
 	<h1>404</h1>

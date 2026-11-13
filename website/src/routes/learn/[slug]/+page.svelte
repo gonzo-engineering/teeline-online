@@ -13,10 +13,7 @@
 	} = $props();
 </script>
 
-<Meta
-	title="{data.title} | Learn | teeline.online"
-	description={data.description}
-/>
+<Meta title="{data.title} | Learn | teeline.online" description={data.description} />
 
 <div class="copy-container">
 	<h2>{data.title}</h2>

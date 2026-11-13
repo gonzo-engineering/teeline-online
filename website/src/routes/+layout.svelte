@@ -15,7 +15,10 @@
 	<meta property="og:site_name" content="teeline.online" />
 	<meta property="og:type" content="website" />
 	<meta property="og:locale" content="en_GB" />
-	<meta property="og:image" content="https://teeline.online/images/teeline-online-social-card.webp" />
+	<meta
+		property="og:image"
+		content="https://teeline.online/images/teeline-online-social-card.webp"
+	/>
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<meta
