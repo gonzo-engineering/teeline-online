@@ -1,6 +1,6 @@
-import lettersAndGroupings from '$lib/data/outlines.json';
-import specials from '$lib/data/special-outlines.json';
-import type { OutlineObject, SpecialOutline } from '$lib/data/interfaces/interfaces';
+import lettersAndGroupings from '#lib/data/outlines.json';
+import specials from '#lib/data/special-outlines.json';
+import type { OutlineObject, SpecialOutline } from '#lib/data/interfaces/interfaces.ts';
 import { findOrCreateOutlineObject } from './outline-building/build-outline-objects';
 import { sortOutlinesAlphabetically } from './helpers';
 

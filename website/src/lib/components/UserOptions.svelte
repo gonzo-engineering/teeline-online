@@ -4,8 +4,8 @@
 		setFontFamily,
 		toggleTheme,
 		user
-	} from '$lib/global-state/global-state.svelte';
-	import { wpms } from '$lib/scripts/speed';
+	} from '#lib/global-state/global-state.svelte.ts';
+	import { wpms } from '#lib/scripts/speed.ts';
 	const wpmOptions = wpms.map((wpm) => wpm.speed);
 </script>
 

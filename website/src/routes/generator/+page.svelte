@@ -1,6 +1,6 @@
 <script lang="ts">
-	import ShorthandPassage from '$lib/components/ShorthandPassage.svelte';
-	import Toggle from '$lib/components/Toggle.svelte';
+	import ShorthandPassage from '#lib/components/ShorthandPassage.svelte';
+	import Toggle from '#lib/components/Toggle.svelte';
 
 	let inputText = $state('Write here and be amazed');
 	let textForPassage = $derived(inputText.trim().replace(/\&nbsp;/g, ''));

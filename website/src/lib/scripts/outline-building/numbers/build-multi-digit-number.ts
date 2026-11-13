@@ -1,4 +1,4 @@
-import type { LineDetails, OutlineObject } from '$lib/data/interfaces/interfaces';
+import type { LineDetails, OutlineObject } from '#lib/data/interfaces/interfaces.ts';
 
 export const buildMultiDigitNumberObject = (
 	numberAsString: string,

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import SyllabusLink from '$lib/components/SyllabusLink.svelte';
+	import SyllabusLink from '#lib/components/SyllabusLink.svelte';
 	let {
 		data
 	}: {

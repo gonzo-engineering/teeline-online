@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Container from './outlineSVGs/OutlineSVG.svelte';
-	import { convertPassageToOutlines } from '$lib/scripts/outline-building/build-outline-objects';
+	import { convertPassageToOutlines } from '#lib/scripts/outline-building/build-outline-objects.ts';
 	import OutlineDetails from './cards/OutlineDetails.svelte';
-	import { hydratedData } from '$lib/scripts/hydrate-outline-data';
-	import { inferPrecedingOutlinesLength } from '$lib/scripts/line-length-inference';
+	import { hydratedData } from '#lib/scripts/hydrate-outline-data.ts';
+	import { inferPrecedingOutlinesLength } from '#lib/scripts/line-length-inference.ts';
 
 	let { text, showMeanings }: { text: string; showMeanings: boolean } = $props();
 

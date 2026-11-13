@@ -6,7 +6,7 @@ order: 11
 ---
 
 <script>
-	import OutlineCardGrid from '$lib/components/cards/OutlineCardGrid.svelte'
+	import OutlineCardGrid from '#lib/components/cards/OutlineCardGrid.svelte'
 </script> 
 
 When you're writing shorthand you're going to come across a fair few measurements. It's important to have a shorthand for these because they're so common. 
