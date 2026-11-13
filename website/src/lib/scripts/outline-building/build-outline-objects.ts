@@ -6,11 +6,14 @@ import type {
 } from '#lib/data/interfaces/interfaces.ts';
 import { disemvowelWord } from '../disemvowel';
 import { createStartingObject } from './calculate-starting-point';
+import { getDetachmentOffset } from './detached-letters';
 import { buildMultiDigitNumberObject } from './numbers/build-multi-digit-number';
 import { downUpI } from './special-endings';
 
 const checkedSpecials: SpecialOutline[] = specials;
 const punctuationRegex = /[,\/#!$%\^&\*;:{}=\-_`~()]/g;
+
+type GroupingMatch = { grouping: string; outline: OutlineObject };
 
 export const findOrCreateOutlineObject = (
 	word: string,
@@ -45,12 +48,14 @@ export const findOrCreateOutlineObject = (
 	}
 
 	// Find matching letter or letter grouping at start of word until no more letters
+	// Tracks which grouping matched as well as the outline, since an outline
+	// object can hold several groupings and we need to know if it was a 't' or 'd'
 	function mapWordToOutlines(
 		word: string,
 		lettersAndGroupings: OutlineObject[],
-		wordOutlines: OutlineObject[] = []
-	): OutlineObject[] {
-		if (!word) return wordOutlines; // Base case for recursion
+		matches: GroupingMatch[] = []
+	): GroupingMatch[] {
+		if (!word) return matches;
 
 		const lowerCaseWord = word.toLowerCase();
 		// Find the longest matching letter grouping at the start of the word
@@ -67,19 +72,18 @@ export const findOrCreateOutlineObject = (
 		}
 
 		// If no match was found, return the accumulated word outlines
-		if (!matchedOutline) return wordOutlines;
+		if (!matchedOutline) return matches;
 
 		// Otherwise, append the found outline and continue recursively
 		return mapWordToOutlines(lowerCaseWord.slice(longestMatch.length), lettersAndGroupings, [
-			...wordOutlines,
-			matchedOutline
+			...matches,
+			{ grouping: longestMatch, outline: matchedOutline }
 		]);
 	}
 
-	const lettersObjectArray = mapWordToOutlines(cleanedWord, outlines);
-
-	// we need to get the first starting point
-	const startingObject = createStartingObject(cleanedWord, lettersObjectArray);
+	const matches = mapWordToOutlines(cleanedWord, outlines);
+	const lettersObjectArray = matches.map(({ outline }) => outline);
+	const matchedGroupings = matches.map(({ grouping }) => grouping);
 
 	// If last letter is 'y' replace the last letterObjectLines entry with the appropriate 'i' object
 	if (cleanedWord.slice(-1) === 'y') {
@@ -95,29 +99,39 @@ export const findOrCreateOutlineObject = (
 		}
 	}
 
+	// Calculated after the 'y' swap so it measures the outlines actually drawn
+	const startingObject = createStartingObject(matchedGroupings, lettersObjectArray);
+
 	const letterObjectLines = lettersObjectArray.map((letterObject) => letterObject?.lines);
 
 	const { combinedLineDetails } = letterObjectLines.reduce<{
 		combinedLineDetails: LineDetails[];
 		x: number;
 		y: number;
-	}>(({ combinedLineDetails, x, y }, lines) => {
+	}>(({ combinedLineDetails, x, y }, lines, index) => {
 		const [first, ...rest] = lines;
 		const last = rest.at(-1) ?? first;
+
+		// The first letter has no predecessor, and its position is already
+		// handled by createStartingObject
+		const detachment = getDetachmentOffset(matchedGroupings[index], matchedGroupings[index - 1]);
+		const startX = x + (detachment?.x ?? 0);
+		const startY = y + (detachment?.y ?? 0);
 
 		const offsetLines = lines.map((line) => {
 			const dx = line.start.x - first.start.x;
 			const dy = line.start.y - first.start.y;
-			const path = line.path.replace(/M[\d\.]+( |,)[\d\.]+/, `M${x + dx} ${y + dy}`);
+			const path = line.path.replace(/M[\d\.]+( |,)[\d\.]+/, `M${startX + dx} ${startY + dy}`);
 			return { ...line, path };
 		});
 
 		combinedLineDetails.push(...offsetLines);
 
+		// The next letter carries on from wherever this one finished
 		return {
 			combinedLineDetails,
-			x: x + last.end.x - first.start.x,
-			y: y + last.end.y - first.start.y
+			x: startX + last.end.x - first.start.x,
+			y: startY + last.end.y - first.start.y
 		};
 	}, startingObject);
 

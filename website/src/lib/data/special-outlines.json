@@ -40,6 +40,10 @@
 		"meanings": ["from"]
 	},
 	{
+		"letterGrouping": "frt",
+		"meanings": ["fortunate"]
+	},
+	{
 		"letterGrouping": "gn",
 		"meanings": ["general"]
 	},
@@ -66,6 +70,10 @@
 	{
 		"letterGrouping": "prm",
 		"meanings": ["permanent"]
+	},
+	{
+		"letterGrouping": "td",
+		"meanings": ["to do"]
 	},
 	{
 		"letterGrouping": "rp",
@@ -182,5 +190,9 @@
 	{
 		"letterGrouping": "lrs",
 		"meanings": ["litres"]
+	},
+	{
+		"letterGrouping": "xmas",
+		"meanings": ["christmas"]
 	}
 ]
