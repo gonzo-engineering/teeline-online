@@ -1,6 +1,5 @@
-import { hydratedData } from '$lib/scripts/hydrate-outline-data';
-import { json } from '@sveltejs/kit';
+import { hydratedData } from '#lib/scripts/hydrate-outline-data.ts';
 
 export async function GET() {
-	return json(hydratedData);
+	return Response.json(hydratedData);
 }

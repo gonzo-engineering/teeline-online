@@ -3,7 +3,7 @@
 	import InkAndQuill from './images/InkAndQuill.svelte';
 	import ConfusedMan from './images/ConfusedMan.svelte';
 	import OutlineCardFlipping from './cards/OutlineCardFlipping.svelte';
-	import { prettify } from '$lib/scripts/helpers';
+	import { prettify } from '#lib/scripts/helpers.ts';
 	import OutlineSVG from './outlineSVGs/OutlineSVG.svelte';
 	import outlines from './../data/outlines.json';
 

@@ -1,7 +1,7 @@
 {
-	"extends": "./.svelte-kit/tsconfig.json",
+	"extends": "$app/tsconfig",
 	"compilerOptions": {
-		"resolveJsonModule": true,
 		"allowSyntheticDefaultImports": true
-	}
+	},
+	"include": ["src", "vite.config.js"]
 }

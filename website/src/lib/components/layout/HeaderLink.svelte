@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 
 	let {
 		title,
@@ -10,7 +10,7 @@
 	} = $props();
 </script>
 
-<a {href} class:active={$page.url.pathname.includes(href)}>{title}</a>
+<a {href} class:active={page.url.pathname.includes(href)}>{title}</a>
 
 <style>
 	a.active {

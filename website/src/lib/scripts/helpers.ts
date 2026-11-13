@@ -1,4 +1,4 @@
-import type { OutlineObject } from '$lib/data/interfaces/interfaces';
+import type { OutlineObject } from '#lib/data/interfaces/interfaces.ts';
 
 export const prettify = (outlineNames: string[]): string => {
 	return outlineNames.toString().replace(/,/g, ' / ');

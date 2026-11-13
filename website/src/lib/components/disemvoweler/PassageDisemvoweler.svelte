@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { disemvowelBodyOfText } from '$lib/scripts/disemvowel';
+	import { disemvowelBodyOfText } from '#lib/scripts/disemvowel.ts';
 	let textToDisemvowel = $state('');
 	let disemvoweledText = $derived(disemvowelBodyOfText(textToDisemvowel));
 </script>

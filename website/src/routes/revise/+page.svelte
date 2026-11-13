@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { OutlineObject } from '$lib/data/interfaces/interfaces';
-	import FlippingOutlineCard from '$lib/components/cards/OutlineCardFlipping.svelte';
-	import Container from '$lib/components/outlineSVGs/OutlineSVG.svelte';
-	import Toggle from '$lib/components/Toggle.svelte';
-	import { prettify, shuffleOutlines } from '$lib/scripts/helpers';
-	import { hydratedData } from '$lib/scripts/hydrate-outline-data';
+	import type { OutlineObject } from '#lib/data/interfaces/interfaces.ts';
+	import FlippingOutlineCard from '#lib/components/cards/OutlineCardFlipping.svelte';
+	import Container from '#lib/components/outlineSVGs/OutlineSVG.svelte';
+	import Toggle from '#lib/components/Toggle.svelte';
+	import { prettify, shuffleOutlines } from '#lib/scripts/helpers.ts';
+	import { hydratedData } from '#lib/scripts/hydrate-outline-data.ts';
 
 	const shuffledSpecialOutlines: OutlineObject[] = shuffleOutlines(
 		hydratedData.filter((outline) => outline.specialOutlineMeanings.length > 0)

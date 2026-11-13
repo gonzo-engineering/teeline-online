@@ -1,4 +1,4 @@
-import type { OutlineObject } from '$lib/data/interfaces/interfaces';
+import type { OutlineObject } from '#lib/data/interfaces/interfaces.ts';
 import { disemvowelWord } from './disemvowel';
 
 export const filterAndSortOutlines = (outlines: OutlineObject[], searchTerm: string) => {
