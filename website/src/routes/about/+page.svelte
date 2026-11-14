@@ -10,13 +10,13 @@
 <div class="copy-container">
 	<h2 style="text-align: center;">About</h2>
 	<p>
-		teeline.online is a free, interactive learning resource for Teeline shorthand. It is developed
-		by <a href="https://frederickobrien.com">Frederick O'Brien</a>, a software engineer and
-		occasional journalist based in London. It's mainly a way of avoiding the revision he should be
+		teeline.online is a free, interactive learning resource for Teeline shorthand. Developed
+		by <a href="https://frederickobrien.com">Fred O'Brien</a>, a software engineer and
+		occasional journalist based in London, it's mainly a way of avoiding the revision he should be
 		doing to reach 100 wpm.
 	</p>
 	<p>
-		The source code is published on <a href="https://github.com/gonzo-engineering/teeline-online"
+		All source code is published on <a href="https://github.com/gonzo-engineering/teeline-online"
 			>GitHub</a
 		>
 		and the data at its core is available at
@@ -25,10 +25,10 @@
 		his own NCTJ diploma.
 	</p>
 	<p>
-		The site has become a centrepiece of the <a href="https://gonzo.engineering"
+		The site is part of the <a href="https://gonzo.engineering"
 			>Gonzo Engineering</a
 		>
-		project, which creates free, open-source tools for journalists and artists. You can support development
+		project, which creates free, open-source tools for journalists, artists, and other creatives. You can support development
 		by <a href="https://ko-fi.com/frederickobrien">buying Fred a coffee</a> or
 		<a href="https://www.opencollective.com/gonzo-engineering"
 			>becoming a Gonzo Engineering backer</a
