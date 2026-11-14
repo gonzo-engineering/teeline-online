@@ -45,7 +45,7 @@
 
 :root {
 	--font-family: 'Handwriting', 'Indie Flower', 'cursive';
-	--regular-font-size: 1.8rem;
+	--regular-font-size: 1.6rem;
 
 	--background: #fff;
 	--foreground: #000;
@@ -70,10 +70,6 @@
 	padding: 0;
 }
 
-:root {
-	--regular-font-size: 1.8rem;
-}
-
 body {
 	background: var(--background);
 	color: var(--foreground);
@@ -81,8 +77,8 @@ body {
 
 p {
 	font-size: var(--regular-font-size);
-	margin: 0 0 2rem 0;
-	line-height: 1.5;
+	margin: 0 0 1.5rem 0;
+	line-height: 1;
 }
 
 h1,
@@ -163,6 +159,7 @@ figure img {
 
 figcaption {
 	font-size: 1.6rem;
+	opacity: 0.6;
 }
 
 small {
