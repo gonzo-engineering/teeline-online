@@ -31,7 +31,7 @@
 		transition: transform 0.8s;
 		transform-style: preserve-3d;
 		transform: rotateY(calc(var(--extra)));
-		font-size: 2.3rem;
+		font-size: 1.9rem;
 	}
 
 	.flip-card:hover .inner {

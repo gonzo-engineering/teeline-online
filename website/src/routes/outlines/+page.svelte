@@ -92,7 +92,7 @@
 		margin: 3rem auto;
 		text-align: center;
 		font-size: 1.8rem;
-		line-height: 1.5;
+		line-height: 1.3;
 		max-width: 800px;
 	}
 	@media (min-width: 768px) {

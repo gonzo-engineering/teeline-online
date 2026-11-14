@@ -30,6 +30,7 @@
 	<a href={sectionPath}>
 		<div class="card-contents">
 			<h2>{sectionName}</h2>
+			<div class="image">
 			{#if sectionImageKey === 'book'}
 				<Book />
 			{:else if sectionImageKey === 'quill'}
@@ -47,6 +48,7 @@
 					</OutlineCardFlipping>
 				</div>
 			{/if}
+			</div>
 			<div>{sectionBlurb}</div>
 		</div>
 	</a>
@@ -76,8 +78,8 @@
 		box-shadow: 0px 0px 10px 1px var(--shadow);
 		border-radius: 20px;
 		padding: 30px;
-		font-size: 1.8rem;
-		line-height: 1.2;
+		font-size: 1.6rem;
+		line-height: 1;
 	}
 	.card-contents h2 {
 		font-size: 2.6rem;
@@ -85,5 +87,8 @@
 	.card-wrapper {
 		margin: 5px auto;
 		padding: 20px;
+	}
+	.image {
+		margin-bottom: 1rem;
 	}
 </style>

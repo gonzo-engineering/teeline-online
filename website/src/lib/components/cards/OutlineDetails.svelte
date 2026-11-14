@@ -51,8 +51,8 @@
 
 	.outline-meaning {
 		text-align: center;
-		font-size: 1.9rem;
-		margin: 0 0 1rem 0;
+		margin: 0 0 0.5rem 0;
+		font-size: 1.6rem;
 		font-weight: bold;
 		line-height: 0.9;
 	}

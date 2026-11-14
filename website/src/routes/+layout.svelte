@@ -4,7 +4,7 @@
 	import Header from '#lib/components/layout/Header.svelte';
 	import Footer from '#lib/components/layout/Footer.svelte';
 	import type { Snippet } from 'svelte';
-	import UserOptions from '#lib/components/UserOptions.svelte';
+	import UserOptionsMenu from '#lib/components/layout/UserOptionsMenu.svelte';
 
 	let { children }: { children: Snippet } = $props();
 </script>
@@ -45,35 +45,11 @@
 	{@render children()}
 </main>
 <Footer />
-<div class="user-options-container">
-	<UserOptions />
-</div>
+<UserOptionsMenu />
 
 <style>
 	main {
-		width: 85vw;
+		width: 90vw;
 		margin: auto;
-	}
-	.user-options-container {
-		position: fixed;
-		bottom: 0;
-		right: 0;
-		width: 100%;
-		background-color: var(--card-background);
-		color: var(--card-foreground);
-		padding: 0.5rem 0;
-		box-shadow: 0px 0px 10px var(--shadow);
-		line-height: 1;
-	}
-	@media (min-width: 768px) {
-		.user-options-container {
-			width: fit-content;
-			height: fit-content;
-			position: fixed;
-			top: 0;
-			right: 0;
-			padding: 0.5rem 1rem;
-			border-bottom-left-radius: 0.5rem;
-		}
 	}
 </style>
