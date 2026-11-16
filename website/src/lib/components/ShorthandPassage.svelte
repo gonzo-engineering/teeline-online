@@ -32,6 +32,7 @@
 		gap: 0;
 		margin: 50px auto;
 		max-width: 1300px;
+		justify-content: center;
 	}
 	.outline {
 		max-width: 100px;
