@@ -6,8 +6,9 @@ import type {
 } from '#lib/data/interfaces/interfaces.ts';
 import { disemvowelWord } from '../disemvowel';
 import { createStartingObject } from './calculate-starting-point';
-import { getDetachmentOffset } from './detached-letters';
+import { findDetachedEnding, getDetachmentOffset } from './detached-letters';
 import { buildMultiDigitNumberObject } from './numbers/build-multi-digit-number';
+import { getLinesXBounds } from './path-bounds';
 import { downUpI } from './special-endings';
 
 const checkedSpecials: SpecialOutline[] = specials;
@@ -94,14 +95,36 @@ export const findOrCreateOutlineObject = (
 		]);
 	}
 
-	const matches = mapWordToOutlines(cleanedWord, outlines);
+	// Endings like '-nce' are written as a detached letter rather than in full,
+	// so the rest of the word is built as normal and that letter appended after
+	const ending = findDetachedEnding(lowerCaseWord.replace(punctuationRegex, ''));
+	// The stem's last vowel isn't really word-final (the ending follows it), so
+	// strip any trailing vowels disemvowelWord kept, but never the first letter
+	const endingStem = ending
+		? disemvowelWord(ending.stem)
+				.replace(punctuationRegex, '')
+				.replace(/(?<=.)[aeiou]+$/, '')
+		: '';
+	const endingOutline = ending
+		? outlines.find((outline) => outline.letterGroupings.includes(ending.letter))
+		: undefined;
+	const endingMatch: GroupingMatch | undefined =
+		ending && endingStem && endingOutline
+			? { grouping: ending.grouping, outline: endingOutline }
+			: undefined;
+	const wordToMap = endingMatch ? endingStem : cleanedWord;
+
+	const matches = mapWordToOutlines(wordToMap, outlines);
+	if (matches.length === 0) {
+		return { letterGroupings: [], specialOutlineMeanings: [], lines: [] };
+	}
 	const lettersObjectArray = matches.map(({ outline }) => outline);
 	const matchedGroupings = matches.map(({ grouping }) => grouping);
 
 	// If last letter is 'y' replace the last letterObjectLines entry with the appropriate 'i' object
-	if (cleanedWord.slice(-1) === 'y') {
+	if (wordToMap.slice(-1) === 'y') {
 		// Penultimate letter
-		const penultimateLetter = cleanedWord.charAt(cleanedWord.length - 2);
+		const penultimateLetter = wordToMap.charAt(wordToMap.length - 2);
 		const regularIObject = findOrCreateOutlineObject('i', outlines);
 		const downUpIObject = downUpI;
 		const lettersThatShouldBeFollowedByDownUpI = ['f', 'g', 'h', 'j', 'n', 'p', 'z'];
@@ -110,6 +133,11 @@ export const findOrCreateOutlineObject = (
 		} else {
 			lettersObjectArray[lettersObjectArray.length - 1] = regularIObject;
 		}
+	}
+
+	if (endingMatch) {
+		lettersObjectArray.push(endingMatch.outline);
+		matchedGroupings.push(endingMatch.grouping);
 	}
 
 	// Calculated after the 'y' swap so it measures the outlines actually drawn
@@ -128,8 +156,16 @@ export const findOrCreateOutlineObject = (
 		// The first letter has no predecessor, and its position is already
 		// handled by createStartingObject
 		const detachment = getDetachmentOffset(matchedGroupings[index], matchedGroupings[index - 1]);
-		const startX = x + (detachment?.x ?? 0);
+		let startX = x + (detachment?.x ?? 0);
 		const startY = y + (detachment?.y ?? 0);
+
+		// Place this letter's leftmost point clear of everything drawn so far,
+		// rather than relative to where the last stroke happened to finish
+		if (detachment?.anchor === 'rightmost' && combinedLineDetails.length > 0) {
+			const wordRight = getLinesXBounds(combinedLineDetails).max;
+			const letterLeft = getLinesXBounds([...lines]).min;
+			startX = wordRight + detachment.x + (first.start.x - letterLeft);
+		}
 
 		const offsetLines = lines.map((line) => {
 			const start = {
