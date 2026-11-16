@@ -15,6 +15,19 @@ const punctuationRegex = /[,\/#!$%\^&\*;:{}=\-_`~()]/g;
 
 type GroupingMatch = { grouping: string; outline: OutlineObject };
 
+// Matches the opening move command of a path, tolerating whitespace, commas,
+// negatives, lowercase 'm' and scientific notation
+const NUM = String.raw`-?(?:\d+\.?\d*|\.\d+)(?:e[-+]?\d+)?`;
+const LEADING_MOVE = new RegExp(String.raw`^\s*[Mm]\s*(${NUM})[\s,]*(${NUM})`, 'i');
+
+const movePathStart = (path: string, x: number, y: number) => {
+	if (!LEADING_MOVE.test(path)) {
+		if (import.meta.env.DEV) console.warn('Could not reposition path:', path.slice(0, 40));
+		return path;
+	}
+	return path.replace(LEADING_MOVE, `M${x} ${y}`);
+};
+
 export const findOrCreateOutlineObject = (
 	word: string,
 	outlines: OutlineObject[]
@@ -119,10 +132,17 @@ export const findOrCreateOutlineObject = (
 		const startY = y + (detachment?.y ?? 0);
 
 		const offsetLines = lines.map((line) => {
-			const dx = line.start.x - first.start.x;
-			const dy = line.start.y - first.start.y;
-			const path = line.path.replace(/M[\d\.]+( |,)[\d\.]+/, `M${startX + dx} ${startY + dy}`);
-			return { ...line, path };
+			const start = {
+				x: startX + line.start.x - first.start.x,
+				y: startY + line.start.y - first.start.y
+			};
+			const end = {
+				x: start.x + line.end.x - line.start.x,
+				y: start.y + line.end.y - line.start.y
+			};
+			// Keep start/end in step with the moved path, so a generated outline
+			// can itself be reused as a building block (e.g. 'ts' inside 'tst')
+			return { ...line, path: movePathStart(line.path, start.x, start.y), start, end };
 		});
 
 		combinedLineDetails.push(...offsetLines);
