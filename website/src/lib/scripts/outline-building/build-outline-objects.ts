@@ -197,9 +197,13 @@ export const findOrCreateOutlineObject = (
 
 	const groupingIsSpecial = specialOutlineMeanings !== undefined;
 
+	// Label abbreviated endings explicitly (e.g. 'going' → 'g -ing' rather than
+	// 'gng'), since the ending isn't drawn letter by letter
+	const groupingLabel = endingMatch ? `${endingStem} ${endingMatch.grouping}` : cleanedWord;
+
 	// Return new outline object
 	return {
-		letterGroupings: [cleanedWord],
+		letterGroupings: [groupingLabel],
 		specialOutlineMeanings: groupingIsSpecial ? specialOutlineMeanings?.meanings : [],
 		lines: combinedLineDetails
 	};

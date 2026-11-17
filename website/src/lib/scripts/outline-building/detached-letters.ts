@@ -17,6 +17,7 @@ const DETACH_AFTER = ['t', 'd', 'tr', 'thr', 'dr', 'r', 'fr'];
 // The ending is matched on the raw word (before disemvowelling) and replaced
 // by `letter`, drawn using the rule stored under `-<ending>` below.
 const DETACHED_ENDINGS: Record<string, string> = {
+	ing: 'i',
 	nce: 'c',
 	nse: 'c'
 };
@@ -26,6 +27,7 @@ const DETACHED_LETTER_RULES: Record<string, DetachmentRule> = {
 	d: { offset: { x: 0, y: 30 } },
 	tr: { offset: { x: 0, y: -30 } },
 	dr: { offset: { x: 0, y: 30 } },
+	'-ing': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
 	'-nce': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
 	'-nse': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' }
 };
