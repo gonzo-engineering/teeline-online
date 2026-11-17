@@ -18,9 +18,13 @@ const DETACH_AFTER = ['t', 'd', 'tr', 'thr', 'dr', 'r', 'fr'];
 // by `letter`, drawn using the rule stored under `-<ending>` below.
 const DETACHED_ENDINGS: Record<string, string> = {
 	ang: 'a',
+	ange: 'a',
 	ing: 'i',
+	inge: 'i',
 	ong: 'o',
+	onge: 'o',
 	ung: 'e',
+	unge: 'e',
 	nce: 'c',
 	nse: 'c'
 };
@@ -31,9 +35,13 @@ const DETACHED_LETTER_RULES: Record<string, DetachmentRule> = {
 	tr: { offset: { x: 0, y: -30 } },
 	dr: { offset: { x: 0, y: 30 } },
 	'-ang': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
+	'-ange': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
 	'-ing': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
+	'-inge': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
 	'-ong': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
+	'-onge': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
 	'-ung': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
+	'-unge': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
 	'-nce': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
 	'-nse': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' }
 };
