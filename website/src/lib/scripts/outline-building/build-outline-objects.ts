@@ -6,7 +6,8 @@ import type {
 } from '#lib/data/interfaces/interfaces.ts';
 import { disemvowelWord } from '../disemvowel';
 import { createStartingObject } from './calculate-starting-point';
-import { findDetachedEnding, getDetachmentOffset } from './detached-letters';
+import { getDetachmentOffset, splitOnDetachedBlends, type WordPart } from './detached-letters';
+import { canMatchMidWord } from './mid-word-groupings';
 import { buildMultiDigitNumberObject } from './numbers/build-multi-digit-number';
 import { getLinesXBounds } from './path-bounds';
 import { downUpI } from './special-endings';
@@ -63,7 +64,9 @@ export const findOrCreateOutlineObject = (
 
 	// Find matching letter or letter grouping at start of word until no more letters
 	// Tracks which grouping matched as well as the outline, since an outline
-	// object can hold several groupings and we need to know if it was a 't' or 'd'
+	// object can hold several groupings and we need to know if it was a 't' or 'd'.
+	// Only single letters and genuine blends are used here; whole-word
+	// abbreviations were already checked against the full word above.
 	function mapWordToOutlines(
 		word: string,
 		lettersAndGroupings: OutlineObject[],
@@ -78,7 +81,11 @@ export const findOrCreateOutlineObject = (
 
 		for (const outline of lettersAndGroupings) {
 			for (const grouping of outline.letterGroupings) {
-				if (lowerCaseWord.startsWith(grouping) && grouping.length > longestMatch.length) {
+				if (
+					canMatchMidWord(grouping) &&
+					lowerCaseWord.startsWith(grouping) &&
+					grouping.length > longestMatch.length
+				) {
 					longestMatch = grouping;
 					matchedOutline = outline;
 				}
@@ -95,36 +102,51 @@ export const findOrCreateOutlineObject = (
 		]);
 	}
 
-	// Endings like '-nce' are written as a detached letter rather than in full,
-	// so the rest of the word is built as normal and that letter appended after
-	const ending = findDetachedEnding(lowerCaseWord.replace(punctuationRegex, ''));
-	// The stem's last vowel isn't really word-final (the ending follows it), so
-	// strip any trailing vowels disemvowelWord kept, but never the first letter
-	const endingStem = ending
-		? disemvowelWord(ending.stem)
-				.replace(punctuationRegex, '')
-				.replace(/(?<=.)[aeiou]+$/, '')
-		: '';
-	const endingOutline = ending
-		? outlines.find((outline) => outline.letterGroupings.includes(ending.letter))
-		: undefined;
-	const endingMatch: GroupingMatch | undefined =
-		ending && endingStem && endingOutline
-			? { grouping: ending.grouping, outline: endingOutline }
-			: undefined;
-	const wordToMap = endingMatch ? endingStem : cleanedWord;
+	// Blends like '-ing' and '-nce' are written as a detached letter rather
+	// than in full, wherever they fall after the first letter. Split the raw
+	// word around them, disemvowel the runs of letters in between, and build
+	// each run as normal with the blend letters slotted in.
+	const parts = splitOnDetachedBlends(lowerCaseWord.replace(punctuationRegex, ''));
+	const blendOutline = (letter: string) =>
+		outlines.find((outline) => outline.letterGroupings.includes(letter));
+	const useBlends =
+		parts.some((part) => part.kind === 'blend') &&
+		parts.every((part) => part.kind === 'letters' || blendOutline(part.letter));
 
-	const matches = mapWordToOutlines(wordToMap, outlines);
+	const segments: WordPart[] = useBlends
+		? parts.map((part, i) => {
+				if (part.kind === 'blend') return part;
+				let text = disemvowelWord(part.text).replace(punctuationRegex, '');
+				// Vowels next to a blend aren't really at the start or end of the word,
+				// so strip any disemvowelWord kept there. The word's first letter stays.
+				if (i > 0) text = text.replace(/^[aeiou]+/, '');
+				if (i < parts.length - 1) {
+					text = i === 0 ? text.replace(/(?<=.)[aeiou]+$/, '') : text.replace(/[aeiou]+$/, '');
+				}
+				return { kind: 'letters', text };
+			})
+		: [{ kind: 'letters', text: cleanedWord }];
+
+	const matches = segments.flatMap((segment): GroupingMatch[] =>
+		segment.kind === 'blend'
+			? [{ grouping: segment.grouping, outline: blendOutline(segment.letter)! }]
+			: mapWordToOutlines(segment.text, outlines)
+	);
 	if (matches.length === 0) {
 		return { letterGroupings: [], specialOutlineMeanings: [], lines: [] };
 	}
 	const lettersObjectArray = matches.map(({ outline }) => outline);
 	const matchedGroupings = matches.map(({ grouping }) => grouping);
 
+	// The drawn word as letters, with '-' standing in for each blend, e.g. 'r--'
+	const drawnLetters = segments
+		.map((segment) => (segment.kind === 'letters' ? segment.text : '-'))
+		.join('');
+
 	// If last letter is 'y' replace the last letterObjectLines entry with the appropriate 'i' object
-	if (wordToMap.slice(-1) === 'y') {
+	if (drawnLetters.slice(-1) === 'y') {
 		// Penultimate letter
-		const penultimateLetter = wordToMap.charAt(wordToMap.length - 2);
+		const penultimateLetter = drawnLetters.charAt(drawnLetters.length - 2);
 		const regularIObject = findOrCreateOutlineObject('i', outlines);
 		const downUpIObject = downUpI;
 		const lettersThatShouldBeFollowedByDownUpI = ['f', 'g', 'h', 'j', 'n', 'p', 'z'];
@@ -133,11 +155,6 @@ export const findOrCreateOutlineObject = (
 		} else {
 			lettersObjectArray[lettersObjectArray.length - 1] = regularIObject;
 		}
-	}
-
-	if (endingMatch) {
-		lettersObjectArray.push(endingMatch.outline);
-		matchedGroupings.push(endingMatch.grouping);
 	}
 
 	// Calculated after the 'y' swap so it measures the outlines actually drawn
@@ -197,9 +214,18 @@ export const findOrCreateOutlineObject = (
 
 	const groupingIsSpecial = specialOutlineMeanings !== undefined;
 
+	// Label blends explicitly (e.g. 'longer' → 'l -ong r' rather than 'lngr'),
+	// since they aren't drawn letter by letter
+	const groupingLabel = useBlends
+		? segments
+				.map((segment) => (segment.kind === 'letters' ? segment.text : segment.grouping))
+				.filter(Boolean)
+				.join(' ')
+		: cleanedWord;
+
 	// Return new outline object
 	return {
-		letterGroupings: [cleanedWord],
+		letterGroupings: [groupingLabel],
 		specialOutlineMeanings: groupingIsSpecial ? specialOutlineMeanings?.meanings : [],
 		lines: combinedLineDetails
 	};
