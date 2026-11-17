@@ -20,6 +20,7 @@ const DETACHED_BLENDS: Record<string, string> = {
 	ang: 'a',
 	ange: 'a',
 	ing: 'i',
+	ingl: 'l',
 	inge: 'i',
 	ong: 'o',
 	onge: 'o',
@@ -37,6 +38,7 @@ const DETACHED_LETTER_RULES: Record<string, DetachmentRule> = {
 	'-ang': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
 	'-ange': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
 	'-ing': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
+	'-ingl': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
 	'-inge': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
 	'-ong': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
 	'-onge': { offset: { x: 20, y: -30 }, always: true, anchor: 'rightmost' },
@@ -71,7 +73,7 @@ export const splitOnDetachedBlends = (word: string): WordPart[] => {
 	const parts: WordPart[] = [];
 	let letters = '';
 
-	for (let i = 0; i < word.length; ) {
+	for (let i = 0; i < word.length;) {
 		const blend = i > 0 ? blendsLongestFirst.find((b) => word.startsWith(b, i)) : undefined;
 		if (blend) {
 			if (letters) parts.push({ kind: 'letters', text: letters });
