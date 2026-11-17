@@ -13,10 +13,10 @@ type DetachmentRule = {
 
 const DETACH_AFTER = ['t', 'd', 'tr', 'thr', 'dr', 'r', 'fr'];
 
-// Word endings written as a single detached letter instead of in full.
-// The ending is matched on the raw word (before disemvowelling) and replaced
-// by `letter`, drawn using the rule stored under `-<ending>` below.
-const DETACHED_ENDINGS: Record<string, string> = {
+// Letter sequences written as a single detached letter instead of in full.
+// They're matched on the raw word (before disemvowelling), anywhere except
+// the very start, and drawn using the rule stored under `-<blend>` below.
+const DETACHED_BLENDS: Record<string, string> = {
 	ang: 'a',
 	ange: 'a',
 	ing: 'i',
@@ -55,17 +55,34 @@ export const getDetachmentOffset = (grouping: string, precedingGrouping?: string
 		: undefined;
 };
 
-// Returns the ending to abbreviate, if the word has one. Requires something
-// before the ending, so the ending on its own is left alone.
-export const findDetachedEnding = (word: string) => {
-	const ending = Object.keys(DETACHED_ENDINGS).find(
-		(ending) => word.endsWith(ending) && word.length > ending.length
-	);
-	if (!ending) return undefined;
-	return {
-		stem: word.slice(0, -ending.length),
-		letter: DETACHED_ENDINGS[ending],
-		// Marker grouping, distinct from any real grouping, used to look up the rule
-		grouping: `-${ending}`
-	};
+export type WordPart =
+	| { kind: 'letters'; text: string }
+	// `grouping` is a marker like '-ing', distinct from any real grouping,
+	// used to look up the detachment rule and label the outline
+	| { kind: 'blend'; letter: string; grouping: string };
+
+const blendsLongestFirst = Object.keys(DETACHED_BLENDS).sort((a, b) => b.length - a.length);
+
+// Splits a raw (not yet disemvowelled) word into runs of ordinary letters and
+// detached blends, scanning left to right. A blend can't start the word, so
+// 'ingot' is left alone, but can appear anywhere after that:
+// 'ringing' → r, -ing, -ing; 'longer' → l, -ong, er
+export const splitOnDetachedBlends = (word: string): WordPart[] => {
+	const parts: WordPart[] = [];
+	let letters = '';
+
+	for (let i = 0; i < word.length; ) {
+		const blend = i > 0 ? blendsLongestFirst.find((b) => word.startsWith(b, i)) : undefined;
+		if (blend) {
+			if (letters) parts.push({ kind: 'letters', text: letters });
+			letters = '';
+			parts.push({ kind: 'blend', letter: DETACHED_BLENDS[blend], grouping: `-${blend}` });
+			i += blend.length;
+		} else {
+			letters += word[i++];
+		}
+	}
+	if (letters) parts.push({ kind: 'letters', text: letters });
+
+	return parts;
 };
